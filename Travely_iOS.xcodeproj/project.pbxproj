@@ -19,8 +19,6 @@
 		5638BBF166F275862FB628B3 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3486DC586E1E89CD82925C3B /* Pods_Travely_iOS.framework */; };
 		D122477A21D0A4A000B10C87 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D122477921D0A4A000B10C87 /* UIColor.swift */; };
 		D122477C21D0A55E00B10C87 /* ReservationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D122477B21D0A55E00B10C87 /* ReservationPicker.swift */; };
-		D122478421D2743300B10C87 /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D122478321D2743300B10C87 /* testViewController.swift */; };
-		D122478621D2771600B10C87 /* testViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D122478521D2771600B10C87 /* testViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +36,6 @@
 		52AB761121CF69240002FB07 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		D122477921D0A4A000B10C87 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = "../../../View Customize Travely/View Customize Travely/UIColor.swift"; sourceTree = "<group>"; };
 		D122477B21D0A55E00B10C87 /* ReservationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReservationPicker.swift; path = "../../../View Customize Travely/View Customize Travely/ReservationPicker.swift"; sourceTree = "<group>"; };
-		D122478321D2743300B10C87 /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = testViewController.swift; path = "../../../View Customize Travely/View Customize Travely/testViewController.swift"; sourceTree = "<group>"; };
-		D122478521D2771600B10C87 /* testViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = testViewController2.swift; path = "../../../View Customize Travely/View Customize Travely/testViewController2.swift"; sourceTree = "<group>"; };
 		E2B4B475C8310A6200220E86 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E2FB916EFC89C55BDDA9BD0E /* Pods-Travely_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,8 +98,6 @@
 			children = (
 				52AB75F521CF506F0002FB07 /* MainViewController.swift */,
 				D122477B21D0A55E00B10C87 /* ReservationPicker.swift */,
-				D122478321D2743300B10C87 /* testViewController.swift */,
-				D122478521D2771600B10C87 /* testViewController2.swift */,
 				52AB760F21CF665B0002FB07 /* Main.storyboard */,
 			);
 			path = MainView;
@@ -280,8 +274,6 @@
 			files = (
 				52AB760D21CF65ED0002FB07 /* LoginViewController.swift in Sources */,
 				D122477A21D0A4A000B10C87 /* UIColor.swift in Sources */,
-				D122478621D2771600B10C87 /* testViewController2.swift in Sources */,
-				D122478421D2743300B10C87 /* testViewController.swift in Sources */,
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
