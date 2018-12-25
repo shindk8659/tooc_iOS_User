@@ -57,6 +57,11 @@
                                     <constraint firstItem="ce6-QN-HcW" firstAttribute="centerY" secondItem="Wm1-zS-ohM" secondAttribute="centerY" constant="-5" id="rGF-sL-MUP"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UHt-ms-h0u">
+                                <rect key="frame" x="0.0" y="269" width="375" height="349"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -74,11 +79,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="currentLocLB" destination="AfO-Rz-ASk" id="tGK-od-ajz"/>
                         <outlet property="hideBtn" destination="Uab-oH-51b" id="T8t-yc-Zgf"/>
                         <outlet property="searchBtn" destination="yM6-wi-D3L" id="sjD-RW-J2k"/>
                         <outlet property="searchView" destination="Wm1-zS-ohM" id="zyr-4U-Uar"/>
+                        <outlet property="shopDetailView" destination="UHt-ms-h0u" id="w9h-CV-SQ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qui-7r-whF" userLabel="First Responder" sceneMemberID="firstResponder"/>
