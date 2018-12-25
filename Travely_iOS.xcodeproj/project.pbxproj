@@ -16,11 +16,15 @@
 		52AB760E21CF65ED0002FB07 /* LoginSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AB760B21CF65ED0002FB07 /* LoginSignup.storyboard */; };
 		52AB761021CF665B0002FB07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AB760F21CF665B0002FB07 /* Main.storyboard */; };
 		52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB761121CF69240002FB07 /* ViewExtension.swift */; };
+
 		52AB761821D0E9C40002FB07 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB761621D0E9C40002FB07 /* SearchTableViewCell.swift */; };
 		52AB761921D0E9C40002FB07 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */; };
 		52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */; };
 		52AB761D21D104810002FB07 /* DetailShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */; };
 		E36EFB7BA6556902807909FF /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D323CC69E72FF10862963C9E /* Pods_Travely_iOS.framework */; };
+		D122477A21D0A4A000B10C87 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D122477921D0A4A000B10C87 /* UIColor.swift */; };
+		D122477C21D0A55E00B10C87 /* ReservationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D122477B21D0A55E00B10C87 /* ReservationPicker.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,7 @@
 		52AB760B21CF65ED0002FB07 /* LoginSignup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginSignup.storyboard; sourceTree = "<group>"; };
 		52AB760F21CF665B0002FB07 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		52AB761121CF69240002FB07 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+
 		52AB761621D0E9C40002FB07 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShopTableViewCell.swift; sourceTree = "<group>"; };
@@ -42,6 +47,11 @@
 		B01FAA1906120A5FC296B0DA /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C7DA2159D1884B1FEDDE53BE /* Pods-Travely_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D323CC69E72FF10862963C9E /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D122477921D0A4A000B10C87 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = "../../../View Customize Travely/View Customize Travely/UIColor.swift"; sourceTree = "<group>"; };
+		D122477B21D0A55E00B10C87 /* ReservationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReservationPicker.swift; path = "../../../View Customize Travely/View Customize Travely/ReservationPicker.swift"; sourceTree = "<group>"; };
+		E2B4B475C8310A6200220E86 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E2FB916EFC89C55BDDA9BD0E /* Pods-Travely_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.release.xcconfig"; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,7 @@
 		52AB75F221CF506F0002FB07 /* Travely_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D122477821D0A47600B10C87 /* Extension */,
 				52AB760821CF65840002FB07 /* LoginView */,
 				52AB760721CF657E0002FB07 /* MainView */,
 				52AB760621CF65690002FB07 /* Support */,
@@ -117,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				52AB75F521CF506F0002FB07 /* MainViewController.swift */,
+				D122477B21D0A55E00B10C87 /* ReservationPicker.swift */,
 				52AB760F21CF665B0002FB07 /* Main.storyboard */,
 				52AB761621D0E9C40002FB07 /* SearchTableViewCell.swift */,
 				52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */,
@@ -134,6 +146,31 @@
 				52AB760921CF65ED0002FB07 /* SignupViewController.swift */,
 			);
 			path = LoginView;
+			sourceTree = "<group>";
+		};
+		D122477821D0A47600B10C87 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D122477921D0A4A000B10C87 /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EF07B6613AC3062530AD8340 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3486DC586E1E89CD82925C3B /* Pods_Travely_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFE508658218C39D7FD25B09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2B4B475C8310A6200220E86 /* Pods-Travely_iOS.debug.xcconfig */,
+				E2FB916EFC89C55BDDA9BD0E /* Pods-Travely_iOS.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,12 +324,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AB760D21CF65ED0002FB07 /* LoginViewController.swift in Sources */,
+				D122477A21D0A4A000B10C87 /* UIColor.swift in Sources */,
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
 				52AB761821D0E9C40002FB07 /* SearchTableViewCell.swift in Sources */,
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
+				D122477C21D0A55E00B10C87 /* ReservationPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
