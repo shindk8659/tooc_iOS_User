@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52986AFC21D28DB100601983 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52986AFB21D28DB100601983 /* UIColor.swift */; };
+		52986AFE21D28DC700601983 /* ReservationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52986AFD21D28DC700601983 /* ReservationPicker.swift */; };
 		52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB75F321CF506F0002FB07 /* AppDelegate.swift */; };
 		52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB75F521CF506F0002FB07 /* MainViewController.swift */; };
 		52AB75FB21CF50700002FB07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AB75FA21CF50700002FB07 /* Assets.xcassets */; };
@@ -16,18 +18,19 @@
 		52AB760E21CF65ED0002FB07 /* LoginSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AB760B21CF65ED0002FB07 /* LoginSignup.storyboard */; };
 		52AB761021CF665B0002FB07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AB760F21CF665B0002FB07 /* Main.storyboard */; };
 		52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB761121CF69240002FB07 /* ViewExtension.swift */; };
-
 		52AB761821D0E9C40002FB07 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB761621D0E9C40002FB07 /* SearchTableViewCell.swift */; };
 		52AB761921D0E9C40002FB07 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */; };
 		52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */; };
 		52AB761D21D104810002FB07 /* DetailShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */; };
-		E36EFB7BA6556902807909FF /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D323CC69E72FF10862963C9E /* Pods_Travely_iOS.framework */; };
-		D122477A21D0A4A000B10C87 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D122477921D0A4A000B10C87 /* UIColor.swift */; };
-		D122477C21D0A55E00B10C87 /* ReservationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D122477B21D0A55E00B10C87 /* ReservationPicker.swift */; };
-
+		52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */; };
+		52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */; };
+		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3ED19096FC49769E399B9F60 /* Pods-Travely_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		52986AFB21D28DB100601983 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		52986AFD21D28DC700601983 /* ReservationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationPicker.swift; sourceTree = "<group>"; };
 		52AB75F021CF506F0002FB07 /* Travely_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travely_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AB75F321CF506F0002FB07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52AB75F521CF506F0002FB07 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -39,19 +42,14 @@
 		52AB760B21CF65ED0002FB07 /* LoginSignup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginSignup.storyboard; sourceTree = "<group>"; };
 		52AB760F21CF665B0002FB07 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		52AB761121CF69240002FB07 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-
 		52AB761621D0E9C40002FB07 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShopTableViewCell.swift; sourceTree = "<group>"; };
 		52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailShopTableViewCell.xib; sourceTree = "<group>"; };
-		B01FAA1906120A5FC296B0DA /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		C7DA2159D1884B1FEDDE53BE /* Pods-Travely_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.release.xcconfig"; sourceTree = "<group>"; };
-		D323CC69E72FF10862963C9E /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D122477921D0A4A000B10C87 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = "../../../View Customize Travely/View Customize Travely/UIColor.swift"; sourceTree = "<group>"; };
-		D122477B21D0A55E00B10C87 /* ReservationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReservationPicker.swift; path = "../../../View Customize Travely/View Customize Travely/ReservationPicker.swift"; sourceTree = "<group>"; };
-		E2B4B475C8310A6200220E86 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		E2FB916EFC89C55BDDA9BD0E /* Pods-Travely_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.release.xcconfig"; sourceTree = "<group>"; };
-
+		52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddressTableViewCell.swift; sourceTree = "<group>"; };
+		52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReviewTableViewCell.swift; sourceTree = "<group>"; };
+		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,37 +57,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E36EFB7BA6556902807909FF /* Pods_Travely_iOS.framework in Frameworks */,
+				58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3917800B5AAFA1051FEEB865 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D323CC69E72FF10862963C9E /* Pods_Travely_iOS.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		440FE423D56F8810B8FB48B7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B01FAA1906120A5FC296B0DA /* Pods-Travely_iOS.debug.xcconfig */,
-				C7DA2159D1884B1FEDDE53BE /* Pods-Travely_iOS.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		52AB75E721CF506F0002FB07 = {
 			isa = PBXGroup;
 			children = (
 				52AB75F221CF506F0002FB07 /* Travely_iOS */,
 				52AB75F121CF506F0002FB07 /* Products */,
-				440FE423D56F8810B8FB48B7 /* Pods */,
-				3917800B5AAFA1051FEEB865 /* Frameworks */,
+				A047BADDF6E147C3D62774C3 /* Pods */,
+				B17064A94ED306BFE6B2F1D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,13 +108,15 @@
 		52AB760721CF657E0002FB07 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				52986AFD21D28DC700601983 /* ReservationPicker.swift */,
 				52AB75F521CF506F0002FB07 /* MainViewController.swift */,
-				D122477B21D0A55E00B10C87 /* ReservationPicker.swift */,
 				52AB760F21CF665B0002FB07 /* Main.storyboard */,
 				52AB761621D0E9C40002FB07 /* SearchTableViewCell.swift */,
 				52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */,
 				52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */,
 				52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */,
+				52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */,
+				52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -148,29 +131,29 @@
 			path = LoginView;
 			sourceTree = "<group>";
 		};
-		D122477821D0A47600B10C87 /* Extension */ = {
+		A047BADDF6E147C3D62774C3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D122477921D0A4A000B10C87 /* UIColor.swift */,
+				C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */,
+				3ED19096FC49769E399B9F60 /* Pods-Travely_iOS.release.xcconfig */,
 			);
-			path = Extension;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		EF07B6613AC3062530AD8340 /* Frameworks */ = {
+		B17064A94ED306BFE6B2F1D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3486DC586E1E89CD82925C3B /* Pods_Travely_iOS.framework */,
+				FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FFE508658218C39D7FD25B09 /* Pods */ = {
+		D122477821D0A47600B10C87 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				E2B4B475C8310A6200220E86 /* Pods-Travely_iOS.debug.xcconfig */,
-				E2FB916EFC89C55BDDA9BD0E /* Pods-Travely_iOS.release.xcconfig */,
+				52986AFB21D28DB100601983 /* UIColor.swift */,
 			);
-			name = Pods;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,12 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52AB760221CF50700002FB07 /* Build configuration list for PBXNativeTarget "Travely_iOS" */;
 			buildPhases = (
-				901D2DC10A9743D6A23712AE /* [CP] Check Pods Manifest.lock */,
+				4B7111D54DD45C3F3FD02B36 /* [CP] Check Pods Manifest.lock */,
 				52AB75EC21CF506F0002FB07 /* Sources */,
 				52AB75ED21CF506F0002FB07 /* Frameworks */,
 				52AB75EE21CF506F0002FB07 /* Resources */,
-				06F25932912F38D7DDCF33A6 /* [CP] Embed Pods Frameworks */,
-				14CBE842B1D1F536E42C6AB3 /* [CP] Copy Pods Resources */,
+				20CE334B2168DE4D16E87F15 /* [CP] Embed Pods Frameworks */,
+				6B5EFD4059158B6550557D85 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,7 +229,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06F25932912F38D7DDCF33A6 /* [CP] Embed Pods Frameworks */ = {
+		20CE334B2168DE4D16E87F15 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,29 +255,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		14CBE842B1D1F536E42C6AB3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		901D2DC10A9743D6A23712AE /* [CP] Check Pods Manifest.lock */ = {
+		4B7111D54DD45C3F3FD02B36 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -316,6 +277,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6B5EFD4059158B6550557D85 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -324,14 +307,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AB760D21CF65ED0002FB07 /* LoginViewController.swift in Sources */,
-				D122477A21D0A4A000B10C87 /* UIColor.swift in Sources */,
+				52986AFE21D28DC700601983 /* ReservationPicker.swift in Sources */,
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
 				52AB761821D0E9C40002FB07 /* SearchTableViewCell.swift in Sources */,
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
+				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
+				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
-				D122477C21D0A55E00B10C87 /* ReservationPicker.swift in Sources */,
+				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +454,7 @@
 		};
 		52AB760321CF50700002FB07 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B01FAA1906120A5FC296B0DA /* Pods-Travely_iOS.debug.xcconfig */;
+			baseConfigurationReference = C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -489,7 +474,7 @@
 		};
 		52AB760421CF50700002FB07 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7DA2159D1884B1FEDDE53BE /* Pods-Travely_iOS.release.xcconfig */;
+			baseConfigurationReference = 3ED19096FC49769E399B9F60 /* Pods-Travely_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
