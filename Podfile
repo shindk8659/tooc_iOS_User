@@ -10,6 +10,7 @@ target 'Travely_iOS' do
     pod 'Alamofire'
     pod 'Kingfisher'
     pod 'GoogleMaps'
+    pod 'ExpandableCell'
 
 
 end
