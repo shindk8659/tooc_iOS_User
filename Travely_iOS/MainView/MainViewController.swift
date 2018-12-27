@@ -18,6 +18,8 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     @IBOutlet weak var hideBtn: UIBarButtonItem!
     @IBOutlet weak var shopDetailView: UITableView!
     @IBOutlet weak var shopSimpleInfoView: UIView!
+    @IBOutlet weak var shopDetailHeaderView: UIView!
+    
     lazy var shopSlideImageView :UIView = UIView.init(frame: CGRect(x: 0, y: -217, width: self.view.frame.size.width, height: 217))
 
     lazy var searchTableView: ExpandableTableView = ExpandableTableView.init(frame: CGRect(x: 0, y: self.view.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height - self.searchView.frame.maxY))
@@ -127,6 +129,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
                 self.shopSlideImageView.frame = CGRect(x: 0, y: -217, width: self.shopSlideImageView.frame.width, height: self.shopSlideImageView.frame.height)
                 self.searchView.isHidden = true
             }) { [weak self](true) in
+                self?.shopDetailHeaderView.isHidden = true
                 self?.shopDetailView.isScrollEnabled = true
             }
 
@@ -144,6 +147,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     @objc func handleSwipeDownGesture(recognizer: UISwipeGestureRecognizer) {
         if self.shopDetailView.frame.origin.y == 0 && self.shopDetailView.contentOffset.y < 0 {
             self.shopDetailView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+            self.shopDetailHeaderView.isHidden = false
             self.shopDetailView.isScrollEnabled = false
             UIView.animate(withDuration: 0.3, animations: {
                 self.shopDetailView.frame = CGRect(x: 0, y: 217, width: self.shopDetailView.frame.width, height: self.shopDetailView.frame.height)
@@ -217,6 +221,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         }
         else {
             //searchTabelView Animation
+            self.searchTableView.closeAll()
             self.searchView.backgroundColor = UIColor.clear
             UIView.animate(withDuration: 0.3, animations: {
                 self.searchTableView.frame = CGRect(x: 0, y:self.view.frame.size.height, width: self.searchTableView.frame.width, height: self.searchTableView.frame.height)
