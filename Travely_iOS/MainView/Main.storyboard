@@ -312,6 +312,7 @@
                         <outlet property="hideBtn" destination="Uab-oH-51b" id="T8t-yc-Zgf"/>
                         <outlet property="searchBtn" destination="yM6-wi-D3L" id="sjD-RW-J2k"/>
                         <outlet property="searchView" destination="Wm1-zS-ohM" id="zyr-4U-Uar"/>
+                        <outlet property="shopDetailHeaderView" destination="WzE-sQ-jCJ" id="3GG-N6-8Uz"/>
                         <outlet property="shopDetailView" destination="52i-L9-bOM" id="Dgc-8s-And"/>
                         <outlet property="shopSimpleInfoView" destination="YN5-nz-IHc" id="WBc-K6-7xx"/>
                     </connections>
