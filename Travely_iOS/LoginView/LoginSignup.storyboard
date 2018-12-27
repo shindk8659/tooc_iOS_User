@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EaI-Y9-jnm">
-                                <rect key="frame" x="84" y="277.33333333333331" width="261" height="20"/>
+                                <rect key="frame" x="84" y="277.33333333333331" width="244" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="OtJ-XR-WL9"/>
                                 </constraints>
@@ -72,7 +72,7 @@
                                 </constraints>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9OU-M6-hUc">
-                                <rect key="frame" x="84" y="374.66666666666669" width="261" height="20"/>
+                                <rect key="frame" x="84" y="374.66666666666669" width="244" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="APW-w4-kUj"/>
                                 </constraints>
@@ -141,7 +141,7 @@
                             <constraint firstItem="Ieb-2a-AGe" firstAttribute="leading" secondItem="O81-Wn-5L1" secondAttribute="leading" constant="47" id="7AM-z1-KVm"/>
                             <constraint firstItem="le5-Qh-Wz0" firstAttribute="top" secondItem="Nou-8q-E3v" secondAttribute="bottom" constant="48" id="C68-qH-YXZ"/>
                             <constraint firstItem="xov-vI-vKu" firstAttribute="top" secondItem="EaI-Y9-jnm" secondAttribute="bottom" constant="25" id="Cpj-zu-yW6"/>
-                            <constraint firstItem="O81-Wn-5L1" firstAttribute="trailing" secondItem="EaI-Y9-jnm" secondAttribute="trailing" constant="30" id="G1b-s3-vdR"/>
+                            <constraint firstItem="O81-Wn-5L1" firstAttribute="trailing" secondItem="EaI-Y9-jnm" secondAttribute="trailing" constant="47" id="G1b-s3-vdR"/>
                             <constraint firstItem="50n-aO-r5K" firstAttribute="top" secondItem="UwY-eS-tUA" secondAttribute="top" constant="145" id="HUr-h5-MyG"/>
                             <constraint firstItem="50n-aO-r5K" firstAttribute="leading" secondItem="O81-Wn-5L1" secondAttribute="leading" constant="46" id="JQN-iS-a8j"/>
                             <constraint firstItem="eoO-3a-grT" firstAttribute="top" secondItem="xov-vI-vKu" secondAttribute="bottom" constant="53" id="NYf-Is-hhO"/>
@@ -158,7 +158,7 @@
                             <constraint firstItem="Nou-8q-E3v" firstAttribute="top" secondItem="Ikl-oy-dha" secondAttribute="bottom" constant="14" id="nu2-Ih-Unp"/>
                             <constraint firstItem="9OU-M6-hUc" firstAttribute="leading" secondItem="eoO-3a-grT" secondAttribute="trailing" constant="20" id="p0o-az-HrK"/>
                             <constraint firstItem="UO8-vk-Moc" firstAttribute="leading" secondItem="UwY-eS-tUA" secondAttribute="leading" constant="37" id="q5i-NM-Mpz"/>
-                            <constraint firstItem="O81-Wn-5L1" firstAttribute="trailing" secondItem="9OU-M6-hUc" secondAttribute="trailing" constant="30" id="t2O-Us-Kzv"/>
+                            <constraint firstItem="O81-Wn-5L1" firstAttribute="trailing" secondItem="9OU-M6-hUc" secondAttribute="trailing" constant="47" id="t2O-Us-Kzv"/>
                             <constraint firstItem="UO8-vk-Moc" firstAttribute="centerX" secondItem="O81-Wn-5L1" secondAttribute="centerX" id="z5n-cx-rMA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O81-Wn-5L1"/>
