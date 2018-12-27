@@ -5,12 +5,11 @@ target 'Travely_iOS' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Travely_iOS
-
     pod 'Alamofire'
     pod 'Kingfisher'
     pod 'GoogleMaps'
     pod 'ExpandableCell'
 
+  # Pods for Travely_iOS
 
 end
