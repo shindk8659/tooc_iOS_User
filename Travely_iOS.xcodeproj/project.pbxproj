@@ -22,9 +22,21 @@
 		52AB761921D0E9C40002FB07 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */; };
 		52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */; };
 		52AB761D21D104810002FB07 /* DetailShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */; };
+		52BDE66E21D50051008204FF /* NanumSquareEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE66A21D50051008204FF /* NanumSquareEB.ttf */; };
+		52BDE66F21D50051008204FF /* NanumSquareR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE66B21D50051008204FF /* NanumSquareR.ttf */; };
+		52BDE67021D50051008204FF /* NanumSquareL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE66C21D50051008204FF /* NanumSquareL.ttf */; };
+		52BDE67121D50051008204FF /* NanumSquareB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE66D21D50051008204FF /* NanumSquareB.ttf */; };
+		52BDE67921D50064008204FF /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67221D50061008204FF /* NotoSansCJKkr-Regular.otf */; };
+		52BDE67A21D50064008204FF /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67321D50061008204FF /* NotoSansCJKkr-Thin.otf */; };
+		52BDE67B21D50064008204FF /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67421D50062008204FF /* NotoSansCJKkr-Bold.otf */; };
+		52BDE67C21D50064008204FF /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67521D50062008204FF /* NotoSansCJKkr-DemiLight.otf */; };
+		52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */; };
+		52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */; };
+		52BDE67F21D50064008204FF /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */; };
 		52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */; };
 		52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */; };
 		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
+		D1CA4DDB21D62F3A003E1C7A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,9 +58,21 @@
 		52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShopTableViewCell.swift; sourceTree = "<group>"; };
 		52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailShopTableViewCell.xib; sourceTree = "<group>"; };
+		52BDE66A21D50051008204FF /* NanumSquareEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.ttf; sourceTree = "<group>"; };
+		52BDE66B21D50051008204FF /* NanumSquareR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareR.ttf; sourceTree = "<group>"; };
+		52BDE66C21D50051008204FF /* NanumSquareL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareL.ttf; sourceTree = "<group>"; };
+		52BDE66D21D50051008204FF /* NanumSquareB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareB.ttf; sourceTree = "<group>"; };
+		52BDE67221D50061008204FF /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		52BDE67321D50061008204FF /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
+		52BDE67421D50062008204FF /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		52BDE67521D50062008204FF /* NotoSansCJKkr-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-DemiLight.otf"; sourceTree = "<group>"; };
+		52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
+		52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
 		52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddressTableViewCell.swift; sourceTree = "<group>"; };
 		52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReviewTableViewCell.swift; sourceTree = "<group>"; };
 		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +125,17 @@
 				52AB75FC21CF50700002FB07 /* LaunchScreen.storyboard */,
 				52AB75FF21CF50700002FB07 /* Info.plist */,
 				52AB761121CF69240002FB07 /* ViewExtension.swift */,
+				52BDE66D21D50051008204FF /* NanumSquareB.ttf */,
+				52BDE66A21D50051008204FF /* NanumSquareEB.ttf */,
+				52BDE66C21D50051008204FF /* NanumSquareL.ttf */,
+				52BDE66B21D50051008204FF /* NanumSquareR.ttf */,
+				52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */,
+				52BDE67421D50062008204FF /* NotoSansCJKkr-Bold.otf */,
+				52BDE67521D50062008204FF /* NotoSansCJKkr-DemiLight.otf */,
+				52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */,
+				52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */,
+				52BDE67221D50061008204FF /* NotoSansCJKkr-Regular.otf */,
+				52BDE67321D50061008204FF /* NotoSansCJKkr-Thin.otf */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -117,6 +152,7 @@
 				52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */,
 				52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */,
 				52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */,
+				D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -217,12 +253,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BDE67C21D50064008204FF /* NotoSansCJKkr-DemiLight.otf in Resources */,
 				52AB760E21CF65ED0002FB07 /* LoginSignup.storyboard in Resources */,
+				52BDE67F21D50064008204FF /* NotoSansCJKkr-Black.otf in Resources */,
 				52AB75FE21CF50700002FB07 /* LaunchScreen.storyboard in Resources */,
+				52BDE67121D50051008204FF /* NanumSquareB.ttf in Resources */,
+				52BDE67A21D50064008204FF /* NotoSansCJKkr-Thin.otf in Resources */,
+				52BDE67B21D50064008204FF /* NotoSansCJKkr-Bold.otf in Resources */,
 				52AB75FB21CF50700002FB07 /* Assets.xcassets in Resources */,
+				52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */,
 				52AB761021CF665B0002FB07 /* Main.storyboard in Resources */,
+				52BDE67021D50051008204FF /* NanumSquareL.ttf in Resources */,
 				52AB761D21D104810002FB07 /* DetailShopTableViewCell.xib in Resources */,
+				52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */,
+				52BDE66E21D50051008204FF /* NanumSquareEB.ttf in Resources */,
+				52BDE66F21D50051008204FF /* NanumSquareR.ttf in Resources */,
 				52AB761921D0E9C40002FB07 /* SearchTableViewCell.xib in Resources */,
+				52BDE67921D50064008204FF /* NotoSansCJKkr-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +364,7 @@
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
+				D1CA4DDB21D62F3A003E1C7A /* TestTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
