@@ -37,6 +37,7 @@
 		52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */; };
 		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
 		D1CA4DDB21D62F3A003E1C7A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */; };
+		D1CA4DDD21D66D2A003E1C7A /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA4DDC21D66D2A003E1C7A /* ReservationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReviewTableViewCell.swift; sourceTree = "<group>"; };
 		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		D1CA4DDC21D66D2A003E1C7A /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 				52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */,
 				52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */,
 				D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */,
+				D1CA4DDC21D66D2A003E1C7A /* ReservationViewController.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
+				D1CA4DDD21D66D2A003E1C7A /* ReservationViewController.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
 				D1CA4DDB21D62F3A003E1C7A /* TestTableViewController.swift in Sources */,
 			);
