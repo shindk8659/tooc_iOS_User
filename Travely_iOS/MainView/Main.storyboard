@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Travely-->
+        <!--Tooc-->
         <scene sceneID="idO-1E-Ko7">
             <objects>
                 <viewController storyboardIdentifier="main" id="dlN-FW-IhO" customClass="MainViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -299,7 +299,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1j4-Ra-gR2"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Travely" id="3QY-Bp-LNx">
+                    <navigationItem key="navigationItem" title="Tooc" id="3QY-Bp-LNx">
                         <barButtonItem key="leftBarButtonItem" id="Uab-oH-51b">
                             <connections>
                                 <action selector="hideBtnAction:" destination="dlN-FW-IhO" id="wbR-Zl-YEv"/>
