@@ -31,6 +31,13 @@ class ReservationViewController: UITableViewController {
     @IBOutlet var kakaoPay: UIButton!
     @IBOutlet var cash: UIButton!
     
+    @IBOutlet var numberOfSuitcaseLabel: UILabel!
+    @IBOutlet var numberOfLuggageLabel: UILabel!
+    
+    @IBOutlet var luggageChoiceLabel: UILabel!
+    
+    
+    
     @IBAction func didPressType(_ sender: UIButton) {
         if sender.tag == 0 {
             if suitcaseCheck == false {
@@ -155,6 +162,10 @@ extension ReservationViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         pickerLabel?.textColor = UIColor.darkGray
         
         return pickerLabel!
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // 픽커뷰 셀렉트
     }
     
 }

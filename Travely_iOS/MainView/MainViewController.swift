@@ -117,7 +117,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             self.navigationItem.title = ""
             self.tabBarController?.hideTabBarAnimated(hide: true)
         }
-        
     }
     
     //swipe Gesture upside
