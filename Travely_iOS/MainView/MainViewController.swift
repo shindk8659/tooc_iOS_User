@@ -28,11 +28,15 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     
     let marker = GMSMarker()
     let marker2 = GMSMarker()
+    
+    let networkManager = NetworkManager()
+    let userdata = UserDefaults.standard
 
     private var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         shopSimpleInfoView.isHidden = true
         //Expandable tableview delegate
         searchTableView.expandableDelegate = self
@@ -76,9 +80,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         hideBtn.title = ""
         hideBtn.isEnabled = false
-        
-        //searchTableView
-        searchTableView.backgroundColor = UIColor.gray
         
         //swipeGesture
         let shopSimpleInfoSwipeUp = UISwipeGestureRecognizer(target: self, action:#selector(handleSimpleInfoSwipeUpGesture))
@@ -128,9 +129,9 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
                 self.shopSlideImageView.frame = CGRect(x: 0, y: -217, width: self.shopSlideImageView.frame.width, height: self.shopSlideImageView.frame.height)
                 self.searchView.isHidden = true
             }) { [weak self](true) in
-                self?.shopDetailHeaderView.isHidden = true
                 self?.shopDetailView.isScrollEnabled = true
             }
+        
 
             //네비게이션바의 투명을 해제하고 white컬러로 바꿈
             self.navigationController?.navigationBar.backgroundColor = UIColor.white
@@ -146,7 +147,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     @objc func handleSwipeDownGesture(recognizer: UISwipeGestureRecognizer) {
         if self.shopDetailView.frame.origin.y == 0 && self.shopDetailView.contentOffset.y < 0 {
             self.shopDetailView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
-            self.shopDetailHeaderView.isHidden = false
             self.shopDetailView.isScrollEnabled = false
             UIView.animate(withDuration: 0.3, animations: {
                 self.shopDetailView.frame = CGRect(x: 0, y: 217, width: self.shopDetailView.frame.width, height: self.shopDetailView.frame.height)
@@ -170,7 +170,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             }) { [weak self](true) in
                  self?.shopSimpleInfoView.isHidden = false
             }
-            self.navigationItem.title = "Travely"
+            self.navigationItem.title = "Tooc"
             self.tabBarController?.hideTabBarAnimated(hide: false)
         }
     }
@@ -195,6 +195,9 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             self.searchTableView.frame = CGRect(x: 0, y: self.searchView.frame.maxY, width: self.searchTableView.frame.width, height: self.searchTableView.frame.height)
         }, completion: nil)
         
+        networkManager.regionList(jwt: userdata.string(forKey: "jwt")!) { (regionList, errorModel, error) in
+           
+        }
         //네비게이션바의 투명을 해제하고 white컬러로 바꿈
         self.searchView.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
@@ -230,7 +233,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         //네비게이션바의 투명을 설정
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-        self.navigationItem.title = "Travely"
+        self.navigationItem.title = "Tooc"
         hideBtn.title = ""
         hideBtn.isEnabled = false
     }
@@ -302,7 +305,7 @@ extension MainViewController: ExpandableDelegate {
         return 3
     }
     
-    //화위 셀 selection event
+    //하위 셀 selection event
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCell: UITableViewCell, didSelectExpandedRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {

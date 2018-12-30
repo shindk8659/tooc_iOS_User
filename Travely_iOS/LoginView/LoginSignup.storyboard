@@ -164,6 +164,10 @@
                         <viewLayoutGuide key="safeArea" id="O81-Wn-5L1"/>
                     </view>
                     <navigationItem key="navigationItem" id="f93-ih-kSa"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="EaI-Y9-jnm" id="gbi-08-HEO"/>
+                        <outlet property="passwordTextField" destination="9OU-M6-hUc" id="gX5-ab-ZSu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kco-Uu-Yhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,68 +188,135 @@
                                     <navigationItem title="Title" id="e3a-IH-TGB"/>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IA2-fF-iIW">
-                                <rect key="frame" x="16" y="114" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nlw-II-2Oa">
-                                <rect key="frame" x="16" y="161" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="휴대폰번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XTz-i6-Hej">
-                                <rect key="frame" x="16" y="210" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1XE-MU-tjT">
-                                <rect key="frame" x="16" y="261" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jAw-8U-abt">
-                                <rect key="frame" x="16" y="311" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnH-Cq-B0l">
-                                <rect key="frame" x="68" y="444" width="240" height="53"/>
+                                <rect key="frame" x="68" y="600" width="240" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btSignx">
                                     <color key="titleColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmButtonAction:" destination="Jwc-Nj-1xB" eventType="touchUpInside" id="Zq9-MF-fBe"/>
+                                </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signinIcCheck" translatesAutoresizingMaskIntoConstraints="NO" id="Czk-0b-q5O">
-                                <rect key="frame" x="334" y="261" width="14" height="9"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HAh-7w-ThA">
+                                <rect key="frame" x="37" y="248" width="301" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signinIcCheck" translatesAutoresizingMaskIntoConstraints="NO" id="GCm-3X-Cww">
-                                <rect key="frame" x="334" y="172" width="14" height="9"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signinIcCheck" translatesAutoresizingMaskIntoConstraints="NO" id="6jA-mv-osm">
-                                <rect key="frame" x="334" y="221" width="14" height="9"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IA2-fF-iIW">
+                                        <rect key="frame" x="0.0" y="0.0" width="301" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJf-U6-q8c">
+                                        <rect key="frame" x="0.0" y="45" width="301" height="1"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xJf-U6-q8c" secondAttribute="height" multiplier="301:1" id="7Pw-xv-6bg"/>
+                                            <constraint firstAttribute="width" constant="301" id="7aB-St-iHS"/>
+                                            <constraint firstAttribute="height" constant="1" id="QrV-n9-UdI"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="301" id="S9Q-yo-R9Q"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nlw-II-2Oa">
+                                        <rect key="frame" x="0.0" y="61" width="301" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="969-6k-zu0">
+                                        <rect key="frame" x="0.0" y="106" width="301" height="1"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="301" id="Vve-4m-wLx"/>
+                                            <constraint firstAttribute="width" secondItem="969-6k-zu0" secondAttribute="height" multiplier="301:1" id="W0u-1d-B1n"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="301" id="X7S-u4-NKH"/>
+                                            <constraint firstAttribute="height" constant="1" id="yRf-8q-dg3"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1XE-MU-tjT">
+                                        <rect key="frame" x="0.0" y="122" width="301" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cf3-Qg-xF2">
+                                        <rect key="frame" x="0.0" y="167" width="301" height="1"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="301" id="7bf-oe-Hdj"/>
+                                            <constraint firstAttribute="height" constant="1" id="9Bk-et-d1H"/>
+                                            <constraint firstAttribute="width" constant="301" id="Xhc-x9-5oe"/>
+                                            <constraint firstAttribute="width" secondItem="Cf3-Qg-xF2" secondAttribute="height" multiplier="301:1" id="rzs-Zr-MPJ"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jAw-8U-abt">
+                                        <rect key="frame" x="0.0" y="183" width="301" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xav-wh-q51">
+                                        <rect key="frame" x="0.0" y="228" width="301" height="1"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Xav-wh-q51" secondAttribute="height" multiplier="301:1" id="HdY-ks-tRt"/>
+                                            <constraint firstAttribute="width" constant="301" id="Sn6-pF-R0n"/>
+                                            <constraint firstAttribute="height" constant="1" id="eBm-Kz-v85"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="301" id="px0-br-4JF"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="휴대폰번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XTz-i6-Hej">
+                                        <rect key="frame" x="0.0" y="244" width="301" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1qU-Ld-zkp">
+                                        <rect key="frame" x="0.0" y="289" width="301" height="1"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="B6j-iU-3mf"/>
+                                            <constraint firstAttribute="width" constant="301" id="HdS-et-UzA"/>
+                                            <constraint firstAttribute="width" secondItem="1qU-Ld-zkp" secondAttribute="height" multiplier="301:1" id="bPE-7W-eSZ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="301" id="biD-sl-gtt"/>
+                                            <constraint firstAttribute="height" constant="1" id="kEF-wf-esV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IA2-fF-iIW" firstAttribute="width" secondItem="jAw-8U-abt" secondAttribute="width" id="3GC-hZ-PhB"/>
+                                    <constraint firstItem="IA2-fF-iIW" firstAttribute="width" secondItem="1XE-MU-tjT" secondAttribute="width" id="8UG-rR-QTf"/>
+                                    <constraint firstItem="IA2-fF-iIW" firstAttribute="width" secondItem="xJf-U6-q8c" secondAttribute="width" id="Aaf-D7-S59"/>
+                                    <constraint firstItem="IA2-fF-iIW" firstAttribute="height" secondItem="Nlw-II-2Oa" secondAttribute="height" id="CQe-36-H2J"/>
+                                    <constraint firstItem="IA2-fF-iIW" firstAttribute="width" secondItem="XTz-i6-Hej" secondAttribute="width" id="DQQ-Eg-9Da"/>
+                                    <constraint firstItem="1XE-MU-tjT" firstAttribute="height" secondItem="Cf3-Qg-xF2" secondAttribute="height" multiplier="30:1" id="Dlo-9C-Sfq"/>
+                                    <constraint firstItem="IA2-fF-iIW" firstAttribute="width" secondItem="Nlw-II-2Oa" secondAttribute="width" id="KdW-bc-hKy"/>
+                                    <constraint firstItem="IA2-fF-iIW" firstAttribute="height" secondItem="jAw-8U-abt" secondAttribute="height" id="Pyv-MK-ZCg"/>
+                                    <constraint firstItem="IA2-fF-iIW" firstAttribute="height" secondItem="1XE-MU-tjT" secondAttribute="height" id="QOo-tj-4IW"/>
+                                    <constraint firstItem="Nlw-II-2Oa" firstAttribute="height" secondItem="969-6k-zu0" secondAttribute="height" multiplier="30:1" id="UBg-1r-D5a"/>
+                                    <constraint firstItem="jAw-8U-abt" firstAttribute="height" secondItem="Xav-wh-q51" secondAttribute="height" multiplier="30:1" id="bBe-Tq-yWH"/>
+                                    <constraint firstItem="XTz-i6-Hej" firstAttribute="height" secondItem="1qU-Ld-zkp" secondAttribute="height" multiplier="30:1" id="bgt-Bl-H8v"/>
+                                    <constraint firstItem="IA2-fF-iIW" firstAttribute="height" secondItem="xJf-U6-q8c" secondAttribute="height" multiplier="30:1" id="qXC-bP-l45"/>
+                                    <constraint firstItem="IA2-fF-iIW" firstAttribute="height" secondItem="XTz-i6-Hej" secondAttribute="height" id="wMB-KS-l1s"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XIN-Vr-kf0"/>
                     </view>
+                    <connections>
+                        <outlet property="configPassTextField" destination="jAw-8U-abt" id="gFg-Nl-KeZ"/>
+                        <outlet property="confirmButton" destination="mnH-Cq-B0l" id="SDJ-wi-tiN"/>
+                        <outlet property="emailTextField" destination="Nlw-II-2Oa" id="lwF-74-rnG"/>
+                        <outlet property="nameTextField" destination="IA2-fF-iIW" id="RrA-CP-90o"/>
+                        <outlet property="passTextField" destination="1XE-MU-tjT" id="w1H-6Z-pdA"/>
+                        <outlet property="phoneTextField" destination="XTz-i6-Hej" id="2K8-ab-oFt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e6q-GJ-TKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="1564" y="-36.945812807881772"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Z6-rL-0ed">
@@ -274,6 +345,5 @@
         <image name="icKakao" width="46" height="46"/>
         <image name="icLock" width="17" height="17"/>
         <image name="icMail" width="17" height="13"/>
-        <image name="signinIcCheck" width="16" height="10.666666984558105"/>
     </resources>
 </document>
