@@ -12,6 +12,4 @@ target 'Travely_iOS' do
     pod 'SwiftyJSON'
     pod 'IQKeyboardManagerSwift'
 
-  # Pods for Travely_iOS
-
 end
