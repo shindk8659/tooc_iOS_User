@@ -10,21 +10,78 @@ import UIKit
 
 class SignupViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var configPassTextField: UITextField!
+    @IBOutlet weak var passTextField: UITextField!
+    
+    @IBOutlet weak var confirmButton: UIButton!
+    let networkManager = NetworkManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        initAddtarget()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func confirmButtonAction(_ sender: Any) {
+        
+        if nameTextField.text == "" || emailTextField.text == "" || phoneTextField.text == "" || configPassTextField.text == "" || passTextField.text == "" {
+            
+            let alertController = UIAlertController(title: "",message: "정보를 입력 해 주세요", preferredStyle: UIAlertController.Style.alert)
+            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+            alertController.addAction(cancelButton)
+            self.present(alertController,animated: true,completion: nil)
+        }
+        else {
+            
+            networkManager.signin(email: gsno(emailTextField.text), password: gsno(passTextField.text), configPassword: gsno(configPassTextField.text), name: gsno(nameTextField.text), phone: gsno(phoneTextField.text)) { [weak self](signin, errorModel, error) in
+                
+                // 로그인 네트워크 처리
+                if signin == nil && errorModel == nil && error != nil {
+                    let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                    alertController.addAction(cancelButton)
+                    self?.present(alertController,animated: true,completion: nil)
+                }
+                else if signin == nil && errorModel != nil && error == nil {
+                    let alertController = UIAlertController(title: "",message: "정확한 정보를 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
+                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                    alertController.addAction(cancelButton)
+                    self?.present(alertController,animated: true,completion: nil)
+                }
+                else {
+                    let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! UITabBarController
+                    self?.present(mainView, animated: true, completion: nil)
+                }
+                
+                
+            }
+        }
+        
+        
     }
-    */
+    
+    func initAddtarget(){
+        nameTextField.addTarget(self, action: #selector(isValid), for: .editingChanged)
+        emailTextField.addTarget(self, action: #selector(isValid), for: .editingChanged)
+        phoneTextField.addTarget(self, action: #selector(isValid), for: .editingChanged)
+        configPassTextField.addTarget(self, action: #selector(isValid), for: .editingChanged)
+        passTextField.addTarget(self, action: #selector(isValid), for: .editingChanged)
+    }
+    
+    @objc func isValid(){
+        
+        if nameTextField.text == "" || emailTextField.text == "" || phoneTextField.text == "" || configPassTextField.text == "" || passTextField.text == ""{
+            
+            let image = UIImage(named: "btSignin.png") as UIImage?
+            confirmButton.setImage(image, for: .normal)
+        }
+        else {
+            let image = UIImage(named: "btSignok.png") as UIImage?
+            confirmButton.setImage(image, for: .normal)
+        }
+    }
 
 }

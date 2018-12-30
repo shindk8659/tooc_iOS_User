@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5280E34C21D7B5A800829935 /* RegionListModel.swift */; };
 		52986AFC21D28DB100601983 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52986AFB21D28DB100601983 /* UIColor.swift */; };
 		52986AFE21D28DC700601983 /* ReservationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52986AFD21D28DC700601983 /* ReservationPicker.swift */; };
 		52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB75F321CF506F0002FB07 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 		52AB761921D0E9C40002FB07 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */; };
 		52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */; };
 		52AB761D21D104810002FB07 /* DetailShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */; };
+		52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B899CB21D7364C00D2667D /* ErrorModel.swift */; };
 		52BDE66E21D50051008204FF /* NanumSquareEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE66A21D50051008204FF /* NanumSquareEB.ttf */; };
 		52BDE66F21D50051008204FF /* NanumSquareR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE66B21D50051008204FF /* NanumSquareR.ttf */; };
 		52BDE67021D50051008204FF /* NanumSquareL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE66C21D50051008204FF /* NanumSquareL.ttf */; };
@@ -33,6 +35,9 @@
 		52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */; };
 		52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */; };
 		52BDE67F21D50064008204FF /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */; };
+		52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3221D6A89E005F48D3 /* APIRouter.swift */; };
+		52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */; };
+		52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3721D6BDCB005F48D3 /* NetworkManager.swift */; };
 		52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */; };
 		52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */; };
 		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
@@ -40,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		3ED19096FC49769E399B9F60 /* Pods-Travely_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		5280E34C21D7B5A800829935 /* RegionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionListModel.swift; sourceTree = "<group>"; };
 		52986AFB21D28DB100601983 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		52986AFD21D28DC700601983 /* ReservationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationPicker.swift; sourceTree = "<group>"; };
 		52AB75F021CF506F0002FB07 /* Travely_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travely_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +63,7 @@
 		52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShopTableViewCell.swift; sourceTree = "<group>"; };
 		52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailShopTableViewCell.xib; sourceTree = "<group>"; };
+		52B899CB21D7364C00D2667D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		52BDE66A21D50051008204FF /* NanumSquareEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.ttf; sourceTree = "<group>"; };
 		52BDE66B21D50051008204FF /* NanumSquareR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareR.ttf; sourceTree = "<group>"; };
 		52BDE66C21D50051008204FF /* NanumSquareL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareL.ttf; sourceTree = "<group>"; };
@@ -68,6 +75,9 @@
 		52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
 		52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
+		52D2BC3221D6A89E005F48D3 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
+		52D2BC3721D6BDCB005F48D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddressTableViewCell.swift; sourceTree = "<group>"; };
 		52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReviewTableViewCell.swift; sourceTree = "<group>"; };
 		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +117,7 @@
 		52AB75F221CF506F0002FB07 /* Travely_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				52D2BC2D21D6A6F9005F48D3 /* NetworkModule */,
 				D122477821D0A47600B10C87 /* Extension */,
 				52AB760821CF65840002FB07 /* LoginView */,
 				52AB760721CF657E0002FB07 /* MainView */,
@@ -162,6 +173,34 @@
 				52AB760921CF65ED0002FB07 /* SignupViewController.swift */,
 			);
 			path = LoginView;
+			sourceTree = "<group>";
+		};
+		52D2BC2D21D6A6F9005F48D3 /* NetworkModule */ = {
+			isa = PBXGroup;
+			children = (
+				52D2BC2F21D6A711005F48D3 /* Network */,
+				52D2BC2E21D6A707005F48D3 /* Model */,
+			);
+			path = NetworkModule;
+			sourceTree = "<group>";
+		};
+		52D2BC2E21D6A707005F48D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52B899CB21D7364C00D2667D /* ErrorModel.swift */,
+				5280E34C21D7B5A800829935 /* RegionListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52D2BC2F21D6A711005F48D3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				52D2BC3221D6A89E005F48D3 /* APIRouter.swift */,
+				52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */,
+				52D2BC3721D6BDCB005F48D3 /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		A047BADDF6E147C3D62774C3 /* Pods */ = {
@@ -284,7 +323,9 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -292,7 +333,9 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -351,16 +394,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AB760D21CF65ED0002FB07 /* LoginViewController.swift in Sources */,
+				5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */,
 				52986AFE21D28DC700601983 /* ReservationPicker.swift in Sources */,
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
+				52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */,
 				52AB761821D0E9C40002FB07 /* SearchTableViewCell.swift in Sources */,
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
+				52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */,
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
+				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
+				52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

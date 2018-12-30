@@ -11,5 +11,8 @@ target 'Travely_iOS' do
     pod 'Kingfisher'
     pod 'GoogleMaps'
     pod 'ExpandableCell'
+    pod 'SwiftyJSON'
+    pod 'Kingfisher'
+    pod 'IQKeyboardManagerSwift'
 
 end
