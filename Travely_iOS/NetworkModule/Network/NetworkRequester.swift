@@ -22,6 +22,7 @@ struct NetworkRequester {
     public typealias Completion1<T> = ((T?,ErrorModel?, Error?) -> Void)?
     public typealias Completion2<T> = ((T?,[ErrorModel?]?, Error?) -> Void)?
     public typealias Completion3<T> = (([T?]?,ErrorModel?, Error?) -> Void)?
+    public typealias Completion4<T> = (([T?]?,[ErrorModel?]?, Error?) -> Void)?
     
     init(with router: APIRouter) {
         self.api = router

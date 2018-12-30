@@ -41,13 +41,6 @@
 		52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */; };
 		52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */; };
 		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
-		D1CA4DDB21D62F3A003E1C7A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */; };
-		D1CA4DDD21D66D2A003E1C7A /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA4DDC21D66D2A003E1C7A /* ReservationViewController.swift */; };
-		D1CA4E0121D782A5003E1C7A /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1CA4E0021D782A5003E1C7A /* Alert.storyboard */; };
-		D1E16E1F21D78B92006EEC59 /* TestViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E16E1E21D78B92006EEC59 /* TestViewController5.swift */; };
-		D1E16E2121D78CB7006EEC59 /* ReservationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E16E2021D78CB7006EEC59 /* ReservationAlertViewController.swift */; };
-		D1E16E2321D7926D006EEC59 /* CancelAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E16E2221D7926D006EEC59 /* CancelAlertViewController.swift */; };
-		D1E16E2521D79657006EEC59 /* cancelConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E16E2421D79657006EEC59 /* cancelConfirmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,13 +81,6 @@
 		52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddressTableViewCell.swift; sourceTree = "<group>"; };
 		52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReviewTableViewCell.swift; sourceTree = "<group>"; };
 		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
-		D1CA4DDC21D66D2A003E1C7A /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
-		D1CA4E0021D782A5003E1C7A /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
-		D1E16E1E21D78B92006EEC59 /* TestViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController5.swift; sourceTree = "<group>"; };
-		D1E16E2021D78CB7006EEC59 /* ReservationAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationAlertViewController.swift; sourceTree = "<group>"; };
-		D1E16E2221D7926D006EEC59 /* CancelAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAlertViewController.swift; sourceTree = "<group>"; };
-		D1E16E2421D79657006EEC59 /* cancelConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cancelConfirmViewController.swift; sourceTree = "<group>"; };
 		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,7 +120,6 @@
 				52D2BC2D21D6A6F9005F48D3 /* NetworkModule */,
 				D122477821D0A47600B10C87 /* Extension */,
 				52AB760821CF65840002FB07 /* LoginView */,
-				D1CA4DFF21D78256003E1C7A /* AlertView */,
 				52AB760721CF657E0002FB07 /* MainView */,
 				52AB760621CF65690002FB07 /* Support */,
 			);
@@ -176,9 +161,6 @@
 				52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */,
 				52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */,
 				52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */,
-				D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */,
-				D1CA4DDC21D66D2A003E1C7A /* ReservationViewController.swift */,
-				D1E16E1E21D78B92006EEC59 /* TestViewController5.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -244,17 +226,6 @@
 				52986AFB21D28DB100601983 /* UIColor.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		D1CA4DFF21D78256003E1C7A /* AlertView */ = {
-			isa = PBXGroup;
-			children = (
-				D1CA4E0021D782A5003E1C7A /* Alert.storyboard */,
-				D1E16E2021D78CB7006EEC59 /* ReservationAlertViewController.swift */,
-				D1E16E2221D7926D006EEC59 /* CancelAlertViewController.swift */,
-				D1E16E2421D79657006EEC59 /* cancelConfirmViewController.swift */,
-			);
-			path = AlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,7 +300,6 @@
 				52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */,
 				52AB761021CF665B0002FB07 /* Main.storyboard in Resources */,
 				52BDE67021D50051008204FF /* NanumSquareL.ttf in Resources */,
-				D1CA4E0121D782A5003E1C7A /* Alert.storyboard in Resources */,
 				52AB761D21D104810002FB07 /* DetailShopTableViewCell.xib in Resources */,
 				52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */,
 				52BDE66E21D50051008204FF /* NanumSquareEB.ttf in Resources */,
@@ -431,24 +401,14 @@
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
 				52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */,
 				52AB761821D0E9C40002FB07 /* SearchTableViewCell.swift in Sources */,
-				D1E16E1F21D78B92006EEC59 /* TestViewController5.swift in Sources */,
-				D1E16E2321D7926D006EEC59 /* CancelAlertViewController.swift in Sources */,
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
 				52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */,
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
-<<<<<<< HEAD
-				D1CA4DDD21D66D2A003E1C7A /* ReservationViewController.swift in Sources */,
-				D1E16E2521D79657006EEC59 /* cancelConfirmViewController.swift in Sources */,
-				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
-				D1E16E2121D78CB7006EEC59 /* ReservationAlertViewController.swift in Sources */,
-				D1CA4DDB21D62F3A003E1C7A /* TestTableViewController.swift in Sources */,
-=======
 				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
 				52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */,
->>>>>>> 3b81dc1ac27c408e9d0fe08d429aa802a4e820c3
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +550,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6D8SYQ63KK;
+				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Travely_iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -610,7 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6D8SYQ63KK;
+				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Travely_iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

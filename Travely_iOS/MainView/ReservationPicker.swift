@@ -171,7 +171,7 @@ class ReservationPicker: UIViewController {
             button.layer.borderWidth = 2
             button.layer.borderColor = UIColor.lightGray.cgColor
             button.setTitleColor(UIColor.lightGray, for: .normal)
-            button.layer.cornerRadius = button.frame.height / 2
+            button.layer.cornerRadius = button.frame.width / 2
             button.layer.masksToBounds = true
         }
     }
