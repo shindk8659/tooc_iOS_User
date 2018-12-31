@@ -10,7 +10,7 @@ import Alamofire
 
 struct APIConfiguration {
     static let baseURL = "http://52.78.222.197:8080"
-   
+    
 }
 
 struct APIRouter {

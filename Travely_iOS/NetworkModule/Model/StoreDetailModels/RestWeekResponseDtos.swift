@@ -12,32 +12,23 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct ReviewResponseDtos : Codable {
-	let reviewIdx : Int?
+struct RestWeekResponseDtos : Codable {
+	let weekIdx : Int?
+	let week : String?
 	let storeIdx : Int?
-	let userIdx : Int?
-	let content : String?
-	let like : Int?
-	let createdAt : Int?
 
 	enum CodingKeys: String, CodingKey {
 
-		case reviewIdx = "reviewIdx"
+		case weekIdx = "weekIdx"
+		case week = "week"
 		case storeIdx = "storeIdx"
-		case userIdx = "userIdx"
-		case content = "content"
-		case like = "like"
-		case createdAt = "createdAt"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		reviewIdx = try values.decodeIfPresent(Int.self, forKey: .reviewIdx)
+		weekIdx = try values.decodeIfPresent(Int.self, forKey: .weekIdx)
+		week = try values.decodeIfPresent(String.self, forKey: .week)
 		storeIdx = try values.decodeIfPresent(Int.self, forKey: .storeIdx)
-		userIdx = try values.decodeIfPresent(Int.self, forKey: .userIdx)
-		content = try values.decodeIfPresent(String.self, forKey: .content)
-		like = try values.decodeIfPresent(Int.self, forKey: .like)
-		createdAt = try values.decodeIfPresent(Int.self, forKey: .createdAt)
 	}
 
 }

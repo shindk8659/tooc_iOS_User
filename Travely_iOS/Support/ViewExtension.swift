@@ -46,6 +46,13 @@ extension UIViewController {
         }
         return num
     }
+    //옵셔널 Double를 해제하는데 값이 nil이면 0을 반환
+    func gdno(_ data: Double?) -> Double {
+        guard let num = data else {
+            return 0
+        }
+        return num
+    }
 }
 extension NetworkManager {
     //옵셔널 String을 해제하는데 값이 nil이면 ""을 반환
