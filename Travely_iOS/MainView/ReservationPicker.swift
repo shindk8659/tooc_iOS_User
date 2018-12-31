@@ -52,6 +52,11 @@ class ReservationPicker: UIViewController {
         }
     }
     
+    @IBAction func didPressConfirmation(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     var checkDate = Date()
     var findDate = Date()
     
@@ -164,6 +169,11 @@ class ReservationPicker: UIViewController {
         date = datePicker.date
         status = .check
         findDate = date.addingTimeInterval(900)
+        
+//        datePicker.backgroundColor = UIColor(displayP3Red: 76, green: 100, blue: 253, alpha: 0.5)
+//        datePicker.isOpaque = false
+//        datePicker.backgroundColor = UIColor(red: 76, green: 100, blue: 253, alpha: 1)
+        //주석
     }
     
     func buttonLayerSetup() {
@@ -173,6 +183,9 @@ class ReservationPicker: UIViewController {
             button.setTitleColor(UIColor.lightGray, for: .normal)
             button.layer.cornerRadius = button.frame.width / 2
             button.layer.masksToBounds = true
+            
+            button.clipsToBounds = true
+            button.layoutIfNeeded()
         }
     }
     
