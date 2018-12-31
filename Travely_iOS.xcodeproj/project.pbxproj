@@ -46,6 +46,15 @@
 		52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */; };
 		52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */; };
 		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
+		D13841E621D9FDB500EC7D9D /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13841E221D9FDB500EC7D9D /* Alert.storyboard */; };
+		D13841E721D9FDB500EC7D9D /* CancelAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E321D9FDB500EC7D9D /* CancelAlertViewController.swift */; };
+		D13841E821D9FDB500EC7D9D /* ReservationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E421D9FDB500EC7D9D /* ReservationAlertViewController.swift */; };
+		D13841E921D9FDB500EC7D9D /* cancelConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E521D9FDB500EC7D9D /* cancelConfirmViewController.swift */; };
+		D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EA21D9FDCA00EC7D9D /* CALayer.swift */; };
+		D13841ED21D9FDEE00EC7D9D /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */; };
+		D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */; };
+		D13841F121D9FDF900EC7D9D /* TestViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */; };
+		D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841F321D9FE0C00EC7D9D /* CSStepper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +100,15 @@
 		52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddressTableViewCell.swift; sourceTree = "<group>"; };
 		52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReviewTableViewCell.swift; sourceTree = "<group>"; };
 		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D13841E221D9FDB500EC7D9D /* Alert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		D13841E321D9FDB500EC7D9D /* CancelAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelAlertViewController.swift; sourceTree = "<group>"; };
+		D13841E421D9FDB500EC7D9D /* ReservationAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationAlertViewController.swift; sourceTree = "<group>"; };
+		D13841E521D9FDB500EC7D9D /* cancelConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cancelConfirmViewController.swift; sourceTree = "<group>"; };
+		D13841EA21D9FDCA00EC7D9D /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
+		D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
+		D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController5.swift; sourceTree = "<group>"; };
+		D13841F321D9FE0C00EC7D9D /* CSStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSStepper.swift; sourceTree = "<group>"; };
 		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,7 +147,9 @@
 			children = (
 				52D2BC2D21D6A6F9005F48D3 /* NetworkModule */,
 				D122477821D0A47600B10C87 /* Extension */,
+				D13841E121D9FDB500EC7D9D /* AlertView */,
 				52AB760821CF65840002FB07 /* LoginView */,
+				D13841F221D9FE0C00EC7D9D /* CustomClass */,
 				52AB760721CF657E0002FB07 /* MainView */,
 				52AB760621CF65690002FB07 /* Support */,
 			);
@@ -171,6 +191,9 @@
 				52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */,
 				52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */,
 				52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */,
+				D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */,
+				D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */,
+				D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -254,9 +277,29 @@
 		D122477821D0A47600B10C87 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D13841EA21D9FDCA00EC7D9D /* CALayer.swift */,
 				52986AFB21D28DB100601983 /* UIColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D13841E121D9FDB500EC7D9D /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				D13841E221D9FDB500EC7D9D /* Alert.storyboard */,
+				D13841E321D9FDB500EC7D9D /* CancelAlertViewController.swift */,
+				D13841E421D9FDB500EC7D9D /* ReservationAlertViewController.swift */,
+				D13841E521D9FDB500EC7D9D /* cancelConfirmViewController.swift */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
+		D13841F221D9FE0C00EC7D9D /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				D13841F321D9FE0C00EC7D9D /* CSStepper.swift */,
+			);
+			path = CustomClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +374,7 @@
 				521FC83021D8B8D600CFD955 /* NanumSquareEB.ttf in Resources */,
 				52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */,
 				52AB761021CF665B0002FB07 /* Main.storyboard in Resources */,
+				D13841E621D9FDB500EC7D9D /* Alert.storyboard in Resources */,
 				52BDE67021D50051008204FF /* NanumSquareL.ttf in Resources */,
 				52AB761D21D104810002FB07 /* DetailShopTableViewCell.xib in Resources */,
 				52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */,
@@ -424,7 +468,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D13841E821D9FDB500EC7D9D /* ReservationAlertViewController.swift in Sources */,
 				52BD7CEA21D8C6D800EDD75D /* StoreListModel.swift in Sources */,
+				D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */,
 				52AB760D21CF65ED0002FB07 /* LoginViewController.swift in Sources */,
 				5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */,
 				52986AFE21D28DC700601983 /* ReservationPicker.swift in Sources */,
@@ -432,19 +478,25 @@
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
 				52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */,
+				D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */,
 				52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */,
 				52AB761821D0E9C40002FB07 /* SearchTableViewCell.swift in Sources */,
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
 				52BD7CF121D8D6D700EDD75D /* ReviewResponseDtos.swift in Sources */,
+				D13841E921D9FDB500EC7D9D /* cancelConfirmViewController.swift in Sources */,
 				52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */,
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
 				52BD7CEF21D8D6D700EDD75D /* StoreImageResponseDtos.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
+				D13841F121D9FDF900EC7D9D /* TestViewController5.swift in Sources */,
 				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
 				52BD7CF021D8D6D700EDD75D /* StoreDetailModel.swift in Sources */,
+				D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */,
+				D13841ED21D9FDEE00EC7D9D /* ReservationViewController.swift in Sources */,
 				52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */,
+				D13841E721D9FDB500EC7D9D /* CancelAlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
