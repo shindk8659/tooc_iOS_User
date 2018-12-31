@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521FC83021D8B8D600CFD955 /* NanumSquareEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */; };
 		5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5280E34C21D7B5A800829935 /* RegionListModel.swift */; };
 		52986AFC21D28DB100601983 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52986AFB21D28DB100601983 /* UIColor.swift */; };
 		52986AFE21D28DC700601983 /* ReservationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52986AFD21D28DC700601983 /* ReservationPicker.swift */; };
@@ -24,7 +25,11 @@
 		52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */; };
 		52AB761D21D104810002FB07 /* DetailShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */; };
 		52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B899CB21D7364C00D2667D /* ErrorModel.swift */; };
-		52BDE66E21D50051008204FF /* NanumSquareEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE66A21D50051008204FF /* NanumSquareEB.ttf */; };
+		52BD7CEA21D8C6D800EDD75D /* StoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD7CE921D8C6D800EDD75D /* StoreListModel.swift */; };
+		52BD7CEF21D8D6D700EDD75D /* StoreImageResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD7CEC21D8D6D700EDD75D /* StoreImageResponseDtos.swift */; };
+		52BD7CF021D8D6D700EDD75D /* StoreDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD7CED21D8D6D700EDD75D /* StoreDetailModel.swift */; };
+		52BD7CF121D8D6D700EDD75D /* ReviewResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD7CEE21D8D6D700EDD75D /* ReviewResponseDtos.swift */; };
+		52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD7CF321D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift */; };
 		52BDE66F21D50051008204FF /* NanumSquareR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE66B21D50051008204FF /* NanumSquareR.ttf */; };
 		52BDE67021D50051008204FF /* NanumSquareL.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE66C21D50051008204FF /* NanumSquareL.ttf */; };
 		52BDE67121D50051008204FF /* NanumSquareB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE66D21D50051008204FF /* NanumSquareB.ttf */; };
@@ -36,24 +41,16 @@
 		52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */; };
 		52BDE67F21D50064008204FF /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */; };
 		52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3221D6A89E005F48D3 /* APIRouter.swift */; };
+		52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */; };
+		52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3721D6BDCB005F48D3 /* NetworkManager.swift */; };
 		52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */; };
 		52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */; };
 		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
-		D1CA4DDB21D62F3A003E1C7A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */; };
-		D1CA4DDD21D66D2A003E1C7A /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA4DDC21D66D2A003E1C7A /* ReservationViewController.swift */; };
-		D1CA4E0121D782A5003E1C7A /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1CA4E0021D782A5003E1C7A /* Alert.storyboard */; };
-		D1E16E1F21D78B92006EEC59 /* TestViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E16E1E21D78B92006EEC59 /* TestViewController5.swift */; };
-		D1E16E2121D78CB7006EEC59 /* ReservationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E16E2021D78CB7006EEC59 /* ReservationAlertViewController.swift */; };
-		D1E16E2321D7926D006EEC59 /* CancelAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E16E2221D7926D006EEC59 /* CancelAlertViewController.swift */; };
-		D1E16E2521D79657006EEC59 /* cancelConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E16E2421D79657006EEC59 /* cancelConfirmViewController.swift */; };
-		D1E16E2E21D8EC5E006EEC59 /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */; };
-		D1E16E2F21D8EC60006EEC59 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3721D6BDCB005F48D3 /* NetworkManager.swift */; };
-		D1E16E3121D903E2006EEC59 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E16E3021D903E2006EEC59 /* CALayer.swift */; };
-		D1E16E3421D9043B006EEC59 /* CSStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E16E3321D9043B006EEC59 /* CSStepper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3ED19096FC49769E399B9F60 /* Pods-Travely_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.ttf; sourceTree = "<group>"; };
 		5280E34C21D7B5A800829935 /* RegionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionListModel.swift; sourceTree = "<group>"; };
 		52986AFB21D28DB100601983 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		52986AFD21D28DC700601983 /* ReservationPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationPicker.swift; sourceTree = "<group>"; };
@@ -73,7 +70,11 @@
 		52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShopTableViewCell.swift; sourceTree = "<group>"; };
 		52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailShopTableViewCell.xib; sourceTree = "<group>"; };
 		52B899CB21D7364C00D2667D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
-		52BDE66A21D50051008204FF /* NanumSquareEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.ttf; sourceTree = "<group>"; };
+		52BD7CE921D8C6D800EDD75D /* StoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListModel.swift; sourceTree = "<group>"; };
+		52BD7CEC21D8D6D700EDD75D /* StoreImageResponseDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreImageResponseDtos.swift; sourceTree = "<group>"; };
+		52BD7CED21D8D6D700EDD75D /* StoreDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDetailModel.swift; sourceTree = "<group>"; };
+		52BD7CEE21D8D6D700EDD75D /* ReviewResponseDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewResponseDtos.swift; sourceTree = "<group>"; };
+		52BD7CF321D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStoreResponseDtos.swift; sourceTree = "<group>"; };
 		52BDE66B21D50051008204FF /* NanumSquareR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareR.ttf; sourceTree = "<group>"; };
 		52BDE66C21D50051008204FF /* NanumSquareL.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareL.ttf; sourceTree = "<group>"; };
 		52BDE66D21D50051008204FF /* NanumSquareB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareB.ttf; sourceTree = "<group>"; };
@@ -90,15 +91,6 @@
 		52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddressTableViewCell.swift; sourceTree = "<group>"; };
 		52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReviewTableViewCell.swift; sourceTree = "<group>"; };
 		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
-		D1CA4DDC21D66D2A003E1C7A /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
-		D1CA4E0021D782A5003E1C7A /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
-		D1E16E1E21D78B92006EEC59 /* TestViewController5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController5.swift; sourceTree = "<group>"; };
-		D1E16E2021D78CB7006EEC59 /* ReservationAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationAlertViewController.swift; sourceTree = "<group>"; };
-		D1E16E2221D7926D006EEC59 /* CancelAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAlertViewController.swift; sourceTree = "<group>"; };
-		D1E16E2421D79657006EEC59 /* cancelConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cancelConfirmViewController.swift; sourceTree = "<group>"; };
-		D1E16E3021D903E2006EEC59 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
-		D1E16E3321D9043B006EEC59 /* CSStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSStepper.swift; sourceTree = "<group>"; };
 		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,9 +129,7 @@
 			children = (
 				52D2BC2D21D6A6F9005F48D3 /* NetworkModule */,
 				D122477821D0A47600B10C87 /* Extension */,
-				D1E16E3221D9040A006EEC59 /* CustomClass */,
 				52AB760821CF65840002FB07 /* LoginView */,
-				D1CA4DFF21D78256003E1C7A /* AlertView */,
 				52AB760721CF657E0002FB07 /* MainView */,
 				52AB760621CF65690002FB07 /* Support */,
 			);
@@ -155,7 +145,7 @@
 				52AB75FF21CF50700002FB07 /* Info.plist */,
 				52AB761121CF69240002FB07 /* ViewExtension.swift */,
 				52BDE66D21D50051008204FF /* NanumSquareB.ttf */,
-				52BDE66A21D50051008204FF /* NanumSquareEB.ttf */,
+				521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */,
 				52BDE66C21D50051008204FF /* NanumSquareL.ttf */,
 				52BDE66B21D50051008204FF /* NanumSquareR.ttf */,
 				52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */,
@@ -181,9 +171,6 @@
 				52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */,
 				52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */,
 				52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */,
-				D1CA4DDA21D62F3A003E1C7A /* TestTableViewController.swift */,
-				D1CA4DDC21D66D2A003E1C7A /* ReservationViewController.swift */,
-				D1E16E1E21D78B92006EEC59 /* TestViewController5.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -198,6 +185,25 @@
 			path = LoginView;
 			sourceTree = "<group>";
 		};
+		52BD7CEB21D8D6AC00EDD75D /* StoreDetailModels */ = {
+			isa = PBXGroup;
+			children = (
+				52BD7CED21D8D6D700EDD75D /* StoreDetailModel.swift */,
+				52BD7CEE21D8D6D700EDD75D /* ReviewResponseDtos.swift */,
+				52BD7CEC21D8D6D700EDD75D /* StoreImageResponseDtos.swift */,
+			);
+			path = StoreDetailModels;
+			sourceTree = "<group>";
+		};
+		52BD7CF221D8DE1900EDD75D /* RegionListModels */ = {
+			isa = PBXGroup;
+			children = (
+				5280E34C21D7B5A800829935 /* RegionListModel.swift */,
+				52BD7CF321D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift */,
+			);
+			path = RegionListModels;
+			sourceTree = "<group>";
+		};
 		52D2BC2D21D6A6F9005F48D3 /* NetworkModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,8 +216,10 @@
 		52D2BC2E21D6A707005F48D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52BD7CF221D8DE1900EDD75D /* RegionListModels */,
+				52BD7CEB21D8D6AC00EDD75D /* StoreDetailModels */,
 				52B899CB21D7364C00D2667D /* ErrorModel.swift */,
-				5280E34C21D7B5A800829935 /* RegionListModel.swift */,
+				52BD7CE921D8C6D800EDD75D /* StoreListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,28 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				52986AFB21D28DB100601983 /* UIColor.swift */,
-				D1E16E3021D903E2006EEC59 /* CALayer.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		D1CA4DFF21D78256003E1C7A /* AlertView */ = {
-			isa = PBXGroup;
-			children = (
-				D1CA4E0021D782A5003E1C7A /* Alert.storyboard */,
-				D1E16E2021D78CB7006EEC59 /* ReservationAlertViewController.swift */,
-				D1E16E2221D7926D006EEC59 /* CancelAlertViewController.swift */,
-				D1E16E2421D79657006EEC59 /* cancelConfirmViewController.swift */,
-			);
-			path = AlertView;
-			sourceTree = "<group>";
-		};
-		D1E16E3221D9040A006EEC59 /* CustomClass */ = {
-			isa = PBXGroup;
-			children = (
-				D1E16E3321D9043B006EEC59 /* CSStepper.swift */,
-			);
-			path = CustomClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,13 +328,12 @@
 				52BDE67A21D50064008204FF /* NotoSansCJKkr-Thin.otf in Resources */,
 				52BDE67B21D50064008204FF /* NotoSansCJKkr-Bold.otf in Resources */,
 				52AB75FB21CF50700002FB07 /* Assets.xcassets in Resources */,
+				521FC83021D8B8D600CFD955 /* NanumSquareEB.ttf in Resources */,
 				52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */,
 				52AB761021CF665B0002FB07 /* Main.storyboard in Resources */,
 				52BDE67021D50051008204FF /* NanumSquareL.ttf in Resources */,
-				D1CA4E0121D782A5003E1C7A /* Alert.storyboard in Resources */,
 				52AB761D21D104810002FB07 /* DetailShopTableViewCell.xib in Resources */,
 				52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */,
-				52BDE66E21D50051008204FF /* NanumSquareEB.ttf in Resources */,
 				52BDE66F21D50051008204FF /* NanumSquareR.ttf in Resources */,
 				52AB761921D0E9C40002FB07 /* SearchTableViewCell.xib in Resources */,
 				52BDE67921D50064008204FF /* NotoSansCJKkr-Regular.otf in Resources */,
@@ -437,30 +424,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BD7CEA21D8C6D800EDD75D /* StoreListModel.swift in Sources */,
 				52AB760D21CF65ED0002FB07 /* LoginViewController.swift in Sources */,
 				5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */,
 				52986AFE21D28DC700601983 /* ReservationPicker.swift in Sources */,
-				D1E16E3421D9043B006EEC59 /* CSStepper.swift in Sources */,
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
-				D1E16E2F21D8EC60006EEC59 /* NetworkManager.swift in Sources */,
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
+				52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */,
 				52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */,
 				52AB761821D0E9C40002FB07 /* SearchTableViewCell.swift in Sources */,
-				D1E16E1F21D78B92006EEC59 /* TestViewController5.swift in Sources */,
-				D1E16E2321D7926D006EEC59 /* CancelAlertViewController.swift in Sources */,
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
+				52BD7CF121D8D6D700EDD75D /* ReviewResponseDtos.swift in Sources */,
 				52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */,
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
+				52BD7CEF21D8D6D700EDD75D /* StoreImageResponseDtos.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
-				D1CA4DDD21D66D2A003E1C7A /* ReservationViewController.swift in Sources */,
-				D1E16E2521D79657006EEC59 /* cancelConfirmViewController.swift in Sources */,
+				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
-				D1E16E2121D78CB7006EEC59 /* ReservationAlertViewController.swift in Sources */,
-				D1E16E3121D903E2006EEC59 /* CALayer.swift in Sources */,
-				D1CA4DDB21D62F3A003E1C7A /* TestTableViewController.swift in Sources */,
-				D1E16E2E21D8EC5E006EEC59 /* NetworkRequester.swift in Sources */,
+				52BD7CF021D8D6D700EDD75D /* StoreDetailModel.swift in Sources */,
+				52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,7 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6D8SYQ63KK;
+				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Travely_iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -622,7 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6D8SYQ63KK;
+				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Travely_iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

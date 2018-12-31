@@ -11,6 +11,8 @@ import ExpandableCell
 
 class DetailShopTableViewCell: UITableViewCell {
 
+    var simpleStoreInfo : SimpleStoreResponseDtos?
+    @IBOutlet weak var storeName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

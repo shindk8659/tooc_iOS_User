@@ -22,6 +22,7 @@ struct NetworkRequester {
     public typealias Completion1<T> = ((T?,ErrorModel?, Error?) -> Void)?
     public typealias Completion2<T> = ((T?,[ErrorModel?]?, Error?) -> Void)?
     public typealias Completion3<T> = (([T?]?,ErrorModel?, Error?) -> Void)?
+    public typealias Completion4<T> = (([T?]?,[ErrorModel?]?, Error?) -> Void)?
     
     init(with router: APIRouter) {
         self.api = router
@@ -137,6 +138,7 @@ struct NetworkRequester {
         manager.request(api.requestUrl, method: api.method, parameters: api.parameters, encoding: JSONEncoding.default, headers: api.headers)
             .validate(contentType: ["application/json"]).responseData { response in
                 switch response.result {
+                    
                 case .success:
                     if let resultStatusCode = response.response?.statusCode {
                         print("- NetworkRequester - Response statusCode : \(resultStatusCode)")
