@@ -12,6 +12,7 @@ import SwiftyJSON
 
 
 class NetworkManager {
+    let jwt = UserDefaults.standard.string(forKey: "jwt")
    
     func login(email:String, password:String, completion: @escaping (ErrorModel?,ErrorModel?,Error?) -> Void) {
         
@@ -48,20 +49,36 @@ class NetworkManager {
         }
     }
     
-    func regionList(jwt:String, completion: @escaping ([RegionListModel?]?,ErrorModel?,Error?) -> Void) {
+    func regionList(completion: @escaping ([RegionListModel?]?,ErrorModel?,Error?) -> Void) {
         
-        let header = [
-            "jwt": jwt
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
         ]
         let router = APIRouter(url: "/api/region", method: .get, parameters: nil, headers: header)
-        NetworkRequester(with: router).request3 { (signin:[RegionListModel?]?, errorModel:ErrorModel?, error) in
+        NetworkRequester(with: router).request3 { (regionList:[RegionListModel?]?, errorModel:ErrorModel?, error) in
             guard error == nil else {
                 completion(nil,errorModel,error)
                 return
             }
-            completion(signin,errorModel,error)
+            completion(regionList,errorModel,error)
         }
     }
+    
+    func storeDetail(storeIdx:Int, completion: @escaping (StoreDetailModel?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        let router = APIRouter(url:"/api/store/\(storeIdx)", method: .get, parameters: nil ,headers:header)
+        NetworkRequester(with: router).request1 { (storeDetailList: StoreDetailModel?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(storeDetailList,errorModel,error)
+        }
+    }
+    
+    
 
     
 }

@@ -138,6 +138,7 @@ struct NetworkRequester {
         manager.request(api.requestUrl, method: api.method, parameters: api.parameters, encoding: JSONEncoding.default, headers: api.headers)
             .validate(contentType: ["application/json"]).responseData { response in
                 switch response.result {
+                    
                 case .success:
                     if let resultStatusCode = response.response?.statusCode {
                         print("- NetworkRequester - Response statusCode : \(resultStatusCode)")

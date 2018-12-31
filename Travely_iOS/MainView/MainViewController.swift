@@ -30,17 +30,30 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     let marker2 = GMSMarker()
     
     let networkManager = NetworkManager()
-    let userdata = UserDefaults.standard
+    var regionListModel: [RegionListModel?]?
+    var storeListModel: [StoreListModel?]?
+    var storeDetailModel: StoreDetailModel?
+    
+    
+    
+    //shopsimpleInfoview IBOulet
+    @IBOutlet weak var simpleInfoStoreNameLabel: UILabel!
+    @IBOutlet weak var simpleInfoAddressLabel: UILabel!
+    @IBOutlet weak var simpleInfoTimeLabel: UILabel!
+    
+    
 
     private var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        shopSimpleInfoView.isHidden = true
+
+        
         //Expandable tableview delegate
         searchTableView.expandableDelegate = self
         searchTableView.animation = .automatic
+        searchTableView.separatorStyle = .singleLine
+        searchTableView.tableFooterView = UIView()
         searchTableView.register(UINib(nibName: "DetailShopTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailShopTableViewCell")
         searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
         
@@ -93,13 +106,13 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         shopSimpleInfoSwipeUp.delegate = self
         swipeDown.delegate = self
         swipeUp.delegate = self
-        
+    
         shopSimpleInfoView.addGestureRecognizer(shopSimpleInfoSwipeUp)
         shopDetailView.addGestureRecognizer(swipeDown)
         shopDetailView.addGestureRecognizer(swipeUp)
         
-      
-       
+        //shopSimpleInfoView 히든처리
+        shopSimpleInfoView.isHidden = true
     }
     
     func gestureRecognizer(_: UIGestureRecognizer,shouldRecognizeSimultaneouslyWith shouldRecognizeSimultaneouslyWithGestureRecognizer:UIGestureRecognizer) -> Bool {
@@ -171,7 +184,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             }) { [weak self](true) in
                  self?.shopSimpleInfoView.isHidden = false
             }
-            self.navigationItem.title = "Tooc"
+            self.navigationItem.title = "tooc"
             self.tabBarController?.hideTabBarAnimated(hide: false)
         }
     }
@@ -196,9 +209,29 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             self.searchTableView.frame = CGRect(x: 0, y: self.searchView.frame.maxY, width: self.searchTableView.frame.width, height: self.searchTableView.frame.height)
         }, completion: nil)
         
-        networkManager.regionList(jwt: userdata.string(forKey: "jwt")!) { (regionList, errorModel, error) in
-           
+        networkManager.regionList{ [weak self](regionList, errorModel, error) in
+            // 지역 리스트 네트워크 처리
+            if regionList == nil && errorModel == nil && error != nil {
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController,animated: true,completion: nil)
+            }
+                // 서버측 에러핸들러 구성후 바꿔야함
+            else if regionList == nil && errorModel != nil && error == nil {
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController,animated: true,completion: nil)
+            }
+            else {
+                self?.regionListModel = regionList
+                self?.searchTableView.reloadData()
+            }
         }
+            
+        
+        
         //네비게이션바의 투명을 해제하고 white컬러로 바꿈
         self.searchView.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
@@ -234,7 +267,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         //네비게이션바의 투명을 설정
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-        self.navigationItem.title = "Tooc"
+        self.navigationItem.title = "tooc"
         hideBtn.title = ""
         hideBtn.isEnabled = false
     }
@@ -248,69 +281,79 @@ extension MainViewController: ExpandableDelegate {
     func expandableTableView(_ expandableTableView: ExpandableTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = expandableTableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as! SearchTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
+        cell.separatorInset = UIEdgeInsets.zero
+        cell.regionName.text = regionListModel?[indexPath.row]?.regionName
+
         return cell
     }
     
+    
     //하위 셀
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
-        switch indexPath.section {
-        case 0:
-            var cellArray = Array<UITableViewCell>()
-            let count = 3
-            for _ in 0..<count
-            {
-                let cell1 = searchTableView.dequeueReusableCell(withIdentifier: "DetailShopTableViewCell") as! DetailShopTableViewCell
-                cell1.selectionStyle = UITableViewCell.SelectionStyle.none;
-                cellArray.append(cell1)
-            }
-            return cellArray
-            
-        case 1:
-            var cellArray = Array<UITableViewCell>()
-            let count = 3
-            for _ in 0..<count
-            {
-                let cell1 = searchTableView.dequeueReusableCell(withIdentifier: "DetailShopTableViewCell") as! DetailShopTableViewCell
-                cell1.selectionStyle = UITableViewCell.SelectionStyle.none;
-                cellArray.append(cell1)
-            }
-            return cellArray
-            
-        default:
-            break
+        var cellArray = Array<UITableViewCell>()
+        let count = gino( regionListModel?[indexPath.row]?.simpleStoreResponseDtos?.count)
+        for i in 0..<count {
+            let cell1 = searchTableView.dequeueReusableCell(withIdentifier: "DetailShopTableViewCell") as! DetailShopTableViewCell
+            cell1.selectionStyle = UITableViewCell.SelectionStyle.none;
+            cell1.storeName.text = regionListModel?[indexPath.row]?.simpleStoreResponseDtos?[i].storeName
+            cell1.simpleStoreInfo = regionListModel?[indexPath.row]?.simpleStoreResponseDtos?[i]
+            cellArray.append(cell1)
         }
-        return nil
+        return cellArray
     }
     
     //하위 셀 사이즈
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightsForExpandedRowAt indexPath: IndexPath) -> [CGFloat]? {
-        switch indexPath.section {
-        case 0:
-                return [44, 44, 44]
-        case 1:
-                return [44, 44, 44]
-        default:
-            break
+        let  expandCount = gino( regionListModel?[indexPath.row]?.simpleStoreResponseDtos?.count)
+        var cellSize = Array<CGFloat>()
+        for _ in 0 ..< expandCount {
+            cellSize.append(40)
         }
-        return nil
-        
+        return cellSize
     }
     
     //섹션 개수
     func numberOfSections(in tableView: ExpandableTableView) -> Int {
-        return 2
+        return 1
     }
     
     //하위 셀 개수
     func expandableTableView(_ expandableTableView: ExpandableTableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if regionListModel?.count != 0 {
+            return gino(regionListModel?.count)
+        }
+        return 0
     }
     
     //하위 셀 selection event
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCell: UITableViewCell, didSelectExpandedRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
-            expandableTableView.closeAll()
+            let storeIndex = expandableTableView.cellForRow(at: indexPath) as! DetailShopTableViewCell
+            //storeDetailModel 데이터를 뷰에 셋한다.
+            networkManager.storeDetail(storeIdx: gino(storeIndex.simpleStoreInfo?.storeIdx)) { [weak self](storeDetail, errorModel, error) in
+                
+                // 지역 리스트 네트워크 처리
+                if storeDetail == nil && errorModel == nil && error != nil {
+                    let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                    alertController.addAction(cancelButton)
+                    self?.present(alertController,animated: true,completion: nil)
+                }
+                    // 서버측 에러핸들러 구성후 바꿔야함
+                else if storeDetail == nil && errorModel != nil && error == nil {
+                    let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                    alertController.addAction(cancelButton)
+                    self?.present(alertController,animated: true,completion: nil)
+                }
+                else {
+                    self?.storeDetailModel = storeDetail
+                    self?.simpleInfoStoreNameLabel.text = storeDetail?.storeName
+                    self?.simpleInfoAddressLabel.text = storeDetail?.address
+                    self?.searchTableView.closeAll()
+                }
+            }
             //searchTabelView shopDetailView Animation
             self.shopSimpleInfoView.isHidden = false
             UIView.animate(withDuration: 0.3, animations: {
@@ -327,58 +370,24 @@ extension MainViewController: ExpandableDelegate {
             self.tabBarController?.hideTabBarAnimated(hide: false)
             mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 16)
         }
-            
-        else {
-            expandableTableView.closeAll()
-            //searchTabelView shopDetailView Animation
-              self.shopSimpleInfoView.isHidden = false
-            UIView.animate(withDuration: 0.3, animations: {
-                self.searchTableView.frame = CGRect(x: 0, y:self.view.frame.height, width: self.searchTableView.frame.width, height: self.searchTableView.frame.height)
-                self.shopDetailView.frame = CGRect(x: 0, y: self.view.frame.height-150, width: self.shopDetailView.frame.width, height: self.shopDetailView.frame.height)
-            }, completion: nil)
-            
-            //네비게이션바의 투명을 설정
-            self.searchView.backgroundColor = UIColor.clear
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-            self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-            hideBtn.title = ""
-            hideBtn.isEnabled = false
-            self.tabBarController?.hideTabBarAnimated(hide: false)
-            mapView.camera = GMSCameraPosition.camera(withTarget: marker2.position, zoom: 16)
-        }
     }
     
     // 섹션 이름 설정
     func expandableTableView(_ expandableTableView: ExpandableTableView, titleForHeaderInSection section: Int) -> String? {
         var sectionName:String
-        switch (section) {
-        case 0:
-            sectionName = "지역별 보관장소"
-            break
-       default:
-            sectionName = "가까운 보관장소"
-            break
-        }
+        sectionName = "지역별 보관장소 (\(gino(regionListModel?.count)))"
+        
         return sectionName
     }
     
     //섹션 헤더 크기
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 40
     }
     
     //섹션 상위 셀 크기
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            return 66
-        case 1:
-            return 66
-        default:
-            break
-        }
-        
-        return 44
+        return 52.5
     }
 
     //
