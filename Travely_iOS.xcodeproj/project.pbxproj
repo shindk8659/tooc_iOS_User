@@ -438,17 +438,13 @@
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
-<<<<<<< HEAD
+
 				D1CA4DDD21D66D2A003E1C7A /* ReservationViewController.swift in Sources */,
 				D1E16E2521D79657006EEC59 /* cancelConfirmViewController.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
 				D1E16E2121D78CB7006EEC59 /* ReservationAlertViewController.swift in Sources */,
 				D1CA4DDB21D62F3A003E1C7A /* TestTableViewController.swift in Sources */,
-=======
-				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
-				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
-				52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */,
->>>>>>> 3b81dc1ac27c408e9d0fe08d429aa802a4e820c3
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
