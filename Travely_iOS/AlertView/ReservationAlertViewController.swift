@@ -15,7 +15,6 @@ class ReservationAlertViewController: UIViewController {
     
     @IBOutlet var reservationLabel: UILabel!
     
-    
     @IBAction func didPressConfirm(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }

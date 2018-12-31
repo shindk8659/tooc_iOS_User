@@ -10,23 +10,15 @@ import UIKit
 
 class ReservationViewController: UITableViewController {
     
-    
-    let numberOfLuggageArray: [String] = ["   1","   2","   3","   4","   5","   6","   7"]
     var suitcaseCheck: Bool!
     var luggageCheck: Bool!
     var numberOfSuitcase = 0
     var numberOfLuggage = 0
     
+    @IBOutlet var checkAndFindView: UIView!
     @IBOutlet var dateAndTimeView: [UIView]!
     
-    @IBOutlet var amountView: [UIView]!
-    
-    
     @IBOutlet var reservationButton: UIButton!
-    
-    @IBOutlet var suitcasePicker: UIPickerView!
-    
-    @IBOutlet var luggagePicker: UIPickerView!
     
     @IBOutlet var kakaoPay: UIButton!
     @IBOutlet var cash: UIButton!
@@ -96,28 +88,33 @@ class ReservationViewController: UITableViewController {
         super.viewDidLoad()
         suitcaseCheck = false
         luggageCheck = false
-        suitcasePicker.delegate = self
-        suitcasePicker.dataSource = self
-        luggagePicker.delegate = self
-        luggagePicker.dataSource = self
         layoutSetup()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didPressCAFView))
+        self.checkAndFindView.addGestureRecognizer(tap)
+    }
+    
+    @objc func didPressCAFView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationPicker") as! ReservationPicker
+        self.present(vc, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if indexPath.row == 1 && suitcaseCheck == false {
+        if indexPath.row == 3 && suitcaseCheck == false {
+            return 0
+        }
+
+        if indexPath.row == 5 && luggageCheck == false {
             return 0
         }
         
-        if indexPath.row == 3 && luggageCheck == false {
-            return 0
-        }
-        
-        if indexPath.row == 4 && (suitcaseCheck == true || luggageCheck == true) {
-            return 68
-        } else if indexPath.row == 4 {
-            return 0
-        }
+//        if indexPath.row == 4 && (suitcaseCheck == true || luggageCheck == true) {
+//            return 68
+//        } else if indexPath.row == 4 {
+//            return 0
+//        }
         
         return UITableView.automaticDimension
     }
@@ -129,43 +126,7 @@ class ReservationViewController: UITableViewController {
             view.layer.borderColor = UIColor.black.cgColor
         }
         
-        for view in amountView {
-            view.layer.borderWidth = 1
-            view.layer.borderColor = UIColor.black.cgColor
-        }
-        
         reservationButton.layer.cornerRadius = reservationButton.frame.width / 13
     }
 }
 
-extension ReservationViewController: UIPickerViewDelegate, UIPickerViewDataSource{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return numberOfLuggageArray.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return numberOfLuggageArray[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        var pickerLabel: UILabel? = (view as? UILabel)
-        if pickerLabel == nil {
-            pickerLabel = UILabel()
-            pickerLabel?.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.bold)
-            pickerLabel?.textAlignment = .left
-        }
-        pickerLabel?.text = numberOfLuggageArray[row]
-        pickerLabel?.textColor = UIColor.darkGray
-        
-        return pickerLabel!
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // 픽커뷰 셀렉트
-    }
-    
-}
