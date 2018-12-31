@@ -173,6 +173,7 @@ class ReservationPicker: UIViewController {
 //        datePicker.backgroundColor = UIColor(displayP3Red: 76, green: 100, blue: 253, alpha: 0.5)
 //        datePicker.isOpaque = false
 //        datePicker.backgroundColor = UIColor(red: 76, green: 100, blue: 253, alpha: 1)
+        //주석
     }
     
     func buttonLayerSetup() {

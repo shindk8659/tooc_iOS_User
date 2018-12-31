@@ -28,6 +28,7 @@ class cancelConfirmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutSetup()
+        //주석
     }
     
     func layoutSetup() {

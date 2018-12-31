@@ -65,6 +65,8 @@ public class CSStepper: UIControl {
     }
     
     private func setup() {
+        // 주석처리
+        
         
         //        let borderWidth: CGFloat = 0.5
         //        let borderColor = UIColor.gray.cgColor

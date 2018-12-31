@@ -20,6 +20,7 @@ class CancelAlertViewController: UIViewController {
     @IBAction func didPressConfirm(_ sender: UIButton) {
         self.dismiss(animated: true) {
             print("프레즌트")
+            //주석
 //            let storyboard = UIStoryboard(name: "Alert", bundle: nil)
 //            let vc = storyboard.instantiateViewController(withIdentifier: "cancelConfirmViewController") as! cancelConfirmViewController
 //            self.presentingViewController?.present(vc, animated: true, completion: nil)

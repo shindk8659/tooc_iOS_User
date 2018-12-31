@@ -9,6 +9,7 @@
 import UIKit
 
 extension CALayer {
+    // 주석 처리
     func addBorder1(_ arr_edge: [UIRectEdge], color: UIColor, width: CGFloat) {
         for edge in arr_edge {
             let border = CALayer()

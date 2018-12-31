@@ -110,6 +110,7 @@ class ReservationViewController: UITableViewController {
             return 0
         }
         
+        //주석
 //        if indexPath.row == 4 && (suitcaseCheck == true || luggageCheck == true) {
 //            return 68
 //        } else if indexPath.row == 4 {

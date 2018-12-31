@@ -23,6 +23,7 @@ class ReservationAlertViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutSetup()
+        //주석
 
     }
     
