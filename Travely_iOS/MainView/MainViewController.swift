@@ -22,7 +22,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     
     lazy var shopSlideImageView :UIView = UIView.init(frame: CGRect(x: 0, y: -217, width: self.view.frame.size.width, height: 217))
 
-    lazy var searchTableView: ExpandableTableView = ExpandableTableView.init(frame: CGRect(x: 0, y: self.view.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height - self.searchView.frame.maxY))
+    lazy var searchTableView: ExpandableTableView = ExpandableTableView.init(frame: CGRect(x: 0, y: self.view.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height))
     
     lazy var mapView = GMSMapView.map(withFrame: CGRect(x: UIScreen.main.bounds.origin.x, y: UIScreen.main.bounds.origin.y, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), camera: GMSCameraPosition.camera(withLatitude: 37.558514, longitude: 126.925239, zoom: 15))
     
@@ -40,7 +40,11 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     @IBOutlet weak var simpleInfoStoreNameLabel: UILabel!
     @IBOutlet weak var simpleInfoAddressLabel: UILabel!
     @IBOutlet weak var simpleInfoTimeLabel: UILabel!
+  
     
+    //shopDetailView IBOulet
+    @IBOutlet weak var detailStoreNameLabel: UILabel!
+    @IBOutlet weak var detailGradeLabel: UILabel!
     
 
     private var locationManager = CLLocationManager()
@@ -150,7 +154,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             //네비게이션바의 투명을 해제하고 white컬러로 바꿈
             self.navigationController?.navigationBar.backgroundColor = UIColor.white
             self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-            self.navigationItem.title = "동대문엽기떡볶이 홍대점"
+            self.navigationItem.title = self.storeDetailModel?.storeName
             hideBtn.title = "뒤로가기"
             hideBtn.isEnabled = true
             self.tabBarController?.hideTabBarAnimated(hide: true)
@@ -206,7 +210,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         
         //searchTabelView Animation
         UIView.animate(withDuration: 0.3, animations: {
-            self.searchTableView.frame = CGRect(x: 0, y: self.searchView.frame.maxY, width: self.searchTableView.frame.width, height: self.searchTableView.frame.height)
+            self.searchTableView.frame = CGRect(x: 0, y: self.searchView.frame.maxY, width: self.searchTableView.frame.width, height: self.view.frame.size.height - self.searchView.frame.maxY)
         }, completion: nil)
         
         networkManager.regionList{ [weak self](regionList, errorModel, error) in
@@ -272,6 +276,30 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         hideBtn.isEnabled = false
     }
     
+    func setStoreTime(openTime: String?, closeTime: String?) -> String{
+        if openTime != nil && closeTime != nil {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let open = dateFormatter.date(from: openTime!)
+            let close = dateFormatter.date(from: closeTime!)
+        
+        //전체시간에서 시간 만 땡기기
+            let dateFormatter2 = DateFormatter()
+            dateFormatter2.dateFormat = "HH:mm"
+            let openTime = dateFormatter2.string(from: open!)
+            let closeTime = dateFormatter2.string(from: close!)
+            let wholeTime = "매일 \(openTime) ~ \(closeTime)"
+            return wholeTime
+            
+        }
+        else {
+            return ""
+        }
+        
+    }
+    
+    
+    
 }
 
 //ExpandableCell 라이브러리 딜리케이트 코드 
@@ -327,9 +355,8 @@ extension MainViewController: ExpandableDelegate {
     
     //하위 셀 selection event
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCell: UITableViewCell, didSelectExpandedRowAt indexPath: IndexPath) {
-        
-        if indexPath.section == 0 {
             let storeIndex = expandableTableView.cellForRow(at: indexPath) as! DetailShopTableViewCell
+            
             //storeDetailModel 데이터를 뷰에 셋한다.
             networkManager.storeDetail(storeIdx: gino(storeIndex.simpleStoreInfo?.storeIdx)) { [weak self](storeDetail, errorModel, error) in
                 
@@ -348,10 +375,18 @@ extension MainViewController: ExpandableDelegate {
                     self?.present(alertController,animated: true,completion: nil)
                 }
                 else {
+                    //심플 상점 데이터
                     self?.storeDetailModel = storeDetail
                     self?.simpleInfoStoreNameLabel.text = storeDetail?.storeName
                     self?.simpleInfoAddressLabel.text = storeDetail?.address
+                    self?.simpleInfoTimeLabel.text = self?.setStoreTime(openTime:storeDetail?.openTime, closeTime: storeDetail?.closeTime)
+                    
+                    //디테일 상점 테이블뷰
+                    self?.detailStoreNameLabel.text = storeDetail?.storeName
+                    self?.detailGradeLabel.text = "\(String(describing: (storeDetail?.grade)!))점"
+                    self?.detailGradeLabel.sizeToFit()
                     self?.searchTableView.closeAll()
+                    self?.shopDetailView.reloadData()
                 }
             }
             //searchTabelView shopDetailView Animation
@@ -369,7 +404,7 @@ extension MainViewController: ExpandableDelegate {
             hideBtn.isEnabled = false
             self.tabBarController?.hideTabBarAnimated(hide: false)
             mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 16)
-        }
+        
     }
     
     // 섹션 이름 설정
@@ -431,6 +466,11 @@ extension MainViewController: UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "shopaddresscell") as! ShopAddressTableViewCell
+            cell.shopAddressLabel.text = self.storeDetailModel?.address
+           //cell.shopOldAddressLabel.text = self.storeDetailModel.
+            cell.shopTimeLabel.text = self.setStoreTime(openTime:self.storeDetailModel?.openTime, closeTime: self.storeDetailModel?.closeTime)
+            cell.shopWebsiteLabel.text = self.storeDetailModel?.address
+            cell.shopCallNumLabel.text = self.storeDetailModel?.storeCall
             return cell
         }
         else {

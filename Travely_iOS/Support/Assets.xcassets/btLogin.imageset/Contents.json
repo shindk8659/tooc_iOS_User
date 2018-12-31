@@ -2,18 +2,18 @@
   "images" : [
     {
       "scale" : "1x",
-      "filename" : "btLogin.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "btLogin.png"
     },
     {
       "scale" : "2x",
-      "filename" : "btLogin@2x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "btLogin@2x.png"
     },
     {
       "scale" : "3x",
-      "filename" : "btLogin@3x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "btLogin@3x.png"
     }
   ],
   "info" : {
