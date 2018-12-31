@@ -31,23 +31,23 @@ class ReservationPicker: UIViewController {
         self.date = Date(timeInterval: 3600, since: date)
     }
     
-    @IBAction func didPressThirty(_ sender: Any) {
-        self.date = Date(timeInterval: 1800, since: date)
+    @IBAction func didPressHourx4(_ sender: Any) {
+        self.date = Date(timeInterval: 14400, since: date)
     }
     
-    @IBAction func didPressfifteen(_ sender: Any) {
-        self.date = Date(timeInterval: 900, since: date)
+    @IBAction func didPressHourx12(_ sender: Any) {
+        self.date = Date(timeInterval: 43200, since: date)
     }
     
-    @IBAction func didPressMinusThirty(_ sender: Any) {
+    @IBAction func didPressMinusHour(_ sender: Any) {
         switch status {
         case .check:
-            if checkDate.addingTimeInterval(-1800) > datePicker.minimumDate! {
-            self.date = Date.init(timeInterval: -1800, since: date)
+            if checkDate.addingTimeInterval(-3600) > datePicker.minimumDate! {
+            self.date = Date.init(timeInterval: -3600, since: date)
             }
         case .find:
-            if findDate.addingTimeInterval(-2700) >= checkDate{
-                self.date = Date.init(timeInterval: -1800, since: date)
+            if findDate.addingTimeInterval(-3660) >= checkDate{
+                self.date = Date.init(timeInterval: -3600, since: date)
             }
         }
     }
@@ -70,10 +70,10 @@ class ReservationPicker: UIViewController {
                 for label in checkViewLabel {
                     label.textColor = .white
                 }
-                checkView.backgroundColor = .lightGray
-                
+                checkView.backgroundColor = UIColor(red: 0x1F, green: 0xBF, blue: 0xC8)
+
                 for label in findViewLabel {
-                    label.textColor = .lightGray
+                    label.textColor = UIColor(red: 0x49, green: 0x49, blue: 0x49)
                 }
                 findView.backgroundColor = .white
                 
@@ -88,14 +88,14 @@ class ReservationPicker: UIViewController {
                 for label in findViewLabel {
                     label.textColor = .white
                 }
-                findView.backgroundColor = .lightGray
+                findView.backgroundColor = UIColor(red: 0x1F, green: 0xBF, blue: 0xC8)
                 
                 for label in checkViewLabel {
-                    label.textColor = .lightGray
+                    label.textColor = UIColor(red: 0x49, green: 0x49, blue: 0x49)
                 }
                 checkView.backgroundColor = .white
                 
-                datePicker.minimumDate = Date.init(timeInterval: 900, since: checkDate)
+                datePicker.minimumDate = Date.init(timeInterval: 60, since: checkDate)
                 guard initialCheck2 == true else {
                     datePicker.date = findDate
                     return
@@ -114,7 +114,7 @@ class ReservationPicker: UIViewController {
                 checkDate = date
                 
                 if findDate <= date {
-                    findDate = Date.init(timeInterval: 900, since: date)
+                    findDate = Date.init(timeInterval: 60, since: date)
                 }
                 
             case .find:
@@ -158,17 +158,19 @@ class ReservationPicker: UIViewController {
     }
     
     func pickerSetup() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "mm"
-        print(Int(dateFormatter.string(from: datePicker.date))!)
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "mm"
+//        print(Int(dateFormatter.string(from: datePicker.date))!)
+//
+//        if Int(dateFormatter.string(from: datePicker.date))! % 15 != 0 {
+//            let timeinterval = Double(Int(dateFormatter.string(from: datePicker.date))! % 15)
+//            datePicker.date.addTimeInterval(900-timeinterval*60)
+//        }
+//        date = datePicker.date
         
-        if Int(dateFormatter.string(from: datePicker.date))! % 15 != 0 {
-            let timeinterval = Double(Int(dateFormatter.string(from: datePicker.date))! % 15)
-            datePicker.date.addTimeInterval(900-timeinterval*60)
-        }
-        date = datePicker.date
+        date = Date(timeIntervalSinceNow: 0)
         status = .check
-        findDate = date.addingTimeInterval(900)
+        findDate = date.addingTimeInterval(60) // 60 -> 14400
         
 //        datePicker.backgroundColor = UIColor(displayP3Red: 76, green: 100, blue: 253, alpha: 0.5)
 //        datePicker.isOpaque = false
@@ -178,24 +180,23 @@ class ReservationPicker: UIViewController {
     
     func buttonLayerSetup() {
         for button in addTimeButtons {
-            button.layer.borderWidth = 2
-            button.layer.borderColor = UIColor.lightGray.cgColor
-            button.setTitleColor(UIColor.lightGray, for: .normal)
-            button.layer.cornerRadius = button.frame.width / 2
+            let color = UIColor(red: 0x70, green: 0x70, blue: 0x70)
+            print(button.frame.width, button.frame.height)
+            button.layer.borderWidth = 1
+            button.layer.borderColor = color.cgColor
+            button.setTitleColor(color, for: .normal)
+//            button.layer.cornerRadius = button.frame.width / 2
             button.layer.masksToBounds = true
-            
-            button.clipsToBounds = true
-            button.layoutIfNeeded()
         }
     }
     
     func viewLayerSetup() {
-        checkView.layer.borderWidth = 0.5
-        checkView.layer.borderColor = UIColor.black.cgColor
+        checkView.layer.borderWidth = 1
+        checkView.layer.borderColor = UIColor(red: 0xCB, green: 0xCB, blue: 0xCB).cgColor
         checkView.layer.cornerRadius = 5
         findView.layer.cornerRadius = 5
-        findView.layer.borderWidth = 0.5
-        findView.layer.borderColor = UIColor.black.cgColor
+        findView.layer.borderWidth = 1
+        findView.layer.borderColor = UIColor(red: 0xCB, green: 0xCB, blue: 0xCB).cgColor
         checkView.layer.masksToBounds = true
         findView.layer.masksToBounds = true
     }
@@ -211,14 +212,14 @@ class ReservationPicker: UIViewController {
         switch status {
         case .check:
             checkViewLabel[1].text = dateFormatter1.string(from: date)
-            checkViewLabel[3].text = dateFormatter2.string(from: date)
+            checkViewLabel[2].text = dateFormatter2.string(from: date)
             
             findViewLabel[1].text = dateFormatter1.string(from: findDate)
-            findViewLabel[3].text = dateFormatter2.string(from: findDate)
+            findViewLabel[2].text = dateFormatter2.string(from: findDate)
             
         case .find:
             findViewLabel[1].text = dateFormatter1.string(from: date)
-            findViewLabel[3].text = dateFormatter2.string(from: date)
+            findViewLabel[2].text = dateFormatter2.string(from: date)
         }
     }
 }

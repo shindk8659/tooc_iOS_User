@@ -55,6 +55,7 @@
 		D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */; };
 		D13841F121D9FDF900EC7D9D /* TestViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */; };
 		D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841F321D9FE0C00EC7D9D /* CSStepper.swift */; };
+		D13841F821DA2C0700EC7D9D /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841F721DA2C0700EC7D9D /* CircleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,7 @@
 		D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController5.swift; sourceTree = "<group>"; };
 		D13841F321D9FE0C00EC7D9D /* CSStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSStepper.swift; sourceTree = "<group>"; };
+		D13841F721DA2C0700EC7D9D /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -298,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				D13841F321D9FE0C00EC7D9D /* CSStepper.swift */,
+				D13841F721DA2C0700EC7D9D /* CircleButton.swift */,
 			);
 			path = CustomClass;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				52AB761821D0E9C40002FB07 /* SearchTableViewCell.swift in Sources */,
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
 				52BD7CF121D8D6D700EDD75D /* ReviewResponseDtos.swift in Sources */,
+				D13841F821DA2C0700EC7D9D /* CircleButton.swift in Sources */,
 				D13841E921D9FDB500EC7D9D /* cancelConfirmViewController.swift in Sources */,
 				52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */,
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
