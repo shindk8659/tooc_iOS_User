@@ -22,7 +22,7 @@ class CancelAlertViewController: UIViewController {
             print("프레즌트")
 //            let storyboard = UIStoryboard(name: "Alert", bundle: nil)
 //            let vc = storyboard.instantiateViewController(withIdentifier: "cancelConfirmViewController") as! cancelConfirmViewController
-            self.presentingViewController?.present(vc, animated: true, completion: nil)
+//            self.presentingViewController?.present(vc, animated: true, completion: nil)
         }
     }
     

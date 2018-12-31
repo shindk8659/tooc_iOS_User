@@ -62,6 +62,4 @@ class NetworkManager {
             completion(signin,errorModel,error)
         }
     }
-
-    
 }
