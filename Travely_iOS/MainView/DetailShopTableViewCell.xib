@@ -19,19 +19,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYX-dw-nNv">
-                        <rect key="frame" x="213" y="11.5" width="30" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icPoint" translatesAutoresizingMaskIntoConstraints="NO" id="zQw-PS-MxG">
+                        <rect key="frame" x="50" y="16" width="10" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="zQw-PS-MxG" secondAttribute="height" multiplier="5:6" id="DvX-KY-4KF"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상점이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYX-dw-nNv">
+                        <rect key="frame" x="72" y="13.5" width="49" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="xYX-dw-nNv" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QDT-vz-9WJ"/>
-                    <constraint firstItem="xYX-dw-nNv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="213" id="f01-AH-dEB"/>
+                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="xYX-dw-nNv" secondAttribute="trailing" constant="199" id="2XV-ax-7XQ"/>
+                    <constraint firstItem="zQw-PS-MxG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BZu-8x-LY2"/>
+                    <constraint firstItem="zQw-PS-MxG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="Usn-ic-F8Q"/>
+                    <constraint firstItem="xYX-dw-nNv" firstAttribute="leading" secondItem="zQw-PS-MxG" secondAttribute="trailing" constant="12" id="rvc-s3-Y6g"/>
+                    <constraint firstItem="xYX-dw-nNv" firstAttribute="centerY" secondItem="zQw-PS-MxG" secondAttribute="centerY" id="xvL-88-sKS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="storeName" destination="xYX-dw-nNv" id="Ega-GE-ESj"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="153.82308845577214"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icPoint" width="10" height="12.5"/>
+    </resources>
 </document>

@@ -11,6 +11,8 @@ import ExpandableCell
 
 class SearchTableViewCell: ExpandableCell {
 
+    
+    @IBOutlet weak var regionName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
