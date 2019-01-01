@@ -10,6 +10,11 @@ import UIKit
 
 class ShopReviewTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var userImgView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var postTimeLabel: UILabel!
+    @IBOutlet weak var userGradeLabel: UILabel!
+    @IBOutlet weak var userReviewTextView: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
