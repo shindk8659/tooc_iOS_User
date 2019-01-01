@@ -13,19 +13,19 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct StoreImageResponseDtos : Codable {
-	let storeImgIdx : Int?
-	let storeImg : String?
-
-	enum CodingKeys: String, CodingKey {
-
-		case storeImgIdx = "storeImgIdx"
-		case storeImg = "storeImg"
-	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		storeImgIdx = try values.decodeIfPresent(Int.self, forKey: .storeImgIdx)
-		storeImg = try values.decodeIfPresent(String.self, forKey: .storeImg)
-	}
-
+    let storeImgIdx : Int?
+    let storeImg : String?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case storeImgIdx = "storeImgIdx"
+        case storeImg = "storeImg"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        storeImgIdx = try values.decodeIfPresent(Int.self, forKey: .storeImgIdx)
+        storeImg = try values.decodeIfPresent(String.self, forKey: .storeImg)
+    }
+    
 }

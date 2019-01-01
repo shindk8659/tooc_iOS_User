@@ -13,22 +13,22 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct RestWeekResponseDtos : Codable {
-	let weekIdx : Int?
-	let week : String?
-	let storeIdx : Int?
-
-	enum CodingKeys: String, CodingKey {
-
-		case weekIdx = "weekIdx"
-		case week = "week"
-		case storeIdx = "storeIdx"
-	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		weekIdx = try values.decodeIfPresent(Int.self, forKey: .weekIdx)
-		week = try values.decodeIfPresent(String.self, forKey: .week)
-		storeIdx = try values.decodeIfPresent(Int.self, forKey: .storeIdx)
-	}
-
+    let weekIdx : Int?
+    let week : Int?
+    let storeIdx : Int?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case weekIdx = "weekIdx"
+        case week = "week"
+        case storeIdx = "storeIdx"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        weekIdx = try values.decodeIfPresent(Int.self, forKey: .weekIdx)
+        week = try values.decodeIfPresent(Int.self, forKey: .week)
+        storeIdx = try values.decodeIfPresent(Int.self, forKey: .storeIdx)
+    }
+    
 }

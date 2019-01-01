@@ -13,31 +13,34 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct ReviewResponseDtos : Codable {
-	let reviewIdx : Int?
-	let storeIdx : Int?
-	let userIdx : Int?
-	let content : String?
-	let like : Int?
-	let createdAt : Int?
-
-	enum CodingKeys: String, CodingKey {
-
-		case reviewIdx = "reviewIdx"
-		case storeIdx = "storeIdx"
-		case userIdx = "userIdx"
-		case content = "content"
-		case like = "like"
-		case createdAt = "createdAt"
-	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		reviewIdx = try values.decodeIfPresent(Int.self, forKey: .reviewIdx)
-		storeIdx = try values.decodeIfPresent(Int.self, forKey: .storeIdx)
-		userIdx = try values.decodeIfPresent(Int.self, forKey: .userIdx)
-		content = try values.decodeIfPresent(String.self, forKey: .content)
-		like = try values.decodeIfPresent(Int.self, forKey: .like)
-		createdAt = try values.decodeIfPresent(Int.self, forKey: .createdAt)
-	}
-
+    let reviewIdx : Int?
+    let storeIdx : Int?
+    let userIdx : Int?
+    let content : String?
+    let like : Int?
+    let createdAt : Int?
+    let userName : String?
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case reviewIdx = "reviewIdx"
+        case storeIdx = "storeIdx"
+        case userIdx = "userIdx"
+        case content = "content"
+        case like = "like"
+        case createdAt = "createdAt"
+        case userName = "userName"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        reviewIdx = try values.decodeIfPresent(Int.self, forKey: .reviewIdx)
+        storeIdx = try values.decodeIfPresent(Int.self, forKey: .storeIdx)
+        userIdx = try values.decodeIfPresent(Int.self, forKey: .userIdx)
+        content = try values.decodeIfPresent(String.self, forKey: .content)
+        like = try values.decodeIfPresent(Int.self, forKey: .like)
+        createdAt = try values.decodeIfPresent(Int.self, forKey: .createdAt)
+        userName = try values.decodeIfPresent(String.self, forKey: .userName)
+    }
+    
 }
