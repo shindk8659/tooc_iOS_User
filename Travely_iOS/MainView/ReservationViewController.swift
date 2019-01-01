@@ -72,7 +72,7 @@ class ReservationViewController: UITableViewController {
     
     @IBAction func didPressAgreement(_ sender: UIButton) {
         if sender.tag == 0 {
-        sender.setImage(UIImage(named: "bt_circle_fill_small"), for: .normal)
+        sender.setImage(UIImage(named: "bt_circle_check_small"), for: .normal)
         sender.tag += 1
         } else {
         sender.setImage(UIImage(named: "bt_circle_empty"), for: .normal)
@@ -124,7 +124,7 @@ class ReservationViewController: UITableViewController {
         for view in dateAndTimeView {
             view.layer.cornerRadius = 8
             view.layer.borderWidth = 1
-            view.layer.borderColor = UIColor.black.cgColor
+            view.layer.borderColor = UIColor(red: 0xCB, green: 0xCB, blue: 0xCB).cgColor
         }
         
         reservationButton.layer.cornerRadius = reservationButton.frame.width / 13

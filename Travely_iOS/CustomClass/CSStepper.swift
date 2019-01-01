@@ -65,26 +65,23 @@ public class CSStepper: UIControl {
     }
     
     private func setup() {
-        // 주석처리
-        
-        
-        //        let borderWidth: CGFloat = 0.5
-        //        let borderColor = UIColor.gray.cgColor
+        let borderWidth: CGFloat = 0.5
+        let borderColor = UIColor.gray.cgColor
         
         self.leftBtn.tag = -1
         //        self.leftBtn.setTitle("-", for: .normal)
         self.leftBtn.setTitle(self.leftTitle, for: .normal)
         self.leftBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        //        self.leftBtn.layer.borderWidth = borderWidth
-        //        self.leftBtn.layer.borderColor = borderColor
+        self.leftBtn.layer.borderWidth = borderWidth
+        self.leftBtn.layer.borderColor = borderColor
         self.leftBtn.setTitleColor(.gray, for: .normal)
         
         self.rightBtn.tag = 1
         //        self.rightBtn.setTitle("+", for: .normal)
         self.rightBtn.setTitle(self.rightTitle, for: .normal)
         self.rightBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        //        self.rightBtn.layer.borderWidth = borderWidth
-        //        self.rightBtn.layer.borderColor = borderColor
+        self.rightBtn.layer.borderWidth = borderWidth
+        self.rightBtn.layer.borderColor = borderColor
         self.rightBtn.setTitleColor(.gray, for: .normal)
         
         
@@ -93,8 +90,8 @@ public class CSStepper: UIControl {
         self.centerLabel.textAlignment = .center
         //        self.centerLabel.backgroundColor = UIColor.white
         self.centerLabel.backgroundColor = self.bgColor
-        //        self.centerLabel.layer.borderWidth = borderWidth
-        //        self.centerLabel.layer.borderColor = borderColor
+        self.centerLabel.layer.borderWidth = borderWidth
+        self.centerLabel.layer.borderColor = borderColor
         
         self.addSubview(self.leftBtn)
         self.addSubview(self.rightBtn)
@@ -131,10 +128,10 @@ public class CSStepper: UIControl {
         self.leftBtn.frame = CGRect(x: 0, y: 0, width: btnWidth, height: btnWidth)
         self.centerLabel.frame = CGRect(x: btnWidth, y: 0, width: lblWidth, height: btnWidth)
         self.rightBtn.frame = CGRect(x: btnWidth+lblWidth, y: 0, width: btnWidth, height: btnWidth)
-        
-        self.leftBtn.layer.addBorder1([.top, .bottom, .left, .right], color: borderColor, width: borderWidth)
-        self.rightBtn.layer.addBorder2([.top, .bottom, .left, .right], color: borderColor, width: borderWidth)
-        self.centerLabel.layer.addBorder1([.top, .bottom], color: borderColor, width: borderWidth)
+
+//        self.leftBtn.layer.addBorder1([.top, .bottom, .left, .right], color: borderColor, width: borderWidth)
+//        self.rightBtn.layer.addBorder2([.top, .bottom, .left, .right], color: borderColor, width: borderWidth)
+//        self.centerLabel.layer.addBorder1([.top, .bottom], color: borderColor, width: borderWidth)
     }
     
 }
