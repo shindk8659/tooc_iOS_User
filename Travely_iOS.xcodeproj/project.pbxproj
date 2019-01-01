@@ -56,6 +56,7 @@
 		D13841F121D9FDF900EC7D9D /* TestViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */; };
 		D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841F321D9FE0C00EC7D9D /* CSStepper.swift */; };
 		D13841F821DA2C0700EC7D9D /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841F721DA2C0700EC7D9D /* CircleButton.swift */; };
+		D13841FA21DB426200EC7D9D /* ReservationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841F921DB426200EC7D9D /* ReservationStatusViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController5.swift; sourceTree = "<group>"; };
 		D13841F321D9FE0C00EC7D9D /* CSStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSStepper.swift; sourceTree = "<group>"; };
 		D13841F721DA2C0700EC7D9D /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		D13841F921DB426200EC7D9D /* ReservationStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationStatusViewController.swift; sourceTree = "<group>"; };
 		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -194,6 +196,7 @@
 				52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */,
 				52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */,
 				D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */,
+				D13841F921DB426200EC7D9D /* ReservationStatusViewController.swift */,
 				D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */,
 				D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */,
 			);
@@ -480,6 +483,7 @@
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
+				D13841FA21DB426200EC7D9D /* ReservationStatusViewController.swift in Sources */,
 				52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */,
 				D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */,
 				52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */,
