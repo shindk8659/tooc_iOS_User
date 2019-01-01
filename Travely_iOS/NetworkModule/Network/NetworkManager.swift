@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class NetworkManager {
     let jwt = UserDefaults.standard.string(forKey: "jwt")
-   
+    
     func login(email:String, password:String, completion: @escaping (ErrorModel?,ErrorModel?,Error?) -> Void) {
         
         let parameters = [
@@ -79,6 +79,6 @@ class NetworkManager {
     }
     
     
-
+    
     
 }

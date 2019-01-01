@@ -9,17 +9,6 @@
 import UIKit
 import Foundation
 
-extension UITabBarController {
-    func hideTabBarAnimated(hide:Bool) {
-        UIView.animate(withDuration: 0.3, animations: {
-            if hide {
-                self.tabBar.transform = CGAffineTransform(translationX: 0, y: 50)
-            } else {
-                self.tabBar.transform = CGAffineTransform.identity
-            }
-        })
-    }
-}
 extension UINavigationBar {
     
     func setBottomBorderColor(color: UIColor, height: CGFloat) {
@@ -41,6 +30,13 @@ extension UIViewController {
     
     //옵셔널 Int를 해제하는데 값이 nil이면 0을 반환
     func gino(_ data: Int?) -> Int {
+        guard let num = data else {
+            return 0
+        }
+        return num
+    }
+    //옵셔널 Double를 해제하는데 값이 nil이면 0을 반환
+    func gdno(_ data: Double?) -> Double {
         guard let num = data else {
             return 0
         }

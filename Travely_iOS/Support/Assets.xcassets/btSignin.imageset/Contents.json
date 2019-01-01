@@ -2,18 +2,18 @@
   "images" : [
     {
       "scale" : "1x",
-      "filename" : "btSignin.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "btSignin.png"
     },
     {
       "scale" : "2x",
-      "filename" : "btSignin@2x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "btSignin@2x.png"
     },
     {
       "scale" : "3x",
-      "filename" : "btSignin@3x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "btSignin@3x.png"
     }
   ],
   "info" : {
