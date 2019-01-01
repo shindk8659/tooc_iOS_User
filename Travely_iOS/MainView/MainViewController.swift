@@ -562,7 +562,7 @@ extension MainViewController: UITableViewDataSource
                 return gino(storeDetailModel?.reviewResponseDtos?.count)
             }
             else {
-                return 0
+                return 1
             }
         }
     }
@@ -589,10 +589,17 @@ extension MainViewController: UITableViewDataSource
             return cell
         }
         else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "shopreviewcell") as! ShopReviewTableViewCell
-            cell.userGradeLabel.text = "\(String(describing: (storeDetailModel?.reviewResponseDtos?[indexPath.row].like)!))점"
-            cell.userReviewTextView.text = storeDetailModel?.reviewResponseDtos?[indexPath.row].content
-            return cell
+            if storeDetailModel?.reviewResponseDtos?.count != 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "shopreviewcell") as! ShopReviewTableViewCell
+                cell.userGradeLabel.text = "\(String(describing: (storeDetailModel?.reviewResponseDtos?[indexPath.row].like)!))점"
+                cell.userReviewTextView.text = storeDetailModel?.reviewResponseDtos?[indexPath.row].content
+                return cell
+            }
+            else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "emptyReviewCell") as! EmptyReviewTableViewCell
+                return cell
+            }
+           
         }
     }
 }
