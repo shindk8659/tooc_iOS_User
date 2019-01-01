@@ -8,7 +8,33 @@
 
 import UIKit
 import Foundation
+import Kingfisher
 
+extension UIImageView {
+    func imageFromUrl(_ urlString: String?) {
+        if let url = urlString {
+            if url.isEmpty {
+                self.image = nil
+            } else {
+                self.kf.setImage(with: URL(string: url), placeholder: nil, options: [.transition(ImageTransition.fade(0.5))])
+            }
+        } else {
+            self.image = nil
+        }
+    }
+}
+
+extension UITabBarController {
+    func hideTabBarAnimated(hide:Bool) {
+        UIView.animate(withDuration: 0.3, animations: {
+            if hide {
+                self.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
+            } else {
+                self.tabBar.transform = CGAffineTransform.identity
+            }
+        })
+    }
+}
 extension UINavigationBar {
     
     func setBottomBorderColor(color: UIColor, height: CGFloat) {

@@ -190,20 +190,20 @@
 		52AB760721CF657E0002FB07 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				52986AFD21D28DC700601983 /* ReservationPicker.swift */,
-				52AB75F521CF506F0002FB07 /* MainViewController.swift */,
 				52AB760F21CF665B0002FB07 /* Main.storyboard */,
-				52AB761621D0E9C40002FB07 /* SearchTableViewCell.swift */,
 				52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */,
-				52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */,
 				52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */,
+				52AB75F521CF506F0002FB07 /* MainViewController.swift */,
+				52AA4B4621DAB36B00442C9A /* ReviewHeaderTableViewCell.swift */,
+				52AB761621D0E9C40002FB07 /* SearchTableViewCell.swift */,
+				52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */,
 				52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */,
 				52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */,
+				52986AFD21D28DC700601983 /* ReservationPicker.swift */,
 				D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */,
 				D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */,
 				D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */,
 				D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */,
-				52AA4B4621DAB36B00442C9A /* ReviewHeaderTableViewCell.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -253,6 +253,7 @@
 				52BD7CF221D8DE1900EDD75D /* RegionListModels */,
 				52BD7CEB21D8D6AC00EDD75D /* StoreDetailModels */,
 				52B899CB21D7364C00D2667D /* ErrorModel.swift */,
+				D13841EA21D9FDCA00EC7D9D /* CALayer.swift */,
 				52BD7CE921D8C6D800EDD75D /* StoreListModel.swift */,
 			);
 			path = Model;
@@ -288,7 +289,6 @@
 		D122477821D0A47600B10C87 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D13841EA21D9FDCA00EC7D9D /* CALayer.swift */,
 				52986AFB21D28DB100601983 /* UIColor.swift */,
 			);
 			path = Extension;

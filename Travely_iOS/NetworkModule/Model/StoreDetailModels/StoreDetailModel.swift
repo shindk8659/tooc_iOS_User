@@ -19,8 +19,8 @@ struct StoreDetailModel : Codable {
     let storeCall : String?
     let storeUrl : String?
     let address : String?
-    let openTime : String?
-    let closeTime : String?
+    let openTime : Int?
+    let closeTime : Int?
     let latitude : Double?
     let longitude : Double?
     let limit : Int?
@@ -58,8 +58,8 @@ struct StoreDetailModel : Codable {
         storeCall = try values.decodeIfPresent(String.self, forKey: .storeCall)
         storeUrl = try values.decodeIfPresent(String.self, forKey: .storeUrl)
         address = try values.decodeIfPresent(String.self, forKey: .address)
-        openTime = try values.decodeIfPresent(String.self, forKey: .openTime)
-        closeTime = try values.decodeIfPresent(String.self, forKey: .closeTime)
+        openTime = try values.decodeIfPresent(Int.self, forKey: .openTime)
+        closeTime = try values.decodeIfPresent(Int.self, forKey: .closeTime)
         latitude = try values.decodeIfPresent(Double.self, forKey: .latitude)
         longitude = try values.decodeIfPresent(Double.self, forKey: .longitude)
         limit = try values.decodeIfPresent(Int.self, forKey: .limit)
