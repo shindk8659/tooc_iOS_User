@@ -310,7 +310,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
 
             // Date객체에서 가져올 포맷과 시간대를 정하고 String 으로 꺼내서 반환 함
             let dateFormatter = DateFormatter()
-            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+9") //Set timezone that you want
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
             dateFormatter.locale = NSLocale.current
             dateFormatter.dateFormat = "HH:mm" //Specify your format that you want
             let open = dateFormatter.string(from: openDate)
@@ -333,49 +333,9 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         self.locationManager.stopUpdatingLocation()
         
     }
-<<<<<<< Updated upstream
-    
-    //어디로 가십니까? 버튼을 눌렀을경우 SearchTableView를 띄우고 searchView의 생상과 navigationBar의 투명을 변경한다.
-    @IBAction func SearchViewBtnAction(_ sender: Any) {
-        
-        //searchTabelView Animation
-        UIView.animate(withDuration: 0.3, animations: {
-            self.searchTableView.frame = CGRect(x: 0, y: self.searchView.frame.maxY, width: self.searchTableView.frame.width, height: self.view.frame.size.height - self.searchView.frame.maxY)
-        }, completion: nil)
-        
-        networkManager.regionList{ [weak self](regionList, errorModel, error) in
-            // 지역 리스트 네트워크 처리
-            if regionList == nil && errorModel == nil && error != nil {
-                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                alertController.addAction(cancelButton)
-                self?.present(alertController,animated: true,completion: nil)
-            }
-                // 서버측 에러핸들러 구성후 바꿔야함
-            else if regionList == nil && errorModel != nil && error == nil {
-                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                alertController.addAction(cancelButton)
-                self?.present(alertController,animated: true,completion: nil)
-            }
-            else {
-                self?.regionListModel = regionList
-                self?.searchTableView.reloadData()
-            }
-        }
-        
-        //네비게이션바의 투명을 해제하고 white컬러로 바꿈
-        self.searchView.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        hideBtn.image = UIImage.init(named: "icBack.png")
-        hideBtn.isEnabled = true
-        self.tabBarController?.tabBar.isHidden = true
-=======
     // 여러 제스처를 한번에 다 사용하기 위한 허용
     func gestureRecognizer(_: UIGestureRecognizer,shouldRecognizeSimultaneouslyWith shouldRecognizeSimultaneouslyWithGestureRecognizer:UIGestureRecognizer) -> Bool {
         return true
->>>>>>> Stashed changes
     }
     
     func updateImageCollection(imgCollection: [StoreImageResponseDtos]?) {
@@ -392,48 +352,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
                 imageView.frame = CGRect(x: xCoordinate - (shopSlideImageView.frame.width/2), y: 0, width: shopSlideImageView.frame.width , height: shopSlideImageView.frame.height)
                 shopSlideImageView.addSubview(imageView)
             }
-<<<<<<< Updated upstream
-            self.tabBarController?.tabBar.isHidden = false
-        }
-        else if self.searchTableView.frame.origin.y == self.searchView.frame.maxY {
-            //searchTabelView Animation
-            self.searchTableView.closeAll()
-            self.searchView.backgroundColor = UIColor.clear
-            UIView.animate(withDuration: 0.3, animations: {
-                self.searchTableView.frame = CGRect(x: 0, y:self.view.frame.size.height, width: self.searchTableView.frame.width, height: self.searchTableView.frame.height)
-            }, completion: nil)
-            self.tabBarController?.tabBar.isHidden = false
-        }
-        //네비게이션바의 투명을 설정
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-        self.navigationItem.titleView = titleImageView
-        hideBtn.image = nil
-        hideBtn.isEnabled = false
-    }
-    
-
-    func setStoreTime(openTime: String?, closeTime: String?) -> String{
-        if openTime != nil && closeTime != nil {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let open = dateFormatter.date(from: openTime!)
-            let close = dateFormatter.date(from: closeTime!)
-        
-        //전체시간에서 시간 만 땡기기
-            let dateFormatter2 = DateFormatter()
-            dateFormatter2.dateFormat = "HH:mm"
-            let openTime = dateFormatter2.string(from: open!)
-            let closeTime = dateFormatter2.string(from: close!)
-            let wholeTime = "매일 \(openTime) ~ \(closeTime)"
-            return wholeTime
-            
-        }
-        else {
-            return ""
-
-   
-=======
             shopSlideImageView.contentSize = CGSize(width: contentWidth, height: shopSlideImageView.frame.height)
             
         }
@@ -446,7 +364,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             imageView.frame = CGRect(x: xCoordinate - (shopSlideImageView.frame.width/2), y: 0, width: shopSlideImageView.frame.width , height: shopSlideImageView.frame.height)
             shopSlideImageView.addSubview(imageView)
             shopSlideImageView.contentSize = CGSize(width: contentWidth, height: shopSlideImageView.frame.height)
->>>>>>> Stashed changes
+
         }
         
     }
@@ -542,8 +460,7 @@ extension MainViewController: ExpandableDelegate {
                     self?.detailStoreNameLabel.text = storeDetail?.storeName
                     self?.detailGradeLabel.text = "\(String(describing: (storeDetail?.grade)!))점"
 
-                    self?.setStoreTime(openTime:storeDetail?.openTime!, closeTime: storeDetail?.closeTime!)
-
+                    
                     self?.searchTableView.closeAll()
                     self?.shopDetailView.reloadData()
                     
