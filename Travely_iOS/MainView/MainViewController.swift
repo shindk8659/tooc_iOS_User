@@ -253,8 +253,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
                 self?.searchTableView.reloadData()
             }
         }
-            
-        
         
         //네비게이션바의 투명을 해제하고 white컬러로 바꿈
         self.searchView.backgroundColor = UIColor.white
@@ -296,6 +294,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         hideBtn.isEnabled = false
     }
     
+
     func setStoreTime(openTime: String?, closeTime: String?) -> String{
         if openTime != nil && closeTime != nil {
             let dateFormatter = DateFormatter()
@@ -314,12 +313,12 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         }
         else {
             return ""
+
+   
         }
         
     }
-    
-    
-    
+
 }
 
 //ExpandableCell 라이브러리 딜리케이트 코드 
@@ -399,12 +398,15 @@ extension MainViewController: ExpandableDelegate {
                     self?.storeDetailModel = storeDetail
                     self?.simpleInfoStoreNameLabel.text = storeDetail?.storeName
                     self?.simpleInfoAddressLabel.text = storeDetail?.address
+
                     self?.simpleInfoTimeLabel.text = self?.setStoreTime(openTime:storeDetail?.openTime, closeTime: storeDetail?.closeTime)
                     
                     //디테일 상점 테이블뷰
                     self?.detailStoreNameLabel.text = storeDetail?.storeName
                     self?.detailGradeLabel.text = "\(String(describing: (storeDetail?.grade)!))점"
-                    self?.detailGradeLabel.sizeToFit()
+
+                    self?.setStoreTime(openTime:storeDetail?.openTime!, closeTime: storeDetail?.closeTime!)
+
                     self?.searchTableView.closeAll()
                     self?.shopDetailView.reloadData()
                     
