@@ -15,6 +15,8 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var currentLocLB: UILabel!
     @IBOutlet weak var searchBtn: UIButton!
+    @IBOutlet weak var currentLocationView: UIView!
+    @IBOutlet weak var searchButtonView: UIView!
     @IBOutlet weak var hideBtn: UIBarButtonItem!
     @IBOutlet weak var shopDetailView: UITableView!
     @IBOutlet weak var shopSimpleInfoView: UIView!
@@ -26,14 +28,15 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     
     lazy var mapView = GMSMapView.map(withFrame: CGRect(x: UIScreen.main.bounds.origin.x, y: UIScreen.main.bounds.origin.y, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), camera: GMSCameraPosition.camera(withLatitude: 37.558514, longitude: 126.925239, zoom: 15))
     
+ 
     let marker = GMSMarker()
-    let marker2 = GMSMarker()
-    
     let networkManager = NetworkManager()
     var regionListModel: [RegionListModel?]?
     var storeListModel: [StoreListModel?]?
     var storeDetailModel: StoreDetailModel?
     
+    //titleImage
+    let titleImageView = UIImageView.init(image: UIImage.init(named: "tooc"))
     
     
     //shopsimpleInfoview IBOulet
@@ -51,8 +54,17 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        
+        //navigationBar title image
+        self.navigationItem.titleView = titleImageView
+    
+        currentLocationView.layer.cornerRadius = 5
+        currentLocationView.layer.masksToBounds = true
+        searchButtonView.layer.cornerRadius = 5
+        searchButtonView.layer.masksToBounds = true
+        
+
         //Expandable tableview delegate
         searchTableView.expandableDelegate = self
         searchTableView.animation = .automatic
@@ -77,25 +89,21 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         mapView.delegate = self
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
+        marker.icon = UIImage.init(named: "<#T##String#>")
+        
         self.view.addSubview(mapView)
         self.view.addSubview(shopSlideImageView)
         self.view.addSubview(shopDetailView)
         self.view.addSubview(shopSimpleInfoView)
         self.view.addSubview(searchView)
         self.view.addSubview(searchTableView)
-        
-    
-        //지도 마커
-        marker.position = CLLocationCoordinate2D(latitude: 37.556027, longitude: 126.922949)
-        marker.map = mapView
-        marker2.position = CLLocationCoordinate2D(latitude: 37.582307, longitude: 127.034302)
-        marker2.map = mapView
+
 
         //네비게이션바를 투명하게 해서 뒤에 mapView를 보여준다
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-        hideBtn.title = ""
+        hideBtn.image = nil
         hideBtn.isEnabled = false
         
         //swipeGesture
@@ -118,6 +126,16 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         //shopSimpleInfoView 히든처리
         shopSimpleInfoView.isHidden = true
     }
+    override func viewWillAppear(_ animated: Bool) {
+        //Expandable tableview delegate
+        searchTableView.expandableDelegate = self
+        searchTableView.animation = .automatic
+        searchTableView.separatorStyle = .singleLine
+        searchTableView.tableFooterView = UIView()
+        searchTableView.register(UINib(nibName: "DetailShopTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailShopTableViewCell")
+        searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
+        self.view.addSubview(searchTableView)
+    }
     
     func gestureRecognizer(_: UIGestureRecognizer,shouldRecognizeSimultaneouslyWith shouldRecognizeSimultaneouslyWithGestureRecognizer:UIGestureRecognizer) -> Bool {
         return true
@@ -132,8 +150,9 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
                 self.shopSlideImageView.frame = CGRect(x: 0, y: 0, width: self.shopSlideImageView.frame.width, height: self.shopSlideImageView.frame.height)
                 self.searchView.isHidden = true
             },completion: nil)
+            self.navigationItem.titleView = nil
             self.navigationItem.title = ""
-            self.tabBarController?.hideTabBarAnimated(hide: true)
+            self.tabBarController?.tabBar.isHidden = true
         }
         
     }
@@ -143,7 +162,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         if self.shopDetailView.frame.origin.y == 217
         {
             UIView.animate(withDuration: 0.3, animations: {
-                self.shopDetailView.frame = CGRect(x: 0, y: 0, width: self.shopDetailView.frame.width, height: self.shopDetailView.frame.height)
+                self.shopDetailView.frame = CGRect(x: 0, y: self.view.safeAreaInsets.bottom, width: self.shopDetailView.frame.width, height: self.shopDetailView.frame.height)
                 self.shopSlideImageView.frame = CGRect(x: 0, y: -217, width: self.shopSlideImageView.frame.width, height: self.shopSlideImageView.frame.height)
                 self.searchView.isHidden = true
             }) { [weak self](true) in
@@ -154,16 +173,16 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             //네비게이션바의 투명을 해제하고 white컬러로 바꿈
             self.navigationController?.navigationBar.backgroundColor = UIColor.white
             self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-            self.navigationItem.title = self.storeDetailModel?.storeName
-            hideBtn.title = "뒤로가기"
+            self.navigationItem.titleView = titleImageView
+            hideBtn.image = UIImage.init(named: "icBack.png")
             hideBtn.isEnabled = true
-            self.tabBarController?.hideTabBarAnimated(hide: true)
+            self.tabBarController?.tabBar.isHidden = true
         }
     }
     
     //swipe Gesture downside
     @objc func handleSwipeDownGesture(recognizer: UISwipeGestureRecognizer) {
-        if self.shopDetailView.frame.origin.y == 0 && self.shopDetailView.contentOffset.y < 0 {
+        if self.shopDetailView.frame.origin.y == self.view.safeAreaInsets.bottom && self.shopDetailView.contentOffset.y < 0 {
             self.shopDetailView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
             self.shopDetailView.isScrollEnabled = false
             UIView.animate(withDuration: 0.3, animations: {
@@ -175,8 +194,9 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             //네비게이션바의 투명을 설정
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
             self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+            self.navigationItem.titleView = nil
             self.navigationItem.title = ""
-            hideBtn.title = ""
+            hideBtn.image = nil
             hideBtn.isEnabled = false
         }
         else if self.shopDetailView.frame.origin.y == 217{
@@ -188,8 +208,8 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             }) { [weak self](true) in
                  self?.shopSimpleInfoView.isHidden = false
             }
-            self.navigationItem.title = "tooc"
-            self.tabBarController?.hideTabBarAnimated(hide: false)
+            self.navigationItem.titleView = titleImageView
+            self.tabBarController?.tabBar.isHidden = false
         }
     }
     
@@ -240,14 +260,14 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         self.searchView.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        hideBtn.title = "뒤로가기"
+        hideBtn.image = UIImage.init(named: "icBack.png")
         hideBtn.isEnabled = true
-        self.tabBarController?.hideTabBarAnimated(hide: true)
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     //처음상태로 변경 SearchTableView를 내린다.
     @IBAction func hideBtnAction(_ sender: Any) {
-        if self.shopDetailView.frame.origin.y == 0 {
+        if self.shopDetailView.frame.origin.y == self.view.safeAreaInsets.bottom{
             self.shopDetailView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
             self.shopDetailView.isScrollEnabled = false
             UIView.animate(withDuration: 0.3, animations: {
@@ -257,22 +277,22 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             }) { [weak self](true) in
                 self?.shopSimpleInfoView.isHidden = false
             }
-            self.tabBarController?.hideTabBarAnimated(hide: false)
+            self.tabBarController?.tabBar.isHidden = false
         }
-        else {
+        else if self.searchTableView.frame.origin.y == self.searchView.frame.maxY {
             //searchTabelView Animation
             self.searchTableView.closeAll()
             self.searchView.backgroundColor = UIColor.clear
             UIView.animate(withDuration: 0.3, animations: {
                 self.searchTableView.frame = CGRect(x: 0, y:self.view.frame.size.height, width: self.searchTableView.frame.width, height: self.searchTableView.frame.height)
             }, completion: nil)
-            self.tabBarController?.hideTabBarAnimated(hide: false)
+            self.tabBarController?.tabBar.isHidden = false
         }
         //네비게이션바의 투명을 설정
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-        self.navigationItem.title = "tooc"
-        hideBtn.title = ""
+        self.navigationItem.titleView = titleImageView
+        hideBtn.image = nil
         hideBtn.isEnabled = false
     }
     
@@ -387,6 +407,15 @@ extension MainViewController: ExpandableDelegate {
                     self?.detailGradeLabel.sizeToFit()
                     self?.searchTableView.closeAll()
                     self?.shopDetailView.reloadData()
+                    
+                 
+                    //지도 마커
+                    self?.marker.map = nil
+                    self?.marker.position = CLLocationCoordinate2D(latitude: (storeDetail?.latitude)!, longitude: (storeDetail?.longitude)!)
+                    self?.marker.map = self?.mapView
+                    self?.mapView.camera = GMSCameraPosition.camera(withTarget: (self?.marker.position)!, zoom: 16)
+                    
+                    
                 }
             }
             //searchTabelView shopDetailView Animation
@@ -400,10 +429,10 @@ extension MainViewController: ExpandableDelegate {
             self.searchView.backgroundColor = UIColor.clear
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
             self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-            hideBtn.title = ""
+            hideBtn.image = nil
             hideBtn.isEnabled = false
-            self.tabBarController?.hideTabBarAnimated(hide: false)
-            mapView.camera = GMSCameraPosition.camera(withTarget: marker.position, zoom: 16)
+            self.tabBarController?.tabBar.isHidden = false
+        
         
     }
     
@@ -451,41 +480,68 @@ extension MainViewController: GMSMapViewDelegate
 extension MainViewController: UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
         }
+        else if section == 1 {
+            return 1
+        }
         else {
-            return 5
+            if storeDetailModel?.reviewResponseDtos?.count != 0 {
+                 return gino(storeDetailModel?.reviewResponseDtos?.count)
+            }
+            else {
+                return 0
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "shopaddresscell") as! ShopAddressTableViewCell
-            cell.shopAddressLabel.text = self.storeDetailModel?.address
+            cell.shopAddressLabel.text = storeDetailModel?.address
            //cell.shopOldAddressLabel.text = self.storeDetailModel.
-            cell.shopTimeLabel.text = self.setStoreTime(openTime:self.storeDetailModel?.openTime, closeTime: self.storeDetailModel?.closeTime)
-            cell.shopWebsiteLabel.text = self.storeDetailModel?.address
-            cell.shopCallNumLabel.text = self.storeDetailModel?.storeCall
+            cell.shopTimeLabel.text = setStoreTime(openTime:storeDetailModel?.openTime, closeTime: storeDetailModel?.closeTime)
+            cell.shopWebsiteLabel.text = storeDetailModel?.address
+            cell.shopCallNumLabel.text = storeDetailModel?.storeCall
             return cell
+        }
+        else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reviewheadercell") as! ReviewHeaderTableViewCell
+            cell.separatorInset = .zero
+            if storeDetailModel?.reviewResponseDtos?.count != 0 {
+                 cell.reviewCountLabel.text = "\(String(describing: gino(storeDetailModel?.reviewResponseDtos?.count)))"
+            }
+            else {
+                cell.reviewCountLabel.text = "\(String(describing: 0))"
+            }
+           
+            return cell
+            
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "shopreviewcell") as! ShopReviewTableViewCell
+            cell.userGradeLabel.text = "\(String(describing: (storeDetailModel?.reviewResponseDtos?[indexPath.row].like)!))점"
+            cell.userReviewTextView.text = storeDetailModel?.reviewResponseDtos?[indexPath.row].content
+            
             return cell
         }
         
     }
+  
+    
+    
     
     
 }
 extension MainViewController: UITableViewDelegate
 {
-  
-    
+
+     
 }
 
 
