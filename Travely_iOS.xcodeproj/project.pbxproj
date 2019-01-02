@@ -48,6 +48,7 @@
 		52EDFB5E21DA2FC400A83CC0 /* StoreImageResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EDFB5B21DA2FC400A83CC0 /* StoreImageResponseDtos.swift */; };
 		52EDFB6021DA425700A83CC0 /* RestWeekResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EDFB5F21DA425700A83CC0 /* RestWeekResponseDtos.swift */; };
 		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
+		D12A6C9621DCB58300FB6B78 /* LatestReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A6C9521DCB58300FB6B78 /* LatestReservationViewController.swift */; };
 		D13841E621D9FDB500EC7D9D /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13841E221D9FDB500EC7D9D /* Alert.storyboard */; };
 		D13841E721D9FDB500EC7D9D /* CancelAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E321D9FDB500EC7D9D /* CancelAlertViewController.swift */; };
 		D13841E821D9FDB500EC7D9D /* ReservationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E421D9FDB500EC7D9D /* ReservationAlertViewController.swift */; };
@@ -106,6 +107,7 @@
 		52EDFB5B21DA2FC400A83CC0 /* StoreImageResponseDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreImageResponseDtos.swift; sourceTree = "<group>"; };
 		52EDFB5F21DA425700A83CC0 /* RestWeekResponseDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestWeekResponseDtos.swift; sourceTree = "<group>"; };
 		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D12A6C9521DCB58300FB6B78 /* LatestReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestReservationViewController.swift; sourceTree = "<group>"; };
 		D13841E221D9FDB500EC7D9D /* Alert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		D13841E321D9FDB500EC7D9D /* CancelAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelAlertViewController.swift; sourceTree = "<group>"; };
 		D13841E421D9FDB500EC7D9D /* ReservationAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationAlertViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				52986AFD21D28DC700601983 /* ReservationPicker.swift */,
 				D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */,
 				D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */,
+				D12A6C9521DCB58300FB6B78 /* LatestReservationViewController.swift */,
 				D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */,
 				D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */,
 			);
@@ -496,6 +499,7 @@
 				52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */,
 				D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */,
 				52EDFB5E21DA2FC400A83CC0 /* StoreImageResponseDtos.swift in Sources */,
+				D12A6C9621DCB58300FB6B78 /* LatestReservationViewController.swift in Sources */,
 				52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */,
 				52AB761821D0E9C40002FB07 /* SearchTableViewCell.swift in Sources */,
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
