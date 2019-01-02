@@ -16,8 +16,6 @@ class ReservationStatusViewController: UITableViewController {
     @IBOutlet var statusProgressView: [UIView]!
     @IBOutlet var cancelButton: UIButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutSetup()
