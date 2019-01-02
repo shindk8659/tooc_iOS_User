@@ -7,30 +7,66 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class LatestReservationViewController: UITableViewController {
-
+    
+    @IBOutlet var halfBgImage: UIImageView!
+    @IBOutlet var reservationView: UIView!
+    @IBOutlet var superViewOfMap: UIView!
+    
+    lazy var mapView = GMSMapView()
+    var initialCheck = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        layoutSetup()
     }
+    
+    func layoutSetup() {
+        halfBgImage.layer.shadowColor = UIColor.black.cgColor
+        halfBgImage.layer.shadowRadius = 5
+        halfBgImage.layer.shadowOpacity = 0.5
+        halfBgImage.layer.shadowOffset = CGSize(width: 0, height: 2)
+        
+        reservationView.layer.cornerRadius = 20
+        reservationView.layer.shadowColor = UIColor.black.cgColor
+        reservationView.layer.shadowRadius = 10
+        reservationView.layer.shadowOpacity = 0.5
+        reservationView.layer.shadowOffset = CGSize(width: 0, height: 0)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if initialCheck == 1 {
+            mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: superViewOfMap.frame.width, height: superViewOfMap.frame.height), camera: GMSCameraPosition.camera(withLatitude: 37.558514, longitude: 126.925239, zoom: 15))
+            superViewOfMap.addSubview(mapView)
+            initialCheck += 1
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

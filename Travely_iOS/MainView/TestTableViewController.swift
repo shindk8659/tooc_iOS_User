@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class TestTableViewController: UITableViewController {
     
@@ -21,6 +22,10 @@ class TestTableViewController: UITableViewController {
             //주석
         }
     }
+    
+    @IBOutlet var testView: UIView!
+    lazy var mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: testView.frame.width, height: testView.frame.height), camera: GMSCameraPosition.camera(withLatitude: 37.558514, longitude: 126.925239, zoom: 15))
+    
     
     var test = false
 
@@ -71,6 +76,8 @@ class TestTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadCheck = false
+        mapView.isMyLocationEnabled = true
+        testView.addSubview(mapView)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -79,29 +86,29 @@ class TestTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 1 && carrierCheck == true {
-            print("실행1")
-            return UITableView.automaticDimension
-        } else if indexPath.row == 1 && carrierCheck == false {
-            return 0
-        }
-        
-        if indexPath.row == 3 && loadCheck == true {
-            print("실행2")
-            return UITableView.automaticDimension
-        }else if indexPath.row == 3 && loadCheck == false {
-            return 0
-        }
-        
-        if indexPath.row == 4 && (carrierCheck == true || loadCheck == true) {
-            return 44
-        } else if indexPath.row == 4 {
-            return 0
-        }
-        
-        return UITableView.automaticDimension
-    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        if indexPath.row == 1 && carrierCheck == true {
+//            print("실행1")
+//            return UITableView.automaticDimension
+//        } else if indexPath.row == 1 && carrierCheck == false {
+//            return 0
+//        }
+//        
+//        if indexPath.row == 3 && loadCheck == true {
+//            print("실행2")
+//            return UITableView.automaticDimension
+//        }else if indexPath.row == 3 && loadCheck == false {
+//            return 0
+//        }
+//        
+//        if indexPath.row == 4 && (carrierCheck == true || loadCheck == true) {
+//            return 44
+//        } else if indexPath.row == 4 {
+//            return 0
+//        }
+//        
+//        return UITableView.automaticDimension
+//    }
 
     // MARK: - Table view data source
 

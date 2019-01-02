@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class ReservationStatusViewController: UITableViewController {
     
@@ -16,9 +17,18 @@ class ReservationStatusViewController: UITableViewController {
     @IBOutlet var statusProgressView: [UIView]!
     @IBOutlet var cancelButton: UIButton!
     
+    @IBOutlet var superViewOfMap: UIView!
+    @IBOutlet var qrCode: UIImageView!
+    
+    lazy var mapView = GMSMapView()
+    var initialCheck = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutSetup()
+        
+        let image = generateQRCode(from: "Hello")
+        qrCode.image = image
     }
 
     func layoutSetup() {
@@ -49,6 +59,29 @@ class ReservationStatusViewController: UITableViewController {
         cancelButton.layer.borderColor = UIColor(red: 0xB6, green: 0xB6, blue: 0xB6).cgColor
         cancelButton.layer.cornerRadius = cancelButton.frame.width / 13
         
+        mapView.isMyLocationEnabled = true
+    }
+    
+    func generateQRCode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+        
+        if let filter = CIFilter(name: "CIQRCodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
+            
+            if let output = filter.outputImage?.transformed(by: transform) {
+                return UIImage(ciImage: output)
+            }
+        }
+        return nil
+    }
+    
+    override func viewDidLayoutSubviews() {
+        if initialCheck == 1 {
+        mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: superViewOfMap.frame.width, height: superViewOfMap.frame.height), camera: GMSCameraPosition.camera(withLatitude: 37.558514, longitude: 126.925239, zoom: 15))
+        superViewOfMap.addSubview(mapView)
+            initialCheck += 1
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

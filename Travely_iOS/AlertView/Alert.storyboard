@@ -34,7 +34,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwq-tX-m3f">
                                         <rect key="frame" x="87.5" y="234" width="120" height="36"/>
-                                        <color key="backgroundColor" red="0.29803921570000003" green="0.3921568627" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="89u-NG-twe"/>
                                             <constraint firstAttribute="width" constant="120" id="k3s-86-eYI"/>
@@ -72,7 +72,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="0.69702646683673475" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cfh-kb-6oq" firstAttribute="trailing" secondItem="syF-I0-Upj" secondAttribute="trailing" constant="40" id="3Ub-r6-UYg"/>
                             <constraint firstItem="cfh-kb-6oq" firstAttribute="bottom" secondItem="syF-I0-Upj" secondAttribute="bottom" constant="148" id="NWF-NT-30b"/>
@@ -105,7 +105,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0c-XF-zmD">
                                         <rect key="frame" x="87.5" y="250.5" width="120" height="36"/>
-                                        <color key="backgroundColor" red="0.29803921570000003" green="0.3921568627" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="frN-g4-6Yc"/>
                                             <constraint firstAttribute="height" constant="36" id="jnN-qb-5Sl"/>
@@ -119,7 +119,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계정 비밀번호를 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PT5-Vq-swl">
-                                        <rect key="frame" x="63" y="84" width="169.5" height="16.5"/>
+                                        <rect key="frame" x="57.5" y="79.5" width="180" height="21"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -131,7 +131,7 @@
                                     <constraint firstItem="PT5-Vq-swl" firstAttribute="centerX" secondItem="XCJ-d7-Y42" secondAttribute="centerX" id="Rs8-9i-YbJ"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIs-LO-iYz">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DIs-LO-iYz">
                                 <rect key="frame" x="87.5" y="318.5" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vvc-fB-ElJ"/>
@@ -142,7 +142,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="0.69702646680000002" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XCJ-d7-Y42" firstAttribute="leading" secondItem="B2k-sB-RaR" secondAttribute="leading" constant="40" id="5ma-Gf-LjV"/>
                             <constraint firstItem="B2k-sB-RaR" firstAttribute="bottom" secondItem="XCJ-d7-Y42" secondAttribute="bottom" constant="148" id="6Yb-ZC-Uuh"/>
@@ -205,7 +205,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiU-xx-VCI">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="36"/>
-                                        <color key="backgroundColor" red="0.29803921570000003" green="0.3921568627" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="X91-bA-CD7"/>
                                             <constraint firstAttribute="width" constant="120" id="iIj-ZS-C4R"/>
@@ -227,7 +227,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="닫기">
-                                            <color key="titleColor" red="0.29803921570000003" green="0.3921568627" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
                                             <action selector="didPressClose:" destination="zAQ-PD-rR6" eventType="touchUpInside" id="u7d-Wu-Xk6"/>
@@ -237,7 +237,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="0.69702646680000002" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Omh-0H-Mpl" firstAttribute="centerX" secondItem="oC4-iM-Jq8" secondAttribute="centerX" id="Ln6-nW-l2f"/>
                             <constraint firstItem="Db5-I9-j1O" firstAttribute="centerX" secondItem="Omh-0H-Mpl" secondAttribute="centerX" id="N0t-55-V1l"/>
