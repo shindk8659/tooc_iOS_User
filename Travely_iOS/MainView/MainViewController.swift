@@ -310,7 +310,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
 
             // Date객체에서 가져올 포맷과 시간대를 정하고 String 으로 꺼내서 반환 함
             let dateFormatter = DateFormatter()
-            dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+9") //Set timezone that you want
             dateFormatter.locale = NSLocale.current
             dateFormatter.dateFormat = "HH:mm" //Specify your format that you want
             let open = dateFormatter.string(from: openDate)
@@ -346,6 +346,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             for i in 0..<gino(imgCollection?.count) {
                 let imageView = UIImageView()
                 imageView.image = UIImage.init(named: "icGoogle")
+                imageView.contentMode = .scaleAspectFit
                 //imageView.imageFromUrl(gsno(imgCollection?[i].storeImg))
                 let xCoordinate = shopSlideImageView.frame.midX + shopSlideImageView.frame.width * CGFloat(i)
                 contentWidth += shopSlideImageView.frame.width
