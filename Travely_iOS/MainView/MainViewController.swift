@@ -53,6 +53,14 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     
     
     // 검색버튼을 눌렀을경우 SearchTableView를 띄우고 searchView의 생상과 navigationBar의 투명을 변경한다.
+    
+    @IBAction func didPressReservation(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func SearchViewBtnAction(_ sender: Any) {
         
         //searchTabelView Animation
@@ -114,7 +122,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             UIView.animate(withDuration: 0.3, animations: {
                 self.searchTableView.frame = CGRect(x: 0, y:self.view.frame.size.height, width: self.searchTableView.frame.width, height: self.searchTableView.frame.height)
             }, completion: nil)
-            
         }
         // 네비게이션바의 투명을 설정
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

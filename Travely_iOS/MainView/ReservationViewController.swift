@@ -81,7 +81,9 @@ class ReservationViewController: UITableViewController {
     }
     
     @IBAction func didPressReservation(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
+        self.present(vc, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
