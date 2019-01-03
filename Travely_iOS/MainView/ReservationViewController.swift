@@ -14,6 +14,12 @@ class ReservationViewController: UITableViewController {
     var luggageCheck: Bool!
     var numberOfSuitcase = 0
     var numberOfLuggage = 0
+    var payment = "CARD"
+    var checkTime: Double = 0
+    var findTime: Double = 0
+    
+    let networkManager = NetworkManager()
+    var reservationDetail: Json4Swift_Base?
     
     @IBOutlet var checkAndFindView: UIView!
     @IBOutlet var dateAndTimeView: [UIView]!
@@ -27,8 +33,6 @@ class ReservationViewController: UITableViewController {
     @IBOutlet var numberOfLuggageLabel: UILabel!
     
     @IBOutlet var luggageChoiceLabel: UILabel!
-    
-    
     
     @IBAction func didPressType(_ sender: UIButton) {
         if sender.tag == 0 {
@@ -81,9 +85,40 @@ class ReservationViewController: UITableViewController {
     }
     
     @IBAction func didPressReservation(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
-        self.present(vc, animated: true, completion: nil)
+//        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
+//        vc.delegate = self
+//        self.present(vc, animated: true, completion: nil)
+        
+        let testbag = ["bagType":"CARRIER", "bagCount": 2] as [String : Any]
+        
+        networkManager.saveReservation(storeIdx: 1, startTime: UInt64(checkTime), endTime: UInt64(findTime), bagDtos: testbag, payType: payment) { [weak self] (data, errorModel, error) in
+            if data == nil && errorModel == nil && error != nil {
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController, animated: true, completion: nil)
+            }
+                // 서버측 에러핸들러 구성후 바꿔야함
+            else if data == nil && errorModel != nil && error == nil {
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController, animated: true, completion: nil)
+            }
+            else {
+                let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
+                vc.delegate = self
+                self?.present(vc, animated: true, completion: nil)
+                print("통신 성공")
+                print(data)
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(checkTime, findTime)
     }
     
     override func viewDidLoad() {
@@ -94,6 +129,8 @@ class ReservationViewController: UITableViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(didPressCAFView))
         self.checkAndFindView.addGestureRecognizer(tap)
+        
+        self.tabBarController?.hideTabBarAnimated(hide: false)
     }
     
     @objc func didPressCAFView() {
@@ -131,5 +168,22 @@ class ReservationViewController: UITableViewController {
         
         reservationButton.layer.cornerRadius = reservationButton.frame.width / 13
     }
+    
+}
+
+extension ReservationViewController: changeTabProtocol {
+    func changeTabViewController() {
+        let ReservationStatusViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReservationStatusViewController") as! ReservationStatusViewController
+        
+        ReservationStatusViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "ic_reservation_gray_tab"),tag: 1)
+        
+        ReservationStatusViewController.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+        
+        self.tabBarController?.viewControllers![1] = ReservationStatusViewController
+        self.tabBarController?.selectedIndex = 1
+        print("확인")
+    }
+    
+    
 }
 

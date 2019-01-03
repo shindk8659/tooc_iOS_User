@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol changeTabProtocol {
+    func changeTabViewController()
+}
+
 class ReservationAlertViewController: UIViewController {
+    
+    var delegate: changeTabProtocol!
     
     @IBOutlet var alertView: UIView!
     @IBOutlet var confirmButton: UIButton!
@@ -16,7 +22,9 @@ class ReservationAlertViewController: UIViewController {
     @IBOutlet var reservationLabel: UILabel!
     
     @IBAction func didPressConfirm(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self.delegate!.changeTabViewController()
+        }
     }
     
     
@@ -24,7 +32,6 @@ class ReservationAlertViewController: UIViewController {
         super.viewDidLoad()
         layoutSetup()
         //주석
-
     }
     
     func layoutSetup() {

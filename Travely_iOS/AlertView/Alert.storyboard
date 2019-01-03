@@ -33,11 +33,10 @@
                                 <rect key="frame" x="40" y="168" width="295" height="351"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwq-tX-m3f">
-                                        <rect key="frame" x="87.5" y="234" width="120" height="36"/>
+                                        <rect key="frame" x="44" y="254.5" width="207" height="38"/>
                                         <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="89u-NG-twe"/>
-                                            <constraint firstAttribute="width" constant="120" id="k3s-86-eYI"/>
+                                            <constraint firstAttribute="height" constant="38" id="n6o-Gz-7XM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                                         <state key="normal" title="확인">
@@ -47,38 +46,43 @@
                                             <action selector="didPressConfirm:" destination="yeW-4W-soX" eventType="touchUpInside" id="XRz-8V-cpX"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약이 완료되었습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knn-8e-gu2">
-                                        <rect key="frame" x="78.5" y="165" width="138" height="21"/>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="14"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_big" translatesAutoresizingMaskIntoConstraints="NO" id="qh8-Ce-Qqt">
+                                        <rect key="frame" x="91" y="55.5" width="113" height="71"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qh8-Ce-Qqt" secondAttribute="height" multiplier="113:71" id="sk6-vT-qIy"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약이 완료되었습니다.     예약 내역을 확인해주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="knn-8e-gu2">
+                                        <rect key="frame" x="57.5" y="151.5" width="180" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="knn-8e-gu2" secondAttribute="height" multiplier="15:4" id="3wL-Fh-vX8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_check_big" translatesAutoresizingMaskIntoConstraints="NO" id="qh8-Ce-Qqt">
-                                        <rect key="frame" x="91" y="69" width="113" height="71"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="71" id="FeV-Cb-eho"/>
-                                            <constraint firstAttribute="width" constant="113" id="rZh-V7-Zst"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="wwq-tX-m3f" firstAttribute="leading" secondItem="syF-I0-Upj" secondAttribute="leading" constant="44" id="0T7-BT-1eP"/>
+                                    <constraint firstItem="knn-8e-gu2" firstAttribute="width" secondItem="syF-I0-Upj" secondAttribute="width" multiplier="0.61" id="5eU-Ld-NSU"/>
+                                    <constraint firstItem="wwq-tX-m3f" firstAttribute="top" secondItem="knn-8e-gu2" secondAttribute="bottom" constant="55" id="8sg-fQ-fvW"/>
                                     <constraint firstItem="qh8-Ce-Qqt" firstAttribute="centerX" secondItem="syF-I0-Upj" secondAttribute="centerX" id="EBH-CO-Nip"/>
+                                    <constraint firstAttribute="trailing" secondItem="wwq-tX-m3f" secondAttribute="trailing" constant="44" id="Hua-1U-eq9"/>
                                     <constraint firstItem="wwq-tX-m3f" firstAttribute="centerX" secondItem="syF-I0-Upj" secondAttribute="centerX" id="JCX-sf-2pL"/>
+                                    <constraint firstAttribute="width" secondItem="syF-I0-Upj" secondAttribute="height" multiplier="295:351" id="KXd-3Z-uz0"/>
                                     <constraint firstItem="knn-8e-gu2" firstAttribute="centerY" secondItem="syF-I0-Upj" secondAttribute="centerY" id="QCa-fM-BVn"/>
                                     <constraint firstItem="knn-8e-gu2" firstAttribute="top" secondItem="qh8-Ce-Qqt" secondAttribute="bottom" constant="25" id="jdn-lV-Nc4"/>
-                                    <constraint firstItem="wwq-tX-m3f" firstAttribute="top" secondItem="knn-8e-gu2" secondAttribute="bottom" constant="48" id="nCO-CZ-AEl"/>
                                     <constraint firstItem="knn-8e-gu2" firstAttribute="centerX" secondItem="syF-I0-Upj" secondAttribute="centerX" id="pBS-3Z-xI2"/>
+                                    <constraint firstItem="qh8-Ce-Qqt" firstAttribute="width" secondItem="syF-I0-Upj" secondAttribute="width" multiplier="0.383" id="wlX-zD-V7K"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cfh-kb-6oq" firstAttribute="trailing" secondItem="syF-I0-Upj" secondAttribute="trailing" constant="40" id="3Ub-r6-UYg"/>
-                            <constraint firstItem="cfh-kb-6oq" firstAttribute="bottom" secondItem="syF-I0-Upj" secondAttribute="bottom" constant="148" id="NWF-NT-30b"/>
+                            <constraint firstItem="syF-I0-Upj" firstAttribute="width" secondItem="JHV-ie-kS1" secondAttribute="width" multiplier="0.787" id="Noi-MF-dbK"/>
                             <constraint firstItem="syF-I0-Upj" firstAttribute="centerX" secondItem="cfh-kb-6oq" secondAttribute="centerX" id="aAx-aZ-6jn"/>
-                            <constraint firstItem="syF-I0-Upj" firstAttribute="top" secondItem="cfh-kb-6oq" secondAttribute="top" constant="148" id="dmg-ff-17N"/>
-                            <constraint firstItem="syF-I0-Upj" firstAttribute="leading" secondItem="cfh-kb-6oq" secondAttribute="leading" constant="40" id="rpn-wC-FRC"/>
+                            <constraint firstItem="syF-I0-Upj" firstAttribute="centerY" secondItem="cfh-kb-6oq" secondAttribute="centerY" id="bqY-G4-5J3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cfh-kb-6oq"/>
                     </view>
@@ -90,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHX-0O-jJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23" y="90"/>
+            <point key="canvasLocation" x="21.600000000000001" y="89.505247376311857"/>
         </scene>
         <!--Cancel Alert View Controller-->
         <scene sceneID="X8D-3r-oaB">

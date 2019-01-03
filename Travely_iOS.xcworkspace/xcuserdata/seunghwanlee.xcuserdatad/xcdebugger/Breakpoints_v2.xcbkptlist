@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Travely_iOS/MainView/ReservationViewController.swift"
-            timestampString = "568137010.6720231"
+            timestampString = "568223283.846094"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "ReservationViewController"
-            landmarkType = "3">
+            startingLineNumber = "190"
+            endingLineNumber = "190">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

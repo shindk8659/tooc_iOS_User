@@ -13,11 +13,11 @@ enum status: String {
     case find
 }
 
-
 class ReservationPicker: UIViewController {
     
     @IBOutlet var checkView: UIView!
     @IBOutlet var findView: UIView!
+    @IBOutlet var intervalTime: UILabel!
     
     @IBOutlet var checkViewLabel: [UILabel]!
     
@@ -53,7 +53,12 @@ class ReservationPicker: UIViewController {
     }
     
     @IBAction func didPressConfirmation(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        if let vc = self.presentingViewController as? ReservationViewController {
+            print("확인")
+            vc.checkTime = checkDate.timeIntervalSince1970
+            vc.findTime = findDate.timeIntervalSince1970
+        }
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     
@@ -221,5 +226,36 @@ class ReservationPicker: UIViewController {
             findViewLabel[1].text = dateFormatter1.string(from: date)
             findViewLabel[2].text = dateFormatter2.string(from: date)
         }
+        
+        /*
+        let calendar = Calendar.current
+        let date1 = calendar.startOfDay(for: checkDate)
+        let date2 = calendar.startOfDay(for: findDate)
+        let components = calendar.dateComponents([.hour, .minute], from: date1, to: date2)
+        print(components, components.date, components.hour, components.minute)
+        */
+        
+        let timeInterval = findDate.timeIntervalSince(checkDate)
+        let t1 = Int(timeInterval) / 60
+//        if t1 >= 60 {
+//           let t2 = t1 / 60
+//           let t3 = t1 - t2*60
+//            print("\(t2)시간 \(t3)분")
+//        }
+        
+        if t1 >= 1440 {
+            let t2 = t1 / 1440 // 일
+            let t3 = t1 - t2*1440
+            let t4 = t3 / 60 // 시간
+            let t5 = t3 - t4*60 // 분
+            intervalTime.text = "\(t2)일 \(t4)시간 \(t5)분"
+        } else if t1 >= 60 {
+            let t2 = t1 / 60
+            let t3 = t1 - t2*60
+            intervalTime.text = "\(t2)시간 \(t3)분"
+        } else {
+            intervalTime.text = ("\(t1)분")
+        }
+        
     }
 }

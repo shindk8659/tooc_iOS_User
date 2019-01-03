@@ -51,13 +51,13 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     // locationManager
     private var locationManager = CLLocationManager()
     
-    
     // 검색버튼을 눌렀을경우 SearchTableView를 띄우고 searchView의 생상과 navigationBar의 투명을 변경한다.
     
     @IBAction func didPressReservation(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -68,7 +68,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             self.searchTableView.frame = CGRect(x: 0, y: self.searchView.frame.maxY, width: self.searchTableView.frame.width, height: self.view.frame.size.height - self.searchView.frame.maxY)
         }, completion: nil)
         
-        networkManager.regionList{ [weak self](regionList, errorModel, error) in
+        networkManager.regionList{ [weak self] (regionList, errorModel, error) in
             // 지역 리스트 네트워크 처리
             if regionList == nil && errorModel == nil && error != nil {
                 let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)

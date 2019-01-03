@@ -49,10 +49,17 @@
 		52EDFB5E21DA2FC400A83CC0 /* StoreImageResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EDFB5B21DA2FC400A83CC0 /* StoreImageResponseDtos.swift */; };
 		52EDFB6021DA425700A83CC0 /* RestWeekResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EDFB5F21DA425700A83CC0 /* RestWeekResponseDtos.swift */; };
 		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
+		D10DD1A021DDF9D80011282C /* ReservationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E421D9FDB500EC7D9D /* ReservationAlertViewController.swift */; };
+		D10DD1AA21DE4B700011282C /* OpenTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DD1A321DE4B6F0011282C /* OpenTime.swift */; };
+		D10DD1AB21DE4B700011282C /* StartTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DD1A421DE4B6F0011282C /* StartTime.swift */; };
+		D10DD1AC21DE4B700011282C /* BagDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DD1A521DE4B6F0011282C /* BagDtos.swift */; };
+		D10DD1AD21DE4B700011282C /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DD1A621DE4B6F0011282C /* Store.swift */; };
+		D10DD1AE21DE4B700011282C /* CloseTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DD1A721DE4B6F0011282C /* CloseTime.swift */; };
+		D10DD1AF21DE4B700011282C /* EndTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DD1A821DE4B6F0011282C /* EndTime.swift */; };
+		D10DD1B021DE4B700011282C /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DD1A921DE4B700011282C /* Json4Swift_Base.swift */; };
 		D12A6C9621DCB58300FB6B78 /* LatestReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12A6C9521DCB58300FB6B78 /* LatestReservationViewController.swift */; };
 		D13841E621D9FDB500EC7D9D /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13841E221D9FDB500EC7D9D /* Alert.storyboard */; };
 		D13841E721D9FDB500EC7D9D /* CancelAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E321D9FDB500EC7D9D /* CancelAlertViewController.swift */; };
-		D13841E821D9FDB500EC7D9D /* ReservationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E421D9FDB500EC7D9D /* ReservationAlertViewController.swift */; };
 		D13841E921D9FDB500EC7D9D /* cancelConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E521D9FDB500EC7D9D /* cancelConfirmViewController.swift */; };
 		D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EA21D9FDCA00EC7D9D /* CALayer.swift */; };
 		D13841ED21D9FDEE00EC7D9D /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */; };
@@ -109,6 +116,13 @@
 		52EDFB5B21DA2FC400A83CC0 /* StoreImageResponseDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreImageResponseDtos.swift; sourceTree = "<group>"; };
 		52EDFB5F21DA425700A83CC0 /* RestWeekResponseDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestWeekResponseDtos.swift; sourceTree = "<group>"; };
 		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		D10DD1A321DE4B6F0011282C /* OpenTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTime.swift; sourceTree = "<group>"; };
+		D10DD1A421DE4B6F0011282C /* StartTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTime.swift; sourceTree = "<group>"; };
+		D10DD1A521DE4B6F0011282C /* BagDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagDtos.swift; sourceTree = "<group>"; };
+		D10DD1A621DE4B6F0011282C /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		D10DD1A721DE4B6F0011282C /* CloseTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseTime.swift; sourceTree = "<group>"; };
+		D10DD1A821DE4B6F0011282C /* EndTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndTime.swift; sourceTree = "<group>"; };
+		D10DD1A921DE4B700011282C /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
 		D12A6C9521DCB58300FB6B78 /* LatestReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestReservationViewController.swift; sourceTree = "<group>"; };
 		D13841E221D9FDB500EC7D9D /* Alert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		D13841E321D9FDB500EC7D9D /* CancelAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelAlertViewController.swift; sourceTree = "<group>"; };
@@ -256,10 +270,10 @@
 		52D2BC2E21D6A707005F48D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D10DD1A221DE4B4D0011282C /* ReservationModels */,
 				52BD7CF221D8DE1900EDD75D /* RegionListModels */,
 				52BD7CEB21D8D6AC00EDD75D /* StoreDetailModels */,
 				52B899CB21D7364C00D2667D /* ErrorModel.swift */,
-				D13841EA21D9FDCA00EC7D9D /* CALayer.swift */,
 				52BD7CE921D8C6D800EDD75D /* StoreListModel.swift */,
 			);
 			path = Model;
@@ -292,10 +306,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D10DD1A221DE4B4D0011282C /* ReservationModels */ = {
+			isa = PBXGroup;
+			children = (
+				D10DD1A521DE4B6F0011282C /* BagDtos.swift */,
+				D10DD1A721DE4B6F0011282C /* CloseTime.swift */,
+				D10DD1A821DE4B6F0011282C /* EndTime.swift */,
+				D10DD1A921DE4B700011282C /* Json4Swift_Base.swift */,
+				D10DD1A321DE4B6F0011282C /* OpenTime.swift */,
+				D10DD1A421DE4B6F0011282C /* StartTime.swift */,
+				D10DD1A621DE4B6F0011282C /* Store.swift */,
+			);
+			path = ReservationModels;
+			sourceTree = "<group>";
+		};
 		D122477821D0A47600B10C87 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				52986AFB21D28DB100601983 /* UIColor.swift */,
+				D13841EA21D9FDCA00EC7D9D /* CALayer.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -486,11 +515,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D13841E821D9FDB500EC7D9D /* ReservationAlertViewController.swift in Sources */,
 				52BD7CEA21D8C6D800EDD75D /* StoreListModel.swift in Sources */,
 				52EDFB5C21DA2FC400A83CC0 /* ReviewResponseDtos.swift in Sources */,
+				D10DD1AA21DE4B700011282C /* OpenTime.swift in Sources */,
 				D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */,
 				52AA4B4721DAB36B00442C9A /* ReviewHeaderTableViewCell.swift in Sources */,
+				D10DD1B021DE4B700011282C /* Json4Swift_Base.swift in Sources */,
 				52AB760D21CF65ED0002FB07 /* LoginViewController.swift in Sources */,
 				52EDFB5D21DA2FC400A83CC0 /* StoreDetailModel.swift in Sources */,
 				528D962721DBEF1E00FC46D1 /* EmptyReviewTableViewCell.swift in Sources */,
@@ -510,16 +540,22 @@
 				D13841E921D9FDB500EC7D9D /* cancelConfirmViewController.swift in Sources */,
 				52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */,
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
+				D10DD1AB21DE4B700011282C /* StartTime.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
 				D13841F121D9FDF900EC7D9D /* TestViewController5.swift in Sources */,
 				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
 				D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */,
+				D10DD1AE21DE4B700011282C /* CloseTime.swift in Sources */,
 				D1ABFAE321DBC20500BEE3E0 /* CircleButton.swift in Sources */,
+				D10DD1AF21DE4B700011282C /* EndTime.swift in Sources */,
+				D10DD1AC21DE4B700011282C /* BagDtos.swift in Sources */,
+				D10DD1AD21DE4B700011282C /* Store.swift in Sources */,
 				D13841ED21D9FDEE00EC7D9D /* ReservationViewController.swift in Sources */,
 				52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */,
 				52EDFB6021DA425700A83CC0 /* RestWeekResponseDtos.swift in Sources */,
+				D10DD1A021DDF9D80011282C /* ReservationAlertViewController.swift in Sources */,
 				D13841E721D9FDB500EC7D9D /* CancelAlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
