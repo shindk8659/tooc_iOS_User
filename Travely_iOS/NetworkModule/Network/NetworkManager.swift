@@ -20,6 +20,7 @@ class NetworkManager {
             "email": email,
             "password": password
         ]
+        
         let router = APIRouter(url:"/api/users/login", method: .post, parameters: parameters)
         NetworkRequester(with: router).request1 { (login: ErrorModel?, errorModel:ErrorModel? , error) in
             guard error == nil else {
@@ -75,6 +76,26 @@ class NetworkManager {
                 return
             }
             completion(storeDetailList,errorModel,error)
+        }
+    }
+    
+    func saveReservation(storeIdx: Int, startTime: UInt64, endTime: UInt64, bagDtos: [String:Any], payType: String, completion: @escaping(Json4Swift_Base?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        let param = ["storeIdx" : storeIdx,
+                     "startTime" : startTime,
+                     "endTime" : endTime,
+                     "bagDtos" : bagDtos,
+                     "payType" : payType
+            ] as [String : Any]
+        let router = APIRouter(url:"/api/reservtion/save", method: .post, parameters: param ,headers:header)
+        NetworkRequester(with: router).request1 { (reservationDetail: Json4Swift_Base?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(reservationDetail,errorModel,error)
         }
     }
     

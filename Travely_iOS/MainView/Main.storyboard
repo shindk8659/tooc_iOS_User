@@ -64,7 +64,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3cl-MR-cUs" secondAttribute="height" multiplier="6:7" constant="-1.1428571428571388" id="b1A-gY-3tv"/>
                                         </constraints>
-                                        <state key="normal" image="icResevation"/>
+                                        <state key="normal" image="ic_resevation"/>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icWorking" translatesAutoresizingMaskIntoConstraints="NO" id="rZm-y2-QcX">
                                         <rect key="frame" x="15" y="47" width="44" height="18"/>
@@ -616,24 +616,6 @@
             <point key="canvasLocation" x="930" y="78"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="CKf-Lv-RLz">
-            <objects>
-                <viewController id="5op-7W-qBl" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IwX-ZQ-6ZQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="r4S-Bn-3J2"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="ic_reservation_gray_tab" id="9md-Z7-D0w">
-                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ps6-2W-AFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-10" y="748"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="Kjk-L6-clo">
             <objects>
                 <viewController id="Vcw-tm-Au1" sceneMemberID="viewController">
@@ -642,10 +624,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 배송 서비스 준비중입니다. 감사합니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYt-ua-U2i">
-                                <rect key="frame" x="71.666666666666686" y="356.66666666666669" width="232" height="60"/>
+                                <rect key="frame" x="60" y="356.66666666666669" width="255" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="6rR-47-h3e"/>
-                                    <constraint firstAttribute="width" constant="232" id="FII-fc-F83"/>
+                                    <constraint firstAttribute="width" constant="255" id="FII-fc-F83"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -669,7 +651,7 @@
                         <viewLayoutGuide key="safeArea" id="7Dp-z7-jqm"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_delivery_gray_tab" id="Eim-n0-wL5">
-                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWb-lt-txc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -685,9 +667,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약 현황이 존재하지 않습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNW-tz-FmL">
-                                <rect key="frame" x="71.666666666666686" y="381" width="232" height="60"/>
+                                <rect key="frame" x="50" y="356.66666666666669" width="275" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="232" id="C9k-sI-Zdr"/>
                                     <constraint firstAttribute="height" constant="60" id="hNC-8Q-Nyb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="18"/>
@@ -695,7 +676,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paper_plane" translatesAutoresizingMaskIntoConstraints="NO" id="DJg-ha-SfC">
-                                <rect key="frame" x="132.66666666666666" y="291" width="110" height="40"/>
+                                <rect key="frame" x="132.66666666666666" y="266.66666666666669" width="110" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="dhb-na-68O"/>
                                     <constraint firstAttribute="height" constant="40" id="sEw-ch-Pna"/>
@@ -705,16 +686,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hNW-tz-FmL" firstAttribute="centerX" secondItem="fWq-Ic-JoF" secondAttribute="centerX" id="5iF-H5-8kQ"/>
+                            <constraint firstItem="hNW-tz-FmL" firstAttribute="leading" secondItem="fWq-Ic-JoF" secondAttribute="leading" constant="50" id="BRU-fC-JP0"/>
                             <constraint firstItem="hNW-tz-FmL" firstAttribute="centerY" secondItem="fWq-Ic-JoF" secondAttribute="centerY" id="F15-8u-Iug"/>
                             <constraint firstItem="hNW-tz-FmL" firstAttribute="top" secondItem="DJg-ha-SfC" secondAttribute="bottom" constant="50" id="VeC-7Q-pMM"/>
                             <constraint firstItem="DJg-ha-SfC" firstAttribute="centerX" secondItem="fWq-Ic-JoF" secondAttribute="centerX" id="VjS-8E-N3j"/>
+                            <constraint firstItem="fWq-Ic-JoF" firstAttribute="trailing" secondItem="hNW-tz-FmL" secondAttribute="trailing" constant="50" id="X8Z-Eo-pGp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fWq-Ic-JoF"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="ic_reservation_gray_tab" id="l9D-5f-JWg">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zpq-a8-bNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927" y="748"/>
+            <point key="canvasLocation" x="-10" y="770"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ccO-nE-W2R">
@@ -727,7 +713,7 @@
                         <viewLayoutGuide key="safeArea" id="HHI-ZD-XTC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_my_page_gray_tab" id="f7d-BD-BVI">
-                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kce-Tx-jAm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -760,7 +746,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRZ-IL-ZMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="2266"/>
+            <point key="canvasLocation" x="926" y="2267"/>
         </scene>
         <!--Test Table View Controller-->
         <scene sceneID="Zex-xk-EuW">
@@ -827,7 +813,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cv6-ab-PyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797.5999999999999" y="2264.039408866995"/>
+            <point key="canvasLocation" x="1710" y="2266"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jyI-Mb-RVR">
@@ -843,7 +829,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Dk2-Wn-Ii2" kind="relationship" relationship="viewControllers" id="5gy-Ke-5vS"/>
-                        <segue destination="5op-7W-qBl" kind="relationship" relationship="viewControllers" id="2FK-8g-Mhe"/>
+                        <segue destination="055-Dd-Nnx" kind="relationship" relationship="viewControllers" id="5Jj-g7-avu"/>
                         <segue destination="Vcw-tm-Au1" kind="relationship" relationship="viewControllers" id="GCf-LP-EdB"/>
                         <segue destination="gYc-RE-qMi" kind="relationship" relationship="viewControllers" id="PYG-X9-RPn"/>
                     </connections>
@@ -857,7 +843,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dk2-Wn-Ii2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="ic_search_color_tab" id="c9X-jf-rlg">
-                        <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="-8"/>
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kQc-xm-Si4">
@@ -1144,6 +1130,7 @@
                         <outlet property="checkView" destination="9g3-jG-Up1" id="75p-lK-acS"/>
                         <outlet property="datePicker" destination="1fs-kz-HaT" id="nce-Zo-4W4"/>
                         <outlet property="findView" destination="wEx-Lb-vQd" id="Nif-rm-epP"/>
+                        <outlet property="intervalTime" destination="Rp3-ah-cYE" id="2NZ-jq-hpx"/>
                         <outletCollection property="addTimeButtons" destination="7Tl-6Q-FWF" collectionClass="NSMutableArray" id="yOH-qw-Cje"/>
                         <outletCollection property="addTimeButtons" destination="QxU-3H-sum" collectionClass="NSMutableArray" id="EqT-ce-NPj"/>
                         <outletCollection property="addTimeButtons" destination="d6q-Lj-fYY" collectionClass="NSMutableArray" id="Hc0-CD-VEL"/>
@@ -1431,6 +1418,14 @@
                                                         <constraint firstAttribute="height" constant="38" id="7IM-dR-mao"/>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="165" id="7nN-EQ-ang"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -1509,6 +1504,14 @@
                                                         <constraint firstAttribute="width" priority="750" constant="165" id="hoY-kT-j27"/>
                                                         <constraint firstAttribute="height" constant="38" id="yMH-lE-nbK"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -1612,7 +1615,7 @@
                                         <rect key="frame" x="0.0" y="816" width="375" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S9P-VA-TyZ" id="bUQ-gc-ZDu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 방법 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40Y-bT-MLg">
@@ -1708,7 +1711,7 @@
                                         <rect key="frame" x="0.0" y="995" width="375" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3C3-pe-vWB" id="hds-V8-xnM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="126.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GfI-4f-ASB">
@@ -2007,7 +2010,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ppl-WU-qJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1798" y="1462"/>
+            <point key="canvasLocation" x="926" y="1462"/>
         </scene>
         <!--Test View Controller5-->
         <scene sceneID="b3p-Mt-4Bj">
@@ -2063,7 +2066,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6GK-kK-gB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2681" y="1462"/>
+            <point key="canvasLocation" x="1710" y="1462"/>
         </scene>
         <!--Reservation Status View Controller-->
         <scene sceneID="GT9-Ln-Hf9">
@@ -2315,12 +2318,20 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캐리어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zy8-GV-yPe">
                                                     <rect key="frame" x="25.333333333333332" y="685.66666666666663" width="44.333333333333343" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="qWu-vN-vlp"/>
+                                                        <constraint firstAttribute="width" constant="44.329999999999998" id="rW0-hg-OY5"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                                                     <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="물품 보관 가방" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExP-Ix-YWz">
                                                     <rect key="frame" x="25.333333333333336" y="727.66666666666663" width="97.333333333333314" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="dG9-jE-ta6"/>
+                                                        <constraint firstAttribute="width" constant="97.329999999999998" id="zlT-YN-O1l"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                                                     <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2351,13 +2362,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 3시간 51분" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lb5-US-bP7">
-                                                    <rect key="frame" x="25.333333333333329" y="790.66666666666663" width="82" height="21"/>
+                                                    <rect key="frame" x="25.333333333333329" y="790.66666666666663" width="82" height="14"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
                                                     <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4시간 기본 요금: 3500원 X 2개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmE-xl-1db">
-                                                    <rect key="frame" x="168.66666666666663" y="790.66666666666663" width="181" height="21"/>
+                                                    <rect key="frame" x="168.66666666666663" y="787" width="181" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="181" id="67g-29-HV5"/>
                                                     </constraints>
@@ -2375,6 +2386,7 @@
                                                 <constraint firstItem="chn-XI-AgF" firstAttribute="centerY" secondItem="YVM-Im-OCc" secondAttribute="centerY" id="4Bp-vK-vpB"/>
                                                 <constraint firstItem="827-6O-iKE" firstAttribute="centerY" secondItem="ExP-Ix-YWz" secondAttribute="centerY" id="4Mm-cC-Atl"/>
                                                 <constraint firstItem="v5I-rs-Hzl" firstAttribute="centerY" secondItem="chn-XI-AgF" secondAttribute="centerY" id="9Q3-2i-6ev"/>
+                                                <constraint firstAttribute="bottom" secondItem="Lb5-US-bP7" secondAttribute="bottom" constant="25" id="AR4-FN-fPt"/>
                                                 <constraint firstItem="Lb5-US-bP7" firstAttribute="leading" secondItem="xOn-LK-71D" secondAttribute="leading" id="C7o-mf-1hh"/>
                                                 <constraint firstItem="dDT-i0-fr8" firstAttribute="top" secondItem="Lec-Z0-Bpd" secondAttribute="bottom" constant="10" id="CoK-EO-gFJ"/>
                                                 <constraint firstItem="827-6O-iKE" firstAttribute="trailing" secondItem="N5n-ID-Dpa" secondAttribute="trailing" id="CrL-aB-Yp0"/>
@@ -2533,21 +2545,21 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Cr-Fg-5VF">
                                                             <rect key="frame" x="18" y="101" width="339" height="110.66666666666669"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H4i-0Z-CRH">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="H4i-0Z-CRH">
                                                                     <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="110.66666666666667"/>
                                                                     <color key="backgroundColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="H4i-0Z-CRH" secondAttribute="height" multiplier="1:1" id="HYA-TQ-wUd"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nDk-hL-NYF">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="nDk-hL-NYF">
                                                                     <rect key="frame" x="114.33333333333334" y="0.0" width="110.33333333333334" height="110.66666666666667"/>
                                                                     <color key="backgroundColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="nDk-hL-NYF" secondAttribute="height" multiplier="1:1" id="HLt-ZR-utn"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hJn-lq-Gda">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="hJn-lq-Gda">
                                                                     <rect key="frame" x="228.33333333333334" y="0.0" width="110.66666666666666" height="110.66666666666667"/>
                                                                     <color key="backgroundColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
@@ -2682,6 +2694,8 @@
                             <outlet property="delegate" destination="KYH-oo-8nq" id="M4e-ER-rpx"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="YQF-3Q-qhB"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="cancelButton" destination="1O0-JT-cFx" id="R39-9r-hFr"/>
                         <outlet property="halfBgImage" destination="82F-ta-Dak" id="xug-KU-bcR"/>
@@ -2697,7 +2711,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4tV-mb-qSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3286" y="78"/>
+            <point key="canvasLocation" x="930" y="770"/>
         </scene>
         <!--Latest Reservation View Controller-->
         <scene sceneID="EGN-pV-WVR">
@@ -3015,21 +3029,21 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3.5" translatesAutoresizingMaskIntoConstraints="NO" id="r1c-kH-uiz">
                                                             <rect key="frame" x="18" y="101" width="339" height="110.66666666666669"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7hA-oP-21M">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="7hA-oP-21M">
                                                                     <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="110.66666666666667"/>
                                                                     <color key="backgroundColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="7hA-oP-21M" secondAttribute="height" multiplier="1:1" id="VCS-iu-Z0C"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JJe-pa-vPO">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="JJe-pa-vPO">
                                                                     <rect key="frame" x="114.33333333333334" y="0.0" width="110.33333333333334" height="110.66666666666667"/>
                                                                     <color key="backgroundColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="JJe-pa-vPO" secondAttribute="height" multiplier="1:1" id="xVM-3D-3Un"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EHU-Tv-Y1Y">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="EHU-Tv-Y1Y">
                                                                     <rect key="frame" x="228.33333333333334" y="0.0" width="110.66666666666666" height="110.66666666666667"/>
                                                                     <color key="backgroundColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
@@ -3172,7 +3186,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XcO-4B-PSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="748"/>
+            <point key="canvasLocation" x="2489" y="1462"/>
         </scene>
     </scenes>
     <resources>
@@ -3183,7 +3197,6 @@
         <image name="bt_find_the_road" width="47.333332061767578" height="61"/>
         <image name="bt_reset" width="43" height="17"/>
         <image name="checkbox_empty" width="20" height="20"/>
-        <image name="icResevation" width="60" height="69"/>
         <image name="icWorking" width="44" height="18"/>
         <image name="ic_address" width="13.333333015441895" height="16"/>
         <image name="ic_bubble" width="14" height="13.666666984558105"/>
@@ -3204,6 +3217,7 @@
         <image name="ic_star" width="14" height="13.333333015441895"/>
         <image name="ic_time_fill" width="14" height="14"/>
         <image name="ic_working" width="44" height="18"/>
+        <image name="img_default_big" width="375" height="375"/>
         <image name="paper_plane" width="110.66666412353516" height="39.333332061767578"/>
         <image name="reserve_pay_rect" width="67" height="22"/>
     </resources>

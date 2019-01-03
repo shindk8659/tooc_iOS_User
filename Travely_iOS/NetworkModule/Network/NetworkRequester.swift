@@ -14,6 +14,7 @@ import SwiftyJSON
 enum NetworkError: Error {
     case failure
 }
+
 struct NetworkRequester {
     
     

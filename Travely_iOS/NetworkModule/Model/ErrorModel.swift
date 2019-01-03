@@ -13,7 +13,6 @@ struct ErrorModel : Codable {
     let message : String?
     
     enum CodingKeys: String, CodingKey {
-        
         case field = "field"
         case message = "message"
     }
