@@ -178,6 +178,22 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
         marker.icon = UIImage(named: "icPinColor.png")
+        //그라데이션 뷰
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = mapView.bounds
+        gradientLayer.colors = [
+            UIColor.white.withAlphaComponent(0).cgColor,
+            UIColor.white.withAlphaComponent(1).cgColor,
+            UIColor.white.withAlphaComponent(1).cgColor,
+            UIColor.white.withAlphaComponent(1).cgColor,
+            UIColor.white.withAlphaComponent(1).cgColor,
+            UIColor.white.withAlphaComponent(1).cgColor,
+            UIColor.white.withAlphaComponent(1).cgColor,
+            UIColor.white.withAlphaComponent(1).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
+        
+        mapView.layer.mask = gradientLayer
         
         // 변경한 뷰들 순차적으로 다시 메인뷰에 설정함
         self.view.addSubview(mapView)

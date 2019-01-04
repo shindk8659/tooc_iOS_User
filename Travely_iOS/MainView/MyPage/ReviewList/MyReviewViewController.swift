@@ -11,7 +11,7 @@ import UIKit
 class MyReviewViewController: UIViewController {
 
     @IBOutlet weak var reviewListTableView: UITableView!
-   
+    let networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,11 @@ class MyReviewViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.addBackButton("black")
+        
+        networkManager.getMyReview { [weak self](reviews, errormodel, error) in
+            print(reviews)
+            print(errormodel)
+        }
     }
   
 

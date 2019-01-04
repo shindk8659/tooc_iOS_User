@@ -101,6 +101,48 @@ class NetworkManager {
         }
     }
     
+    func getProfileInfo(completion: @escaping(ProfileModel?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        let router = APIRouter(url:"/api/users/profile", method: .get, parameters: nil ,headers:header)
+        NetworkRequester(with: router).request1 { (profile: ProfileModel?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(profile,errorModel,error)
+        }
+    }
+    
+    
+    func getMyReview(completion: @escaping([MyReviewModel?]?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        let router = APIRouter(url:"/api/review", method: .get, parameters: nil ,headers:header)
+        NetworkRequester(with: router).request3 { (review: [MyReviewModel?]?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(review,errorModel,error)
+        }
+    }
+    
+    func getFavoriteStore(completion: @escaping([FavoriteModel?]?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        let router = APIRouter(url:"/api/favorite", method: .get, parameters: nil ,headers:header)
+        NetworkRequester(with: router).request3 { (review: [FavoriteModel?]?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(review,errorModel,error)
+        }
+    }
     
     
     
