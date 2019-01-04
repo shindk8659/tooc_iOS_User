@@ -65,6 +65,9 @@
                                             <constraint firstAttribute="width" secondItem="3cl-MR-cUs" secondAttribute="height" multiplier="6:7" constant="-1.1428571428571388" id="b1A-gY-3tv"/>
                                         </constraints>
                                         <state key="normal" image="ic_resevation"/>
+                                        <connections>
+                                            <action selector="didPressReservation:" destination="dlN-FW-IhO" eventType="touchUpInside" id="dF9-qk-QMa"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icWorking" translatesAutoresizingMaskIntoConstraints="NO" id="rZm-y2-QcX">
                                         <rect key="frame" x="15" y="47" width="44" height="18"/>
@@ -613,7 +616,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qui-7r-whF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="78"/>
+            <point key="canvasLocation" x="946" y="78"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Kjk-L6-clo">
