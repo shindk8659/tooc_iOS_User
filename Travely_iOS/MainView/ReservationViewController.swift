@@ -19,7 +19,7 @@ class ReservationViewController: UITableViewController {
     var findTime: Double = 0
     
     let networkManager = NetworkManager()
-    var reservationDetail: Json4Swift_Base?
+    var reservationDetail: ReservationModel?
     
     @IBOutlet var checkAndFindView: UIView!
     @IBOutlet var dateAndTimeView: [UIView]!
