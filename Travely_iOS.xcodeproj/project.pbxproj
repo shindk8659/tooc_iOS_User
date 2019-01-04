@@ -329,9 +329,9 @@
 		52F2481621DF7A81003F6989 /* MakeReservation */ = {
 			isa = PBXGroup;
 			children = (
-				52986AFD21D28DC700601983 /* ReservationPicker.swift */,
 				D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */,
 				D12A6C9521DCB58300FB6B78 /* LatestReservationViewController.swift */,
+				52986AFD21D28DC700601983 /* ReservationPicker.swift */,
 				D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */,
 				D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */,
 				528D962521DBEF1E00FC46D1 /* EmptyReviewTableViewCell.swift */,

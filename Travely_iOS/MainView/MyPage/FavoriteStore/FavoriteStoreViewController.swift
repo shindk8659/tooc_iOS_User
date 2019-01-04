@@ -20,6 +20,7 @@ class FavoriteStoreViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        self.addBackButton("black")
     }
 
 }
@@ -38,11 +39,15 @@ extension FavoriteStoreViewController: UITableViewDataSource
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteregioncell") as! FavoriteRegionTableViewCell
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none;
+            cell.separatorInset = UIEdgeInsets.zero
             return cell
         }
             
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "favoritestorecell") as! FavoriteStoreTableViewCell
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none;
+            cell.separatorInset = UIEdgeInsets.zero
             return cell
             
         }
