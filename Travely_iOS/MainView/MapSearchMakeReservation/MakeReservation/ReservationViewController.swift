@@ -153,11 +153,12 @@ class ReservationViewController: UITableViewController {
         reservationButton.isEnabled = false
         reservationButton.backgroundColor = .darkGray
         layoutSetup()
+        self.addBackButton("white")
+        
         
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(didPressCAFView))
         self.checkAndFindView.addGestureRecognizer(tap)
-        
         self.tabBarController?.hideTabBarAnimated(hide: false)
         
         checkTime = Date(timeIntervalSinceNow: 0)
@@ -185,6 +186,8 @@ class ReservationViewController: UITableViewController {
         vc.findDate = findTime
         self.present(vc, animated: true, completion: nil)
     }
+   
+    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         

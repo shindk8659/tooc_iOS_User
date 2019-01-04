@@ -11,12 +11,28 @@ import UIKit
 class MyPageViewController: UIViewController {
 
     @IBOutlet weak var myPageTableView: UITableView!
+    
+    @IBAction func luggageStatusButtonAction(_ sender: Any) {
+        
+        
+    }
+    @IBAction func favoriteButtonAction(_ sender: Any) {
+        let favoriteVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "favoritestoreview") as! FavoriteStoreViewController
+        self.navigationController?.pushViewController(favoriteVC, animated: true)
+    }
+    
+    
+    @IBAction func myreviewButtonAction(_ sender: Any) {
+        let myreviewVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "myreviewview") as! MyReviewViewController
+        self.navigationController?.pushViewController(myreviewVC, animated: true)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.myPageTableView.delegate = self
         self.myPageTableView.dataSource = self
-        
-    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
 
