@@ -10,6 +10,7 @@ import UIKit
 
 class MyPageViewController: UIViewController {
 
+    let networkManager = NetworkManager()
     @IBOutlet weak var myPageTableView: UITableView!
     
     @IBAction func luggageStatusButtonAction(_ sender: Any) {
@@ -35,6 +36,11 @@ class MyPageViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        
+        networkManager.getProfileInfo { [weak self](profile, errorModel, error) in
+            print(profile)
+            print(errorModel)
+        }
 
         // Do any additional setup after loading the view.
     }
