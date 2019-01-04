@@ -20,6 +20,7 @@ class MyReviewViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        self.addBackButton("black")
     }
   
 
@@ -36,6 +37,8 @@ extension MyReviewViewController: UITableViewDataSource
         var frame = cell.frame
         frame.size.height = cell.contentView.frame.height
         cell.frame = frame
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none;
+        cell.separatorInset = UIEdgeInsets.zero
         return cell
     }
  

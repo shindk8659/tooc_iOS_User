@@ -24,6 +24,7 @@ extension UIImageView {
     }
 }
 
+
 extension UITabBarController {
     func hideTabBarAnimated(hide:Bool) {
         UIView.animate(withDuration: 0.3, animations: {
@@ -68,7 +69,27 @@ extension UIViewController {
         }
         return num
     }
+    func addBackButton(_ pngcolor:String?) {
+        let btnLeftMenu: UIButton = UIButton()
+        
+        var image:UIImage
+        if pngcolor == "white" {
+            image  = UIImage(named: "icBackReservation.png")!
+        }
+        else {
+            image = UIImage(named: "icBack.png")!
+        }
+        btnLeftMenu.setImage(image, for: .normal)
+        btnLeftMenu.addTarget(self, action: #selector (backButtonClick(sender:)), for: .touchUpInside)
+        let barButton = UIBarButtonItem(customView: btnLeftMenu)
+        self.navigationItem.leftBarButtonItem = barButton
+    }
+    
+    @objc func backButtonClick(sender : UIButton) {
+        self.navigationController?.popViewController(animated: true);
+    }
 }
+
 extension NetworkManager {
     //옵셔널 String을 해제하는데 값이 nil이면 ""을 반환
     func gsno(_ data: String?) -> String {

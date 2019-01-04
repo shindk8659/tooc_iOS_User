@@ -142,11 +142,12 @@ class ReservationViewController: UITableViewController {
         suitcaseCheck = false
         luggageCheck = false
         layoutSetup()
+        self.addBackButton("white")
+        
         
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(didPressCAFView))
         self.checkAndFindView.addGestureRecognizer(tap)
-        
         self.tabBarController?.hideTabBarAnimated(hide: false)
     }
     
@@ -155,6 +156,8 @@ class ReservationViewController: UITableViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "ReservationPicker") as! ReservationPicker
         self.present(vc, animated: true, completion: nil)
     }
+   
+    
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
