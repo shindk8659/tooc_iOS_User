@@ -79,7 +79,7 @@ class NetworkManager {
         }
     }
     
-    func saveReservation(storeIdx: Int, startTime: UInt64, endTime: UInt64, bagDtos: [[String: Any]], payType: String, completion: @escaping(ReservationModel?,ErrorModel?,Error?) -> Void) {
+    func saveReservation(storeIdx: Int, startTime: Int, endTime: Int, bagDtos: [[String: Any]], payType: String, completion: @escaping(ReservationModel?,ErrorModel?,Error?) -> Void) {
         let header:HTTPHeaders = [
             "jwt": gsno(jwt)
         ]

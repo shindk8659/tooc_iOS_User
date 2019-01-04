@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol tossTheTime {
+    func tossTheTime(checkDate: Date, findDate: Date, timeInterval: Int, dateSet: [String])
+}
+
 enum status: String {
     case check
     case find
@@ -53,22 +57,19 @@ class ReservationPicker: UIViewController {
     }
     
     @IBAction func didPressConfirmation(_ sender: UIButton) {
-        if let vc = self.presentingViewController as? ReservationViewController {
-            print("확인")
-            vc.checkTime = checkDate.timeIntervalSince1970
-            vc.findTime = findDate.timeIntervalSince1970
-        }
-        print(checkDate.timeIntervalSince1970, findDate.timeIntervalSince1970 )
-        
+        let dateSet: [String] = [checkViewLabel[1].text!, checkViewLabel[2].text!, findViewLabel[1].text!, findViewLabel[2].text!, intervalTime.text!]
+        self.delegate.tossTheTime(checkDate: checkDate , findDate: findDate, timeInterval: timeInterval, dateSet: dateSet)
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     
+    var delegate: tossTheTime!
     var checkDate = Date()
     var findDate = Date()
     
     var initialCheck1: Bool = true
     var initialCheck2: Bool = true
+    var timeInterval = 14400
     
     var status: status = .check {
         didSet {
@@ -114,18 +115,22 @@ class ReservationPicker: UIViewController {
     
     var date: Date = Date() {
         didSet {
-            datePicker.setDate(date, animated: true)
+            let calendar = NSCalendar.current
+            let dateComponents = calendar.dateComponents( [.year, .day, .hour, .minute], from: date)
+            let fixedDate = calendar.date(from: dateComponents)
+            
+            datePicker.setDate(fixedDate!, animated: true)
             
             switch status {
             case .check:
-                checkDate = date
+                checkDate = fixedDate!
                 
                 if findDate <= date {
                     findDate = Date.init(timeInterval: 60, since: date)
                 }
                 
             case .find:
-                findDate = date
+                findDate = fixedDate!
             }
             changeLabel()
         }
@@ -174,10 +179,12 @@ class ReservationPicker: UIViewController {
 //            datePicker.date.addTimeInterval(900-timeinterval*60)
 //        }
 //        date = datePicker.date
+    
         
-        date = Date(timeIntervalSinceNow: 0)
+        
+//        date = Date(timeIntervalSinceNow: 0)
         status = .check
-        findDate = date.addingTimeInterval(60) // 60 -> 14400
+        changeLabel()
         
 //        datePicker.backgroundColor = UIColor(displayP3Red: 76, green: 100, blue: 253, alpha: 0.5)
 //        datePicker.isOpaque = false
@@ -188,7 +195,6 @@ class ReservationPicker: UIViewController {
     func buttonLayerSetup() {
         for button in addTimeButtons {
             let color = UIColor(red: 0x70, green: 0x70, blue: 0x70)
-            print(button.frame.width, button.frame.height)
             button.layer.borderWidth = 1
             button.layer.borderColor = color.cgColor
             button.setTitleColor(color, for: .normal)
@@ -237,8 +243,9 @@ class ReservationPicker: UIViewController {
         print(components, components.date, components.hour, components.minute)
         */
         
-        let timeInterval = findDate.timeIntervalSince(checkDate)
-        let t1 = Int(timeInterval) / 60
+        let Interval = findDate.timeIntervalSince(checkDate)
+        let t1 = Int(Interval) / 60
+        timeInterval = t1
 //        if t1 >= 60 {
 //           let t2 = t1 / 60
 //           let t3 = t1 - t2*60
