@@ -14,7 +14,6 @@ import SwiftyJSON
 enum NetworkError: Error {
     case failure
 }
-
 struct NetworkRequester {
     
     
@@ -80,6 +79,7 @@ struct NetworkRequester {
                 }
         }
         
+
     }
     
     func request2<T: Codable>(completion: Completion2<T>) {
