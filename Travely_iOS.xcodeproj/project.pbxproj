@@ -49,6 +49,7 @@
 		52EDFB5E21DA2FC400A83CC0 /* StoreImageResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EDFB5B21DA2FC400A83CC0 /* StoreImageResponseDtos.swift */; };
 		52EDFB6021DA425700A83CC0 /* RestWeekResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EDFB5F21DA425700A83CC0 /* RestWeekResponseDtos.swift */; };
 		52F2481A21DF7BEE003F6989 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2481921DF7BEE003F6989 /* MyPageViewController.swift */; };
+		52F2481C21DF9A5C003F6989 /* RecentStorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2481B21DF9A5C003F6989 /* RecentStorageTableViewCell.swift */; };
 		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
 		D10DD1A021DDF9D80011282C /* ReservationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E421D9FDB500EC7D9D /* ReservationAlertViewController.swift */; };
 		D10DD1AA21DE4B700011282C /* OpenTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DD1A321DE4B6F0011282C /* OpenTime.swift */; };
@@ -118,6 +119,7 @@
 		52EDFB5B21DA2FC400A83CC0 /* StoreImageResponseDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreImageResponseDtos.swift; sourceTree = "<group>"; };
 		52EDFB5F21DA425700A83CC0 /* RestWeekResponseDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestWeekResponseDtos.swift; sourceTree = "<group>"; };
 		52F2481921DF7BEE003F6989 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		52F2481B21DF9A5C003F6989 /* RecentStorageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStorageTableViewCell.swift; sourceTree = "<group>"; };
 		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D10DD1A321DE4B6F0011282C /* OpenTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTime.swift; sourceTree = "<group>"; };
 		D10DD1A421DE4B6F0011282C /* StartTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTime.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				52F2481921DF7BEE003F6989 /* MyPageViewController.swift */,
+				52F2481B21DF9A5C003F6989 /* RecentStorageTableViewCell.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				D1ABFAE321DBC20500BEE3E0 /* CircleButton.swift in Sources */,
 				D10DD1AF21DE4B700011282C /* EndTime.swift in Sources */,
 				D10DD1AC21DE4B700011282C /* BagDtos.swift in Sources */,
+				52F2481C21DF9A5C003F6989 /* RecentStorageTableViewCell.swift in Sources */,
 				D10DD1AD21DE4B700011282C /* Store.swift in Sources */,
 				D13841ED21D9FDEE00EC7D9D /* ReservationViewController.swift in Sources */,
 				52F2481A21DF7BEE003F6989 /* MyPageViewController.swift in Sources */,
