@@ -50,6 +50,11 @@
 		52EDFB6021DA425700A83CC0 /* RestWeekResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EDFB5F21DA425700A83CC0 /* RestWeekResponseDtos.swift */; };
 		52F2481A21DF7BEE003F6989 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2481921DF7BEE003F6989 /* MyPageViewController.swift */; };
 		52F2481C21DF9A5C003F6989 /* RecentStorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2481B21DF9A5C003F6989 /* RecentStorageTableViewCell.swift */; };
+		52F2481E21DFAB25003F6989 /* FavoriteStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2481D21DFAB25003F6989 /* FavoriteStoreViewController.swift */; };
+		52F2482221DFADE4003F6989 /* FavoriteStoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2482121DFADE4003F6989 /* FavoriteStoreTableViewCell.swift */; };
+		52F2482421DFADF6003F6989 /* FavoriteRegionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2482321DFADF6003F6989 /* FavoriteRegionTableViewCell.swift */; };
+		52F2482721DFC998003F6989 /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2482621DFC998003F6989 /* MyReviewViewController.swift */; };
+		52F2482921DFCAA6003F6989 /* MyReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2482821DFCAA6003F6989 /* MyReviewTableViewCell.swift */; };
 		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
 		D10DD1A021DDF9D80011282C /* ReservationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E421D9FDB500EC7D9D /* ReservationAlertViewController.swift */; };
 		D10DD1AA21DE4B700011282C /* OpenTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DD1A321DE4B6F0011282C /* OpenTime.swift */; };
@@ -120,6 +125,11 @@
 		52EDFB5F21DA425700A83CC0 /* RestWeekResponseDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestWeekResponseDtos.swift; sourceTree = "<group>"; };
 		52F2481921DF7BEE003F6989 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		52F2481B21DF9A5C003F6989 /* RecentStorageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentStorageTableViewCell.swift; sourceTree = "<group>"; };
+		52F2481D21DFAB25003F6989 /* FavoriteStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStoreViewController.swift; sourceTree = "<group>"; };
+		52F2482121DFADE4003F6989 /* FavoriteStoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStoreTableViewCell.swift; sourceTree = "<group>"; };
+		52F2482321DFADF6003F6989 /* FavoriteRegionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRegionTableViewCell.swift; sourceTree = "<group>"; };
+		52F2482621DFC998003F6989 /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
+		52F2482821DFCAA6003F6989 /* MyReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewTableViewCell.swift; sourceTree = "<group>"; };
 		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D10DD1A321DE4B6F0011282C /* OpenTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTime.swift; sourceTree = "<group>"; };
 		D10DD1A421DE4B6F0011282C /* StartTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTime.swift; sourceTree = "<group>"; };
@@ -304,9 +314,9 @@
 		52F2481521DF7A73003F6989 /* MapSearch */ = {
 			isa = PBXGroup;
 			children = (
-				52AB75F521CF506F0002FB07 /* MainViewController.swift */,
 				52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */,
 				52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */,
+				52AB75F521CF506F0002FB07 /* MainViewController.swift */,
 				52AA4B4621DAB36B00442C9A /* ReviewHeaderTableViewCell.swift */,
 				52AB761621D0E9C40002FB07 /* SearchTableViewCell.swift */,
 				52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */,
@@ -339,10 +349,39 @@
 		52F2481821DF7BA5003F6989 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				52F2482021DFADB1003F6989 /* MyPageMain */,
+				52F2481F21DFADA2003F6989 /* FavoriteStore */,
+				52F2482521DFC951003F6989 /* ReviewList */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		52F2481F21DFADA2003F6989 /* FavoriteStore */ = {
+			isa = PBXGroup;
+			children = (
+				52F2481D21DFAB25003F6989 /* FavoriteStoreViewController.swift */,
+				52F2482121DFADE4003F6989 /* FavoriteStoreTableViewCell.swift */,
+				52F2482321DFADF6003F6989 /* FavoriteRegionTableViewCell.swift */,
+			);
+			path = FavoriteStore;
+			sourceTree = "<group>";
+		};
+		52F2482021DFADB1003F6989 /* MyPageMain */ = {
+			isa = PBXGroup;
+			children = (
 				52F2481921DF7BEE003F6989 /* MyPageViewController.swift */,
 				52F2481B21DF9A5C003F6989 /* RecentStorageTableViewCell.swift */,
 			);
-			path = MyPage;
+			path = MyPageMain;
+			sourceTree = "<group>";
+		};
+		52F2482521DFC951003F6989 /* ReviewList */ = {
+			isa = PBXGroup;
+			children = (
+				52F2482621DFC998003F6989 /* MyReviewViewController.swift */,
+				52F2482821DFCAA6003F6989 /* MyReviewTableViewCell.swift */,
+			);
+			path = ReviewList;
 			sourceTree = "<group>";
 		};
 		A047BADDF6E147C3D62774C3 /* Pods */ = {
@@ -577,6 +616,7 @@
 				52EDFB5C21DA2FC400A83CC0 /* ReviewResponseDtos.swift in Sources */,
 				D10DD1AA21DE4B700011282C /* OpenTime.swift in Sources */,
 				D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */,
+				52F2482921DFCAA6003F6989 /* MyReviewTableViewCell.swift in Sources */,
 				52AA4B4721DAB36B00442C9A /* ReviewHeaderTableViewCell.swift in Sources */,
 				D10DD1B021DE4B700011282C /* ReservationModel.swift in Sources */,
 				52AB760D21CF65ED0002FB07 /* LoginViewController.swift in Sources */,
@@ -588,6 +628,7 @@
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
+				52F2482721DFC998003F6989 /* MyReviewViewController.swift in Sources */,
 				52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */,
 				D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */,
 				52EDFB5E21DA2FC400A83CC0 /* StoreImageResponseDtos.swift in Sources */,
@@ -597,11 +638,14 @@
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
 				D13841E921D9FDB500EC7D9D /* cancelConfirmViewController.swift in Sources */,
 				52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */,
+				52F2482421DFADF6003F6989 /* FavoriteRegionTableViewCell.swift in Sources */,
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
+				52F2481E21DFAB25003F6989 /* FavoriteStoreViewController.swift in Sources */,
 				D10DD1AB21DE4B700011282C /* StartTime.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
 				D13841F121D9FDF900EC7D9D /* TestViewController5.swift in Sources */,
+				52F2482221DFADE4003F6989 /* FavoriteStoreTableViewCell.swift in Sources */,
 				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
 				D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */,
