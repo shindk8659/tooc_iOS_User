@@ -58,6 +58,8 @@ class ReservationPicker: UIViewController {
             vc.checkTime = checkDate.timeIntervalSince1970
             vc.findTime = findDate.timeIntervalSince1970
         }
+        print(checkDate.timeIntervalSince1970, findDate.timeIntervalSince1970 )
+        
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     

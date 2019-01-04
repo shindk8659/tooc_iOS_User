@@ -89,11 +89,26 @@ class ReservationViewController: UITableViewController {
 //        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
 //        vc.delegate = self
 //        self.present(vc, animated: true, completion: nil)
+        let bag = Bag()
+        bag.bagType = "CARRIER"
+        bag.bagCount = 2
         
-        let testbag = ["bagType":"CARRIER", "bagCount": 2] as [String : Any]
+        let testbag: [Bag] = [
+            bag
+        ]
         
-        networkManager.saveReservation(storeIdx: 1, startTime: UInt64(checkTime), endTime: UInt64(findTime), bagDtos: testbag, payType: payment) { [weak self] (data, errorModel, error) in
+        let testbag1:[[String : Any]] = [["bagType" : "CARRIER", "bagCount" : 2]]
+        
+        
+//        let testbag2 = Bag(bagType: "CARRIER", bagCount: 2)
+//        let jsonData = try? JSONEncoder().encode(testbag2)
+//        let json = String(data: jsonData!, encoding: String.Encoding.utf16)
+
+        
+        
+        networkManager.saveReservation(storeIdx: 1, startTime: 1546924800000, endTime: 1546942800000, bagDtos: testbag1, payType: payment) { [weak self] (data, errorModel, error) in
             if data == nil && errorModel == nil && error != nil {
+                print(errorModel, error)
                 let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
                 let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
                 alertController.addAction(cancelButton)
@@ -101,16 +116,17 @@ class ReservationViewController: UITableViewController {
             }
                 // 서버측 에러핸들러 구성후 바꿔야함
             else if data == nil && errorModel != nil && error == nil {
+                print(errorModel, error)
                 let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
                 let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
                 alertController.addAction(cancelButton)
                 self?.present(alertController, animated: true, completion: nil)
             }
             else {
-                let storyboard = UIStoryboard(name: "Alert", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
-                vc.delegate = self
-                self?.present(vc, animated: true, completion: nil)
+//                let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+//                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
+//                vc.delegate = self
+//                self?.present(vc, animated: true, completion: nil)
                 print("통신 성공")
                 print(data)
             }
@@ -126,6 +142,7 @@ class ReservationViewController: UITableViewController {
         suitcaseCheck = false
         luggageCheck = false
         layoutSetup()
+        
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(didPressCAFView))
         self.checkAndFindView.addGestureRecognizer(tap)
