@@ -928,7 +928,9 @@
                                                     </constraints>
                                                 </stackView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ysY-Gp-MRZ">
-                                                    <rect key="frame" x="38" y="6.6666666666666643" width="97" height="97"/>
+
+                                                    <rect key="frame" x="37.666666666666664" y="6.3333333333333357" width="97.333333333333343" height="97.333333333333314"/>
+
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="97" id="FOe-WP-72G"/>
@@ -937,18 +939,33 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상호명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJY-Fw-U8W">
                                                     <rect key="frame" x="145" y="6.6666666666666679" width="44.333333333333343" height="24"/>
+
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="LSl-PR-j5N"/>
+                                                    </constraints>
+
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매일 7:30 ~ 11:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GU-cq-Sgy">
                                                     <rect key="frame" x="145" y="48.666666666666664" width="90.333333333333314" height="17.999999999999993"/>
+
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="DG3-Cm-2Ve"/>
+                                                    </constraints>
+
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                     <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMF-3c-RjM">
                                                     <rect key="frame" x="145" y="30.666666666666671" width="22.333333333333343" height="18"/>
+
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="0kY-d8-fer"/>
+                                                    </constraints>
+
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                                     <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1704,6 +1721,9 @@
                                                             <integer key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="didPressSCStepper:" destination="1Jm-HX-7W1" eventType="valueChanged" id="Buz-G8-T7H"/>
+                                                    </connections>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -2049,6 +2069,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="y7c-iF-NWQ"/>
                     <connections>
+                        <outlet property="basicRate" destination="mpN-bc-rnB" id="pBd-nz-Y9S"/>
                         <outlet property="cash" destination="F98-RI-Ncs" id="cyF-1b-bob"/>
                         <outlet property="checkAndFindView" destination="LuQ-TZ-UTa" id="NwP-kT-0Ys"/>
                         <outlet property="kakaoPay" destination="XXq-NZ-CZM" id="6w8-QW-Qwy"/>
@@ -2056,8 +2077,13 @@
                         <outlet property="numberOfLuggageLabel" destination="jbs-0R-hT4" id="kfe-S5-xAa"/>
                         <outlet property="numberOfSuitcaseLabel" destination="H3C-uA-QG1" id="8bJ-Uh-SgM"/>
                         <outlet property="reservationButton" destination="biN-KF-AYb" id="hPU-Uo-vO9"/>
+                        <outlet property="totalTime" destination="z8q-mR-Roi" id="bd6-l2-UnY"/>
                         <outletCollection property="dateAndTimeView" destination="190-Dv-fRD" collectionClass="NSMutableArray" id="o0B-XL-4cX"/>
                         <outletCollection property="dateAndTimeView" destination="wkw-Ar-yYx" collectionClass="NSMutableArray" id="bDQ-XP-ZDt"/>
+                        <outletCollection property="checkLabel" destination="U0L-Lk-66B" collectionClass="NSMutableArray" id="X6y-pm-zwC"/>
+                        <outletCollection property="checkLabel" destination="KhR-7z-CFq" collectionClass="NSMutableArray" id="wHI-pp-wbY"/>
+                        <outletCollection property="findLabel" destination="rjB-cJ-ZSB" collectionClass="NSMutableArray" id="CB4-Uz-6zJ"/>
+                        <outletCollection property="findLabel" destination="5lg-08-Ijh" collectionClass="NSMutableArray" id="DYI-t8-nTl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjo-kN-6w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
