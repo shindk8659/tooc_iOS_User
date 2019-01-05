@@ -168,7 +168,7 @@ class ReservationViewController: UITableViewController {
             bagDtos.append(luggage)
         }
 
-        networkManager.saveReservation(storeIdx:8 , startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
+        networkManager.saveReservation(storeIdx:9 , startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
             
             print(data)
             print(errorModel)

@@ -20,8 +20,16 @@ class ReservationStatusViewController: UITableViewController {
     @IBOutlet var superViewOfMap: UIView!
     @IBOutlet var qrCode: UIImageView!
     
+    @IBAction func didPressRVCancel(_ sender: UIButton) {
+        networkManager.cancelReservation { [weak self] (result, errorModel, error) in
+            print(result,errorModel,error)
+        }
+    }
+    
+    
     lazy var mapView = GMSMapView()
     var initialCheck = 1
+    let networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
