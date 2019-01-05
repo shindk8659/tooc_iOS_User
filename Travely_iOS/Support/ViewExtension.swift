@@ -81,7 +81,7 @@ extension UIViewController {
         }
         btnLeftMenu.setImage(image, for: .normal)
         btnLeftMenu.addTarget(self, action: #selector (backButtonClick(sender:)), for: .touchUpInside)
-        btnLeftMenu.sizeToFit()
+        btnLeftMenu.frame = CGRect(x:0, y:0, width:image.size.width, height:image.size.height);
         let barButton = UIBarButtonItem(customView: btnLeftMenu)
         self.navigationItem.leftBarButtonItem = barButton
     }
