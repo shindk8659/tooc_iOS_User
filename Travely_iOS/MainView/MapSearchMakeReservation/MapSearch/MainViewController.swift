@@ -61,7 +61,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         vc.limit = gino(storeDetailModel?.limit)
         vc.opentime = gino(storeDetailModel?.openTime)
         vc.restWeekResponseDtos = storeDetailModel?.restWeekResponseDtos
-
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
