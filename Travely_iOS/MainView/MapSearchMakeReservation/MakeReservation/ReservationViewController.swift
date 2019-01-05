@@ -168,7 +168,12 @@ class ReservationViewController: UITableViewController {
             bagDtos.append(luggage)
         }
 
-        networkManager.saveReservation(storeIdx: gino(restWeekResponseDtos?[0]?.storeIdx), startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
+
+        //gino(restWeekResponseDtos?[0]?.storeIdx) 스토어 인덱스 빼오는 로직
+//        networkManager.saveReservation(storeIdx: gino(restWeekResponseDtos?[0]?.storeIdx), startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
+
+       networkManager.saveReservation(storeIdx:9 , startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
+
             
             print(data)
             print(errorModel)

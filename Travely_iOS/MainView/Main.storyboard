@@ -2073,7 +2073,6 @@
                             <outlet property="delegate" destination="1Jm-HX-7W1" id="fSa-uD-wKs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="y7c-iF-NWQ"/>
                     <connections>
                         <outlet property="basicRate" destination="mpN-bc-rnB" id="pBd-nz-Y9S"/>
                         <outlet property="cash" destination="F98-RI-Ncs" id="cyF-1b-bob"/>
@@ -2824,6 +2823,9 @@
                                                     <state key="normal" title="예약취소">
                                                         <color key="titleColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didPressRVCancel:" destination="KYH-oo-8nq" eventType="touchUpInside" id="Ew6-uD-BAc"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>

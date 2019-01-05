@@ -178,7 +178,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         shopDetailView.isScrollEnabled = false
         
         // shopSlideImageView
-        shopSlideImageView.backgroundColor = UIColor.gray
+        shopSlideImageView.backgroundColor = UIColor.black
         
         // main 뷰에 mapView를 추가하고 지도뷰 위에 searchView와 searchTableView shopDetailView를 추가한다
         mapView.delegate = self
@@ -248,14 +248,14 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     
     override func viewWillAppear(_ animated: Bool) {
       
-//        // Expandable tableview delegate
-//        searchTableView.expandableDelegate = self
-//        searchTableView.animation = .automatic
-//        searchTableView.separatorStyle = .singleLine
-//        searchTableView.tableFooterView = UIView()
-//        searchTableView.register(UINib(nibName: "DetailShopTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailShopTableViewCell")
-//        searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
-//        self.view.addSubview(searchTableView)
+        // Expandable tableview delegate
+        searchTableView.expandableDelegate = self
+        searchTableView.animation = .automatic
+        searchTableView.separatorStyle = .singleLine
+        searchTableView.tableFooterView = UIView()
+        searchTableView.register(UINib(nibName: "DetailShopTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailShopTableViewCell")
+        searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
+        self.view.addSubview(searchTableView)
         if self.shopDetailView.frame.origin.y == (self.navigationController?.navigationBar.frame.maxY)! {
             self.navigationController?.navigationBar.barTintColor = UIColor.white
             self.navigationController?.navigationBar.backgroundColor = UIColor.white
@@ -391,7 +391,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         if imgCollection?.count != 0 {
             for i in 0..<gino(imgCollection?.count) {
                 let imageView = UIImageView()
-                imageView.image = UIImage.init(named: "icGoogle")
+                imageView.imageFromUrl(imgCollection?[i].storeImg)
                 imageView.contentMode = .scaleAspectFit
                 //imageView.imageFromUrl(gsno(imgCollection?[i].storeImg))
                 let xCoordinate = shopSlideImageView.frame.midX + shopSlideImageView.frame.width * CGFloat(i)
