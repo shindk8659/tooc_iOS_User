@@ -22,7 +22,7 @@ class SignupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.addBackButton("black")
         initAddtarget()
         if userdata.string(forKey: "showGuide") == nil {
             userdata.setValue("yes", forKey: "showGuide")

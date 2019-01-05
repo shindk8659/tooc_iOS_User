@@ -44,6 +44,7 @@
 		52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3721D6BDCB005F48D3 /* NetworkManager.swift */; };
 		52DAACD321E0B20B00B000A7 /* AppGuidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAACD221E0B20B00B000A7 /* AppGuidePageViewController.swift */; };
 		52DAACD521E0B5A800B000A7 /* AppGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAACD421E0B5A800B000A7 /* AppGuideViewController.swift */; };
+		52DAACD721E1001E00B000A7 /* LastGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAACD621E1001E00B000A7 /* LastGuideViewController.swift */; };
 		52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */; };
 		52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */; };
 		52EDFB5C21DA2FC400A83CC0 /* ReviewResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EDFB5921DA2FC400A83CC0 /* ReviewResponseDtos.swift */; };
@@ -125,6 +126,7 @@
 		52D2BC3721D6BDCB005F48D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		52DAACD221E0B20B00B000A7 /* AppGuidePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGuidePageViewController.swift; sourceTree = "<group>"; };
 		52DAACD421E0B5A800B000A7 /* AppGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGuideViewController.swift; sourceTree = "<group>"; };
+		52DAACD621E1001E00B000A7 /* LastGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastGuideViewController.swift; sourceTree = "<group>"; };
 		52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddressTableViewCell.swift; sourceTree = "<group>"; };
 		52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReviewTableViewCell.swift; sourceTree = "<group>"; };
 		52EDFB5921DA2FC400A83CC0 /* ReviewResponseDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewResponseDtos.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				52AB760921CF65ED0002FB07 /* SignupViewController.swift */,
 				52DAACD421E0B5A800B000A7 /* AppGuideViewController.swift */,
 				52DAACD221E0B20B00B000A7 /* AppGuidePageViewController.swift */,
+				52DAACD621E1001E00B000A7 /* LastGuideViewController.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				52F2482421DFADF6003F6989 /* FavoriteRegionTableViewCell.swift in Sources */,
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
 				52F2482D21E00072003F6989 /* ProfileModel.swift in Sources */,
+				52DAACD721E1001E00B000A7 /* LastGuideViewController.swift in Sources */,
 				52F2481E21DFAB25003F6989 /* FavoriteStoreViewController.swift in Sources */,
 				52F2483421E00735003F6989 /* FavoriteModel.swift in Sources */,
 				D10DD1AB21DE4B700011282C /* StartTime.swift in Sources */,
