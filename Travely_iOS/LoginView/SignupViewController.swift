@@ -18,26 +18,32 @@ class SignupViewController: UIViewController {
     
     @IBOutlet weak var confirmButton: UIButton!
     let networkManager = NetworkManager()
+    let userdata = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initAddtarget()
+        if userdata.string(forKey: "showGuide") == nil {
+            userdata.setValue("yes", forKey: "showGuide")
+            userdata.synchronize()
+        }
     }
     
     @IBAction func confirmButtonAction(_ sender: Any) {
-        
+       
         if nameTextField.text == "" || emailTextField.text == "" || phoneTextField.text == "" || configPassTextField.text == "" || passTextField.text == "" {
-            
+
             let alertController = UIAlertController(title: "",message: "정보를 입력 해 주세요", preferredStyle: UIAlertController.Style.alert)
             let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
             alertController.addAction(cancelButton)
             self.present(alertController,animated: true,completion: nil)
         }
+
         else {
-            
+
             networkManager.signin(email: gsno(emailTextField.text), password: gsno(passTextField.text), configPassword: gsno(configPassTextField.text), name: gsno(nameTextField.text), phone: gsno(phoneTextField.text)) { [weak self](signin, errorModel, error) in
-                
+
                 // 로그인 네트워크 처리
                 if signin == nil && errorModel == nil && error != nil {
                     let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
@@ -52,15 +58,23 @@ class SignupViewController: UIViewController {
                     self?.present(alertController,animated: true,completion: nil)
                 }
                 else {
-                    let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! UITabBarController
-                    self?.present(mainView, animated: true, completion: nil)
+                    if self?.userdata.string(forKey: "showGuide") == "yes" {
+                        self?.userdata.setValue("no", forKey: "showGuide")
+                        self?.userdata.synchronize()
+
+                        let guideView = UIStoryboard(name: "LoginSignup", bundle: nil).instantiateViewController(withIdentifier: "appguideview") as! UINavigationController
+                        self?.present(guideView, animated: true, completion: nil)
+                        
+                    }
+                    else {
+                        let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! UITabBarController
+                        self?.present(mainView, animated: true, completion: nil)
+                        
+                    }
+                    
                 }
-                
-                
             }
         }
-        
-        
     }
     
     func initAddtarget(){

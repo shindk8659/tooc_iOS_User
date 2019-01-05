@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
                     self?.present(alertController,animated: true,completion: nil)
                 }
                 else if login == nil && errorModel != nil && error == nil {
-                    let alertController = UIAlertController(title: "",message: "정보를 제대로 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
+                    let alertController = UIAlertController(title: "",message: "정확한 정보를 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
                     let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
                     alertController.addAction(cancelButton)
                     self?.present(alertController,animated: true,completion: nil)
@@ -56,6 +56,8 @@ class LoginViewController: UIViewController {
                 else {
                     let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! UITabBarController
                     self?.present(mainView, animated: true, completion: nil)
+                    let guideView = UIStoryboard(name: "LoginSignup", bundle: nil).instantiateViewController(withIdentifier: "appguideview") as!UINavigationController
+                    self?.present(guideView, animated: true, completion: nil)
                 }
             }
         }
