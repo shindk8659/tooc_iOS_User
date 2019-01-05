@@ -44,38 +44,64 @@ class ReservationViewController: UITableViewController {
     
     @IBOutlet var luggageChoiceLabel: UILabel!
     
+    @IBOutlet var suitCaseStepper: CSStepper!
+    
+    @IBOutlet var luggageStepper: CSStepper!
+    
+    @IBOutlet var totalRateLabel: UILabel!
+    
     @IBAction func didPressType(_ sender: UIButton) {
         if sender.tag == 0 {
             if suitcaseCheck == false {
                 suitcaseCheck = !suitcaseCheck
                 sender.setImage(UIImage(named: "checkbox_fill"), for: .normal)
                 numberOfSuitcase = 1
+                suitCaseStepper.value = 1
                 tableView.reloadData()
             } else {
                 suitcaseCheck = !suitcaseCheck
                 sender.setImage(UIImage(named: "checkbox_empty"), for: .normal)
                 numberOfSuitcase = 0
+                rateOfSuitcase = 0
+                totalRate = rateOfSuitcase + rateOfLuggage
+                totalRateLabel.text = "\(totalRate)원"
                 tableView.reloadData()
             }
         } else {
             if luggageCheck == false {
                 luggageCheck = !luggageCheck
                 sender.setImage(UIImage(named: "checkbox_fill"), for: .normal)
-                
+                numberOfLuggage = 1
+                luggageStepper.value = 1
                 tableView.reloadData()
             } else {
                 luggageCheck = !luggageCheck
                 sender.setImage(UIImage(named: "checkbox_empty"), for: .normal)
-                
+                numberOfLuggage = 0
+                rateOfLuggage = 0
+                totalRate = rateOfSuitcase + rateOfLuggage
+                totalRateLabel.text = "\(totalRate)원"
                 tableView.reloadData()
             }
         }
     }
     
     @IBAction func didPressSCStepper(_ sender: CSStepper) {
-        sender.value = numberOfSuitcase
-        print(numberOfSuitcase)
+        numberOfSuitcase = sender.value
+        rateOfSuitcase = rate*Int(numberOfSuitcase)
+        totalRate = rateOfSuitcase + rateOfLuggage
+        numberOfSuitcaseLabel.text = "\(numberOfSuitcase)개 \(String(rateOfSuitcase))원"
+        totalRateLabel.text = "\(totalRate)원"
     }
+    
+    @IBAction func didPressLGStepper(_ sender: CSStepper) {
+        numberOfLuggage = sender.value
+        rateOfLuggage = rate*Int(numberOfLuggage)
+        totalRate = rateOfSuitcase + rateOfLuggage
+        numberOfLuggageLabel.text = "\(numberOfLuggage)개 \(String(rateOfLuggage))원"
+        totalRateLabel.text = "\(totalRate)원"
+    }
+    
     
     
     @IBAction func didPressPayment(_ sender: UIButton) {
@@ -111,15 +137,22 @@ class ReservationViewController: UITableViewController {
 //        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
 //        vc.delegate = self
 //        self.present(vc, animated: true, completion: nil)
-        let startTime = Int(checkTime.timeIntervalSince1970)
-        let endTime = Int(findTime.timeIntervalSince1970)
-        let testbag1:[[String : Any]] = [["bagType" : "CARRIER", "bagCount" : 2]]
         
-//        let testbag2 = Bag(bagType: "CARRIER", bagCount: 2)
-//        let jsonData = try? JSONEncoder().encode(testbag2)
-//        let json = String(data: jsonData!, encoding: String.Encoding.utf16)
+        let startTime = Int(checkTime.timeIntervalSince1970)*1000
+        let endTime = Int(findTime.timeIntervalSince1970)*1000
+        var bagDtos:[[String : Any]] = []
         
-        networkManager.saveReservation(storeIdx: 2, startTime: startTime, endTime: endTime, bagDtos: testbag1, payType: payment) { [weak self] (data, errorModel, error) in
+        if numberOfSuitcase != 0 {
+            let suitCase: [String : Any] = ["bagType" : "CARRIER", "bagCount" : numberOfSuitcase]
+            bagDtos.append(suitCase)
+        }
+        
+        if numberOfLuggage != 0 {
+            let luggage: [String : Any] = ["bagType" : "ETC", "bagCount" : numberOfLuggage]
+            bagDtos.append(luggage)
+        }
+
+        networkManager.saveReservation(storeIdx: 4, startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
             if data == nil && errorModel == nil && error != nil {
                 print(errorModel, error)
                 let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
@@ -134,12 +167,12 @@ class ReservationViewController: UITableViewController {
                 let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
                 alertController.addAction(cancelButton)
                 self?.present(alertController, animated: true, completion: nil)
-            }
-            else {
-//                let storyboard = UIStoryboard(name: "Alert", bundle: nil)
-//                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
-//                vc.delegate = self
-//                self?.present(vc, animated: true, completion: nil)
+            } else {
+                // ???
+                let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
+                vc.delegate = self
+                self?.present(vc, animated: true, completion: nil)
                 print("통신 성공")
                 print(data)
             }

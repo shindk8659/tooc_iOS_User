@@ -35,10 +35,9 @@ public class CSStepper: UIControl {
     
     
     @IBInspectable
-    public var value: Int = 0 {
+    public var value: Int = 1 {
         didSet {
             self.centerLabel.text = String(value)
-            
             self.sendActions(for: .valueChanged)
         }
     }
