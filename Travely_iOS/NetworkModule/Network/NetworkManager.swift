@@ -102,6 +102,20 @@ class NetworkManager {
         }
     }
     
+    func cancelReservation(completion: @escaping(ErrorModel?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+    ]
+    let router = APIRouter(url:"/api/reservation", method: .delete, parameters: nil ,headers:header)
+        NetworkRequester(with: router).request1 { (result: ErrorModel?, errorModel:ErrorModel? , error) in
+        guard error == nil else {
+            completion(nil,errorModel,error)
+        return
+        }
+        completion(result,errorModel,error)
+    }
+    }
+    
     func getProfileInfo(completion: @escaping(ProfileModel?,ErrorModel?,Error?) -> Void) {
         let header:HTTPHeaders = [
             "jwt": gsno(jwt)
