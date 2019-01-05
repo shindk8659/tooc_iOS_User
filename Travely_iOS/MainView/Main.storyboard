@@ -1663,10 +1663,23 @@
                                                         <action selector="didPressType:" destination="1Jm-HX-7W1" eventType="touchUpInside" id="yp0-VD-YVH"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRD-Fc-FrJ">
+                                                    <rect key="frame" x="284" y="23" width="66" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="66" id="GCF-pi-Fz5"/>
+                                                        <constraint firstAttribute="height" constant="18" id="gZL-tY-iv6"/>
+                                                    </constraints>
+                                                    <state key="normal" image="info_fare"/>
+                                                    <connections>
+                                                        <action selector="didPressFareInfo:" destination="1Jm-HX-7W1" eventType="touchUpInside" id="rU3-oB-Oyl"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="uRD-Fc-FrJ" firstAttribute="centerY" secondItem="Dio-ki-9Lh" secondAttribute="centerY" id="9XP-mj-KGD"/>
                                                 <constraint firstItem="jfa-d6-hAP" firstAttribute="leading" secondItem="IUL-T1-PLd" secondAttribute="trailing" constant="10" id="Cq8-3Q-RqE"/>
                                                 <constraint firstItem="jfa-d6-hAP" firstAttribute="centerY" secondItem="IUL-T1-PLd" secondAttribute="centerY" id="DLa-vc-z0l"/>
+                                                <constraint firstAttribute="trailing" secondItem="uRD-Fc-FrJ" secondAttribute="trailing" constant="25" id="Sav-fJ-jlN"/>
                                                 <constraint firstItem="Dio-ki-9Lh" firstAttribute="leading" secondItem="bdP-dQ-6n8" secondAttribute="leading" constant="24" id="Sgx-Bf-Sgo"/>
                                                 <constraint firstAttribute="bottom" secondItem="IUL-T1-PLd" secondAttribute="bottom" id="bbe-Q7-fLc"/>
                                                 <constraint firstItem="IUL-T1-PLd" firstAttribute="top" secondItem="Dio-ki-9Lh" secondAttribute="bottom" constant="19" id="hXt-SQ-WWm"/>
@@ -1906,7 +1919,7 @@
                                         <rect key="frame" x="0.0" y="816" width="375" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S9P-VA-TyZ" id="bUQ-gc-ZDu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 방법 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40Y-bT-MLg">
@@ -2002,7 +2015,7 @@
                                         <rect key="frame" x="0.0" y="995" width="375" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3C3-pe-vWB" id="hds-V8-xnM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="126.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GfI-4f-ASB">
@@ -3861,6 +3874,7 @@
         <image name="ic_time_fill" width="14" height="14"/>
         <image name="ic_working" width="44" height="18"/>
         <image name="img_default_big" width="375" height="375"/>
+        <image name="info_fare" width="66.333335876464844" height="18"/>
         <image name="mypageBtDefault" width="65" height="65"/>
         <image name="mypageBtReservation" width="68" height="23"/>
         <image name="mypageBtReview" width="68" height="23"/>

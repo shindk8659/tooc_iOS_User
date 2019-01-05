@@ -31,6 +31,7 @@ class ReservationViewController: UITableViewController {
     var rateOfSuitcase = 0
     var rateOfLuggage = 0
     var totalRate = 0
+    var serviceRate: [Int] = [4, 6, 8, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
     
     let networkManager = NetworkManager()
     var reservationDetail: ReservationModel?
@@ -58,6 +59,12 @@ class ReservationViewController: UITableViewController {
     @IBOutlet var luggageStepper: CSStepper!
     
     @IBOutlet var totalRateLabel: UILabel!
+    
+    @IBAction func didPressFareInfo(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ServiceRateAlertViewController") as! ServiceRateAlertViewController
+        self.present(vc, animated: true, completion: nil)
+    }
     
     @IBAction func didPressType(_ sender: UIButton) {
         if sender.tag == 0 {
@@ -161,30 +168,35 @@ class ReservationViewController: UITableViewController {
             bagDtos.append(luggage)
         }
 
-        networkManager.saveReservation(storeIdx: 4, startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
-            if data == nil && errorModel == nil && error != nil {
-                print(errorModel, error)
-                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                alertController.addAction(cancelButton)
-                self?.present(alertController, animated: true, completion: nil)
-            }
-                // 서버측 에러핸들러 구성후 바꿔야함
-            else if data == nil && errorModel != nil && error == nil {
-                print(errorModel, error)
-                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                alertController.addAction(cancelButton)
-                self?.present(alertController, animated: true, completion: nil)
-            } else {
-                // ???
-                let storyboard = UIStoryboard(name: "Alert", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
-                vc.delegate = self
-                self?.present(vc, animated: true, completion: nil)
-                print("통신 성공")
-                print(data)
-            }
+        networkManager.saveReservation(storeIdx:8 , startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
+            
+            print(data)
+            print(errorModel)
+            print(error)
+//            if data == nil && errorModel == nil && error != nil {
+//                print(errorModel, error)
+//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//                alertController.addAction(cancelButton)
+//                self?.present(alertController, animated: true, completion: nil)
+//            }
+//                // 서버측 에러핸들러 구성후 바꿔야함
+//            else if data == nil && errorModel != nil && error == nil {
+//                print(errorModel, error)
+//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//                alertController.addAction(cancelButton)
+//                self?.present(alertController, animated: true, completion: nil)
+//            }
+//            else {
+//                // ???
+//                let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+//                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
+//                vc.delegate = self
+//                self?.present(vc, animated: true, completion: nil)
+//                print("통신 성공")
+//                print(data)
+//            }
         }
     }
     
@@ -198,9 +210,12 @@ class ReservationViewController: UITableViewController {
         reservationButton.isEnabled = false
         reservationButton.backgroundColor = .darkGray
         layoutSetup()
-        self.addBackButton("white")
         
-        
+//        self.addBackButton("white")
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0x1F, green: 0xBF, blue: 0xC8)
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+//        hideBtn.image = UIImage.init(named: "icBack.png")
+//        hideBtn.isEnabled = true
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(didPressCAFView))
         self.checkAndFindView.addGestureRecognizer(tap)
@@ -260,7 +275,6 @@ class ReservationViewController: UITableViewController {
             view.layer.borderWidth = 1
             view.layer.borderColor = UIColor(red: 0xCB, green: 0xCB, blue: 0xCB).cgColor
         }
-        
         reservationButton.layer.cornerRadius = reservationButton.frame.width / 13
     }
     
@@ -287,11 +301,38 @@ extension ReservationViewController: changeTabProtocol,tossTheTime {
         findLabel[0].text = dateSet[2]
         findLabel[1].text = dateSet[3]
         totalTime.text = dateSet[4]
+        calculatebasicRate(interval: timeInterval)
     }
     
-//    func calculatebasicRate(interval: TimeInterval) {
-//        print(interval)
-//        //4시간, 4~6, 6~8, 8~12, 12~24, 24~36, 36~48 ... 12시간 단위
-//    }
+    func calculatebasicRate(interval: Int) {
+        for rate in serviceRate {
+//            if rate == serviceRate.last {
+//                serviceRate.append(rate + 12)
+//                print(serviceRate.last, rate)
+//            }
+            
+            // 서버 로직(알고리즘) 보기
+            if interval <= rate*3600 {
+                switch rate {
+                case 4: self.rate = 3500
+                basicRate.text = "4시간 기본 요금: 3500원"
+                case 6: self.rate = 4500
+                basicRate.text = "4~6시간 기본 요금: 4500원"
+                case 8: self.rate = 5500
+                basicRate.text = "6~8시간 기본 요금: 5500원"
+                case 12: self.rate = 6500
+                basicRate.text = "8~12시간 기본 요금: 6500원"
+                case 24: self.rate = 7500
+                basicRate.text = "12~24시간 기본 요금: 6500원"
+                default: self.rate = 7500 + 4000*(rate - 24)/12
+                basicRate.text = "\(rate-12)~\(rate)시간 기본 요금: \(self.rate)원"
+                }
+                return
+            }
+        }
+        //4시간, 4~6, 6~8, 8~12, 12~24, 24~36, 36~48 ... 12시간 단위
+    }
+    
+    
 }
 
