@@ -42,6 +42,8 @@
 		52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3221D6A89E005F48D3 /* APIRouter.swift */; };
 		52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */; };
 		52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3721D6BDCB005F48D3 /* NetworkManager.swift */; };
+		52DAACD321E0B20B00B000A7 /* AppGuidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAACD221E0B20B00B000A7 /* AppGuidePageViewController.swift */; };
+		52DAACD521E0B5A800B000A7 /* AppGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAACD421E0B5A800B000A7 /* AppGuideViewController.swift */; };
 		52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */; };
 		52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */; };
 		52EDFB5C21DA2FC400A83CC0 /* ReviewResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EDFB5921DA2FC400A83CC0 /* ReviewResponseDtos.swift */; };
@@ -121,6 +123,8 @@
 		52D2BC3221D6A89E005F48D3 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
 		52D2BC3721D6BDCB005F48D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		52DAACD221E0B20B00B000A7 /* AppGuidePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGuidePageViewController.swift; sourceTree = "<group>"; };
+		52DAACD421E0B5A800B000A7 /* AppGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGuideViewController.swift; sourceTree = "<group>"; };
 		52EA578321D3AA380012F53C /* ShopAddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAddressTableViewCell.swift; sourceTree = "<group>"; };
 		52EA578521D3AA6F0012F53C /* ShopReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReviewTableViewCell.swift; sourceTree = "<group>"; };
 		52EDFB5921DA2FC400A83CC0 /* ReviewResponseDtos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewResponseDtos.swift; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 				52AB760B21CF65ED0002FB07 /* LoginSignup.storyboard */,
 				52AB760A21CF65ED0002FB07 /* LoginViewController.swift */,
 				52AB760921CF65ED0002FB07 /* SignupViewController.swift */,
+				52DAACD421E0B5A800B000A7 /* AppGuideViewController.swift */,
+				52DAACD221E0B20B00B000A7 /* AppGuidePageViewController.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -636,6 +642,7 @@
 				52EDFB5C21DA2FC400A83CC0 /* ReviewResponseDtos.swift in Sources */,
 				D10DD1AA21DE4B700011282C /* OpenTime.swift in Sources */,
 				D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */,
+				52DAACD321E0B20B00B000A7 /* AppGuidePageViewController.swift in Sources */,
 				52F2482921DFCAA6003F6989 /* MyReviewTableViewCell.swift in Sources */,
 				52AA4B4721DAB36B00442C9A /* ReviewHeaderTableViewCell.swift in Sources */,
 				D10DD1B021DE4B700011282C /* ReservationModel.swift in Sources */,
@@ -651,6 +658,7 @@
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
 				52F2482721DFC998003F6989 /* MyReviewViewController.swift in Sources */,
 				52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */,
+				52DAACD521E0B5A800B000A7 /* AppGuideViewController.swift in Sources */,
 				D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */,
 				52EDFB5E21DA2FC400A83CC0 /* StoreImageResponseDtos.swift in Sources */,
 				D12A6C9621DCB58300FB6B78 /* LatestReservationViewController.swift in Sources */,
