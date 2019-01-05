@@ -245,7 +245,7 @@ class ReservationPicker: UIViewController {
         
         let Interval = findDate.timeIntervalSince(checkDate)
         let t1 = Int(Interval) / 60
-        timeInterval = t1
+        timeInterval = Int(Interval)
 //        if t1 >= 60 {
 //           let t2 = t1 / 60
 //           let t3 = t1 - t2*60

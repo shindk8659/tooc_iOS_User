@@ -9,12 +9,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Travely_iOS/MainView/ReservationViewController.swift"
-            timestampString = "568285422.845796"
+            filePath = "Travely_iOS/NetworkModule/Network/NetworkManager.swift"
+            timestampString = "568397095.7609791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207">
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "saveReservation(storeIdx:startTime:endTime:bagDtos:payType:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
