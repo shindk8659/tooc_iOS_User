@@ -55,6 +55,10 @@
 		52F2482421DFADF6003F6989 /* FavoriteRegionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2482321DFADF6003F6989 /* FavoriteRegionTableViewCell.swift */; };
 		52F2482721DFC998003F6989 /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2482621DFC998003F6989 /* MyReviewViewController.swift */; };
 		52F2482921DFCAA6003F6989 /* MyReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2482821DFCAA6003F6989 /* MyReviewTableViewCell.swift */; };
+		52F2482D21E00072003F6989 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2482B21E00072003F6989 /* ProfileModel.swift */; };
+		52F2483021E00398003F6989 /* StoreInfoResponseDtoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2482F21E00398003F6989 /* StoreInfoResponseDtoList.swift */; };
+		52F2483221E003AF003F6989 /* MyReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2483121E003AF003F6989 /* MyReviewModel.swift */; };
+		52F2483421E00735003F6989 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F2483321E00735003F6989 /* FavoriteModel.swift */; };
 		58F65CFF372615526B72DC45 /* Pods_Travely_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */; };
 		D10DD1A021DDF9D80011282C /* ReservationAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E421D9FDB500EC7D9D /* ReservationAlertViewController.swift */; };
 		D10DD1AA21DE4B700011282C /* OpenTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10DD1A321DE4B6F0011282C /* OpenTime.swift */; };
@@ -130,6 +134,10 @@
 		52F2482321DFADF6003F6989 /* FavoriteRegionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRegionTableViewCell.swift; sourceTree = "<group>"; };
 		52F2482621DFC998003F6989 /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		52F2482821DFCAA6003F6989 /* MyReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewTableViewCell.swift; sourceTree = "<group>"; };
+		52F2482B21E00072003F6989 /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		52F2482F21E00398003F6989 /* StoreInfoResponseDtoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreInfoResponseDtoList.swift; sourceTree = "<group>"; };
+		52F2483121E003AF003F6989 /* MyReviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyReviewModel.swift; sourceTree = "<group>"; };
+		52F2483321E00735003F6989 /* FavoriteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		C60D5008FEC6D2AA646AB039 /* Pods-Travely_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D10DD1A321DE4B6F0011282C /* OpenTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTime.swift; sourceTree = "<group>"; };
 		D10DD1A421DE4B6F0011282C /* StartTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTime.swift; sourceTree = "<group>"; };
@@ -275,6 +283,7 @@
 		52D2BC2E21D6A707005F48D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52F2482A21E0004D003F6989 /* MyPageModels */,
 				D10DD1A221DE4B4D0011282C /* ReservationModels */,
 				52BD7CF221D8DE1900EDD75D /* RegionListModels */,
 				52BD7CEB21D8D6AC00EDD75D /* StoreDetailModels */,
@@ -382,6 +391,17 @@
 				52F2482821DFCAA6003F6989 /* MyReviewTableViewCell.swift */,
 			);
 			path = ReviewList;
+			sourceTree = "<group>";
+		};
+		52F2482A21E0004D003F6989 /* MyPageModels */ = {
+			isa = PBXGroup;
+			children = (
+				52F2482B21E00072003F6989 /* ProfileModel.swift */,
+				52F2482F21E00398003F6989 /* StoreInfoResponseDtoList.swift */,
+				52F2483121E003AF003F6989 /* MyReviewModel.swift */,
+				52F2483321E00735003F6989 /* FavoriteModel.swift */,
+			);
+			path = MyPageModels;
 			sourceTree = "<group>";
 		};
 		A047BADDF6E147C3D62774C3 /* Pods */ = {
@@ -624,6 +644,7 @@
 				528D962721DBEF1E00FC46D1 /* EmptyReviewTableViewCell.swift in Sources */,
 				D1ABFAE521DBC29B00BEE3E0 /* ReservationStatusViewController.swift in Sources */,
 				5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */,
+				52F2483221E003AF003F6989 /* MyReviewModel.swift in Sources */,
 				52986AFE21D28DC700601983 /* ReservationPicker.swift in Sources */,
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
@@ -634,13 +655,16 @@
 				52EDFB5E21DA2FC400A83CC0 /* StoreImageResponseDtos.swift in Sources */,
 				D12A6C9621DCB58300FB6B78 /* LatestReservationViewController.swift in Sources */,
 				52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */,
+				52F2483021E00398003F6989 /* StoreInfoResponseDtoList.swift in Sources */,
 				52AB761821D0E9C40002FB07 /* SearchTableViewCell.swift in Sources */,
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
 				D13841E921D9FDB500EC7D9D /* cancelConfirmViewController.swift in Sources */,
 				52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */,
 				52F2482421DFADF6003F6989 /* FavoriteRegionTableViewCell.swift in Sources */,
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
+				52F2482D21E00072003F6989 /* ProfileModel.swift in Sources */,
 				52F2481E21DFAB25003F6989 /* FavoriteStoreViewController.swift in Sources */,
+				52F2483421E00735003F6989 /* FavoriteModel.swift in Sources */,
 				D10DD1AB21DE4B700011282C /* StartTime.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,

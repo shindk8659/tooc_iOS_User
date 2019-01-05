@@ -10,6 +10,7 @@ import UIKit
 
 class FavoriteStoreViewController: UIViewController {
 
+    let networkModel = NetworkManager()
     @IBOutlet weak var favoriteStoreTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,10 @@ class FavoriteStoreViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.addBackButton("black")
+        networkModel.getFavoriteStore { [weak self](favoriteStore, errorModel, error) in
+            print(favoriteStore)
+            print(errorModel)
+        }
     }
 
 }
