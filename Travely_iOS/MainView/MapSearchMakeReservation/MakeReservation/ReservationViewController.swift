@@ -10,6 +10,15 @@ import UIKit
 
 class ReservationViewController: UITableViewController {
     
+    //이전뷰에서 가져온 데이터들
+    var closeTime:Int = 0
+    var currentBag:Int = 0
+    var limit:Int = 0
+    var opentime:Int = 0
+    var week:Int = 0
+    var restWeekResponseDtos:[RestWeekResponseDtos?]?
+    
+    
     var suitcaseCheck: Bool!
     var luggageCheck: Bool!
     var numberOfSuitcase = 0
@@ -193,6 +202,9 @@ class ReservationViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //테스트프린트
+        print("테스트프린트",closeTime,currentBag,limit,opentime,restWeekResponseDtos!,week)
         suitcaseCheck = false
         luggageCheck = false
         reservationButton.isEnabled = false
