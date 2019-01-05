@@ -56,6 +56,12 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     @IBAction func didPressReservation(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
+        vc.closeTime = gino(storeDetailModel?.closeTime)
+        vc.currentBag = gino(storeDetailModel?.currentBag)
+        vc.limit = gino(storeDetailModel?.limit)
+        vc.opentime = gino(storeDetailModel?.openTime)
+        vc.restWeekResponseDtos = storeDetailModel?.restWeekResponseDtos
+
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
