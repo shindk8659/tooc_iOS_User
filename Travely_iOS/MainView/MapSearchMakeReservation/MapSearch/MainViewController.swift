@@ -54,6 +54,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     // 검색버튼을 눌렀을경우 SearchTableView를 띄우고 searchView의 생상과 navigationBar의 투명을 변경한다.
     
     @IBAction func didPressReservation(_ sender: Any) {
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
         vc.closeTime = gino(storeDetailModel?.closeTime)
@@ -61,7 +62,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         vc.limit = gino(storeDetailModel?.limit)
         vc.opentime = gino(storeDetailModel?.openTime)
         vc.restWeekResponseDtos = storeDetailModel?.restWeekResponseDtos
-
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -96,6 +96,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         
         // 네비게이션바의 투명을 해제하고 white컬러로 바꿈
         self.searchView.backgroundColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         hideBtn.image = UIImage.init(named: "icBack.png")
@@ -130,6 +131,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         }
         // 네비게이션바의 투명을 설정
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.barTintColor = UIColor.clear
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         self.navigationItem.titleView = titleImageView
         hideBtn.image = nil
@@ -176,7 +178,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         shopDetailView.isScrollEnabled = false
         
         // shopSlideImageView
-        shopSlideImageView.backgroundColor = UIColor.gray
+        shopSlideImageView.backgroundColor = UIColor.black
         
         // main 뷰에 mapView를 추가하고 지도뷰 위에 searchView와 searchTableView shopDetailView를 추가한다
         mapView.delegate = self
@@ -211,6 +213,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         //네비게이션바를 투명하게 해서 뒤에 mapView를 보여준다
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.barTintColor = UIColor.clear
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         hideBtn.image = nil
         hideBtn.isEnabled = false
@@ -253,6 +256,19 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         searchTableView.register(UINib(nibName: "DetailShopTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailShopTableViewCell")
         searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
         self.view.addSubview(searchTableView)
+        if self.shopDetailView.frame.origin.y == (self.navigationController?.navigationBar.frame.maxY)! {
+            self.navigationController?.navigationBar.barTintColor = UIColor.white
+            self.navigationController?.navigationBar.backgroundColor = UIColor.white
+            self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+            
+        }
+        else {
+            //네비게이션바를 투명하게 해서 뒤에 mapView를 보여준다
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.barTintColor = UIColor.clear
+            self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        }
+        
         
     }
 
@@ -277,6 +293,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         if self.shopDetailView.frame.origin.y == 217
         {
             //네비게이션바의 투명을 해제하고 white컬러로 바꿈
+             self.navigationController?.navigationBar.barTintColor = UIColor.white
             self.navigationController?.navigationBar.backgroundColor = UIColor.white
             self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
             self.navigationItem.titleView = titleImageView
@@ -299,6 +316,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         if self.shopDetailView.frame.origin.y == (self.navigationController?.navigationBar.frame.maxY)! && self.shopDetailView.contentOffset.y < 0 {
             //네비게이션바의 투명을 설정
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.barTintColor = UIColor.clear
             self.navigationController?.navigationBar.backgroundColor = UIColor.clear
             self.navigationItem.titleView = nil
             self.navigationItem.title = ""
@@ -373,7 +391,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         if imgCollection?.count != 0 {
             for i in 0..<gino(imgCollection?.count) {
                 let imageView = UIImageView()
-                imageView.image = UIImage.init(named: "icGoogle")
+                imageView.imageFromUrl(imgCollection?[i].storeImg)
                 imageView.contentMode = .scaleAspectFit
                 //imageView.imageFromUrl(gsno(imgCollection?[i].storeImg))
                 let xCoordinate = shopSlideImageView.frame.midX + shopSlideImageView.frame.width * CGFloat(i)
@@ -509,6 +527,7 @@ extension MainViewController: ExpandableDelegate {
             //네비게이션바의 투명을 설정
             self.searchView.backgroundColor = UIColor.clear
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.barTintColor = UIColor.clear
             self.navigationController?.navigationBar.backgroundColor = UIColor.clear
             hideBtn.image = nil
             hideBtn.isEnabled = false

@@ -1919,7 +1919,7 @@
                                         <rect key="frame" x="0.0" y="816" width="375" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S9P-VA-TyZ" id="bUQ-gc-ZDu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 방법 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40Y-bT-MLg">
@@ -2073,7 +2073,6 @@
                             <outlet property="delegate" destination="1Jm-HX-7W1" id="fSa-uD-wKs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="y7c-iF-NWQ"/>
                     <connections>
                         <outlet property="basicRate" destination="mpN-bc-rnB" id="pBd-nz-Y9S"/>
                         <outlet property="cash" destination="F98-RI-Ncs" id="cyF-1b-bob"/>
@@ -2096,13 +2095,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjo-kN-6w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationBar contentMode="scaleToFill" id="e10-1Y-ANb">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <items>
-                        <navigationItem title="Title" id="ni4-zi-wid"/>
-                    </items>
-                </navigationBar>
             </objects>
             <point key="canvasLocation" x="1881" y="78"/>
         </scene>

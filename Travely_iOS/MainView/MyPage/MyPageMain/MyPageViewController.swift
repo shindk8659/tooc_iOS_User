@@ -38,8 +38,22 @@ class MyPageViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         
         networkManager.getProfileInfo { [weak self](profile, errorModel, error) in
-            print(profile)
-            print(errorModel)
+            // 로그인 네트워크 처리
+            if profile == nil && errorModel == nil && error != nil {
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController,animated: true,completion: nil)
+            }
+            else if profile == nil && errorModel != nil && error == nil {
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController,animated: true,completion: nil)
+            }
+            else {
+                
+            }
         }
 
         // Do any additional setup after loading the view.
