@@ -1033,7 +1033,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRZ-IL-ZMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4663.1999999999998" y="2253.6945812807885"/>
+            <point key="canvasLocation" x="5250" y="2254"/>
         </scene>
         <!--Test Table View Controller-->
         <scene sceneID="Zex-xk-EuW">
@@ -1100,7 +1100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cv6-ab-PyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5388" y="2253.6945812807885"/>
+            <point key="canvasLocation" x="6030" y="2254"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jyI-Mb-RVR">
@@ -1919,7 +1919,7 @@
                                         <rect key="frame" x="0.0" y="816" width="375" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S9P-VA-TyZ" id="bUQ-gc-ZDu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 방법 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40Y-bT-MLg">
@@ -2331,7 +2331,110 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ppl-WU-qJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="1462"/>
+            <point key="canvasLocation" x="3316" y="2267"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mIY-hx-fBb">
+            <objects>
+                <viewController id="wCl-NL-9c5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BQp-aA-aKk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_ic_address" translatesAutoresizingMaskIntoConstraints="NO" id="gwM-w8-tCf">
+                                <rect key="frame" x="38" y="254" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="08s-bz-Y3K"/>
+                                    <constraint firstAttribute="height" constant="16" id="0OK-TM-3lv"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_ic_message" translatesAutoresizingMaskIntoConstraints="NO" id="4pa-vt-mTu">
+                                <rect key="frame" x="38" y="290" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="3dV-0w-20E"/>
+                                    <constraint firstAttribute="width" constant="16" id="c5w-6D-M5O"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_ic_phone" translatesAutoresizingMaskIntoConstraints="NO" id="Fu1-n0-HJl">
+                                <rect key="frame" x="38" y="326" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="85h-Jb-YFw"/>
+                                    <constraint firstAttribute="height" constant="16" id="uGA-dk-sHn"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_ic_instagram" translatesAutoresizingMaskIntoConstraints="NO" id="bDb-Bb-VTg">
+                                <rect key="frame" x="38" y="362" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="f4J-vm-3dI"/>
+                                    <constraint firstAttribute="height" constant="16" id="sZF-OM-f7k"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울시 강남구 테헤란로 47 201호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMl-VI-6fw">
+                                <rect key="frame" x="74" y="251.33333333333337" width="227" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="admin_tooc@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXQ-Te-6XI">
+                                <rect key="frame" x="74" y="287.33333333333331" width="182" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02)123-4567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJ4-Eq-DRp">
+                                <rect key="frame" x="74" y="323.33333333333331" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@tooctooc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnB-55-gJf">
+                                <rect key="frame" x="74" y="359.33333333333331" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tooc을 소개합니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWt-vA-CVr">
+                                <rect key="frame" x="38" y="170.33333333333334" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABOUT US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sti-Sj-k6W">
+                                <rect key="frame" x="38" y="114.33333333333331" width="146" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MMl-VI-6fw" firstAttribute="centerY" secondItem="gwM-w8-tCf" secondAttribute="centerY" id="5iD-jQ-swl"/>
+                            <constraint firstItem="4pa-vt-mTu" firstAttribute="leading" secondItem="Fu1-n0-HJl" secondAttribute="leading" id="6cA-cI-Ay2"/>
+                            <constraint firstItem="TJ4-Eq-DRp" firstAttribute="leading" secondItem="Fu1-n0-HJl" secondAttribute="trailing" constant="20" id="CJe-Ck-0eV"/>
+                            <constraint firstItem="4pa-vt-mTu" firstAttribute="top" secondItem="gwM-w8-tCf" secondAttribute="bottom" constant="20" id="CWI-mC-g3Q"/>
+                            <constraint firstItem="bDb-Bb-VTg" firstAttribute="centerY" secondItem="L1T-VD-eso" secondAttribute="centerY" multiplier="0.9" id="HEq-oo-9tn"/>
+                            <constraint firstItem="dnB-55-gJf" firstAttribute="centerY" secondItem="bDb-Bb-VTg" secondAttribute="centerY" id="ILv-6D-god"/>
+                            <constraint firstItem="JXQ-Te-6XI" firstAttribute="leading" secondItem="4pa-vt-mTu" secondAttribute="trailing" constant="20" id="Jj3-zu-Bof"/>
+                            <constraint firstItem="bDb-Bb-VTg" firstAttribute="leading" secondItem="L1T-VD-eso" secondAttribute="leading" constant="38" id="LP4-Ep-FMH"/>
+                            <constraint firstItem="Fu1-n0-HJl" firstAttribute="top" secondItem="4pa-vt-mTu" secondAttribute="bottom" constant="20" id="LPW-ny-8kp"/>
+                            <constraint firstItem="bDb-Bb-VTg" firstAttribute="top" secondItem="Fu1-n0-HJl" secondAttribute="bottom" constant="20" id="VuX-Lj-QAT"/>
+                            <constraint firstItem="JXQ-Te-6XI" firstAttribute="centerY" secondItem="4pa-vt-mTu" secondAttribute="centerY" id="YVW-vg-x6F"/>
+                            <constraint firstItem="gwM-w8-tCf" firstAttribute="leading" secondItem="4pa-vt-mTu" secondAttribute="leading" id="aL3-74-JNn"/>
+                            <constraint firstItem="TJ4-Eq-DRp" firstAttribute="centerY" secondItem="Fu1-n0-HJl" secondAttribute="centerY" id="gBG-xX-tH8"/>
+                            <constraint firstItem="PWt-vA-CVr" firstAttribute="top" secondItem="Sti-Sj-k6W" secondAttribute="bottom" constant="20" id="hjI-KY-T66"/>
+                            <constraint firstItem="dnB-55-gJf" firstAttribute="leading" secondItem="bDb-Bb-VTg" secondAttribute="trailing" constant="20" id="j49-ue-TN4"/>
+                            <constraint firstItem="MMl-VI-6fw" firstAttribute="leading" secondItem="gwM-w8-tCf" secondAttribute="trailing" constant="20" id="kFO-R4-cB2"/>
+                            <constraint firstItem="PWt-vA-CVr" firstAttribute="leading" secondItem="gwM-w8-tCf" secondAttribute="leading" id="lPg-km-Asc"/>
+                            <constraint firstItem="MMl-VI-6fw" firstAttribute="top" secondItem="PWt-vA-CVr" secondAttribute="bottom" constant="60" id="mFR-Es-g29"/>
+                            <constraint firstItem="Sti-Sj-k6W" firstAttribute="leading" secondItem="PWt-vA-CVr" secondAttribute="leading" id="mkB-6f-usB"/>
+                            <constraint firstItem="Fu1-n0-HJl" firstAttribute="leading" secondItem="bDb-Bb-VTg" secondAttribute="leading" id="rqH-9u-PNI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L1T-VD-eso"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEr-cU-D7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4061.5999999999999" y="2266.9950738916259"/>
         </scene>
         <!--Test View Controller5-->
         <scene sceneID="b3p-Mt-4Bj">
@@ -3510,7 +3613,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XcO-4B-PSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489" y="1462"/>
+            <point key="canvasLocation" x="929" y="1462"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5wC-hs-FXO">
@@ -3884,5 +3987,9 @@
         <image name="mypageRecentCircle" width="6" height="6"/>
         <image name="paper_plane" width="110.66666412353516" height="39.333332061767578"/>
         <image name="reserve_pay_rect" width="67" height="22"/>
+        <image name="setting_ic_address" width="16" height="16"/>
+        <image name="setting_ic_instagram" width="16" height="16"/>
+        <image name="setting_ic_message" width="16" height="16"/>
+        <image name="setting_ic_phone" width="16" height="16"/>
     </resources>
 </document>
