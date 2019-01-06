@@ -23,6 +23,7 @@ struct NetworkRequester {
     public typealias Completion2<T> = ((T?,[ErrorModel?]?, Error?) -> Void)?
     public typealias Completion3<T> = (([T?]?,ErrorModel?, Error?) -> Void)?
     public typealias Completion4<T> = (([T?]?,[ErrorModel?]?, Error?) -> Void)?
+    public typealias CompletionOtherAPI<T> = ((T?, Error?) -> Void)?
     
     init(with router: APIRouter) {
         self.api = router
@@ -180,5 +181,35 @@ struct NetworkRequester {
                     completion?(nil,nil, failError)
                 }
         }
+    }
+    
+    func requestOtherAPI<T: Codable>(completion: CompletionOtherAPI<T>) {
+        
+        manager.request(api.url, method: api.method, parameters: api.parameters, encoding: JSONEncoding.default, headers: api.headers)
+            .responseJSON { response in
+                switch response.result {
+                case .success:
+                    if let resultStatusCode = response.response?.statusCode {
+                        print("- NetworkRequester - Response statusCode : \(resultStatusCode)")
+                        let data = response.data
+                        let jsonString = JSON(data as Any).description
+                        let jsonData = jsonString.data(using: .utf8) ?? Data()
+                        do {
+                            let result = try JSONDecoder().decode(T.self, from: jsonData)
+                            completion?(result, nil)
+                        } catch {
+                            
+                        }
+                    }
+                    
+                case .failure(let failError):
+                    //네트워크 자체가 안 될 경우
+                    completion?(nil, failError)
+                    
+                    
+                }
+        }
+        
+        
     }
 }

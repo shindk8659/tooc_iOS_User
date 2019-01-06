@@ -109,6 +109,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     @IBAction func hideBtnAction(_ sender: Any) {
         
         if self.shopDetailView.frame.origin.y == (self.navigationController?.navigationBar.frame.maxY)!{
+            self.mapView.isUserInteractionEnabled = true
             self.shopDetailView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
             self.shopDetailView.isScrollEnabled = false
             UIView.animate(withDuration: 0.3, animations: {
@@ -163,7 +164,15 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         // 처음 메인에 들어왔을 경우 현재위치로 지도위치를 설정한다.
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
-        
+        var currentLocation: CLLocation
+        currentLocation = self.locationManager.location!
+        print(currentLocation.coordinate.latitude,currentLocation.coordinate.longitude)
+      
+        networkManager.getCurrentLocation(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude) { [weak self](current, err) in
+            let currentLocationString:String = "현위치 : " + (current?.results?[0].region?.area1?.name)! + " " + (current?.results?[0].region?.area2?.name)! + " " + (current?.results?[0].region?.area3?.name)!
+            self?.currentLocLB.text = currentLocationString
+        }
+       
         // shopDetailView
         shopDetailView.delegate = self
         shopDetailView.dataSource = self
@@ -268,6 +277,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     // swipe Gesture upside
     @objc func handleSimpleInfoSwipeUpGesture(recognizer: UISwipeGestureRecognizer) {
         if self.shopDetailView.frame.origin.y == self.view.frame.height-150{
+            self.mapView.isUserInteractionEnabled = false
             self.shopSimpleInfoView.isHidden = true
             UIView.animate(withDuration: 0.3, animations: {
                 self.shopDetailView.frame = CGRect(x: 0, y: 217, width: self.shopDetailView.frame.width, height: self.shopDetailView.frame.height)
@@ -325,7 +335,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             } ,completion: nil)
         }
         else if self.shopDetailView.frame.origin.y == 217{
-            
+            self.mapView.isUserInteractionEnabled = true
             UIView.animate(withDuration: 0.3, animations: {
                 self.shopDetailView.frame = CGRect(x: 0, y: self.view.frame.height-150, width: self.shopDetailView.frame.width, height: self.shopDetailView.frame.height)
                 self.shopSlideImageView.frame = CGRect(x: 0, y: -217, width: self.shopSlideImageView.frame.width, height: self.shopSlideImageView.frame.height)
@@ -390,7 +400,16 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
                 //imageView.imageFromUrl(gsno(imgCollection?[i].storeImg))
                 let xCoordinate = shopSlideImageView.frame.midX + shopSlideImageView.frame.width * CGFloat(i)
                 contentWidth += shopSlideImageView.frame.width
-                imageView.frame = CGRect(x: xCoordinate - (shopSlideImageView.frame.width/2), y: 0, width: shopSlideImageView.frame.width , height: shopSlideImageView.frame.height)
+                let imageViewHeight:CGFloat
+                print(UIScreen.main.bounds.size.height)
+                if UIScreen.main.bounds.size.height >= 812.0
+                {
+                    imageViewHeight = shopSlideImageView.frame.height - UIApplication.shared.statusBarFrame.size.height
+                    imageView.frame = CGRect(x: xCoordinate - (shopSlideImageView.frame.width/2), y: UIApplication.shared.statusBarFrame.size.height, width: shopSlideImageView.frame.width , height: imageViewHeight)
+                }
+                else {
+                    imageView.frame = CGRect(x: xCoordinate - (shopSlideImageView.frame.width/2), y: 0, width: shopSlideImageView.frame.width , height: shopSlideImageView.frame.height)
+                }
                 shopSlideImageView.addSubview(imageView)
             }
             shopSlideImageView.contentSize = CGSize(width: contentWidth, height: shopSlideImageView.frame.height)

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Cosmos
 
 protocol DeleteReviewReloadTableView {
     func didDeleteReview(onCell: MyReviewTableViewCell)
+    func ModifyReview(onCell: MyReviewTableViewCell)
 }
 class MyReviewTableViewCell: UITableViewCell {
 
@@ -19,6 +21,7 @@ class MyReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewImg: UIImageView!
     @IBOutlet weak var reviewStoreTimeLabel: UILabel!
     @IBOutlet weak var reviewTextView: UITextView!
+    @IBOutlet weak var reviewStoreStarRatingView: CosmosView!
     
     var delegate: DeleteReviewReloadTableView?
     let networkManager = NetworkManager()
@@ -26,6 +29,9 @@ class MyReviewTableViewCell: UITableViewCell {
     
     
     @IBAction func reviewModifyAction(_ sender: Any) {
+        self.delegate?.ModifyReview(onCell: self)
+        
+        
     }
     @IBAction func reviewDeleteAction(_ sender: Any) {
         self.networkManager.deleteReview(reviewIdx: reviewIdx!) { [weak self](delete, errModel, err) in

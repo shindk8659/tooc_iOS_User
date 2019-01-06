@@ -174,5 +174,39 @@ class NetworkManager {
         }
     }
     
+    func makeReview(storeIdx:Int,content:String,liked:Int, completion: @escaping(ReviewModel?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        let parameter:[String:Any] = [
+            "storeIdx":storeIdx,
+            "content":content,
+            "liked":liked
+        ]
+        let router = APIRouter(url:"/api/review/save", method: .post, parameters: parameter ,headers:header)
+        NetworkRequester(with: router).request1 { (review:ReviewModel?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(review,errorModel,error)
+        }
+    }
+    func getCurrentLocation(lat:Double,long:Double,completion: @escaping(CurrentLocation?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "Content-Type": "application/json",
+            "X-NCP-APIGW-API-KEY-ID":"icdkg66i3x",
+            "X-NCP-APIGW-API-KEY":"0R1DKbvvFk9C2vt5DfF7vA7WeHAgWmxTLXirf51e"
+        ]
+        let router = APIRouter(url:"https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords=\(long),\(lat)&sourcecrs=epsg:4326&output=json&orders=legalcode", method: .get, parameters: nil ,headers:header)
+        NetworkRequester(with: router).requestOtherAPI{ (review:CurrentLocation?, error) in
+            guard error == nil else {
+                completion(nil,error)
+                return
+            }
+            completion(review,error)
+        }
+    }
+    
     
 }
