@@ -1049,7 +1049,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yRZ-IL-ZMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5250" y="2254"/>
+            <point key="canvasLocation" x="5650" y="2267"/>
         </scene>
         <!--Test Table View Controller-->
         <scene sceneID="Zex-xk-EuW">
@@ -1116,7 +1116,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cv6-ab-PyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6030" y="2254"/>
+            <point key="canvasLocation" x="6417" y="2267"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jyI-Mb-RVR">
@@ -2443,6 +2443,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEr-cU-D7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4061.5999999999999" y="2266.9950738916259"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8jL-Uv-HVd">
+            <objects>
+                <viewController id="Lxz-dK-s3n" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c6X-Cy-wJc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_text" translatesAutoresizingMaskIntoConstraints="NO" id="EKu-eA-ngA">
+                                <rect key="frame" x="20" y="104" width="335" height="674"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EKu-eA-ngA" firstAttribute="leading" secondItem="Kcg-Yh-zEN" secondAttribute="leading" constant="20" id="WQZ-Qe-uRv"/>
+                            <constraint firstItem="Kcg-Yh-zEN" firstAttribute="trailing" secondItem="EKu-eA-ngA" secondAttribute="trailing" constant="20" id="bS5-g2-dc1"/>
+                            <constraint firstItem="EKu-eA-ngA" firstAttribute="top" secondItem="Kcg-Yh-zEN" secondAttribute="top" constant="60" id="nSE-Q6-Tv0"/>
+                            <constraint firstItem="Kcg-Yh-zEN" firstAttribute="bottom" secondItem="EKu-eA-ngA" secondAttribute="bottom" id="nlp-JU-niF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kcg-Yh-zEN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PYc-bM-LV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4825" y="2267"/>
         </scene>
         <!--Test View Controller5-->
         <scene sceneID="b3p-Mt-4Bj">
@@ -4026,5 +4052,6 @@
         <image name="setting_ic_instagram" width="16" height="16"/>
         <image name="setting_ic_message" width="16" height="16"/>
         <image name="setting_ic_phone" width="16" height="16"/>
+        <image name="setting_text" width="327" height="569"/>
     </resources>
 </document>
