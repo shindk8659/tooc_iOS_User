@@ -9,6 +9,18 @@
 /* Begin PBXBuildFile section */
 		5202615221E22F7100C3EDA7 /* MakeReviewPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615121E22F7100C3EDA7 /* MakeReviewPopupViewController.swift */; };
 		5202615421E247A600C3EDA7 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615321E247A600C3EDA7 /* ReviewModel.swift */; };
+		5202616221E271D500C3EDA7 /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615621E271D500C3EDA7 /* Code.swift */; };
+		5202616321E271D500C3EDA7 /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615721E271D500C3EDA7 /* CurrentLocation.swift */; };
+		5202616421E271D500C3EDA7 /* Coords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615821E271D500C3EDA7 /* Coords.swift */; };
+		5202616521E271D500C3EDA7 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615921E271D500C3EDA7 /* Status.swift */; };
+		5202616621E271D500C3EDA7 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615A21E271D500C3EDA7 /* Region.swift */; };
+		5202616721E271D500C3EDA7 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615B21E271D500C3EDA7 /* Results.swift */; };
+		5202616821E271D500C3EDA7 /* Area1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615C21E271D500C3EDA7 /* Area1.swift */; };
+		5202616921E271D500C3EDA7 /* Area2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615D21E271D500C3EDA7 /* Area2.swift */; };
+		5202616A21E271D500C3EDA7 /* Area4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615E21E271D500C3EDA7 /* Area4.swift */; };
+		5202616B21E271D500C3EDA7 /* Area3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615F21E271D500C3EDA7 /* Area3.swift */; };
+		5202616C21E271D500C3EDA7 /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202616021E271D500C3EDA7 /* Center.swift */; };
+		5202616D21E271D500C3EDA7 /* Area0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202616121E271D500C3EDA7 /* Area0.swift */; };
 		521FC83021D8B8D600CFD955 /* NanumSquareEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */; };
 		5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5280E34C21D7B5A800829935 /* RegionListModel.swift */; };
 		528D962421DBDC2E00FC46D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528D962321DBDC2E00FC46D1 /* Main.storyboard */; };
@@ -94,6 +106,18 @@
 		3ED19096FC49769E399B9F60 /* Pods-Travely_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5202615121E22F7100C3EDA7 /* MakeReviewPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeReviewPopupViewController.swift; sourceTree = "<group>"; };
 		5202615321E247A600C3EDA7 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
+		5202615621E271D500C3EDA7 /* Code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
+		5202615721E271D500C3EDA7 /* CurrentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentLocation.swift; sourceTree = "<group>"; };
+		5202615821E271D500C3EDA7 /* Coords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coords.swift; sourceTree = "<group>"; };
+		5202615921E271D500C3EDA7 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		5202615A21E271D500C3EDA7 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		5202615B21E271D500C3EDA7 /* Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		5202615C21E271D500C3EDA7 /* Area1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area1.swift; sourceTree = "<group>"; };
+		5202615D21E271D500C3EDA7 /* Area2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area2.swift; sourceTree = "<group>"; };
+		5202615E21E271D500C3EDA7 /* Area4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area4.swift; sourceTree = "<group>"; };
+		5202615F21E271D500C3EDA7 /* Area3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area3.swift; sourceTree = "<group>"; };
+		5202616021E271D500C3EDA7 /* Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
+		5202616121E271D500C3EDA7 /* Area0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area0.swift; sourceTree = "<group>"; };
 		521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.ttf; sourceTree = "<group>"; };
 		5280E34C21D7B5A800829935 /* RegionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionListModel.swift; sourceTree = "<group>"; };
 		528D962321DBDC2E00FC46D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -190,6 +214,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5202615521E271A600C3EDA7 /* CurrentLocation */ = {
+			isa = PBXGroup;
+			children = (
+				5202616121E271D500C3EDA7 /* Area0.swift */,
+				5202615C21E271D500C3EDA7 /* Area1.swift */,
+				5202615D21E271D500C3EDA7 /* Area2.swift */,
+				5202615F21E271D500C3EDA7 /* Area3.swift */,
+				5202615E21E271D500C3EDA7 /* Area4.swift */,
+				5202616021E271D500C3EDA7 /* Center.swift */,
+				5202615621E271D500C3EDA7 /* Code.swift */,
+				5202615821E271D500C3EDA7 /* Coords.swift */,
+				5202615721E271D500C3EDA7 /* CurrentLocation.swift */,
+				5202615A21E271D500C3EDA7 /* Region.swift */,
+				5202615B21E271D500C3EDA7 /* Results.swift */,
+				5202615921E271D500C3EDA7 /* Status.swift */,
+			);
+			path = CurrentLocation;
+			sourceTree = "<group>";
+		};
 		52AB75E721CF506F0002FB07 = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +345,7 @@
 		52D2BC2E21D6A707005F48D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5202615521E271A600C3EDA7 /* CurrentLocation */,
 				52F2482A21E0004D003F6989 /* MyPageModels */,
 				D10DD1A221DE4B4D0011282C /* ReservationModels */,
 				52BD7CF221D8DE1900EDD75D /* RegionListModels */,
@@ -661,10 +705,13 @@
 			files = (
 				52BD7CEA21D8C6D800EDD75D /* StoreListModel.swift in Sources */,
 				D10DD1B221DE826F0011282C /* bag.swift in Sources */,
+				5202616B21E271D500C3EDA7 /* Area3.swift in Sources */,
 				52EDFB5C21DA2FC400A83CC0 /* ReviewResponseDtos.swift in Sources */,
 				D10DD1AA21DE4B700011282C /* OpenTime.swift in Sources */,
+				5202616621E271D500C3EDA7 /* Region.swift in Sources */,
 				D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */,
 				52DAACD321E0B20B00B000A7 /* AppGuidePageViewController.swift in Sources */,
+				5202616421E271D500C3EDA7 /* Coords.swift in Sources */,
 				52F2482921DFCAA6003F6989 /* MyReviewTableViewCell.swift in Sources */,
 				52AA4B4721DAB36B00442C9A /* ReviewHeaderTableViewCell.swift in Sources */,
 				D10DD1B021DE4B700011282C /* ReservationModel.swift in Sources */,
@@ -679,6 +726,7 @@
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
+				5202616721E271D500C3EDA7 /* Results.swift in Sources */,
 				52F2482721DFC998003F6989 /* MyReviewViewController.swift in Sources */,
 				5202615221E22F7100C3EDA7 /* MakeReviewPopupViewController.swift in Sources */,
 				52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */,
@@ -693,12 +741,16 @@
 				52AB75F421CF506F0002FB07 /* AppDelegate.swift in Sources */,
 				D13841E921D9FDB500EC7D9D /* cancelConfirmViewController.swift in Sources */,
 				52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */,
+				5202616C21E271D500C3EDA7 /* Center.swift in Sources */,
 				52F2482421DFADF6003F6989 /* FavoriteRegionTableViewCell.swift in Sources */,
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
 				52F2482D21E00072003F6989 /* ProfileModel.swift in Sources */,
+				5202616321E271D500C3EDA7 /* CurrentLocation.swift in Sources */,
 				5202615421E247A600C3EDA7 /* ReviewModel.swift in Sources */,
 				52DAACD721E1001E00B000A7 /* LastGuideViewController.swift in Sources */,
+				5202616D21E271D500C3EDA7 /* Area0.swift in Sources */,
 				52F2481E21DFAB25003F6989 /* FavoriteStoreViewController.swift in Sources */,
+				5202616821E271D500C3EDA7 /* Area1.swift in Sources */,
 				52F2483421E00735003F6989 /* FavoriteModel.swift in Sources */,
 				D10DD1AB21DE4B700011282C /* StartTime.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
@@ -710,16 +762,20 @@
 				D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */,
 				D1912E6F21E11B73005ADBAF /* ServiceRateAlertViewController.swift in Sources */,
 				D10DD1AE21DE4B700011282C /* CloseTime.swift in Sources */,
+				5202616A21E271D500C3EDA7 /* Area4.swift in Sources */,
 				D1ABFAE321DBC20500BEE3E0 /* CircleButton.swift in Sources */,
 				D10DD1AF21DE4B700011282C /* EndTime.swift in Sources */,
 				D10DD1AC21DE4B700011282C /* BagDtos.swift in Sources */,
 				52F2481C21DF9A5C003F6989 /* RecentStorageTableViewCell.swift in Sources */,
 				D10DD1AD21DE4B700011282C /* Store.swift in Sources */,
 				D13841ED21D9FDEE00EC7D9D /* ReservationViewController.swift in Sources */,
+				5202616521E271D500C3EDA7 /* Status.swift in Sources */,
+				5202616921E271D500C3EDA7 /* Area2.swift in Sources */,
 				52F2481A21DF7BEE003F6989 /* MyPageViewController.swift in Sources */,
 				52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */,
 				52EDFB6021DA425700A83CC0 /* RestWeekResponseDtos.swift in Sources */,
 				D10DD1A021DDF9D80011282C /* ReservationAlertViewController.swift in Sources */,
+				5202616221E271D500C3EDA7 /* Code.swift in Sources */,
 				D13841E721D9FDB500EC7D9D /* CancelAlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

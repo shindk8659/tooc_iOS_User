@@ -192,6 +192,21 @@ class NetworkManager {
             completion(review,errorModel,error)
         }
     }
+    func getCurrentLocation(lat:Double,long:Double,completion: @escaping(CurrentLocation?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "Content-Type": "application/json",
+            "X-NCP-APIGW-API-KEY-ID":"icdkg66i3x",
+            "X-NCP-APIGW-API-KEY":"0R1DKbvvFk9C2vt5DfF7vA7WeHAgWmxTLXirf51e"
+        ]
+        let router = APIRouter(url:"https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords=\(long),\(lat)&sourcecrs=epsg:4326&output=json&orders=legalcode", method: .get, parameters: nil ,headers:header)
+        NetworkRequester(with: router).requestOtherAPI{ (review:CurrentLocation?, error) in
+            guard error == nil else {
+                completion(nil,error)
+                return
+            }
+            completion(review,error)
+        }
+    }
     
     
 }
