@@ -70,23 +70,20 @@ extension UIViewController {
         return num
     }
     func addBackButton(_ pngcolor:String?) {
-        let btnLeftMenu: UIButton = UIButton()
         
         var image:UIImage
         if pngcolor == "white" {
             image  = UIImage(named: "icBackReservation.png")!
+            self.navigationController?.navigationBar.tintColor = UIColor.white
         }
         else {
             image = UIImage(named: "icBack.png")!
+            self.navigationController?.navigationBar.tintColor = UIColor.black
         }
-        btnLeftMenu.setImage(image, for: .normal)
-        btnLeftMenu.addTarget(self, action: #selector (backButtonClick(sender:)), for: .touchUpInside)
-        btnLeftMenu.sizeToFit()
-        let barButton = UIBarButtonItem(customView: btnLeftMenu)
-        self.navigationItem.leftBarButtonItem = barButton
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: image, style: .done, target: self, action: #selector(backButtonClick(sender:)))
     }
     
-    @objc func backButtonClick(sender : UIButton) {
+    @objc func backButtonClick(sender : UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true);
     }
 }

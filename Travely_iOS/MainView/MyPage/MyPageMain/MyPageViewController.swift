@@ -11,7 +11,16 @@ import UIKit
 class MyPageViewController: UIViewController {
 
     let networkManager = NetworkManager()
+    var profileModel: ProfileModel?
     @IBOutlet weak var myPageTableView: UITableView!
+    //마이페이지 아울렛
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var myLuggageStatusCountLabel: UILabel!
+    @IBOutlet weak var favoriteCountLabel: UILabel!
+    @IBOutlet weak var reviewCountLabel: UILabel!
+    
+    
+    
     
     @IBAction func luggageStatusButtonAction(_ sender: Any) {
         
@@ -36,13 +45,36 @@ class MyPageViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        
-        networkManager.getProfileInfo { [weak self](profile, errorModel, error) in
-            print(profile)
-            print(errorModel)
-        }
-
+    
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        networkManager.getProfileInfo { [weak self](profile, errorModel, error) in
+            // 로그인 네트워크 처리
+            if profile == nil && errorModel == nil && error != nil {
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController,animated: true,completion: nil)
+            }
+            else if profile == nil && errorModel != nil && error == nil {
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController,animated: true,completion: nil)
+            }
+            else {
+                self?.profileModel = profile
+                self?.nameLabel.text = (profile?.name)! + "님,"
+                self?.myLuggageStatusCountLabel.text =
+                "\((profile?.myBagCount)!)"
+                self?.favoriteCountLabel.text =
+                "\((profile?.favoriteCount)!)"
+                self?.reviewCountLabel.text =
+                "\((profile?.reviewCount)!)"
+                self?.myPageTableView.reloadData()
+            }
+        }
     }
   
 
@@ -54,13 +86,18 @@ extension MyPageViewController: UITableViewDelegate
 extension MyPageViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        
+        return gino(profileModel?.storeInfoResponseDtoList?.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recentstoragecell") as! RecentStorageTableViewCell
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         cell.separatorInset = UIEdgeInsets.zero
+        cell.recentStorageNameLabel.text = self.gsno(profileModel?.storeInfoResponseDtoList?[indexPath.row].storeName)
+        cell.recentStorageAddressLabel.text = self.gsno(profileModel?.storeInfoResponseDtoList?[indexPath.row].address)
+        cell.recentStorageImg.imageFromUrl(self.gsno(profileModel?.storeInfoResponseDtoList?[indexPath.row].storeImage))
+        
         return cell
     }
     

@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         
+        emailTextField.keyboardType = .asciiCapable
+        passwordTextField.keyboardType = .asciiCapable
        
 
         // Do any additional setup after loading the view.
@@ -62,6 +64,7 @@ class LoginViewController: UIViewController {
                     self?.present(alertController,animated: true,completion: nil)
                 }
                 else {
+                    print("로그인",login?.isReserve)
                     let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! UITabBarController
                     self?.present(mainView, animated: true, completion: nil)
                     let guideView = UIStoryboard(name: "LoginSignup", bundle: nil).instantiateViewController(withIdentifier: "appguideview") as!UINavigationController

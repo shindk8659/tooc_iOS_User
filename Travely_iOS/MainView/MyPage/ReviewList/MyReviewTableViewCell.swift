@@ -8,15 +8,37 @@
 
 import UIKit
 
+protocol DeleteReviewReloadTableView {
+    func didDeleteReview(onCell: MyReviewTableViewCell)
+}
 class MyReviewTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var reviewTableView: UITextView!
+    
+    @IBOutlet weak var reviewStoreNameLabel: UILabel!
+    @IBOutlet weak var reviewStoreAddressLabel: UILabel!
+    @IBOutlet weak var reviewImg: UIImageView!
+    @IBOutlet weak var reviewStoreTimeLabel: UILabel!
+    @IBOutlet weak var reviewTextView: UITextView!
+    
+    var delegate: DeleteReviewReloadTableView?
+    let networkManager = NetworkManager()
+    var reviewIdx:Int?
+    
+    
+    @IBAction func reviewModifyAction(_ sender: Any) {
+    }
+    @IBAction func reviewDeleteAction(_ sender: Any) {
+        self.networkManager.deleteReview(reviewIdx: reviewIdx!) { [weak self](delete, errModel, err) in
+            self?.delegate?.didDeleteReview(onCell: self!)
+          
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        var frame = self.reviewTableView.frame
-        frame.size.height = self.reviewTableView.contentSize.height
-        self.reviewTableView.frame = frame
+        var frame = self.reviewTextView.frame
+        frame.size.height = self.reviewTextView.contentSize.height
+        self.reviewTextView.frame = frame
     }
     
     

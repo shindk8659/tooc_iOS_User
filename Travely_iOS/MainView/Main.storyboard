@@ -916,10 +916,16 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEm-UZ-0QZ">
                                                             <rect key="frame" x="0.0" y="0.0" width="68" height="23"/>
                                                             <state key="normal" image="mypageBtReview"/>
+                                                            <connections>
+                                                                <action selector="makeReviewButtonAction:" destination="mbT-qg-Md4" eventType="touchUpInside" id="Vd2-T7-aYk"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TM-bh-3PI">
                                                             <rect key="frame" x="74" y="0.0" width="68" height="23"/>
                                                             <state key="normal" image="mypageBtReservation"/>
+                                                            <connections>
+                                                                <action selector="makeReserveButtonAction:" destination="mbT-qg-Md4" eventType="touchUpInside" id="gYq-7E-BbR"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -981,6 +987,12 @@
                                                 <constraint firstItem="ysY-Gp-MRZ" firstAttribute="leading" secondItem="pq7-V1-q3e" secondAttribute="trailing" constant="16" id="qbZ-QL-LFv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recentStorageAddressLabel" destination="VMF-3c-RjM" id="Npp-Wr-nYE"/>
+                                            <outlet property="recentStorageImg" destination="ysY-Gp-MRZ" id="WNc-wV-BkR"/>
+                                            <outlet property="recentStorageNameLabel" destination="yJY-Fw-U8W" id="zTG-cd-8aJ"/>
+                                            <outlet property="recentStorageTimeLabel" destination="0GU-cq-Sgy" id="Jsa-5r-pxY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1000,7 +1012,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="favoriteCountLabel" destination="5a8-eg-qrW" id="dSy-21-che"/>
+                        <outlet property="myLuggageStatusCountLabel" destination="WEP-bs-bv8" id="K3h-Xl-r0C"/>
                         <outlet property="myPageTableView" destination="fta-qs-zu3" id="dEu-lq-tjM"/>
+                        <outlet property="nameLabel" destination="OSG-Uo-TGR" id="xq0-fw-qCs"/>
+                        <outlet property="reviewCountLabel" destination="plA-4A-qTN" id="OjZ-0o-eBe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJP-Mf-1es" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2073,7 +2089,6 @@
                             <outlet property="delegate" destination="1Jm-HX-7W1" id="fSa-uD-wKs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="y7c-iF-NWQ"/>
                     <connections>
                         <outlet property="basicRate" destination="mpN-bc-rnB" id="pBd-nz-Y9S"/>
                         <outlet property="cash" destination="F98-RI-Ncs" id="cyF-1b-bob"/>
@@ -2096,13 +2111,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjo-kN-6w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationBar contentMode="scaleToFill" id="e10-1Y-ANb">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <items>
-                        <navigationItem title="Title" id="ni4-zi-wid"/>
-                    </items>
-                </navigationBar>
             </objects>
             <point key="canvasLocation" x="1881" y="78"/>
         </scene>
@@ -3670,15 +3678,23 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteregioncell" rowHeight="40" id="jk6-gC-viB" customClass="FavoriteRegionTableViewCell" customModule="Travely_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="156" width="375" height="40"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteregioncell" rowHeight="59" id="jk6-gC-viB" customClass="FavoriteRegionTableViewCell" customModule="Travely_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="156" width="375" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jk6-gC-viB" id="IaE-Db-aER">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cT5-Z9-eyP">
+                                                    <rect key="frame" x="9" y="52" width="357" height="1"/>
+                                                    <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="JA1-F2-qvL"/>
+                                                        <constraint firstAttribute="width" constant="357" id="iT1-6k-YvA"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소 (2)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rOA-0U-TKc">
-                                                    <rect key="frame" x="25" y="0.0" width="54" height="24"/>
+                                                    <rect key="frame" x="25" y="19" width="54" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="qdG-fu-7YB"/>
                                                     </constraints>
@@ -3686,24 +3702,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cT5-Z9-eyP">
-                                                    <rect key="frame" x="9" y="33" width="357" height="1"/>
-                                                    <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cT5-Z9-eyP" firstAttribute="top" secondItem="rOA-0U-TKc" secondAttribute="bottom" constant="9" id="01A-e7-Zsd"/>
-                                                <constraint firstItem="rOA-0U-TKc" firstAttribute="top" secondItem="IaE-Db-aER" secondAttribute="top" id="65m-RS-LEh"/>
                                                 <constraint firstItem="rOA-0U-TKc" firstAttribute="leading" secondItem="IaE-Db-aER" secondAttribute="leading" constant="25" id="VBx-0B-Jns"/>
                                                 <constraint firstItem="cT5-Z9-eyP" firstAttribute="centerX" secondItem="IaE-Db-aER" secondAttribute="centerX" id="ZzZ-Za-D8L"/>
                                                 <constraint firstAttribute="trailing" secondItem="cT5-Z9-eyP" secondAttribute="trailing" constant="9" id="dH3-Gw-0gC"/>
                                                 <constraint firstItem="cT5-Z9-eyP" firstAttribute="leading" secondItem="IaE-Db-aER" secondAttribute="leadingMargin" constant="-6" id="eGy-qw-CJg"/>
+                                                <constraint firstItem="cT5-Z9-eyP" firstAttribute="top" secondItem="rOA-0U-TKc" secondAttribute="bottom" constant="9" id="g1i-tP-1Qg"/>
                                                 <constraint firstAttribute="bottom" secondItem="cT5-Z9-eyP" secondAttribute="bottom" constant="6" id="o6z-fw-10H"/>
+                                                <constraint firstItem="rOA-0U-TKc" firstAttribute="top" secondItem="IaE-Db-aER" secondAttribute="top" constant="19" id="v2A-Wb-7Mc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="regionNameLabel" destination="rOA-0U-TKc" id="bQM-wj-zhk"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoritestorecell" rowHeight="110" id="byp-AF-dJ4" customClass="FavoriteStoreTableViewCell" customModule="Travely_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="196" width="375" height="110"/>
+                                        <rect key="frame" x="0.0" y="215" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="byp-AF-dJ4" id="2Uy-ef-Lgl">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
@@ -3751,6 +3766,9 @@
                                                     <rect key="frame" x="292" y="76" width="68" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="mypageBtReservation"/>
+                                                    <connections>
+                                                        <action selector="makeReservationButtonAction:" destination="byp-AF-dJ4" eventType="touchUpInside" id="EuR-UL-8cp"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -3766,6 +3784,12 @@
                                                 <constraint firstItem="0Sh-XB-fv6" firstAttribute="leading" secondItem="nvH-i0-ETH" secondAttribute="trailing" constant="10" id="q6I-4N-Y4d"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="favoriteStoreAddressLabel" destination="3hd-5l-Pcc" id="eOz-Ri-U9C"/>
+                                            <outlet property="favoriteStoreImg" destination="nvH-i0-ETH" id="iX1-6n-hw3"/>
+                                            <outlet property="favoriteStoreNameLabel" destination="0Sh-XB-fv6" id="7DR-4r-eOu"/>
+                                            <outlet property="favoriteStoreTimeLabel" destination="0E5-nm-RpU" id="U56-dy-MOW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -3785,7 +3809,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnd-qq-DAz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759" y="2267"/>
+            <point key="canvasLocation" x="1757.5999999999999" y="2266.9950738916259"/>
         </scene>
         <!--나의 리뷰-->
         <scene sceneID="Qks-TA-oYQ">
@@ -3880,6 +3904,9 @@
                                                             <state key="normal" title="수정하기">
                                                                 <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="reviewModifyAction:" destination="IAe-V3-Bht" eventType="touchUpInside" id="PBt-tJ-Y6o"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKg-tc-MGl">
                                                             <rect key="frame" x="57" y="0.0" width="45" height="0.0"/>
@@ -3887,6 +3914,9 @@
                                                             <state key="normal" title="삭제하기">
                                                                 <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="reviewDeleteAction:" destination="IAe-V3-Bht" eventType="touchUpInside" id="atH-3H-dQU"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -3926,7 +3956,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="reviewTableView" destination="VlV-0x-eoA" id="qht-ht-EAK"/>
+                                            <outlet property="reviewImg" destination="JxL-1D-DDr" id="Pla-dL-rw8"/>
+                                            <outlet property="reviewStoreAddressLabel" destination="I8b-fB-na9" id="Gc8-tr-Bk7"/>
+                                            <outlet property="reviewStoreNameLabel" destination="Hnr-EW-ZtW" id="pe9-vO-KMV"/>
+                                            <outlet property="reviewStoreTimeLabel" destination="HrH-g5-TlL" id="Z3i-5G-tCw"/>
+                                            <outlet property="reviewTextView" destination="VlV-0x-eoA" id="MNS-tD-biy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3942,7 +3976,8 @@
                         <viewLayoutGuide key="safeArea" id="8HZ-sh-XE7"/>
                     </view>
                     <connections>
-                        <outlet property="reviewListTableView" destination="f0d-IH-1ql" id="gtD-sX-xZa"/>
+                        <outlet property="reviewCountLabel" destination="uVK-Q8-pZ6" id="XFR-pj-ibR"/>
+                        <outlet property="reviewListTableView" destination="f0d-IH-1ql" id="Fyt-Dq-YNB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="738-9K-u9V" userLabel="First Responder" sceneMemberID="firstResponder"/>

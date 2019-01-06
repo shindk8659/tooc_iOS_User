@@ -168,7 +168,12 @@ class ReservationViewController: UITableViewController {
             bagDtos.append(luggage)
         }
 
-        networkManager.saveReservation(storeIdx:9 , startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
+
+        //gino(restWeekResponseDtos?[0]?.storeIdx) 스토어 인덱스 빼오는 로직
+//        networkManager.saveReservation(storeIdx: gino(restWeekResponseDtos?[0]?.storeIdx), startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
+
+       networkManager.saveReservation(storeIdx:9 , startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
+
             
             print(data)
             print(errorModel)
@@ -199,7 +204,7 @@ class ReservationViewController: UITableViewController {
 //            }
         }
     }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -211,11 +216,13 @@ class ReservationViewController: UITableViewController {
         reservationButton.backgroundColor = .darkGray
         layoutSetup()
         
-//        self.addBackButton("white")
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0x1F, green: 0xBF, blue: 0xC8)
+        self.addBackButton("white")
+        self.navigationItem.title = "예약하기"
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-//        hideBtn.image = UIImage.init(named: "icBack.png")
-//        hideBtn.isEnabled = true
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 31, green: 191, blue: 200)
+        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 31, green: 191, blue: 200)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(didPressCAFView))
         self.checkAndFindView.addGestureRecognizer(tap)

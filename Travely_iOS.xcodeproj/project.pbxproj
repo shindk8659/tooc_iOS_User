@@ -39,6 +39,7 @@
 		52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */; };
 		52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */; };
 		52BDE67F21D50064008204FF /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */; };
+		52D174B821E132E300CD28ED /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D174B721E132E300CD28ED /* LoginModel.swift */; };
 		52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3221D6A89E005F48D3 /* APIRouter.swift */; };
 		52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */; };
 		52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3721D6BDCB005F48D3 /* NetworkManager.swift */; };
@@ -123,6 +124,7 @@
 		52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
 		52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
+		52D174B721E132E300CD28ED /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		52D2BC3221D6A89E005F48D3 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
 		52D2BC3721D6BDCB005F48D3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				52BD7CEB21D8D6AC00EDD75D /* StoreDetailModels */,
 				52B899CB21D7364C00D2667D /* ErrorModel.swift */,
 				52BD7CE921D8C6D800EDD75D /* StoreListModel.swift */,
+				52D174B721E132E300CD28ED /* LoginModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				52DAACD521E0B5A800B000A7 /* AppGuideViewController.swift in Sources */,
 				D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */,
 				52EDFB5E21DA2FC400A83CC0 /* StoreImageResponseDtos.swift in Sources */,
+				52D174B821E132E300CD28ED /* LoginModel.swift in Sources */,
 				D12A6C9621DCB58300FB6B78 /* LatestReservationViewController.swift in Sources */,
 				52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */,
 				52F2483021E00398003F6989 /* StoreInfoResponseDtoList.swift in Sources */,

@@ -14,7 +14,7 @@ import SwiftyJSON
 class NetworkManager {
     let jwt = UserDefaults.standard.string(forKey: "jwt")
     
-    func login(email:String, password:String, completion: @escaping (ErrorModel?,ErrorModel?,Error?) -> Void) {
+    func login(email:String, password:String, completion: @escaping (LoginModel?,ErrorModel?,Error?) -> Void) {
         
         let parameters = [
             "email": email,
@@ -22,7 +22,7 @@ class NetworkManager {
         ]
         
         let router = APIRouter(url:"/api/users/login", method: .post, parameters: parameters)
-        NetworkRequester(with: router).request1 { (login: ErrorModel?, errorModel:ErrorModel? , error) in
+        NetworkRequester(with: router).request1 { (login: LoginModel?, errorModel:ErrorModel? , error) in
             guard error == nil else {
                 completion(nil,errorModel,error)
                 return
@@ -159,6 +159,20 @@ class NetworkManager {
         }
     }
     
+    func deleteReview(reviewIdx:Int, completion: @escaping(ErrorModel?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        print(reviewIdx)
+        let router = APIRouter(url:"/api/review/delete/\(reviewIdx)", method: .delete, parameters: nil ,headers:header)
+        NetworkRequester(with: router).request1 { (review:ErrorModel?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(review,errorModel,error)
+        }
+    }
     
     
 }
