@@ -20,7 +20,6 @@ struct OpenTime : Codable {
 	let year : Int?
 
 	enum CodingKeys: String, CodingKey {
-
 		case date = "date"
 		case day = "day"
 		case hours = "hours"

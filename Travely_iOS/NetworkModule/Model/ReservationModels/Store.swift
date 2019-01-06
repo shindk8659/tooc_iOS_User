@@ -10,11 +10,11 @@ import Foundation
 struct Store : Codable {
 	let address : String?
 	let addressNumber : String?
-	let avgLike : Int?
-	let closeTime : CloseTime?
-	let latitude : Int?
-	let longitude : Int?
-	let openTime : OpenTime?
+	let avgLike : Double?
+	let closeTime : Int?
+	let latitude : Double?
+	let longitude : Double?
+	let openTime : Int?
 	let ownerName : String?
 	let storeCall : String?
 	let storeIdx : Int?
@@ -39,11 +39,11 @@ struct Store : Codable {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		address = try values.decodeIfPresent(String.self, forKey: .address)
 		addressNumber = try values.decodeIfPresent(String.self, forKey: .addressNumber)
-		avgLike = try values.decodeIfPresent(Int.self, forKey: .avgLike)
-		closeTime = try values.decodeIfPresent(CloseTime.self, forKey: .closeTime)
-		latitude = try values.decodeIfPresent(Int.self, forKey: .latitude)
-		longitude = try values.decodeIfPresent(Int.self, forKey: .longitude)
-		openTime = try values.decodeIfPresent(OpenTime.self, forKey: .openTime)
+		avgLike = try values.decodeIfPresent(Double.self, forKey: .avgLike)
+        closeTime = try values.decodeIfPresent(Int.self, forKey: .closeTime)
+		latitude = try values.decodeIfPresent(Double.self, forKey: .latitude)
+		longitude = try values.decodeIfPresent(Double.self, forKey: .longitude)
+        openTime = try values.decodeIfPresent(Int.self, forKey: .openTime)
 		ownerName = try values.decodeIfPresent(String.self, forKey: .ownerName)
 		storeCall = try values.decodeIfPresent(String.self, forKey: .storeCall)
 		storeIdx = try values.decodeIfPresent(Int.self, forKey: .storeIdx)

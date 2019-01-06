@@ -18,7 +18,6 @@ class ReservationViewController: UITableViewController {
     var week:Int = 0
     var restWeekResponseDtos:[RestWeekResponseDtos?]?
     
-    
     var suitcaseCheck: Bool!
     var luggageCheck: Bool!
     var numberOfSuitcase = 0
@@ -28,6 +27,7 @@ class ReservationViewController: UITableViewController {
     var findTime = Date()
     
     var rate = 3500
+    
     var rateOfSuitcase = 0
     var rateOfLuggage = 0
     var totalRate = 0
@@ -65,6 +65,13 @@ class ReservationViewController: UITableViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "ServiceRateAlertViewController") as! ServiceRateAlertViewController
         self.present(vc, animated: true, completion: nil)
     }
+    
+    @IBAction func didPressBagSizeInfo(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "BagSizeAlertViewController") as! BagSizeAlertViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     
     @IBAction func didPressType(_ sender: UIButton) {
         if sender.tag == 0 {
@@ -149,11 +156,8 @@ class ReservationViewController: UITableViewController {
     }
     
     @IBAction func didPressReservation(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
-//        vc.delegate = self
-//        self.present(vc, animated: true, completion: nil)
-        
+        let storeIdx = gino(restWeekResponseDtos?[0]?.storeIdx)
+        print("스토어 인덱스 \(storeIdx)")
         let startTime = Int(checkTime.timeIntervalSince1970)*1000
         let endTime = Int(findTime.timeIntervalSince1970)*1000
         var bagDtos:[[String : Any]] = []
@@ -168,40 +172,31 @@ class ReservationViewController: UITableViewController {
             bagDtos.append(luggage)
         }
 
+       networkManager.saveReservation(storeIdx:storeIdx , startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
 
-        //gino(restWeekResponseDtos?[0]?.storeIdx) 스토어 인덱스 빼오는 로직
-//        networkManager.saveReservation(storeIdx: gino(restWeekResponseDtos?[0]?.storeIdx), startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
-
-       networkManager.saveReservation(storeIdx:9 , startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
-
-            
-            print(data)
-            print(errorModel)
-            print(error)
-//            if data == nil && errorModel == nil && error != nil {
-//                print(errorModel, error)
-//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                alertController.addAction(cancelButton)
-//                self?.present(alertController, animated: true, completion: nil)
-//            }
-//                // 서버측 에러핸들러 구성후 바꿔야함
-//            else if data == nil && errorModel != nil && error == nil {
-//                print(errorModel, error)
-//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                alertController.addAction(cancelButton)
-//                self?.present(alertController, animated: true, completion: nil)
-//            }
-//            else {
-//                // ???
-//                let storyboard = UIStoryboard(name: "Alert", bundle: nil)
-//                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
-//                vc.delegate = self
-//                self?.present(vc, animated: true, completion: nil)
-//                print("통신 성공")
-//                print(data)
-//            }
+            if data == nil && errorModel == nil && error != nil {
+                print(errorModel, error)
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController, animated: true, completion: nil)
+            }
+                // 서버측 에러핸들러 구성후 바꿔야함
+            else if data == nil && errorModel != nil && error == nil {
+                print(errorModel, error)
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController, animated: true, completion: nil)
+            }
+            else {
+                print("통신 성공")
+                print(data)
+                let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
+                vc.delegate = self
+                self?.present(vc, animated: true, completion: nil)
+            }
         }
     }
    
@@ -251,6 +246,8 @@ class ReservationViewController: UITableViewController {
         vc.delegate = self
         vc.checkDate = checkTime
         vc.findDate = findTime
+        vc.openTime = Date(timeIntervalSince1970: Double(opentime/1000))
+        vc.closeTime = Date(timeIntervalSince1970: Double(closeTime/1000))
         self.present(vc, animated: true, completion: nil)
     }
    
@@ -334,6 +331,12 @@ extension ReservationViewController: changeTabProtocol,tossTheTime {
                 default: self.rate = 7500 + 4000*(rate - 24)/12
                 basicRate.text = "\(rate-12)~\(rate)시간 기본 요금: \(self.rate)원"
                 }
+                rateOfSuitcase = self.rate*Int(numberOfSuitcase)
+                rateOfLuggage = self.rate*Int(numberOfLuggage)
+                totalRate = rateOfSuitcase + rateOfLuggage
+                numberOfSuitcaseLabel.text = "\(numberOfSuitcase)개 \(String(rateOfSuitcase))원"
+                numberOfLuggageLabel.text = "\(numberOfLuggage)개 \(String(rateOfLuggage))원"
+                totalRateLabel.text = "\(totalRate)원"
                 return
             }
         }
