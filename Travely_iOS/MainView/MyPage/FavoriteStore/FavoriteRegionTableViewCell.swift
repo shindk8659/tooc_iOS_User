@@ -10,6 +10,7 @@ import UIKit
 
 class FavoriteRegionTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var regionNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

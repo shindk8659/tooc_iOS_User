@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         
+        emailTextField.keyboardType = .asciiCapable
+        passwordTextField.keyboardType = .asciiCapable
        
 
         // Do any additional setup after loading the view.

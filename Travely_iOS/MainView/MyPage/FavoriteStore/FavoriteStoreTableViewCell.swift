@@ -10,6 +10,14 @@ import UIKit
 
 class FavoriteStoreTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var favoriteStoreImg: UIImageView!
+    @IBOutlet weak var favoriteStoreNameLabel: UILabel!
+    @IBOutlet weak var favoriteStoreAddressLabel: UILabel!
+    @IBOutlet weak var favoriteStoreTimeLabel: UILabel!
+   
+    @IBAction func makeReservationButtonAction(_ sender: Any) {
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

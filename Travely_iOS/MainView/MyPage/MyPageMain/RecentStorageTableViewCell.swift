@@ -10,6 +10,15 @@ import UIKit
 
 class RecentStorageTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var recentStorageImg: UIImageView!
+    @IBOutlet weak var recentStorageNameLabel: UILabel!
+    @IBOutlet weak var recentStorageAddressLabel: UILabel!
+    @IBOutlet weak var recentStorageTimeLabel: UILabel!
+    @IBAction func makeReviewButtonAction(_ sender: Any) {
+    }
+    @IBAction func makeReserveButtonAction(_ sender: Any) {
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

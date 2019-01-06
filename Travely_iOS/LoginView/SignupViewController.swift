@@ -28,6 +28,11 @@ class SignupViewController: UIViewController {
             userdata.setValue("yes", forKey: "showGuide")
             userdata.synchronize()
         }
+        nameTextField.keyboardType = .namePhonePad
+        emailTextField.keyboardType = .asciiCapable
+        phoneTextField.keyboardType = .numberPad
+        configPassTextField.keyboardType = .asciiCapable
+        passTextField.keyboardType = .asciiCapable
     }
     
     @IBAction func confirmButtonAction(_ sender: Any) {
