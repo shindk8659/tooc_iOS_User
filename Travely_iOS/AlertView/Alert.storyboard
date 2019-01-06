@@ -510,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IK8-dd-1Zv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2206" y="89"/>
+            <point key="canvasLocation" x="2140" y="89"/>
         </scene>
         <!--Make Review Popup View Controller-->
         <scene sceneID="1dv-w3-Xa0">
@@ -675,10 +675,10 @@
             </objects>
             <point key="canvasLocation" x="716" y="813.54679802955673"/>
         </scene>
-        <!--View Controller-->
+        <!--Bag Size Alert View Controller-->
         <scene sceneID="Oym-Dm-6bT">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="LN9-9O-yGP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BagSizeAlertViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="LN9-9O-yGP" customClass="BagSizeAlertViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="113-k7-kx5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -688,7 +688,37 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yB2-8Z-qX1">
                                         <rect key="frame" x="0.0" y="0.0" width="326.33333333333331" height="62"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="물품 보관 가방 규격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FF8-kI-4g1">
+                                                <rect key="frame" x="98.000000000000014" y="19.333333333333343" width="130.33333333333337" height="23.666666666666671"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="FF8-kI-4g1" secondAttribute="height" multiplier="11:2" id="lwx-bS-QIa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jV-HO-hsr">
+                                                <rect key="frame" x="297.33333333333337" y="16" width="13" height="13"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="13" id="xTj-0T-ikL"/>
+                                                    <constraint firstAttribute="height" constant="13" id="zAE-v3-FEt"/>
+                                                </constraints>
+                                                <state key="normal" image="pay_popup_x"/>
+                                                <connections>
+                                                    <action selector="didPressCancel:" destination="LN9-9O-yGP" eventType="touchUpInside" id="DpH-dR-f6N"/>
+                                                    <action selector="didPressCancel:" destination="1bm-ji-mWw" eventType="touchUpInside" id="ZWB-qL-ghM"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="FF8-kI-4g1" firstAttribute="centerX" secondItem="yB2-8Z-qX1" secondAttribute="centerX" id="QVO-j4-ZjZ"/>
+                                            <constraint firstItem="FF8-kI-4g1" firstAttribute="centerY" secondItem="yB2-8Z-qX1" secondAttribute="centerY" id="TX6-oe-nHA"/>
+                                            <constraint firstAttribute="trailing" secondItem="9jV-HO-hsr" secondAttribute="trailing" constant="16" id="Vfi-Fj-NGl"/>
+                                            <constraint firstItem="FF8-kI-4g1" firstAttribute="width" secondItem="yB2-8Z-qX1" secondAttribute="width" multiplier="0.4" id="YOI-CY-Chj"/>
+                                            <constraint firstItem="9jV-HO-hsr" firstAttribute="top" secondItem="yB2-8Z-qX1" secondAttribute="top" constant="16" id="oHm-sR-TLc"/>
+                                        </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_bagsize" translatesAutoresizingMaskIntoConstraints="NO" id="rwv-EZ-npn">
                                         <rect key="frame" x="0.0" y="62" width="326.33333333333331" height="314"/>
@@ -716,6 +746,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3L2-Qo-db5"/>
                     </view>
+                    <connections>
+                        <outlet property="popupView" destination="t4g-3Q-hem" id="qlH-jn-oNM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKn-qt-uEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

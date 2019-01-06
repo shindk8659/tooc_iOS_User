@@ -93,7 +93,6 @@ class NetworkManager {
         ]
         let router = APIRouter(url:"/api/reservation", method: .post, parameters: param ,headers:header)
         NetworkRequester(with: router).request1 { (reservationDetail: ReservationModel?, errorModel:ErrorModel? , error) in
-            
             guard error == nil else {
                 completion(nil,errorModel,error)
                 return
@@ -101,6 +100,7 @@ class NetworkManager {
             completion(reservationDetail,errorModel,error)
         }
     }
+    
     
     func cancelReservation(completion: @escaping(ErrorModel?,ErrorModel?,Error?) -> Void) {
         let header:HTTPHeaders = [

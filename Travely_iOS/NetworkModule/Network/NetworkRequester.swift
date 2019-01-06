@@ -66,16 +66,14 @@ struct NetworkRequester {
                         do {
                             let result = try JSONDecoder().decode(T.self, from: jsonData)
                             completion?(result, nil, nil)
-                        } catch {
-                            
+                        } catch let catchError{
+                            print("캐치에러 \(catchError)")
                         }
                     }
                     
                 case .failure(let failError):
                     //네트워크 자체가 안 될 경우
                     completion?(nil,nil, failError)
-                    
-                    
                 }
         }
         
@@ -119,8 +117,8 @@ struct NetworkRequester {
                         do {
                             let result = try JSONDecoder().decode(T.self, from: jsonData)
                             completion?(result, nil, nil)
-                        } catch {
-                            
+                        } catch let catchError{
+                            print("캐치에러 \(catchError)")
                         }
                     }
                     
@@ -172,21 +170,15 @@ struct NetworkRequester {
                         do {
                             let result = try JSONDecoder().decode([T].self, from: jsonData)
                             completion?(result, nil, nil)
-                        } catch {
-                            
+                        } catch let catchError {
+                            print("캐치에러 \(catchError)")
                         }
                     }
                     
                 case .failure(let failError):
                     //네트워크 자체가 안 될 경우
                     completion?(nil,nil, failError)
-                    
-                    
                 }
         }
-        
     }
-    
-    
-    
 }
