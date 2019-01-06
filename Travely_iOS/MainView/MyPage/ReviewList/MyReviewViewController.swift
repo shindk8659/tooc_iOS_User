@@ -72,7 +72,6 @@ extension MyReviewViewController: UITableViewDelegate
 extension MyReviewViewController: DeleteReviewReloadTableView
 {
     func didDeleteReview(onCell: MyReviewTableViewCell) {
-        print("델리게이트")
         getMyReview()
     }
 }

@@ -1,5 +1,6 @@
 PODS:
-  - Alamofire (4.7.3)
+  - Alamofire (4.8.0)
+  - Cosmos (18.0.1)
   - ExpandableCell (1.2.8)
   - GoogleMaps (2.7.0):
     - GoogleMaps/Maps (= 2.7.0)
@@ -7,34 +8,41 @@ PODS:
   - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
   - IQKeyboardManagerSwift (6.2.0)
-  - Kingfisher (4.10.0)
+  - Kingfisher (5.0.1)
   - SwiftyJSON (4.2.0)
+  - "UITextView+Placeholder (1.2.1)"
 
 DEPENDENCIES:
   - Alamofire
+  - Cosmos (~> 18.0)
   - ExpandableCell
   - GoogleMaps
   - IQKeyboardManagerSwift
   - Kingfisher
   - SwiftyJSON
+  - "UITextView+Placeholder"
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Cosmos
     - ExpandableCell
     - GoogleMaps
     - IQKeyboardManagerSwift
     - Kingfisher
     - SwiftyJSON
+    - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Cosmos: 7dfaa3f52584ca5f94ab74b5c2e264019cc9f7f5
   ExpandableCell: a79824c52c1a30218aafcbfcdc42a0c3585a3b77
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
-  Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
+  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  "UITextView+Placeholder": 0c3efd97f37ea64bde7f34cc6e90fe02e87b3909
 
-PODFILE CHECKSUM: f66bc374d655e156b325b5a2095cd495e96406bc
+PODFILE CHECKSUM: 9263dcfa158c5c09d2a047fed0f0fe4afe600e4e
 
 COCOAPODS: 1.5.3
