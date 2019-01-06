@@ -8,15 +8,21 @@
 
 import UIKit
 
-class MyReviewViewController: UIViewController {
+class MyReviewViewController: UIViewController ,ReloadViwDelegate{
+    func reloadView() {
+        self.getMyReview()
+    }
+    
     
     @IBOutlet weak var reviewCountLabel: UILabel!
     @IBOutlet weak var reviewListTableView: UITableView!
     let networkManager = NetworkManager()
     var myReviewModel: [MyReviewModel?]?
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.reviewListTableView.delegate = self
         self.reviewListTableView.dataSource = self
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -29,10 +35,27 @@ class MyReviewViewController: UIViewController {
     }
     func getMyReview()
     {
-        networkManager.getMyReview { [weak self](reviews, errormodel, error) in
-            self?.myReviewModel = reviews
-            self?.reviewCountLabel.text = "후기 \((reviews?.count)!)개"
-            self?.reviewListTableView.reloadData()
+        networkManager.getMyReview { [weak self](reviews, errorModel, error) in
+            
+            // 리뷰 
+            if reviews == nil && errorModel == nil && error != nil {
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController,animated: true,completion: nil)
+            }
+            else if reviews == nil && errorModel != nil && error == nil {
+                let alertController = UIAlertController(title: "",message: "정확한 정보를 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController,animated: true,completion: nil)
+            }
+            else {
+                self?.myReviewModel = reviews
+                self?.reviewCountLabel.text = "후기 \((reviews?.count)!)개"
+                self?.reviewListTableView.reloadData()
+               
+            }
             
         }
         
@@ -60,6 +83,7 @@ extension MyReviewViewController: UITableViewDataSource
         cell.reviewStoreAddressLabel.text = self.myReviewModel?[indexPath.row]?.address
         cell.reviewImg.imageFromUrl(self.myReviewModel?[indexPath.row]?.storeImgUrl)
         cell.reviewTextView.text = self.myReviewModel?[indexPath.row]?.content
+        cell.reviewStoreStarRatingView.rating = Double((self.myReviewModel?[indexPath.row]?.liked)!)
         return cell
     }
  
@@ -71,6 +95,18 @@ extension MyReviewViewController: UITableViewDelegate
 }
 extension MyReviewViewController: DeleteReviewReloadTableView
 {
+    func ModifyReview(onCell: MyReviewTableViewCell) {
+        let indexPath = self.reviewListTableView.indexPath(for: onCell)
+        let index :Int = gino(indexPath?.row)
+        let modifyReview = UIStoryboard.init(name: "Alert", bundle: nil).instantiateViewController(withIdentifier: "makereview") as! MakeReviewPopupViewController
+        modifyReview.delegate = self
+        modifyReview.storeIdx = gino(self.myReviewModel?[index]?.storeIdx)
+        modifyReview.content = gsno(self.myReviewModel?[index]?.content)
+        modifyReview.liked = Double(gino(self.myReviewModel?[index]?.liked))
+        self.present(modifyReview, animated: true, completion: nil)
+        
+    }
+    
     func didDeleteReview(onCell: MyReviewTableViewCell) {
         getMyReview()
     }

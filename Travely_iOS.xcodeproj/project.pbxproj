@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5202615221E22F7100C3EDA7 /* MakeReviewPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615121E22F7100C3EDA7 /* MakeReviewPopupViewController.swift */; };
+		5202615421E247A600C3EDA7 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615321E247A600C3EDA7 /* ReviewModel.swift */; };
 		521FC83021D8B8D600CFD955 /* NanumSquareEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */; };
 		5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5280E34C21D7B5A800829935 /* RegionListModel.swift */; };
 		528D962421DBDC2E00FC46D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528D962321DBDC2E00FC46D1 /* Main.storyboard */; };
@@ -92,6 +93,7 @@
 /* Begin PBXFileReference section */
 		3ED19096FC49769E399B9F60 /* Pods-Travely_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		5202615121E22F7100C3EDA7 /* MakeReviewPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeReviewPopupViewController.swift; sourceTree = "<group>"; };
+		5202615321E247A600C3EDA7 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.ttf; sourceTree = "<group>"; };
 		5280E34C21D7B5A800829935 /* RegionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionListModel.swift; sourceTree = "<group>"; };
 		528D962321DBDC2E00FC46D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				52B899CB21D7364C00D2667D /* ErrorModel.swift */,
 				52BD7CE921D8C6D800EDD75D /* StoreListModel.swift */,
 				52D174B721E132E300CD28ED /* LoginModel.swift */,
+				5202615321E247A600C3EDA7 /* ReviewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 				52F2482421DFADF6003F6989 /* FavoriteRegionTableViewCell.swift in Sources */,
 				52EA578421D3AA380012F53C /* ShopAddressTableViewCell.swift in Sources */,
 				52F2482D21E00072003F6989 /* ProfileModel.swift in Sources */,
+				5202615421E247A600C3EDA7 /* ReviewModel.swift in Sources */,
 				52DAACD721E1001E00B000A7 /* LastGuideViewController.swift in Sources */,
 				52F2481E21DFAB25003F6989 /* FavoriteStoreViewController.swift in Sources */,
 				52F2483421E00735003F6989 /* FavoriteModel.swift in Sources */,

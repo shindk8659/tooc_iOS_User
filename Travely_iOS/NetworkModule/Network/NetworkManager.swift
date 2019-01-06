@@ -174,5 +174,24 @@ class NetworkManager {
         }
     }
     
+    func makeReview(storeIdx:Int,content:String,liked:Int, completion: @escaping(ReviewModel?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        let parameter:[String:Any] = [
+            "storeIdx":storeIdx,
+            "content":content,
+            "liked":liked
+        ]
+        let router = APIRouter(url:"/api/review/save", method: .post, parameters: parameter ,headers:header)
+        NetworkRequester(with: router).request1 { (review:ReviewModel?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(review,errorModel,error)
+        }
+    }
+    
     
 }

@@ -1021,7 +1021,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJP-Mf-1es" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="2267"/>
+            <point key="canvasLocation" x="928.79999999999995" y="2266.9950738916259"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="dMr-yQ-zq0">
@@ -1935,7 +1935,7 @@
                                         <rect key="frame" x="0.0" y="816" width="375" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S9P-VA-TyZ" id="bUQ-gc-ZDu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 방법 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40Y-bT-MLg">
@@ -3762,24 +3762,44 @@
                                                     <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zj-Yo-t8m">
-                                                    <rect key="frame" x="292" y="76" width="68" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zj-Yo-t8m">
+                                                    <rect key="frame" x="276" y="77.666666666666515" width="68" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="23" id="cvy-89-JRI"/>
+                                                        <constraint firstAttribute="width" constant="68" id="sDH-vU-7yK"/>
+                                                    </constraints>
                                                     <state key="normal" image="mypageBtReservation"/>
                                                     <connections>
                                                         <action selector="makeReservationButtonAction:" destination="byp-AF-dJ4" eventType="touchUpInside" id="EuR-UL-8cp"/>
                                                     </connections>
                                                 </button>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsZ-UP-rxL" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="144.66666666666666" y="78.333333333333343" width="85.333333333333343" height="22"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="aTu-rB-Yu3"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="reviewIcStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="reviewIcStarGray"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="dsZ-UP-rxL" firstAttribute="top" secondItem="0E5-nm-RpU" secondAttribute="bottom" constant="7" id="2lp-p8-aSp"/>
                                                 <constraint firstItem="0E5-nm-RpU" firstAttribute="leading" secondItem="3hd-5l-Pcc" secondAttribute="leading" id="6Fk-y7-zpm"/>
                                                 <constraint firstItem="0E5-nm-RpU" firstAttribute="top" secondItem="3hd-5l-Pcc" secondAttribute="bottom" id="9gx-4o-2oQ"/>
+                                                <constraint firstItem="0zj-Yo-t8m" firstAttribute="leading" secondItem="dsZ-UP-rxL" secondAttribute="trailing" constant="46" id="CR3-UL-ZHe"/>
                                                 <constraint firstItem="0Sh-XB-fv6" firstAttribute="top" secondItem="nvH-i0-ETH" secondAttribute="top" constant="5" id="H2i-io-kCG"/>
                                                 <constraint firstItem="nvH-i0-ETH" firstAttribute="leading" secondItem="2Uy-ef-Lgl" secondAttribute="leading" constant="37.666666666666664" id="Iif-q2-Tuc"/>
                                                 <constraint firstAttribute="bottom" secondItem="nvH-i0-ETH" secondAttribute="bottom" constant="6.3300000000000001" id="LFp-Oy-unY"/>
                                                 <constraint firstItem="3hd-5l-Pcc" firstAttribute="top" secondItem="0Sh-XB-fv6" secondAttribute="bottom" id="PTB-gh-dF1"/>
                                                 <constraint firstItem="nvH-i0-ETH" firstAttribute="top" secondItem="2Uy-ef-Lgl" secondAttribute="top" constant="6.3300000000000001" id="WKk-gE-VXi"/>
+                                                <constraint firstAttribute="bottom" secondItem="0zj-Yo-t8m" secondAttribute="bottom" constant="9.3333333333333286" id="ZaF-EQ-8Nh"/>
                                                 <constraint firstItem="3hd-5l-Pcc" firstAttribute="leading" secondItem="0Sh-XB-fv6" secondAttribute="leading" id="aem-ep-8sX"/>
+                                                <constraint firstItem="dsZ-UP-rxL" firstAttribute="leading" secondItem="0E5-nm-RpU" secondAttribute="leading" id="dTB-Yf-m0Z"/>
+                                                <constraint firstAttribute="trailing" secondItem="0zj-Yo-t8m" secondAttribute="trailing" constant="31" id="f7I-A8-HeA"/>
+                                                <constraint firstItem="0zj-Yo-t8m" firstAttribute="centerY" secondItem="dsZ-UP-rxL" secondAttribute="centerY" id="hzl-M5-9tA"/>
                                                 <constraint firstAttribute="trailing" secondItem="0E5-nm-RpU" secondAttribute="trailing" constant="139.66666666666669" id="mGX-Ka-5WJ"/>
                                                 <constraint firstItem="0Sh-XB-fv6" firstAttribute="leading" secondItem="nvH-i0-ETH" secondAttribute="trailing" constant="10" id="q6I-4N-Y4d"/>
                                             </constraints>
@@ -3789,6 +3809,7 @@
                                             <outlet property="favoriteStoreImg" destination="nvH-i0-ETH" id="iX1-6n-hw3"/>
                                             <outlet property="favoriteStoreNameLabel" destination="0Sh-XB-fv6" id="7DR-4r-eOu"/>
                                             <outlet property="favoriteStoreTimeLabel" destination="0E5-nm-RpU" id="U56-dy-MOW"/>
+                                            <outlet property="starRateView" destination="dsZ-UP-rxL" id="Gjp-Jj-5Bs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -3931,9 +3952,27 @@
                                                         <constraint firstAttribute="height" constant="1" id="Qcr-bx-J7S"/>
                                                     </constraints>
                                                 </view>
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-If-dfa" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="260" y="10.666666666666664" width="91" height="15"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ipc-If-dfa" secondAttribute="height" multiplier="91:15" id="iVk-ef-fC2"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="reviewIcStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="reviewIcStarGray"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                            <real key="value" value="4"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="I8b-fB-na9" firstAttribute="leading" secondItem="Hnr-EW-ZtW" secondAttribute="leading" id="03t-sP-bL9"/>
+                                                <constraint firstItem="ipc-If-dfa" firstAttribute="trailing" secondItem="cSG-X5-Vw8" secondAttribute="trailing" id="1wJ-Sj-DfE"/>
                                                 <constraint firstAttribute="trailing" secondItem="VlV-0x-eoA" secondAttribute="trailing" constant="40" id="20W-zq-wc6"/>
                                                 <constraint firstItem="oPi-nw-Te4" firstAttribute="leading" secondItem="5oy-2j-sEd" secondAttribute="leading" constant="9" id="H5C-OX-3zf"/>
                                                 <constraint firstAttribute="trailing" secondItem="oPi-nw-Te4" secondAttribute="trailing" constant="9" id="NH8-dI-ENs"/>
@@ -3949,6 +3988,7 @@
                                                 <constraint firstItem="oPi-nw-Te4" firstAttribute="centerX" secondItem="5oy-2j-sEd" secondAttribute="centerX" id="nVx-ql-mOe"/>
                                                 <constraint firstItem="oPi-nw-Te4" firstAttribute="top" secondItem="3Ti-x8-vvm" secondAttribute="bottom" constant="5.3333333333333428" id="o1s-rq-edH"/>
                                                 <constraint firstAttribute="bottom" secondItem="oPi-nw-Te4" secondAttribute="bottom" constant="13.67" id="qQx-JR-MWw"/>
+                                                <constraint firstItem="ipc-If-dfa" firstAttribute="centerY" secondItem="Hnr-EW-ZtW" secondAttribute="centerY" id="qd0-v1-5g5"/>
                                                 <constraint firstItem="HrH-g5-TlL" firstAttribute="top" secondItem="I8b-fB-na9" secondAttribute="bottom" id="vNm-YL-A6I"/>
                                                 <constraint firstItem="Hnr-EW-ZtW" firstAttribute="leading" secondItem="JxL-1D-DDr" secondAttribute="trailing" constant="12" id="vYr-yr-Kyv"/>
                                                 <constraint firstAttribute="trailing" secondItem="HrH-g5-TlL" secondAttribute="trailing" constant="139.66666666666669" id="x2d-Qy-EGt"/>
@@ -3959,6 +3999,7 @@
                                             <outlet property="reviewImg" destination="JxL-1D-DDr" id="Pla-dL-rw8"/>
                                             <outlet property="reviewStoreAddressLabel" destination="I8b-fB-na9" id="Gc8-tr-Bk7"/>
                                             <outlet property="reviewStoreNameLabel" destination="Hnr-EW-ZtW" id="pe9-vO-KMV"/>
+                                            <outlet property="reviewStoreStarRatingView" destination="ipc-If-dfa" id="aAF-vG-JP3"/>
                                             <outlet property="reviewStoreTimeLabel" destination="HrH-g5-TlL" id="Z3i-5G-tCw"/>
                                             <outlet property="reviewTextView" destination="VlV-0x-eoA" id="MNS-tD-biy"/>
                                         </connections>
@@ -3982,7 +4023,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="738-9K-u9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2479" y="2267"/>
+            <point key="canvasLocation" x="2477.5999999999999" y="2266.9950738916259"/>
         </scene>
     </scenes>
     <resources>
@@ -4022,6 +4063,8 @@
         <image name="mypageRecentCircle" width="6" height="6"/>
         <image name="paper_plane" width="110.66666412353516" height="39.333332061767578"/>
         <image name="reserve_pay_rect" width="67" height="22"/>
+        <image name="reviewIcStar" width="22.666666030883789" height="22.666666030883789"/>
+        <image name="reviewIcStarGray" width="22.666666030883789" height="22.666666030883789"/>
         <image name="setting_ic_address" width="16" height="16"/>
         <image name="setting_ic_instagram" width="16" height="16"/>
         <image name="setting_ic_message" width="16" height="16"/>
