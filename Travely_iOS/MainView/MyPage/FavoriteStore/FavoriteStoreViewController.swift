@@ -11,7 +11,9 @@ import UIKit
 class FavoriteStoreViewController: UIViewController {
 
     let networkModel = NetworkManager()
+    var favoriteModel: [FavoriteModel?]?
     @IBOutlet weak var favoriteStoreTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,8 +25,9 @@ class FavoriteStoreViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.addBackButton("black")
         networkModel.getFavoriteStore { [weak self](favoriteStore, errorModel, error) in
-            print(favoriteStore)
-            print(errorModel)
+            self?.favoriteModel = favoriteStore
+            self?.favoriteStoreTableView.reloadData()
+            print(favoriteStore!)
         }
     }
 
@@ -33,11 +36,13 @@ class FavoriteStoreViewController: UIViewController {
 extension FavoriteStoreViewController: UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        print(gino(self.favoriteModel?.count))
+        return gino(self.favoriteModel?.count)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        print(gino(self.favoriteModel?[section]?.simpleStoreResponseDtos?.count))
+        return gino(self.favoriteModel?[section]?.simpleStoreResponseDtos?.count) + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,6 +51,7 @@ extension FavoriteStoreViewController: UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteregioncell") as! FavoriteRegionTableViewCell
             cell.selectionStyle = UITableViewCell.SelectionStyle.none;
             cell.separatorInset = UIEdgeInsets.zero
+            cell.regionNameLabel.text = gsno(self.favoriteModel?[indexPath.section]?.regionName) + "(\(gino(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?.count)))"
             return cell
         }
             
@@ -53,6 +59,7 @@ extension FavoriteStoreViewController: UITableViewDataSource
             let cell = tableView.dequeueReusableCell(withIdentifier: "favoritestorecell") as! FavoriteStoreTableViewCell
             cell.selectionStyle = UITableViewCell.SelectionStyle.none;
             cell.separatorInset = UIEdgeInsets.zero
+            cell.favoriteStoreNameLabel.text = gsno(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].storeName)
             return cell
             
         }

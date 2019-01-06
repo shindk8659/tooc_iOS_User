@@ -159,6 +159,20 @@ class NetworkManager {
         }
     }
     
+    func deleteReview(reviewIdx:Int, completion: @escaping(ErrorModel?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        print(reviewIdx)
+        let router = APIRouter(url:"/api/review/delete/\(reviewIdx)", method: .delete, parameters: nil ,headers:header)
+        NetworkRequester(with: router).request1 { (review:ErrorModel?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(review,errorModel,error)
+        }
+    }
     
     
 }

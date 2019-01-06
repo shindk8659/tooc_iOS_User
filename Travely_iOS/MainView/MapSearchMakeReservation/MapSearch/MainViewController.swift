@@ -99,6 +99,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.tintColor = UIColor.black
         hideBtn.image = UIImage.init(named: "icBack.png")
         hideBtn.isEnabled = true
         self.tabBarController?.hideTabBarAnimated(hide: true)
@@ -159,14 +160,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         searchButtonView.layer.cornerRadius = 5
         searchButtonView.layer.masksToBounds = true
         
-        // Expandable tableview delegate
-        searchTableView.expandableDelegate = self
-        searchTableView.animation = .automatic
-        searchTableView.separatorStyle = .singleLine
-        searchTableView.tableFooterView = UIView()
-        searchTableView.register(UINib(nibName: "DetailShopTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailShopTableViewCell")
-        searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
-        
         // 처음 메인에 들어왔을 경우 현재위치로 지도위치를 설정한다.
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
@@ -208,7 +201,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         self.view.addSubview(shopDetailView)
         self.view.addSubview(shopSimpleInfoView)
         self.view.addSubview(searchView)
-        self.view.addSubview(searchTableView)
 
         //네비게이션바를 투명하게 해서 뒤에 mapView를 보여준다
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -257,6 +249,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         searchTableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
         self.view.addSubview(searchTableView)
         if self.shopDetailView.frame.origin.y == (self.navigationController?.navigationBar.frame.maxY)! {
+            self.navigationController?.navigationBar.tintColor = UIColor.black
             self.navigationController?.navigationBar.barTintColor = UIColor.white
             self.navigationController?.navigationBar.backgroundColor = UIColor.white
             self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
@@ -297,6 +290,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             self.navigationController?.navigationBar.backgroundColor = UIColor.white
             self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
             self.navigationItem.titleView = titleImageView
+            self.navigationController?.navigationBar.tintColor = UIColor.black
             hideBtn.image = UIImage.init(named: "icBack.png")
             hideBtn.isEnabled = true
             self.tabBarController?.hideTabBarAnimated(hide: true)
