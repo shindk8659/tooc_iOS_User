@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5202615221E22F7100C3EDA7 /* MakeReviewPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202615121E22F7100C3EDA7 /* MakeReviewPopupViewController.swift */; };
 		521FC83021D8B8D600CFD955 /* NanumSquareEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */; };
 		5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5280E34C21D7B5A800829935 /* RegionListModel.swift */; };
 		528D962421DBDC2E00FC46D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528D962321DBDC2E00FC46D1 /* Main.storyboard */; };
@@ -90,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 		3ED19096FC49769E399B9F60 /* Pods-Travely_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travely_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		5202615121E22F7100C3EDA7 /* MakeReviewPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeReviewPopupViewController.swift; sourceTree = "<group>"; };
 		521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.ttf; sourceTree = "<group>"; };
 		5280E34C21D7B5A800829935 /* RegionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionListModel.swift; sourceTree = "<group>"; };
 		528D962321DBDC2E00FC46D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				D13841E521D9FDB500EC7D9D /* cancelConfirmViewController.swift */,
 				D1912E6E21E11B73005ADBAF /* ServiceRateAlertViewController.swift */,
 				D1912E7021E11B93005ADBAF /* RateCell.swift */,
+				5202615121E22F7100C3EDA7 /* MakeReviewPopupViewController.swift */,
 			);
 			path = AlertView;
 			sourceTree = "<group>";
@@ -578,20 +581,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Travely_iOS/Pods-Travely_iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -670,6 +677,7 @@
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
 				52F2482721DFC998003F6989 /* MyReviewViewController.swift in Sources */,
+				5202615221E22F7100C3EDA7 /* MakeReviewPopupViewController.swift in Sources */,
 				52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */,
 				52DAACD521E0B5A800B000A7 /* AppGuideViewController.swift in Sources */,
 				D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */,

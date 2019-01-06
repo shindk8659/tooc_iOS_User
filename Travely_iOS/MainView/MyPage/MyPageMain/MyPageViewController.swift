@@ -92,6 +92,7 @@ extension MyPageViewController: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recentstoragecell") as! RecentStorageTableViewCell
+        cell.delegate = self
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         cell.separatorInset = UIEdgeInsets.zero
         cell.recentStorageNameLabel.text = self.gsno(profileModel?.storeInfoResponseDtoList?[indexPath.row].storeName)
@@ -102,4 +103,11 @@ extension MyPageViewController: UITableViewDataSource
     }
     
     
+}
+extension MyPageViewController: MakeReviewPresentView {
+    func makeReview(onCell: RecentStorageTableViewCell) {
+         let makeReview = UIStoryboard.init(name: "Alert", bundle: nil).instantiateViewController(withIdentifier: "makereview") as! MakeReviewPopupViewController
+        self.present(makeReview, animated: true, completion: nil)
+        
+    }
 }

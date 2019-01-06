@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+protocol MakeReviewPresentView {
+    func makeReview(onCell: RecentStorageTableViewCell)
+}
 class RecentStorageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var recentStorageImg: UIImageView!
@@ -15,12 +17,16 @@ class RecentStorageTableViewCell: UITableViewCell {
     @IBOutlet weak var recentStorageAddressLabel: UILabel!
     @IBOutlet weak var recentStorageTimeLabel: UILabel!
     @IBAction func makeReviewButtonAction(_ sender: Any) {
+        self.delegate?.makeReview(onCell: self)
+        
     }
     @IBAction func makeReserveButtonAction(_ sender: Any) {
     }
-    
+    var delegate: MakeReviewPresentView?
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
         // Initialization code
     }
 
