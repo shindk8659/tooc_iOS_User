@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Cosmos
 
 class FavoriteStoreTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var starRateView: CosmosView!
     @IBOutlet weak var favoriteStoreImg: UIImageView!
     @IBOutlet weak var favoriteStoreNameLabel: UILabel!
     @IBOutlet weak var favoriteStoreAddressLabel: UILabel!

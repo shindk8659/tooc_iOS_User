@@ -25,9 +25,27 @@ class FavoriteStoreViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         self.addBackButton("black")
         networkModel.getFavoriteStore { [weak self](favoriteStore, errorModel, error) in
-            self?.favoriteModel = favoriteStore
-            self?.favoriteStoreTableView.reloadData()
-            print(favoriteStore!)
+            
+            // 리뷰
+            if favoriteStore == nil && errorModel == nil && error != nil {
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController,animated: true,completion: nil)
+            }
+            else if favoriteStore == nil && errorModel != nil && error == nil {
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController,animated: true,completion: nil)
+            }
+            else {
+                
+                self?.favoriteModel = favoriteStore
+                self?.favoriteStoreTableView.reloadData()
+                
+            }
+        
         }
     }
 

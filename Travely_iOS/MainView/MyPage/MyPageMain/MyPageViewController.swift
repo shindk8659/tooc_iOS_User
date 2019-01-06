@@ -8,7 +8,11 @@
 
 import UIKit
 
-class MyPageViewController: UIViewController {
+class MyPageViewController: UIViewController,ReloadViwDelegate {
+    func reloadView() {
+        self.myPageNetworking()
+    }
+    
 
     let networkManager = NetworkManager()
     var profileModel: ProfileModel?
@@ -37,18 +41,8 @@ class MyPageViewController: UIViewController {
         self.navigationController?.pushViewController(myreviewVC, animated: true)
         
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.myPageTableView.delegate = self
-        self.myPageTableView.dataSource = self
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
     
-        // Do any additional setup after loading the view.
-    }
-    override func viewWillAppear(_ animated: Bool) {
+    func myPageNetworking() {
         networkManager.getProfileInfo { [weak self](profile, errorModel, error) in
             // 로그인 네트워크 처리
             if profile == nil && errorModel == nil && error != nil {
@@ -75,7 +69,23 @@ class MyPageViewController: UIViewController {
                 self?.myPageTableView.reloadData()
             }
         }
+        
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.myPageTableView.delegate = self
+        self.myPageTableView.dataSource = self
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+     
+        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        myPageNetworking()
+    }
+   
   
 
 }
@@ -106,7 +116,10 @@ extension MyPageViewController: UITableViewDataSource
 }
 extension MyPageViewController: MakeReviewPresentView {
     func makeReview(onCell: RecentStorageTableViewCell) {
+        let indexPath = self.myPageTableView.indexPath(for: onCell)
          let makeReview = UIStoryboard.init(name: "Alert", bundle: nil).instantiateViewController(withIdentifier: "makereview") as! MakeReviewPopupViewController
+        makeReview.delegate = self
+        makeReview.storeIdx = gino(self.profileModel?.storeInfoResponseDtoList?[(indexPath?.row)!].storeIdx)
         self.present(makeReview, animated: true, completion: nil)
         
     }
