@@ -70,6 +70,7 @@ extension FavoriteStoreViewController: UITableViewDataSource
             cell.selectionStyle = UITableViewCell.SelectionStyle.none;
             cell.separatorInset = UIEdgeInsets.zero
             cell.regionNameLabel.text = gsno(self.favoriteModel?[indexPath.section]?.regionName) + "(\(gino(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?.count)))"
+            
             return cell
         }
             
@@ -78,6 +79,10 @@ extension FavoriteStoreViewController: UITableViewDataSource
             cell.selectionStyle = UITableViewCell.SelectionStyle.none;
             cell.separatorInset = UIEdgeInsets.zero
             cell.favoriteStoreNameLabel.text = gsno(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].storeName)
+            cell.favoriteStoreImg.imageFromUrl(gsno(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].storeImgUrl))
+            cell.favoriteStoreAddressLabel.text = gsno(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].address)
+            cell.starRateView.rating = (self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].grade)!
+            //cell.favoriteStoreTimeLabel.text = gsno(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].)
             return cell
             
         }

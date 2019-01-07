@@ -430,11 +430,20 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         }
         else {
             let imageView = UIImageView()
-            imageView.image = UIImage.init(named: "icGoogle")
-            //imageView.imageFromUrl(gsno(imgCollection?[i].storeImg))
+            imageView.image = UIImage.init(named: "img_default_big.png")
+            imageView.contentMode = .scaleAspectFit
             let xCoordinate = shopSlideImageView.frame.midX + shopSlideImageView.frame.width * CGFloat(0)
             contentWidth += shopSlideImageView.frame.width
-            imageView.frame = CGRect(x: xCoordinate - (shopSlideImageView.frame.width/2), y: 0, width: shopSlideImageView.frame.width , height: shopSlideImageView.frame.height)
+            let imageViewHeight:CGFloat
+            print(UIScreen.main.bounds.size.height)
+            if UIScreen.main.bounds.size.height >= 812.0
+            {
+                imageViewHeight = shopSlideImageView.frame.height - UIApplication.shared.statusBarFrame.size.height
+                imageView.frame = CGRect(x: xCoordinate - (shopSlideImageView.frame.width/2), y: UIApplication.shared.statusBarFrame.size.height, width: shopSlideImageView.frame.width , height: imageViewHeight)
+            }
+            else {
+                imageView.frame = CGRect(x: xCoordinate - (shopSlideImageView.frame.width/2), y: 0, width: shopSlideImageView.frame.width , height: shopSlideImageView.frame.height)
+            }
             shopSlideImageView.addSubview(imageView)
             shopSlideImageView.contentSize = CGSize(width: contentWidth, height: shopSlideImageView.frame.height)
 
@@ -645,10 +654,11 @@ extension MainViewController: UITableViewDataSource
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "shopaddresscell") as! ShopAddressTableViewCell
             cell.shopAddressLabel.text = storeDetailModel?.address
-           //cell.shopOldAddressLabel.text = self.storeDetailModel.
+            cell.shopOldAddressLabel.text = storeDetailModel?.addressNumber
             cell.shopTimeLabel.text = setStoreTime(openTime:storeDetailModel?.openTime, closeTime: storeDetailModel?.closeTime)
             cell.shopWebsiteLabel.text = storeDetailModel?.address
             cell.shopCallNumLabel.text = storeDetailModel?.storeCall
+            cell.storeIdx = gino(storeDetailModel?.storeIdx)
             return cell
         }
         else if indexPath.section == 1 {

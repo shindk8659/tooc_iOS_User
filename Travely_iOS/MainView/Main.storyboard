@@ -401,6 +401,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="favoriteButton" destination="hdm-re-XGi" id="5FZ-MO-E1o"/>
                                             <outlet property="openCloseImageView" destination="nyD-u8-8xQ" id="VP6-e8-Iv5"/>
                                             <outlet property="shopAddressLabel" destination="xf6-Ae-feU" id="qVv-DZ-Iv9"/>
                                             <outlet property="shopCallNumLabel" destination="eFU-gZ-YRB" id="KKD-Oy-Hfx"/>
@@ -629,14 +630,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_delivery_service" translatesAutoresizingMaskIntoConstraints="NO" id="a6I-La-ZHp">
-                                <rect key="frame" x="0.0" y="158" width="375" height="380"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgDeliveryReady" translatesAutoresizingMaskIntoConstraints="NO" id="a6I-La-ZHp">
+                                <rect key="frame" x="0.0" y="173.66666666666666" width="344" height="348.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="a6I-La-ZHp" secondAttribute="height" multiplier="75:76" id="fBc-zQ-rlf"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 배송 서비스 준비중입니다. 감사합니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYt-ua-U2i">
-                                <rect key="frame" x="72.333333333333329" y="543" width="230.33333333333337" height="53"/>
+                                <rect key="frame" x="72.333333333333329" y="527" width="230.33333333333337" height="53.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iYt-ua-U2i" secondAttribute="height" multiplier="230:53" id="YJC-mg-sIA"/>
                                 </constraints>
@@ -647,7 +648,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="a6I-La-ZHp" firstAttribute="trailing" secondItem="7Dp-z7-jqm" secondAttribute="trailing" id="3K9-pg-gh8"/>
+                            <constraint firstItem="a6I-La-ZHp" firstAttribute="trailing" secondItem="7Dp-z7-jqm" secondAttribute="trailing" constant="-31" id="3K9-pg-gh8"/>
                             <constraint firstItem="a6I-La-ZHp" firstAttribute="centerY" secondItem="7Dp-z7-jqm" secondAttribute="centerY" multiplier="0.9" id="52s-sZ-V5x"/>
                             <constraint firstItem="a6I-La-ZHp" firstAttribute="leading" secondItem="7Dp-z7-jqm" secondAttribute="leading" id="8kB-Qm-RNt"/>
                             <constraint firstItem="iYt-ua-U2i" firstAttribute="centerX" secondItem="7Dp-z7-jqm" secondAttribute="centerX" id="EGZ-OB-XcG"/>
@@ -672,14 +673,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_reservation_service" translatesAutoresizingMaskIntoConstraints="NO" id="DJg-ha-SfC">
-                                <rect key="frame" x="0.0" y="158" width="375" height="380"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgReserveReady" translatesAutoresizingMaskIntoConstraints="NO" id="DJg-ha-SfC">
+                                <rect key="frame" x="0.0" y="173.66666666666666" width="344" height="348.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DJg-ha-SfC" secondAttribute="height" multiplier="75:76" id="6lc-hS-NV3"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약 현황이 존재하지 않습니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfY-wG-Kt9">
-                                <rect key="frame" x="82.666666666666686" y="543" width="210" height="24"/>
+                                <rect key="frame" x="82.666666666666686" y="527" width="210" height="24.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="XfY-wG-Kt9" secondAttribute="height" multiplier="209:24" id="KHw-yN-cdn"/>
                                 </constraints>
@@ -694,8 +695,8 @@
                             <constraint firstItem="DJg-ha-SfC" firstAttribute="centerY" secondItem="fWq-Ic-JoF" secondAttribute="centerY" multiplier="0.9" id="INs-QS-Hf2"/>
                             <constraint firstItem="XfY-wG-Kt9" firstAttribute="top" secondItem="DJg-ha-SfC" secondAttribute="bottom" constant="5" id="KuI-3z-vWN"/>
                             <constraint firstItem="XfY-wG-Kt9" firstAttribute="width" secondItem="yl4-U1-cSZ" secondAttribute="width" multiplier="0.56" id="PPp-mj-SNH"/>
-                            <constraint firstItem="DJg-ha-SfC" firstAttribute="trailing" secondItem="fWq-Ic-JoF" secondAttribute="trailing" id="nhm-If-BRF"/>
                             <constraint firstItem="DJg-ha-SfC" firstAttribute="leading" secondItem="fWq-Ic-JoF" secondAttribute="leading" id="ns5-CY-sCR"/>
+                            <constraint firstItem="DJg-ha-SfC" firstAttribute="trailing" secondItem="fWq-Ic-JoF" secondAttribute="trailing" constant="-31" id="tLK-BP-2y6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fWq-Ic-JoF"/>
                     </view>
@@ -2093,7 +2094,7 @@
                                         <rect key="frame" x="0.0" y="995" width="375" height="127"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3C3-pe-vWB" id="hds-V8-xnM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="127"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="126.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GfI-4f-ASB">
@@ -3862,14 +3863,24 @@
                                                     </connections>
                                                 </button>
                                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsZ-UP-rxL" customClass="CosmosView" customModule="Cosmos">
-                                                    <rect key="frame" x="144.66666666666666" y="78.333333333333343" width="85.333333333333343" height="22"/>
+                                                    <rect key="frame" x="144.66666666666666" y="78.333333333333343" width="118.99999999999997" height="22"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="aTu-rB-Yu3"/>
+                                                        <constraint firstAttribute="width" secondItem="dsZ-UP-rxL" secondAttribute="height" multiplier="119:22" id="jr8-Bi-o0h"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="reviewIcStar"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="reviewIcStarGray"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                            <integer key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
@@ -3877,7 +3888,6 @@
                                                 <constraint firstItem="dsZ-UP-rxL" firstAttribute="top" secondItem="0E5-nm-RpU" secondAttribute="bottom" constant="7" id="2lp-p8-aSp"/>
                                                 <constraint firstItem="0E5-nm-RpU" firstAttribute="leading" secondItem="3hd-5l-Pcc" secondAttribute="leading" id="6Fk-y7-zpm"/>
                                                 <constraint firstItem="0E5-nm-RpU" firstAttribute="top" secondItem="3hd-5l-Pcc" secondAttribute="bottom" id="9gx-4o-2oQ"/>
-                                                <constraint firstItem="0zj-Yo-t8m" firstAttribute="leading" secondItem="dsZ-UP-rxL" secondAttribute="trailing" constant="46" id="CR3-UL-ZHe"/>
                                                 <constraint firstItem="0Sh-XB-fv6" firstAttribute="top" secondItem="nvH-i0-ETH" secondAttribute="top" constant="5" id="H2i-io-kCG"/>
                                                 <constraint firstItem="nvH-i0-ETH" firstAttribute="leading" secondItem="2Uy-ef-Lgl" secondAttribute="leading" constant="37.666666666666664" id="Iif-q2-Tuc"/>
                                                 <constraint firstAttribute="bottom" secondItem="nvH-i0-ETH" secondAttribute="bottom" constant="6.3300000000000001" id="LFp-Oy-unY"/>
@@ -4040,7 +4050,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="Qcr-bx-J7S"/>
                                                     </constraints>
                                                 </view>
-                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-If-dfa" customClass="CosmosView" customModule="Cosmos">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-If-dfa" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="260" y="10.666666666666664" width="91" height="15"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -4144,9 +4154,9 @@
         <image name="ic_star" width="14" height="13.333333015441895"/>
         <image name="ic_time_fill" width="14" height="14"/>
         <image name="ic_working" width="44" height="18"/>
+        <image name="imgDeliveryReady" width="355" height="464"/>
+        <image name="imgReserveReady" width="345" height="450"/>
         <image name="img_default_big" width="375" height="375"/>
-        <image name="img_delivery_service" width="570" height="380"/>
-        <image name="img_reservation_service" width="570" height="380"/>
         <image name="info_fare" width="66.333335876464844" height="18"/>
         <image name="mypageBtDefault" width="65" height="65"/>
         <image name="mypageBtReservation" width="68" height="23"/>
