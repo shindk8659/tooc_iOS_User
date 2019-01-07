@@ -19,9 +19,12 @@ enum status: String {
 
 class ReservationPicker: UIViewController {
     
+    
+    @IBOutlet var openHoursAlert: UIView!
     @IBOutlet var checkView: UIView!
     @IBOutlet var findView: UIView!
     @IBOutlet var intervalTime: UILabel!
+    @IBOutlet var openHourLabel: UILabel!
     
     @IBOutlet var checkViewLabel: [UILabel]!
     
@@ -57,11 +60,14 @@ class ReservationPicker: UIViewController {
     }
     
     @IBAction func didPressConfirmation(_ sender: UIButton) {
-        let dateSet: [String] = [checkViewLabel[1].text!, checkViewLabel[2].text!, findViewLabel[1].text!, findViewLabel[2].text!, intervalTime.text!]
-        self.delegate.tossTheTime(checkDate: checkDate , findDate: findDate, timeInterval: timeInterval, dateSet: dateSet)
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        if checkDate.compareTimeOnly(to: openTime).rawValue == 1 && findDate.compareTimeOnly(to: closeTime).rawValue == -1 {
+            let dateSet: [String] = [checkViewLabel[1].text!, checkViewLabel[2].text!, findViewLabel[1].text!, findViewLabel[2].text!, intervalTime.text!]
+            self.delegate.tossTheTime(checkDate: checkDate , findDate: findDate, timeInterval: timeInterval, dateSet: dateSet)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        } else {
+            openHoursAlert.isHidden = false
+        }
     }
-    
     
     var delegate: tossTheTime!
     var checkDate = Date()
@@ -70,6 +76,9 @@ class ReservationPicker: UIViewController {
     var initialCheck1: Bool = true
     var initialCheck2: Bool = true
     var timeInterval = 14400
+    
+    var openTime = Date()
+    var closeTime = Date()
     
     var status: status = .check {
         didSet {
@@ -115,6 +124,8 @@ class ReservationPicker: UIViewController {
     
     var date: Date = Date() {
         didSet {
+            
+            
             let calendar = NSCalendar.current
             let dateComponents = calendar.dateComponents( [.year, .day, .hour, .minute], from: date)
             let fixedDate = calendar.date(from: dateComponents)
@@ -143,12 +154,22 @@ class ReservationPicker: UIViewController {
         
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(check))
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(find))
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(hide))
         self.checkView.addGestureRecognizer(tap1)
         self.findView.addGestureRecognizer(tap2)
+        self.openHoursAlert.addGestureRecognizer(tap3)
         
         buttonLayerSetup()
         viewLayerSetup()
         pickerSetup()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        
+        let open = dateFormatter.string(from: openTime)
+        let close = dateFormatter.string(from: closeTime)
+        
+        openHourLabel.text = "영업시간:\(open) ~ \(close)"
     }
     
     @objc func valueChanged() {
@@ -167,6 +188,10 @@ class ReservationPicker: UIViewController {
     @objc func find() {
         status = .find
         date = findDate
+    }
+    
+    @objc func hide() {
+        openHoursAlert.isHidden = true
     }
     
     func pickerSetup() {
@@ -212,6 +237,7 @@ class ReservationPicker: UIViewController {
         findView.layer.borderColor = UIColor(red: 0xCB, green: 0xCB, blue: 0xCB).cgColor
         checkView.layer.masksToBounds = true
         findView.layer.masksToBounds = true
+        openHoursAlert.layer.cornerRadius = 8
     }
     
     func changeLabel() {
@@ -234,23 +260,11 @@ class ReservationPicker: UIViewController {
             findViewLabel[1].text = dateFormatter1.string(from: date)
             findViewLabel[2].text = dateFormatter2.string(from: date)
         }
-        
-        /*
-        let calendar = Calendar.current
-        let date1 = calendar.startOfDay(for: checkDate)
-        let date2 = calendar.startOfDay(for: findDate)
-        let components = calendar.dateComponents([.hour, .minute], from: date1, to: date2)
-        print(components, components.date, components.hour, components.minute)
-        */
-        
+
         let Interval = findDate.timeIntervalSince(checkDate)
         let t1 = Int(Interval) / 60
+    
         timeInterval = Int(Interval)
-//        if t1 >= 60 {
-//           let t2 = t1 / 60
-//           let t3 = t1 - t2*60
-//            print("\(t2)시간 \(t3)분")
-//        }
         
         if t1 >= 1440 {
             let t2 = t1 / 1440 // 일
@@ -265,6 +279,5 @@ class ReservationPicker: UIViewController {
         } else {
             intervalTime.text = ("\(t1)분")
         }
-        
     }
 }

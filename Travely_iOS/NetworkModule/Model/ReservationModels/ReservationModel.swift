@@ -9,16 +9,15 @@
 import Foundation
 struct ReservationModel: Codable {
 	let bagDtos : [BagDtos]?
-	let endTime : EndTime?
+	let endTime : Int?
 	let payType : String?
 	let price : Int?
 	let reserveCode : String?
-	let startTime : StartTime?
+	let startTime : Int?
 	let stateType : String?
 	let store : Store?
 
 	enum CodingKeys: String, CodingKey {
-
 		case bagDtos = "bagDtos"
 		case endTime = "endTime"
 		case payType = "payType"
@@ -32,11 +31,11 @@ struct ReservationModel: Codable {
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		bagDtos = try values.decodeIfPresent([BagDtos].self, forKey: .bagDtos)
-		endTime = try values.decodeIfPresent(EndTime.self, forKey: .endTime)
+        endTime = try values.decodeIfPresent(Int.self, forKey: .endTime)
 		payType = try values.decodeIfPresent(String.self, forKey: .payType)
 		price = try values.decodeIfPresent(Int.self, forKey: .price)
 		reserveCode = try values.decodeIfPresent(String.self, forKey: .reserveCode)
-		startTime = try values.decodeIfPresent(StartTime.self, forKey: .startTime)
+        startTime = try values.decodeIfPresent(Int.self, forKey: .startTime)
 		stateType = try values.decodeIfPresent(String.self, forKey: .stateType)
 		store = try values.decodeIfPresent(Store.self, forKey: .store)
 	}
