@@ -26,6 +26,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     @IBOutlet weak var simpleInfoStoreNameLabel: UILabel!
     @IBOutlet weak var simpleInfoAddressLabel: UILabel!
     @IBOutlet weak var simpleInfoTimeLabel: UILabel!
+    @IBOutlet weak var simpleIsWorkingImg: UIImageView!
     
     // shopDetailView IBOulet
     @IBOutlet weak var detailStoreNameLabel: UILabel!
@@ -550,6 +551,20 @@ extension MainViewController: ExpandableDelegate {
                     self?.marker.position = CLLocationCoordinate2D(latitude: (storeDetail?.latitude)!, longitude: (storeDetail?.longitude)!)
                     self?.marker.map = self?.mapView
                     self?.mapView.camera = GMSCameraPosition.camera(withTarget: (self?.marker.position)!, zoom: 16)
+                    
+                    // 영업중 영업종료 이미지 시간에 따른 변환
+                    let now = Date()
+                    let openTimestamp = (self?.storeDetailModel?.openTime)!
+                    let closeTemestamp = (self?.storeDetailModel?.closeTime)!
+                    let openDate = Date(timeIntervalSince1970: Double(openTimestamp))
+                    let closeDate = Date(timeIntervalSince1970: Double(closeTemestamp))
+                    if now.compare(openDate).rawValue == 1 && now.compare(closeDate).rawValue == -1 {
+                        self?.simpleIsWorkingImg.image = UIImage(named: "ic_working.png")
+                    }
+                    else {
+                        self?.simpleIsWorkingImg.image = UIImage(named: "ic_end.png")
+                    }
+                    //
                 }
             }
             //searchTabelView shopDetailView Animation
@@ -659,6 +674,19 @@ extension MainViewController: UITableViewDataSource
             cell.shopWebsiteLabel.text = storeDetailModel?.address
             cell.shopCallNumLabel.text = storeDetailModel?.storeCall
             cell.storeIdx = gino(storeDetailModel?.storeIdx)
+           // 영업중 영업종료 이미지 시간에 따른 변환
+            let now = Date()
+            let openTimestamp = gino(storeDetailModel?.openTime)
+            let closeTemestamp = gino(storeDetailModel?.closeTime)
+            let openDate = Date(timeIntervalSince1970: Double(gino(openTimestamp)))
+            let closeDate = Date(timeIntervalSince1970: Double(gino(closeTemestamp)))
+            if now.compare(openDate).rawValue == 1 && now.compare(closeDate).rawValue == -1 {
+                cell.openCloseImageView.image = UIImage(named: "ic_working.png")
+            }
+            else {
+                cell.openCloseImageView.image = UIImage(named: "ic_end.png")
+            }
+            //
             return cell
         }
         else if indexPath.section == 1 {

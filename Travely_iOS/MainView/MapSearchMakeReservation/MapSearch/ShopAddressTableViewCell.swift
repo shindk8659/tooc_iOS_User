@@ -11,6 +11,8 @@ import UIKit
 class ShopAddressTableViewCell: UITableViewCell {
     
     var storeIdx:Int?
+    var openDate:Date?
+    var closeDate:Date?
     @IBOutlet weak var shopAddressLabel: UILabel!
     @IBOutlet weak var shopOldAddressLabel: UILabel!
     @IBOutlet weak var openCloseImageView: UIImageView!
@@ -49,6 +51,8 @@ class ShopAddressTableViewCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
+        
+        
         super.awakeFromNib()
         // Initialization code
     }

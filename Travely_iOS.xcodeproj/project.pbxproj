@@ -53,7 +53,7 @@
 		52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */; };
 		52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */; };
 		52BDE67F21D50064008204FF /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */; };
-		52CCB8EB21E37E7F00BD0FDB /* SetFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCB8EA21E37E7F00BD0FDB /* SetFavoriteModel.swift */; };
+		52C14C0221E39DFD00372309 /* SetFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCB8EA21E37E7F00BD0FDB /* SetFavoriteModel.swift */; };
 		52D174B821E132E300CD28ED /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D174B721E132E300CD28ED /* LoginModel.swift */; };
 		52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3221D6A89E005F48D3 /* APIRouter.swift */; };
 		52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */; };
@@ -743,9 +743,7 @@
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
-
 				D192BFA321E2CC450072D4EF /* MainTabBarController.swift in Sources */,
-
 				5202616721E271D500C3EDA7 /* Results.swift in Sources */,
 				52F2482721DFC998003F6989 /* MyReviewViewController.swift in Sources */,
 				5202615221E22F7100C3EDA7 /* MakeReviewPopupViewController.swift in Sources */,
@@ -781,6 +779,7 @@
 				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
 				D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */,
+				52C14C0221E39DFD00372309 /* SetFavoriteModel.swift in Sources */,
 				D1912E6F21E11B73005ADBAF /* ServiceRateAlertViewController.swift in Sources */,
 				D10DD1AE21DE4B700011282C /* CloseTime.swift in Sources */,
 				5202616A21E271D500C3EDA7 /* Area4.swift in Sources */,
@@ -939,7 +938,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6D8SYQ63KK;
+				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Travely_iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -959,7 +958,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6D8SYQ63KK;
+				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Travely_iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

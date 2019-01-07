@@ -28,6 +28,8 @@ class ReservationStatusViewController: UITableViewController {
     
     
     lazy var mapView = GMSMapView()
+    // mapMarker
+    let marker = GMSMarker()
     var initialCheck = 1
     let networkManager = NetworkManager()
     
@@ -90,8 +92,14 @@ class ReservationStatusViewController: UITableViewController {
     override func viewDidLayoutSubviews() {
         if initialCheck == 1 {
         mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: superViewOfMap.frame.width, height: superViewOfMap.frame.height), camera: GMSCameraPosition.camera(withLatitude: 37.558514, longitude: 126.925239, zoom: 15))
+            mapView.settings.setAllGesturesEnabled(false)
         superViewOfMap.addSubview(mapView)
             initialCheck += 1
+            //지도 마커
+            marker.icon = UIImage(named: "icPinColor.png")
+            marker.position = CLLocationCoordinate2D(latitude: 37.558514, longitude: 126.925239)
+            marker.map = self.mapView
+            mapView.camera = GMSCameraPosition.camera(withTarget: self.marker.position, zoom: 16)
         }
     }
     
