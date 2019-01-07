@@ -53,6 +53,7 @@
 		52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */; };
 		52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */; };
 		52BDE67F21D50064008204FF /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */; };
+		52CCB8EB21E37E7F00BD0FDB /* SetFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCB8EA21E37E7F00BD0FDB /* SetFavoriteModel.swift */; };
 		52D174B821E132E300CD28ED /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D174B721E132E300CD28ED /* LoginModel.swift */; };
 		52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3221D6A89E005F48D3 /* APIRouter.swift */; };
 		52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */; };
@@ -156,6 +157,7 @@
 		52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
 		52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
+		52CCB8EA21E37E7F00BD0FDB /* SetFavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFavoriteModel.swift; sourceTree = "<group>"; };
 		52D174B721E132E300CD28ED /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		52D2BC3221D6A89E005F48D3 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 				52EDFB5921DA2FC400A83CC0 /* ReviewResponseDtos.swift */,
 				52EDFB5B21DA2FC400A83CC0 /* StoreImageResponseDtos.swift */,
 				52EDFB5F21DA425700A83CC0 /* RestWeekResponseDtos.swift */,
+				52CCB8EA21E37E7F00BD0FDB /* SetFavoriteModel.swift */,
 			);
 			path = StoreDetailModels;
 			sourceTree = "<group>";
@@ -740,7 +743,9 @@
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
+
 				D192BFA321E2CC450072D4EF /* MainTabBarController.swift in Sources */,
+
 				5202616721E271D500C3EDA7 /* Results.swift in Sources */,
 				52F2482721DFC998003F6989 /* MyReviewViewController.swift in Sources */,
 				5202615221E22F7100C3EDA7 /* MakeReviewPopupViewController.swift in Sources */,

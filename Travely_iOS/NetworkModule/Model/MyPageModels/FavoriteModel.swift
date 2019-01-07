@@ -27,3 +27,4 @@ struct FavoriteModel : Codable {
 	}
 
 }
+
