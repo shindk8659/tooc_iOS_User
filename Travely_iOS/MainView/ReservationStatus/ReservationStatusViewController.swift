@@ -19,29 +19,148 @@ class ReservationStatusViewController: UITableViewController {
     
     @IBOutlet var superViewOfMap: UIView!
     @IBOutlet var qrCode: UIImageView!
+    @IBOutlet var reservationCode: UILabel!
+    
+    @IBOutlet var checkDate: UILabel!
+    @IBOutlet var checkTime: UILabel!
+    
+    @IBOutlet var findDate: UILabel!
+    @IBOutlet var findTime: UILabel!
+    
+    @IBOutlet var suitcaseRate: UILabel!
+    @IBOutlet var luggageRate: UILabel!
+    
+    @IBOutlet var totalTime: UILabel!
+    @IBOutlet var totalRate: UILabel!
+    
+    @IBOutlet var paymentProgress: UIImageView!
+    
+    @IBOutlet var payType: UILabel!
+    @IBOutlet var totalRateOfPayment: UILabel!
+    @IBOutlet var totalBag: UILabel!
+    
+    @IBOutlet var bagImages: [UIImageView]!
+    
+    @IBOutlet var storeName: UILabel!
+    @IBOutlet var isOpenImg: UIImageView!
+    @IBOutlet var openTime: UILabel!
+    @IBOutlet var storeAdress: UILabel!
     
     @IBAction func didPressRVCancel(_ sender: UIButton) {
-        networkManager.cancelReservation { [weak self] (result, errorModel, error) in
-            print(result,errorModel,error)
-        }
+        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "cancelConfirmViewController") as! cancelConfirmViewController
+        vc.delegate = self
+        self.tabBarController?.present(vc, animated: true, completion: nil)
     }
-    
     
     lazy var mapView = GMSMapView()
     // mapMarker
     let marker = GMSMarker()
     var initialCheck = 1
     let networkManager = NetworkManager()
+    var latitude:  CLLocationDegrees?
+    var longitude:  CLLocationDegrees?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutSetup()
         
-        let image = generateQRCode(from: "Hello")
-        qrCode.image = image
-        
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 //        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            network()
+    }
+    
+    func network() {
+        networkManager.bringReservationInfo { [weak self] (result, errorModel, error) in
+            if result == nil && errorModel == nil && error != nil {
+                print(errorModel, error)
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController, animated: true, completion: nil)
+            }
+                // 서버측 에러핸들러 구성후 바꿔야함
+            else if result == nil && errorModel != nil && error == nil {
+                print(errorModel, error)
+                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self?.present(alertController, animated: true, completion: nil)
+            }
+            else {
+                print(result)
+//                let storeIdx = gino(restWeekResponseDtos?[0]?.storeIdx)
+                switch result?.stateType {
+                case "RESERVED":
+                    self!.statusProgressView[0].backgroundColor = .black
+                case "PAYED":
+                    self!.statusProgressView[0].backgroundColor = .black
+                    self!.statusProgressView[1].backgroundColor = .black
+                case "ARCHIVE":
+                    self!.statusProgressView[0].backgroundColor = .black
+                    self!.statusProgressView[1].backgroundColor = .black
+                    self!.statusProgressView[2].backgroundColor = .black
+                case "PICKUP":
+                    self!.statusProgressView[0].backgroundColor = .black
+                    self!.statusProgressView[1].backgroundColor = .black
+                    self!.statusProgressView[2].backgroundColor = .black
+                    self!.statusProgressView[3].backgroundColor = .black
+                case "CANCEL": break
+                default: break
+                }
+                
+                self!.reservationCode.text = result?.reserveCode
+                
+                let image = self!.generateQRCode(from: self!.reservationCode.text!)
+                self!.qrCode.image = image
+                
+                let dateFormatter1 = DateFormatter()
+                dateFormatter1.dateFormat = "yy년 M월 d일 E요일"
+                dateFormatter1.locale = Locale(identifier:"ko_KR")
+                let dateFormatter2 = DateFormatter()
+                dateFormatter2.dateFormat = "a h시 m분"
+                dateFormatter2.locale = Locale(identifier:"ko_KR")
+                
+                self!.checkDate.text = dateFormatter1.string(from: Date(timeIntervalSince1970: TimeInterval((result?.startTime)!/1000)))
+                self!.checkTime.text = dateFormatter2.string(from: Date(timeIntervalSince1970: TimeInterval((result?.startTime)!/1000)))
+                
+                self!.findDate.text = dateFormatter1.string(from: Date(timeIntervalSince1970: TimeInterval((result?.endTime)!/1000)))
+                self!.findTime.text = dateFormatter2.string(from: Date(timeIntervalSince1970: TimeInterval((result?.endTime)!/1000)))
+                
+//                if result?.bagDtos!.count == 1 {
+//                    if result?.bagDtos![0]["bagType"] == "CARRIER" {
+//                        let count = result?.bagDtos![0]["bagCount"]
+//                        suitcaseRate.text = "\(count)개: \(result?.price)원"
+//                    }
+//                } else {
+//
+//                }
+                
+                switch result?.progressType {
+                case "DONE": self!.paymentProgress.image = UIImage(named: "reserve_pay_rect")
+                default: break
+                }
+                
+                switch result?.payType {
+                case "CASH": self!.payType.text = "현장 결제"
+                case "CARD": self!.payType.text = "카카오 페이"
+                default: break
+                }
+                
+                self!.totalRateOfPayment.text = "\(result!.price)원"
+                self?.storeName.text = result?.store?.storeName
+                self?.storeAdress.text = result?.store?.address
+                print("클로즈 타임: \(result?.store?.closeTime)")
+                
+                self?.latitude = result?.store?.latitude
+                self?.longitude = result?.store?.longitude
+                
+            
+            }
+        }
     }
 
     func layoutSetup() {
@@ -90,16 +209,20 @@ class ReservationStatusViewController: UITableViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        
+        if let lat = latitude, let long = longitude {
         if initialCheck == 1 {
-        mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: superViewOfMap.frame.width, height: superViewOfMap.frame.height), camera: GMSCameraPosition.camera(withLatitude: 37.558514, longitude: 126.925239, zoom: 15))
+        mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: superViewOfMap.frame.width, height: superViewOfMap.frame.height), camera: GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 15))
             mapView.settings.setAllGesturesEnabled(false)
         superViewOfMap.addSubview(mapView)
             initialCheck += 1
+            
             //지도 마커
             marker.icon = UIImage(named: "icPinColor.png")
-            marker.position = CLLocationCoordinate2D(latitude: 37.558514, longitude: 126.925239)
+            marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
             marker.map = self.mapView
             mapView.camera = GMSCameraPosition.camera(withTarget: self.marker.position, zoom: 16)
+        }
         }
     }
     
@@ -185,4 +308,12 @@ class ReservationStatusViewController: UITableViewController {
     }
     */
 
+}
+
+extension ReservationStatusViewController: presentAlert {
+    func presentRVAlert() {
+        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
+        self.tabBarController?.present(vc, animated: true, completion: nil)
+    }
 }

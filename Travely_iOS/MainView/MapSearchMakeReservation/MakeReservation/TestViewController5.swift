@@ -43,7 +43,6 @@ class TestViewController5: UIViewController {
                 return UIImage(ciImage: output)
             }
         }
-        
         return nil
     }
     

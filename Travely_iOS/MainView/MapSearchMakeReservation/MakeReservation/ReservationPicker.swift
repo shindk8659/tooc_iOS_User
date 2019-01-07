@@ -19,7 +19,6 @@ enum status: String {
 
 class ReservationPicker: UIViewController {
     
-    
     @IBOutlet var openHoursAlert: UIView!
     @IBOutlet var checkView: UIView!
     @IBOutlet var findView: UIView!
@@ -60,10 +59,22 @@ class ReservationPicker: UIViewController {
     }
     
     @IBAction func didPressConfirmation(_ sender: UIButton) {
-        print(checkDate.compareTimeOnly(to: openTime).rawValue, findDate.compareTimeOnly(to: closeTime).rawValue)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "e"
+        var isDayOff: Bool?
+        
+        if dayOff != nil {
+            for day in dayOff! {
+                if Int(dateFormatter.string(from: checkDate)) == day || Int(dateFormatter.string(from: findDate)) == day {
+                    isDayOff = true
+                } else {
+                    isDayOff = false
+                }
+            }
+        }
         
         // rawValue가 0 일때 클로징타임이 00:00시일때 -> rawValue 1이 뜸
-        if checkDate.compareTimeOnly(to: openTime).rawValue == 1 && findDate.compareTimeOnly(to: closeTime).rawValue == -1 {
+        if checkDate.compareTimeOnly(to: openTime).rawValue == 1 && findDate.compareTimeOnly(to: closeTime).rawValue == -1 && isDayOff == false {
             let dateSet: [String] = [checkViewLabel[1].text!, checkViewLabel[2].text!, findViewLabel[1].text!, findViewLabel[2].text!, intervalTime.text!]
             self.delegate.tossTheTime(checkDate: checkDate , findDate: findDate, timeInterval: timeInterval, dateSet: dateSet)
             self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -79,6 +90,7 @@ class ReservationPicker: UIViewController {
     var initialCheck1: Bool = true
     var initialCheck2: Bool = true
     var timeInterval = 14400
+    var dayOff: [Int]? = [Int]()
     
     var openTime = Date()
     var closeTime = Date()
@@ -166,13 +178,31 @@ class ReservationPicker: UIViewController {
         viewLayerSetup()
         pickerSetup()
         
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
-        
         let open = dateFormatter.string(from: openTime)
         let close = dateFormatter.string(from: closeTime)
-        
         openHourLabel.text = "영업시간:\(open) ~ \(close)"
+        
+        print(dayOff)
+        
+        
+        if dayOff != nil {
+            for day in dayOff! {
+                switch day {
+                case 1: openHourLabel.text!.append(" (일)")
+                case 2: openHourLabel.text!.append(" (월)")
+                case 3: openHourLabel.text!.append(" (화)")
+                case 4: openHourLabel.text!.append(" (수)")
+                case 5: openHourLabel.text!.append(" (목)")
+                case 6: openHourLabel.text!.append(" (금)")
+                case 7: openHourLabel.text!.append(" (토)")
+                default: return
+                }
+            }
+            openHourLabel.text!.append(" 휴무")
+        }
     }
     
     @objc func valueChanged() {

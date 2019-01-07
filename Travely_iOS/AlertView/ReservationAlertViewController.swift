@@ -12,9 +12,15 @@ protocol changeTabProtocol {
     func changeTabViewController()
 }
 
+enum type: String {
+    case reserve
+    case cancel
+}
+
 class ReservationAlertViewController: UIViewController {
     
     var delegate: changeTabProtocol!
+    var type: type?
     
     @IBOutlet var alertView: UIView!
     @IBOutlet var confirmButton: UIButton!
@@ -22,22 +28,28 @@ class ReservationAlertViewController: UIViewController {
     @IBOutlet var reservationLabel: UILabel!
     
     @IBAction func didPressConfirm(_ sender: UIButton) {
+        if type == .reserve {
         self.dismiss(animated: true) {
             self.delegate!.changeTabViewController()
         }
+        } else {
+            // 두번째 탭 예약뷰 -> 예약현황 없음 뷰 & 첫번째 탭 처음 들어왔을때 뷰로 들어 오는 로직
+        }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutSetup()
-        //주석
+        
+        if type == .reserve {
+            reservationLabel.text = "예약이 완료되었습니다.     예약 내역을 확인해주세요."
+        } else {
+            reservationLabel.text = "예약이 취소되었습니다."
+        }
     }
     
     func layoutSetup() {
         alertView.layer.cornerRadius = 10
         confirmButton.layer.cornerRadius = 18
     }
-
-
 }

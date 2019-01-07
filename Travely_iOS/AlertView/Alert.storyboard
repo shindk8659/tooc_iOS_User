@@ -235,7 +235,6 @@
                                         </state>
                                         <connections>
                                             <action selector="didPressClose:" destination="zAQ-PD-rR6" eventType="touchUpInside" id="u7d-Wu-Xk6"/>
-                                            <action selector="didPressConfirm:" destination="zAQ-PD-rR6" eventType="touchUpInside" id="r6A-tE-BYi"/>
                                         </connections>
                                     </button>
                                 </subviews>

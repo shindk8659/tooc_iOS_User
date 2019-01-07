@@ -157,10 +157,10 @@ class ReservationViewController: UITableViewController {
     
     @IBAction func didPressReservation(_ sender: Any) {
         let storeIdx = gino(restWeekResponseDtos?[0]?.storeIdx)
-        print("스토어 인덱스 \(storeIdx)")
         let startTime = Int(checkTime.timeIntervalSince1970)*1000
         let endTime = Int(findTime.timeIntervalSince1970)*1000
         var bagDtos:[[String : Any]] = []
+        
         
         if numberOfSuitcase != 0 {
             let suitCase: [String : Any] = ["bagType" : "CARRIER", "bagCount" : numberOfSuitcase]
@@ -194,6 +194,7 @@ class ReservationViewController: UITableViewController {
                 print(data)
                 let storyboard = UIStoryboard(name: "Alert", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
+                vc.type = .reserve
                 vc.delegate = self
                 self!.tabBarController?.present(vc, animated: false, completion: nil)
             } 
@@ -240,14 +241,39 @@ class ReservationViewController: UITableViewController {
         findLabel[1].text = dateFormatter2.string(from: findTime)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        networkManager.bringPriceList { [weak self] (result, errorModel, error) in
+            if result == nil && errorModel == nil && error != nil {
+                print(errorModel, error)
+            }
+                // 서버측 에러핸들러 구성후 바꿔야함
+            else if result == nil && errorModel != nil && error == nil {
+                print(errorModel, error)
+            }
+            else {
+                print("통신 성공")
+                print(result)
+            }
+        }
+    }
+    
     @objc func didPressCAFView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ReservationPicker") as! ReservationPicker
+        
+        var dayOffArray: [Int]? = [Int]()
+        for dayOff in restWeekResponseDtos! {
+            if dayOff?.week != nil {
+                dayOffArray?.append((dayOff?.week)!)
+            }
+        }
+        
         vc.delegate = self
         vc.checkDate = checkTime
         vc.findDate = findTime
         vc.openTime = Date(timeIntervalSince1970: Double(opentime/1000))
         vc.closeTime = Date(timeIntervalSince1970: Double(closeTime/1000))
+        vc.dayOff = dayOffArray
         tabBarController?.present(vc, animated: false, completion: nil)
     }
    
@@ -309,13 +335,34 @@ extension ReservationViewController: changeTabProtocol,tossTheTime {
     }
     
     func calculatebasicRate(interval: Int) {
+        
+        // 서버 로직(알고리즘)
+        var hour = interval / 60 / 60
+        if hour * 60 * 60 != interval {
+            print("실행")
+            hour += 1
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         for rate in serviceRate {
 //            if rate == serviceRate.last {
 //                serviceRate.append(rate + 12)
 //                print(serviceRate.last, rate)
 //            }
             
-            // 서버 로직(알고리즘) 보기
             if interval <= rate*3600 {
                 switch rate {
                 case 4: self.rate = 3500
