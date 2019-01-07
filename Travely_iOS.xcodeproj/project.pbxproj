@@ -53,7 +53,6 @@
 		52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */; };
 		52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */; };
 		52BDE67F21D50064008204FF /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */; };
-		52CCB8EB21E37E7F00BD0FDB /* SetFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCB8EA21E37E7F00BD0FDB /* SetFavoriteModel.swift */; };
 		52D174B821E132E300CD28ED /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D174B721E132E300CD28ED /* LoginModel.swift */; };
 		52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3221D6A89E005F48D3 /* APIRouter.swift */; };
 		52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */; };
@@ -103,6 +102,10 @@
 		D192BF9F21E295450072D4EF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BF9E21E295450072D4EF /* Date.swift */; };
 		D192BFA321E2CC450072D4EF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFA221E2CC450072D4EF /* MainTabBarController.swift */; };
 		D192BFA521E2CF3B0072D4EF /* DidNotReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFA421E2CF3B0072D4EF /* DidNotReserveViewController.swift */; };
+		D192BFA621E393400072D4EF /* SetFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCB8EA21E37E7F00BD0FDB /* SetFavoriteModel.swift */; };
+		D192BFA821E3BEB40072D4EF /* PriceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFA721E3BEB40072D4EF /* PriceList.swift */; };
+		D192BFAA21E3C2CE0072D4EF /* ReservationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFA921E3C2CE0072D4EF /* ReservationInfo.swift */; };
+		D192BFAC21E3C3190072D4EF /* BagImgDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFAB21E3C3190072D4EF /* BagImgDtos.swift */; };
 		D1ABFAE321DBC20500BEE3E0 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABFAE221DBC20500BEE3E0 /* CircleButton.swift */; };
 		D1ABFAE521DBC29B00BEE3E0 /* ReservationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */; };
 /* End PBXBuildFile section */
@@ -207,6 +210,9 @@
 		D192BF9E21E295450072D4EF /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		D192BFA221E2CC450072D4EF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		D192BFA421E2CF3B0072D4EF /* DidNotReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DidNotReserveViewController.swift; sourceTree = "<group>"; };
+		D192BFA721E3BEB40072D4EF /* PriceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceList.swift; sourceTree = "<group>"; };
+		D192BFA921E3C2CE0072D4EF /* ReservationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationInfo.swift; sourceTree = "<group>"; };
+		D192BFAB21E3C3190072D4EF /* BagImgDtos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagImgDtos.swift; sourceTree = "<group>"; };
 		D1ABFAE221DBC20500BEE3E0 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStatusViewController.swift; sourceTree = "<group>"; };
 		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -510,6 +516,9 @@
 				D10DD1A421DE4B6F0011282C /* StartTime.swift */,
 				D10DD1A621DE4B6F0011282C /* Store.swift */,
 				D10DD1B121DE826F0011282C /* bag.swift */,
+				D192BFA721E3BEB40072D4EF /* PriceList.swift */,
+				D192BFA921E3C2CE0072D4EF /* ReservationInfo.swift */,
+				D192BFAB21E3C3190072D4EF /* BagImgDtos.swift */,
 			);
 			path = ReservationModels;
 			sourceTree = "<group>";
@@ -743,9 +752,7 @@
 				52AB760C21CF65ED0002FB07 /* SignupViewController.swift in Sources */,
 				52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */,
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
-
 				D192BFA321E2CC450072D4EF /* MainTabBarController.swift in Sources */,
-
 				5202616721E271D500C3EDA7 /* Results.swift in Sources */,
 				52F2482721DFC998003F6989 /* MyReviewViewController.swift in Sources */,
 				5202615221E22F7100C3EDA7 /* MakeReviewPopupViewController.swift in Sources */,
@@ -769,18 +776,21 @@
 				5202616321E271D500C3EDA7 /* CurrentLocation.swift in Sources */,
 				5202615421E247A600C3EDA7 /* ReviewModel.swift in Sources */,
 				52DAACD721E1001E00B000A7 /* LastGuideViewController.swift in Sources */,
+				D192BFAA21E3C2CE0072D4EF /* ReservationInfo.swift in Sources */,
 				5202616D21E271D500C3EDA7 /* Area0.swift in Sources */,
 				52F2481E21DFAB25003F6989 /* FavoriteStoreViewController.swift in Sources */,
 				5202616821E271D500C3EDA7 /* Area1.swift in Sources */,
 				52F2483421E00735003F6989 /* FavoriteModel.swift in Sources */,
 				D10DD1AB21DE4B700011282C /* StartTime.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
+				D192BFAC21E3C3190072D4EF /* BagImgDtos.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
 				D13841F121D9FDF900EC7D9D /* TestViewController5.swift in Sources */,
 				52F2482221DFADE4003F6989 /* FavoriteStoreTableViewCell.swift in Sources */,
 				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
 				D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */,
+				D192BFA621E393400072D4EF /* SetFavoriteModel.swift in Sources */,
 				D1912E6F21E11B73005ADBAF /* ServiceRateAlertViewController.swift in Sources */,
 				D10DD1AE21DE4B700011282C /* CloseTime.swift in Sources */,
 				5202616A21E271D500C3EDA7 /* Area4.swift in Sources */,
@@ -792,6 +802,7 @@
 				D13841ED21D9FDEE00EC7D9D /* ReservationViewController.swift in Sources */,
 				5202616521E271D500C3EDA7 /* Status.swift in Sources */,
 				5202616921E271D500C3EDA7 /* Area2.swift in Sources */,
+				D192BFA821E3BEB40072D4EF /* PriceList.swift in Sources */,
 				52F2481A21DF7BEE003F6989 /* MyPageViewController.swift in Sources */,
 				52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */,
 				52EDFB6021DA425700A83CC0 /* RestWeekResponseDtos.swift in Sources */,

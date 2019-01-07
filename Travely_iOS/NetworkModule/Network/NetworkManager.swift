@@ -101,6 +101,33 @@ class NetworkManager {
         }
     }
     
+    func bringPriceList(completion: @escaping([PriceList?]?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        let router = APIRouter(url:"/api/reservation/price/list", method: .get, parameters: nil ,headers:header)
+        NetworkRequester(with: router).request3 { (result: [PriceList?]?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(result,errorModel,error)
+        }
+    }
+    
+    func bringReservationInfo(completion: @escaping(ReservationInfo?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        let router = APIRouter(url:"/api/reservation", method: .get, parameters: nil ,headers:header)
+        NetworkRequester(with: router).request1 { (result: ReservationInfo?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(result,errorModel,error)
+        }
+    }
     
     func cancelReservation(completion: @escaping(ErrorModel?,ErrorModel?,Error?) -> Void) {
         let header:HTTPHeaders = [

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol presentAlert {
+    func presentRVAlert()
+}
+
 class cancelConfirmViewController: UIViewController {
 
     @IBOutlet var alertView: UIView!
@@ -17,13 +21,18 @@ class cancelConfirmViewController: UIViewController {
     @IBOutlet var closeButton: UIButton!
     
     @IBAction func didPressConfirm(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        networkManager.cancelReservation { [weak self] (result, errorModel, error) in
+            self!.dismiss(animated: true, completion: nil)
+            self?.delegate.presentRVAlert()
+        }
     }
     
     @IBAction func didPressClose(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    let networkManager = NetworkManager()
+    var delegate: presentAlert!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +45,5 @@ class cancelConfirmViewController: UIViewController {
         confirmButton.layer.cornerRadius = 18
         closeButton.layer.cornerRadius = 18
     }
-    
-
     
 }
