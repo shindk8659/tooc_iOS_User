@@ -53,6 +53,7 @@
 		52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67621D50063008204FF /* NotoSansCJKkr-Light.otf */; };
 		52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */; };
 		52BDE67F21D50064008204FF /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52BDE67821D50064008204FF /* NotoSansCJKkr-Black.otf */; };
+		52C14C0221E39DFD00372309 /* SetFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCB8EA21E37E7F00BD0FDB /* SetFavoriteModel.swift */; };
 		52D174B821E132E300CD28ED /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D174B721E132E300CD28ED /* LoginModel.swift */; };
 		52D2BC3321D6A89E005F48D3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3221D6A89E005F48D3 /* APIRouter.swift */; };
 		52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2BC3421D6AB19005F48D3 /* NetworkRequester.swift */; };
@@ -102,7 +103,6 @@
 		D192BF9F21E295450072D4EF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BF9E21E295450072D4EF /* Date.swift */; };
 		D192BFA321E2CC450072D4EF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFA221E2CC450072D4EF /* MainTabBarController.swift */; };
 		D192BFA521E2CF3B0072D4EF /* DidNotReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFA421E2CF3B0072D4EF /* DidNotReserveViewController.swift */; };
-		D192BFA621E393400072D4EF /* SetFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CCB8EA21E37E7F00BD0FDB /* SetFavoriteModel.swift */; };
 		D192BFA821E3BEB40072D4EF /* PriceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFA721E3BEB40072D4EF /* PriceList.swift */; };
 		D192BFAA21E3C2CE0072D4EF /* ReservationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFA921E3C2CE0072D4EF /* ReservationInfo.swift */; };
 		D192BFAC21E3C3190072D4EF /* BagImgDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFAB21E3C3190072D4EF /* BagImgDtos.swift */; };
@@ -790,7 +790,7 @@
 				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
 				D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */,
-				D192BFA621E393400072D4EF /* SetFavoriteModel.swift in Sources */,
+				52C14C0221E39DFD00372309 /* SetFavoriteModel.swift in Sources */,
 				D1912E6F21E11B73005ADBAF /* ServiceRateAlertViewController.swift in Sources */,
 				D10DD1AE21DE4B700011282C /* CloseTime.swift in Sources */,
 				5202616A21E271D500C3EDA7 /* Area4.swift in Sources */,

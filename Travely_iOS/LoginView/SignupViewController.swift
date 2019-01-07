@@ -57,9 +57,25 @@ class SignupViewController: UIViewController {
                     self?.present(alertController,animated: true,completion: nil)
                 }
                 else if signin == nil && errorModel != nil && error == nil {
-                    let alertController = UIAlertController(title: "",message: "정확한 정보를 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
+                    var message :String? = ""
+                    for i in 0 ..< errorModel!.count
+                    {
+                        if i == errorModel!.count-1 {
+                             message?.append((errorModel?[i]?.message)!)
+                        }
+                        else {
+                             message?.append((errorModel?[i]?.message)!+"\n")
+                        }
+                       
+                    }
+                    let alertController = UIAlertController(title: "정확한 정보를 입력해주세요.",message: message, preferredStyle: UIAlertController.Style.alert)
                     let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
                     alertController.addAction(cancelButton)
+                    self?.nameTextField.text = ""
+                    self?.emailTextField.text = ""
+                    self?.passTextField.text = ""
+                    self?.configPassTextField.text = ""
+                    self?.phoneTextField.text = ""
                     self?.present(alertController,animated: true,completion: nil)
                 }
                 else {

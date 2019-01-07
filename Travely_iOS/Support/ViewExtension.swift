@@ -48,7 +48,6 @@ extension UINavigationBar {
 
 extension UIViewController {
     
-    
     //옵셔널 String을 해제하는데 값이 nil이면 ""을 반환
     func gsno(_ data: String?) -> String {
         guard let str = data else {

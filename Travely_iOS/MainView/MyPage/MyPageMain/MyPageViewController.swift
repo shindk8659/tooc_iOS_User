@@ -87,9 +87,33 @@ class MyPageViewController: UIViewController,ReloadViwDelegate {
     override func viewWillAppear(_ animated: Bool) {
         myPageNetworking()
     }
-   
-  
-
+    
+    func setStoreTime(openTime: Int?, closeTime: Int?) -> String{
+        if openTime != nil && closeTime != nil {
+            
+            // 개장시간과 폐장시간을 timeStemp 로 받아 Date객체로 변환
+            let openTimestamp = gino(openTime)/1000
+            let closeTemestamp = gino(closeTime)/1000
+            let openDate = Date(timeIntervalSince1970: Double(gino(openTimestamp)))
+            let closeDate = Date(timeIntervalSince1970: Double(gino(closeTemestamp)))
+            
+            // Date객체에서 가져올 포맷과 시간대를 정하고 String 으로 꺼내서 반환 함
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+9") //Set timezone that you want
+            dateFormatter.locale = NSLocale.current
+            dateFormatter.dateFormat = "HH:mm" //Specify your format that you want
+            let open = dateFormatter.string(from: openDate)
+            let close = dateFormatter.string(from: closeDate)
+            let wholeTime = "매일 \(open) ~ \(close)"
+            return wholeTime
+        }
+        else {
+            return ""
+        }
+        
+    }
+    
+    
 }
 extension MyPageViewController: UITableViewDelegate
 {
@@ -110,7 +134,8 @@ extension MyPageViewController: UITableViewDataSource
         cell.recentStorageNameLabel.text = self.gsno(profileModel?.storeInfoResponseDtoList?[indexPath.row].storeName)
         cell.recentStorageAddressLabel.text = self.gsno(profileModel?.storeInfoResponseDtoList?[indexPath.row].address)
         cell.recentStorageImg.imageFromUrl(self.gsno(profileModel?.storeInfoResponseDtoList?[indexPath.row].storeImage))
-        
+        let time = setStoreTime(openTime: self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].openTime), closeTime: self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].closeTime))
+        cell.recentStorageTimeLabel.text = time
         return cell
     }
     

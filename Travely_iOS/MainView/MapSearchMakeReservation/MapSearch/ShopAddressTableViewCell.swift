@@ -11,6 +11,8 @@ import UIKit
 class ShopAddressTableViewCell: UITableViewCell {
     
     var storeIdx:Int?
+    var openDate:Date?
+    var closeDate:Date?
     @IBOutlet weak var shopAddressLabel: UILabel!
     @IBOutlet weak var shopOldAddressLabel: UILabel!
     @IBOutlet weak var openCloseImageView: UIImageView!
@@ -46,9 +48,24 @@ class ShopAddressTableViewCell: UITableViewCell {
         }
     }
     @IBAction func findPathButtonAction(_ sender: Any) {
+        
+        let url :URL = URL(string: "daummaps://route?sp=37.537229,127.005515&ep=37.4979502,127.0276368&by=PUBLICTRANSIT")!
+        if (UIApplication.shared.canOpenURL(url)) {
+             UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+        }
+        else {
+             let url :URL = URL(string: "https://itunes.apple.com/us/app/id304608425?mt=8")!
+            UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+        }
+       
+       
+        
+        
     }
     
     override func awakeFromNib() {
+        
+        
         super.awakeFromNib()
         // Initialization code
     }
