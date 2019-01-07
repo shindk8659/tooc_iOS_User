@@ -830,9 +830,6 @@
                                             <state key="normal">
                                                 <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
-                                            <connections>
-                                                <action selector="luggageStatusButtonAction:" destination="xR9-8A-W0t" eventType="touchUpInside" id="LpD-QI-2Zx"/>
-                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLN-sY-YT8">
                                             <rect key="frame" x="136.33333333333334" y="192.66666666666666" width="54" height="52"/>
@@ -1009,11 +1006,14 @@
                     <navigationItem key="navigationItem" title="마이페이지" id="5kf-VF-Ehr">
                         <barButtonItem key="rightBarButtonItem" image="btSettings" id="mRe-tn-6yK">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="appStatusButtonAction:" destination="xR9-8A-W0t" id="vN9-a4-1eO"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="favoriteCountLabel" destination="5a8-eg-qrW" id="dSy-21-che"/>
-                        <outlet property="myLuggageStatusCountLabel" destination="WEP-bs-bv8" id="K3h-Xl-r0C"/>
+                        <outlet property="myLuggageStatusCountLabel" destination="WEP-bs-bv8" id="Q3A-zg-0dw"/>
                         <outlet property="myPageTableView" destination="fta-qs-zu3" id="dEu-lq-tjM"/>
                         <outlet property="nameLabel" destination="OSG-Uo-TGR" id="xq0-fw-qCs"/>
                         <outlet property="reviewCountLabel" destination="plA-4A-qTN" id="OjZ-0o-eBe"/>
@@ -1935,7 +1935,7 @@
                                         <rect key="frame" x="0.0" y="816" width="375" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S9P-VA-TyZ" id="bUQ-gc-ZDu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="179"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="178.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 방법 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40Y-bT-MLg">
@@ -2117,7 +2117,7 @@
         <!--Table View Controller-->
         <scene sceneID="IJM-Dk-SLs">
             <objects>
-                <tableViewController id="qId-YW-Gtz" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="appstatus" id="qId-YW-Gtz" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VRw-gb-QlH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3763,7 +3763,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zj-Yo-t8m">
-                                                    <rect key="frame" x="276" y="77.666666666666515" width="68" height="23"/>
+                                                    <rect key="frame" x="276" y="77.666666666666671" width="68" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="23" id="cvy-89-JRI"/>
                                                         <constraint firstAttribute="width" constant="68" id="sDH-vU-7yK"/>
@@ -3952,7 +3952,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="Qcr-bx-J7S"/>
                                                     </constraints>
                                                 </view>
-                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-If-dfa" customClass="CosmosView" customModule="Cosmos">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-If-dfa" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="260" y="10.666666666666664" width="91" height="15"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>

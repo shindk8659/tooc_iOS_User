@@ -164,14 +164,8 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         // 처음 메인에 들어왔을 경우 현재위치로 지도위치를 설정한다.
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
-        var currentLocation: CLLocation
-        currentLocation = self.locationManager.location!
-        print(currentLocation.coordinate.latitude,currentLocation.coordinate.longitude)
-      
-        networkManager.getCurrentLocation(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude) { [weak self](current, err) in
-            let currentLocationString:String = "현위치 : " + (current?.results?[0].region?.area1?.name)! + " " + (current?.results?[0].region?.area2?.name)! + " " + (current?.results?[0].region?.area3?.name)!
-            self?.currentLocLB.text = currentLocationString
-        }
+        
+        self.getCurrentAddress()
        
         // shopDetailView
         shopDetailView.delegate = self
@@ -236,6 +230,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         //shopSimpleInfoView 히든처리
         shopSimpleInfoView.isHidden = true
     }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -345,6 +340,24 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
                  self?.shopSimpleInfoView.isHidden = false
             }
             self.navigationItem.titleView = titleImageView
+            
+        }
+    }
+    
+    func getCurrentAddress() {
+        var currentLocation: CLLocation
+        currentLocation = self.locationManager.location!
+        print(currentLocation.coordinate.latitude,currentLocation.coordinate.longitude)
+        networkManager.getCurrentLocation(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude) { [weak self](current, err) in
+            
+            if current?.status?.name != "no results"  {
+                let currentLocationString:String = "현위치 : " + (current?.results?[0].region?.area1?.name)! + " " + (current?.results?[0].region?.area2?.name)! + " " + (current?.results?[0].region?.area3?.name)!
+                self?.currentLocLB.text = currentLocationString
+                
+            }
+            else {
+                self?.currentLocLB.text = "위치를 찾을수 없습니다."
+            }
             
         }
     }
