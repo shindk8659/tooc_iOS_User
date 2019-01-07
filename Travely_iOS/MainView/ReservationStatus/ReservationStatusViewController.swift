@@ -37,6 +37,9 @@ class ReservationStatusViewController: UITableViewController {
         
         let image = generateQRCode(from: "Hello")
         qrCode.image = image
+        
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 
     func layoutSetup() {

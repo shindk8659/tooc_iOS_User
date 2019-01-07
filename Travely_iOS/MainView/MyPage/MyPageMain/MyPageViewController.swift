@@ -120,7 +120,6 @@ extension MyPageViewController: MakeReviewPresentView {
          let makeReview = UIStoryboard.init(name: "Alert", bundle: nil).instantiateViewController(withIdentifier: "makereview") as! MakeReviewPopupViewController
         makeReview.delegate = self
         makeReview.storeIdx = gino(self.profileModel?.storeInfoResponseDtoList?[(indexPath?.row)!].storeIdx)
-        self.present(makeReview, animated: true, completion: nil)
-        
+        self.tabBarController?.present(makeReview, animated: true, completion: nil)
     }
 }
