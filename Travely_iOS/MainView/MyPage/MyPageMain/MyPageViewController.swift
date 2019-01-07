@@ -26,9 +26,11 @@ class MyPageViewController: UIViewController,ReloadViwDelegate {
     
     
     
-    @IBAction func luggageStatusButtonAction(_ sender: Any) {
-        
-        
+    @IBAction func appStatusButtonAction(_ sender: Any) {
+        let appstatusVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "appstatus")
+        appstatusVC.addBackButton("black")
+        self.navigationController?.pushViewController(appstatusVC, animated: true)
+    
     }
     @IBAction func favoriteButtonAction(_ sender: Any) {
         let favoriteVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "favoritestoreview") as! FavoriteStoreViewController

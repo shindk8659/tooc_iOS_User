@@ -192,6 +192,22 @@ class NetworkManager {
             completion(review,errorModel,error)
         }
     }
+    
+    func setFavorite(storeIdx:Int, completion: @escaping(SetFavoriteModel?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+       
+        let router = APIRouter(url:"/api/favorite/\(storeIdx)", method: .put, parameters: nil ,headers:header)
+        NetworkRequester(with: router).request1 { (review:SetFavoriteModel?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(review,errorModel,error)
+        }
+    }
+    
     func getCurrentLocation(lat:Double,long:Double,completion: @escaping(CurrentLocation?,Error?) -> Void) {
         let header:HTTPHeaders = [
             "Content-Type": "application/json",
@@ -207,6 +223,7 @@ class NetworkManager {
             completion(review,error)
         }
     }
+
     
     
 }

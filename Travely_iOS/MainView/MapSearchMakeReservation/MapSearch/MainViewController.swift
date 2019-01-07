@@ -164,14 +164,8 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         // 처음 메인에 들어왔을 경우 현재위치로 지도위치를 설정한다.
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
-        var currentLocation: CLLocation
-        currentLocation = self.locationManager.location!
-        print(currentLocation.coordinate.latitude,currentLocation.coordinate.longitude)
-      
-        networkManager.getCurrentLocation(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude) { [weak self](current, err) in
-            let currentLocationString:String = "현위치 : " + (current?.results?[0].region?.area1?.name)! + " " + (current?.results?[0].region?.area2?.name)! + " " + (current?.results?[0].region?.area3?.name)!
-            self?.currentLocLB.text = currentLocationString
-        }
+        
+        self.getCurrentAddress()
        
         // shopDetailView
         shopDetailView.delegate = self
@@ -236,6 +230,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         //shopSimpleInfoView 히든처리
         shopSimpleInfoView.isHidden = true
     }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -349,6 +344,24 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         }
     }
     
+    func getCurrentAddress() {
+        var currentLocation: CLLocation
+        currentLocation = self.locationManager.location!
+        print(currentLocation.coordinate.latitude,currentLocation.coordinate.longitude)
+        networkManager.getCurrentLocation(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude) { [weak self](current, err) in
+            
+            if current?.status?.name != "no results"  {
+                let currentLocationString:String = "현위치 : " + (current?.results?[0].region?.area1?.name)! + " " + (current?.results?[0].region?.area2?.name)! + " " + (current?.results?[0].region?.area3?.name)!
+                self?.currentLocLB.text = currentLocationString
+                
+            }
+            else {
+                self?.currentLocLB.text = "위치를 찾을수 없습니다."
+            }
+            
+        }
+    }
+    
     func setStoreTime(openTime: Int?, closeTime: Int?) -> String{
         if openTime != nil && closeTime != nil {
             
@@ -417,11 +430,20 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         }
         else {
             let imageView = UIImageView()
-            imageView.image = UIImage.init(named: "icGoogle")
-            //imageView.imageFromUrl(gsno(imgCollection?[i].storeImg))
+            imageView.image = UIImage.init(named: "img_default_big.png")
+            imageView.contentMode = .scaleAspectFit
             let xCoordinate = shopSlideImageView.frame.midX + shopSlideImageView.frame.width * CGFloat(0)
             contentWidth += shopSlideImageView.frame.width
-            imageView.frame = CGRect(x: xCoordinate - (shopSlideImageView.frame.width/2), y: 0, width: shopSlideImageView.frame.width , height: shopSlideImageView.frame.height)
+            let imageViewHeight:CGFloat
+            print(UIScreen.main.bounds.size.height)
+            if UIScreen.main.bounds.size.height >= 812.0
+            {
+                imageViewHeight = shopSlideImageView.frame.height - UIApplication.shared.statusBarFrame.size.height
+                imageView.frame = CGRect(x: xCoordinate - (shopSlideImageView.frame.width/2), y: UIApplication.shared.statusBarFrame.size.height, width: shopSlideImageView.frame.width , height: imageViewHeight)
+            }
+            else {
+                imageView.frame = CGRect(x: xCoordinate - (shopSlideImageView.frame.width/2), y: 0, width: shopSlideImageView.frame.width , height: shopSlideImageView.frame.height)
+            }
             shopSlideImageView.addSubview(imageView)
             shopSlideImageView.contentSize = CGSize(width: contentWidth, height: shopSlideImageView.frame.height)
 
@@ -632,10 +654,11 @@ extension MainViewController: UITableViewDataSource
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "shopaddresscell") as! ShopAddressTableViewCell
             cell.shopAddressLabel.text = storeDetailModel?.address
-           //cell.shopOldAddressLabel.text = self.storeDetailModel.
+            cell.shopOldAddressLabel.text = storeDetailModel?.addressNumber
             cell.shopTimeLabel.text = setStoreTime(openTime:storeDetailModel?.openTime, closeTime: storeDetailModel?.closeTime)
             cell.shopWebsiteLabel.text = storeDetailModel?.address
             cell.shopCallNumLabel.text = storeDetailModel?.storeCall
+            cell.storeIdx = gino(storeDetailModel?.storeIdx)
             return cell
         }
         else if indexPath.section == 1 {
