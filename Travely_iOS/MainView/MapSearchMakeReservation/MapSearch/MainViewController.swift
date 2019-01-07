@@ -674,6 +674,13 @@ extension MainViewController: UITableViewDataSource
             cell.shopWebsiteLabel.text = storeDetailModel?.address
             cell.shopCallNumLabel.text = storeDetailModel?.storeCall
             cell.storeIdx = gino(storeDetailModel?.storeIdx)
+            if gino(storeDetailModel?.isFavorite) == 1 {
+                cell.favoriteButton.imageView?.image = UIImage(named: "icFavoriteColor.png")
+            }
+            else {
+                cell.favoriteButton.imageView?.image = UIImage(named: "icFavoriteGray.png")
+            }
+          
            // 영업중 영업종료 이미지 시간에 따른 변환
             let now = Date()
             let openTimestamp = gino(storeDetailModel?.openTime)
