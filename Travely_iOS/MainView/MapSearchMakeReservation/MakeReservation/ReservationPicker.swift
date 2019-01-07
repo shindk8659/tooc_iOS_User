@@ -60,6 +60,9 @@ class ReservationPicker: UIViewController {
     }
     
     @IBAction func didPressConfirmation(_ sender: UIButton) {
+        print(checkDate.compareTimeOnly(to: openTime).rawValue, findDate.compareTimeOnly(to: closeTime).rawValue)
+        
+        // rawValue가 0 일때 클로징타임이 00:00시일때 -> rawValue 1이 뜸
         if checkDate.compareTimeOnly(to: openTime).rawValue == 1 && findDate.compareTimeOnly(to: closeTime).rawValue == -1 {
             let dateSet: [String] = [checkViewLabel[1].text!, checkViewLabel[2].text!, findViewLabel[1].text!, findViewLabel[2].text!, intervalTime.text!]
             self.delegate.tossTheTime(checkDate: checkDate , findDate: findDate, timeInterval: timeInterval, dateSet: dateSet)

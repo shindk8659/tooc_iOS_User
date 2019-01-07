@@ -63,13 +63,13 @@ class ReservationViewController: UITableViewController {
     @IBAction func didPressFareInfo(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Alert", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ServiceRateAlertViewController") as! ServiceRateAlertViewController
-        self.present(vc, animated: true, completion: nil)
+        tabBarController?.present(vc, animated: false, completion: nil)
     }
     
     @IBAction func didPressBagSizeInfo(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Alert", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "BagSizeAlertViewController") as! BagSizeAlertViewController
-        self.present(vc, animated: true, completion: nil)
+        tabBarController?.present(vc, animated: false, completion: nil)
     }
     
     
@@ -195,8 +195,8 @@ class ReservationViewController: UITableViewController {
                 let storyboard = UIStoryboard(name: "Alert", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
                 vc.delegate = self
-                self?.present(vc, animated: true, completion: nil)
-            }
+                self!.tabBarController?.present(vc, animated: false, completion: nil)
+            } 
         }
     }
    
@@ -248,7 +248,7 @@ class ReservationViewController: UITableViewController {
         vc.findDate = findTime
         vc.openTime = Date(timeIntervalSince1970: Double(opentime/1000))
         vc.closeTime = Date(timeIntervalSince1970: Double(closeTime/1000))
-        self.present(vc, animated: true, completion: nil)
+        tabBarController?.present(vc, animated: false, completion: nil)
     }
    
     
@@ -287,7 +287,7 @@ class ReservationViewController: UITableViewController {
 extension ReservationViewController: changeTabProtocol,tossTheTime {
 
     func changeTabViewController() {
-        let ReservationStatusViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReservationStatusViewController") as! ReservationStatusViewController
+        let ReservationStatusViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReservationStatusNavi")
         
         ReservationStatusViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "ic_reservation_gray_tab"),tag: 1)
         
@@ -342,7 +342,5 @@ extension ReservationViewController: changeTabProtocol,tossTheTime {
         }
         //4시간, 4~6, 6~8, 8~12, 12~24, 24~36, 36~48 ... 12시간 단위
     }
-    
-    
 }
 

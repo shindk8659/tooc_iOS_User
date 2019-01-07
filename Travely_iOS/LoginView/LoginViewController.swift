@@ -65,7 +65,8 @@ class LoginViewController: UIViewController {
                 }
                 else {
                     print("로그인",login?.isReserve)
-                    let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! UITabBarController
+                    let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! MainTabBarController
+                    mainView.isReserve = login?.isReserve
                     self?.present(mainView, animated: true, completion: nil)
                     let guideView = UIStoryboard(name: "LoginSignup", bundle: nil).instantiateViewController(withIdentifier: "appguideview") as!UINavigationController
                     self?.present(guideView, animated: true, completion: nil)
