@@ -3253,6 +3253,9 @@
                                                                 <constraint firstAttribute="width" constant="47" id="nVy-4y-HBp"/>
                                                             </constraints>
                                                             <state key="normal" image="bt_find_the_road"/>
+                                                            <connections>
+                                                                <action selector="findPath:" destination="KYH-oo-8nq" eventType="touchUpInside" id="raG-jO-PPJ"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울 동대문구 존농로 151 2층 (전농동)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOb-xU-am2">
                                                             <rect key="frame" x="20.000000000000014" y="290" width="225.33333333333337" height="21.666666666666686"/>
@@ -3328,6 +3331,7 @@
                         <outlet property="qrCode" destination="gKt-kh-1tg" id="siE-ZI-zQB"/>
                         <outlet property="qrCodeView" destination="ayN-hD-OQK" id="3Xa-wV-L3T"/>
                         <outlet property="reservationCode" destination="ejv-2X-TVR" id="e2W-Mu-N3c"/>
+                        <outlet property="reservationLocationInfoCell" destination="SbZ-k5-B1F" id="Qv9-nC-8cl"/>
                         <outlet property="reservationView" destination="xOn-LK-71D" id="xlc-q4-Dg6"/>
                         <outlet property="storeAdress" destination="qOb-xU-am2" id="Btd-Ru-Sg4"/>
                         <outlet property="storeName" destination="Xnc-Vg-uEJ" id="nWj-SU-c9B"/>
@@ -4164,7 +4168,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="Qcr-bx-J7S"/>
                                                     </constraints>
                                                 </view>
-                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-If-dfa" customClass="CosmosView" customModule="Cosmos">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-If-dfa" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="260" y="10.666666666666664" width="91" height="15"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -4242,7 +4246,7 @@
             <objects>
                 <navigationController storyboardIdentifier="ReservationStatusNavi" automaticallyAdjustsScrollViewInsets="NO" id="TAZ-y3-iSZ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SMb-gQ-x0f">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="SMb-gQ-x0f">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

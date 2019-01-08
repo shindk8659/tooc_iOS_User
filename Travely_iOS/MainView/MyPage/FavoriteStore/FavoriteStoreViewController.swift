@@ -23,7 +23,7 @@ class FavoriteStoreViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        self.addBackButton("black")
+        self.addBackButton("white")
         networkModel.getFavoriteStore { [weak self](favoriteStore, errorModel, error) in
             
             // 리뷰
@@ -102,8 +102,15 @@ extension FavoriteStoreViewController: UITableViewDataSource
             
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "favoritestorecell") as! FavoriteStoreTableViewCell
+            cell.delegate = self
             cell.selectionStyle = UITableViewCell.SelectionStyle.none;
             cell.separatorInset = UIEdgeInsets.zero
+            cell.storeIdx = self.gino(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].storeIdx)
+            cell.closeTime = self.gino(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].closeTime)
+            cell.currentBag  = self.gino(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].currentBag)
+            cell.limit = self.gino(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].limit)
+            cell.opentime = self.gino(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].openTime)
+            cell.restWeekResponseDtos = self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].restWeekResponseDtos
             cell.favoriteStoreNameLabel.text = gsno(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].storeName)
             cell.favoriteStoreImg.imageFromUrl(gsno(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].storeImgUrl))
             cell.favoriteStoreAddressLabel.text = gsno(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].address)
@@ -119,5 +126,28 @@ extension FavoriteStoreViewController: UITableViewDataSource
 }
 extension FavoriteStoreViewController: UITableViewDelegate
 {
+    
+}
+extension FavoriteStoreViewController: MakeReviewPresentView
+{
+    func makeReview(onCell: RecentStorageTableViewCell) {
+        
+    }
+    
+    func makeReservation(storeIdx: Int, closeTime: Int, currentBag: Int, limit: Int, opentime: Int,available:Int, restWeekResponseDtos: [RestWeekResponseDtos?]?) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
+        vc.closeTime = closeTime
+        vc.currentBag = currentBag
+        vc.limit = limit
+        vc.opentime = opentime
+        vc.restWeekResponseDtos = restWeekResponseDtos
+        vc.storeIdx = storeIdx
+        vc.available = available
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     
 }

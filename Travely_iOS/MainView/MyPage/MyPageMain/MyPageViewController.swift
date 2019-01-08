@@ -129,6 +129,17 @@ extension MyPageViewController: UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recentstoragecell") as! RecentStorageTableViewCell
         cell.delegate = self
+        
+        //마이페이지예약
+        //이전뷰에서 가져온 데이터들
+        cell.storeIdx = self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].storeIdx)
+        cell.closeTime = self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].closeTime)
+        cell.currentBag  = self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].currentBag)
+        cell.limit = self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].limit)
+        cell.opentime = self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].openTime)
+        cell.available = self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].available)
+        cell.restWeekResponseDtos = profileModel?.storeInfoResponseDtoList?[indexPath.row].restWeekResponseDtos
+        
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
         cell.separatorInset = UIEdgeInsets.zero
         cell.recentStorageNameLabel.text = self.gsno(profileModel?.storeInfoResponseDtoList?[indexPath.row].storeName)
@@ -142,6 +153,20 @@ extension MyPageViewController: UITableViewDataSource
     
 }
 extension MyPageViewController: MakeReviewPresentView {
+ 
+    func makeReservation(storeIdx: Int, closeTime: Int, currentBag: Int, limit: Int, opentime: Int,available:Int, restWeekResponseDtos: [RestWeekResponseDtos?]?) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
+        vc.closeTime = closeTime
+        vc.currentBag = currentBag
+        vc.limit = limit
+        vc.opentime = opentime
+        vc.restWeekResponseDtos = restWeekResponseDtos
+        vc.storeIdx = storeIdx
+        vc.available = available
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func makeReview(onCell: RecentStorageTableViewCell) {
         let indexPath = self.myPageTableView.indexPath(for: onCell)
          let makeReview = UIStoryboard.init(name: "Alert", bundle: nil).instantiateViewController(withIdentifier: "makereview") as! MakeReviewPopupViewController

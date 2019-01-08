@@ -28,7 +28,7 @@ class MyReviewViewController: UIViewController ,ReloadViwDelegate{
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        self.addBackButton("black")
+        self.addBackButton("white")
         self.getMyReview()
             
         
@@ -119,7 +119,7 @@ extension MyReviewViewController: UITableViewDelegate
 {
     
 }
-extension MyReviewViewController: DeleteReviewReloadTableView
+extension MyReviewViewController: ReviewReloadTableView
 {
     func ModifyReview(onCell: MyReviewTableViewCell) {
         let indexPath = self.reviewListTableView.indexPath(for: onCell)

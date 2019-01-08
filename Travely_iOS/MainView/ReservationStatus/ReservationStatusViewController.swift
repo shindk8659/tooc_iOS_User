@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class ReservationStatusViewController: UITableViewController {
+class ReservationStatusViewController: UITableViewController,CLLocationManagerDelegate {
     
     @IBOutlet var halfBgImage: UIImageView!
     @IBOutlet var reservationView: UIView!
@@ -46,6 +46,7 @@ class ReservationStatusViewController: UITableViewController {
     @IBOutlet var openTime: UILabel!
     @IBOutlet var storeAdress: UILabel!
     
+    @IBOutlet weak var reservationLocationInfoCell: UITableViewCell!
     @IBAction func didPressRVCancel(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Alert", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "cancelConfirmViewController") as! cancelConfirmViewController
@@ -53,8 +54,46 @@ class ReservationStatusViewController: UITableViewController {
         self.tabBarController?.present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func findPath(_ sender: UIButton) {
+        
+            let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+            
+            
+            let appleMapInstalled = UIApplication.shared.canOpenURL(URL(string: "http://maps.apple.com/")!)
+            let kakaoMapInstalled = UIApplication.shared.canOpenURL(URL(string: "daummaps://")!)
+            if (!appleMapInstalled){
+                let appleButton = UIAlertAction(title: "애플 지도 다운받기", style: .default, handler: {(alert: UIAlertAction!) in
+                    UIApplication.shared.open(URL(string: "http://maps.apple.com/?saddr=\((self.locationManager.location?.coordinate.latitude)!),\((self.locationManager.location?.coordinate.longitude)!)&daddr=\((self.latitude)!),\((self.longitude)!)")! as URL, options: [:], completionHandler: nil)})
+                alertController.addAction(appleButton)
+                
+            }
+            else {
+                let appleButton = UIAlertAction(title: "애플 지도", style: .default, handler: {(alert: UIAlertAction!) in
+                    UIApplication.shared.open(URL(string: "http://maps.apple.com/?saddr=\((self.locationManager.location?.coordinate.latitude)!),\((self.locationManager.location?.coordinate.longitude)!)&daddr=\((self.latitude)!),\((self.longitude)!)")! as URL, options: [:], completionHandler: nil)})
+                alertController.addAction(appleButton)
+                
+            }
+            
+            if (!kakaoMapInstalled){
+                let appleDownButton = UIAlertAction(title: "카카오 맵 다운받기", style: .default, handler: {(alert: UIAlertAction!) in
+                    UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/id304608425?mt=8")! as URL, options: [:], completionHandler: nil)})
+                alertController.addAction(appleDownButton)
+            }
+            else {
+                let kakaoButton = UIAlertAction(title: "카카오 맵", style: .default, handler: {(alert: UIAlertAction!) in
+                    UIApplication.shared.open(URL(string: "daummaps://route?sp=\((self.locationManager.location?.coordinate.latitude)!),\((self.locationManager.location?.coordinate.longitude)!)&ep=\((self.latitude)!),\((self.longitude)!)&by=CAR")! as URL, options: [:], completionHandler: nil)})
+                alertController.addAction(kakaoButton)
+                
+            }
+            
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: {(alert: UIAlertAction!) in alertController.dismiss(animated: true, completion: nil)})
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion:{})
+            
+    }
     let titleImageView = UIImageView.init(image: UIImage.init(named: "logoWhite.png"))
     lazy var mapView = GMSMapView()
+   
     // mapMarker
     let marker = GMSMarker()
     var initialCheck = 1
@@ -62,10 +101,17 @@ class ReservationStatusViewController: UITableViewController {
     var latitude:  CLLocationDegrees?
     var longitude:  CLLocationDegrees?
     var paymentState: String?
+    var reservationInfo:ReservationInfo?
+    
+    // locationManager
+    private var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.titleView = titleImageView
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
         layoutSetup()
         
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -99,6 +145,7 @@ class ReservationStatusViewController: UITableViewController {
             else {
                 print(result)
 //                let storeIdx = gino(restWeekResponseDtos?[0]?.storeIdx)
+                self?.reservationInfo = result
                 self!.paymentState = result?.stateType
                 switch self!.paymentState {
                 case "RESERVED":
@@ -376,3 +423,5 @@ extension ReservationStatusViewController: presentAlert, changeTabProtocol {
         self.tabBarController?.present(vc, animated: true, completion: nil)
     }
 }
+
+

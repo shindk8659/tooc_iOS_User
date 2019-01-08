@@ -20,6 +20,9 @@ struct StoreInfoResponseDtoList : Codable {
 	let longitude : Double?
 	let limit : Int?
 	let storeImage : String?
+    let currentBag: Int?
+    let available: Int?
+    let restWeekResponseDtos : [RestWeekResponseDtos]?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -35,6 +38,9 @@ struct StoreInfoResponseDtoList : Codable {
 		case longitude = "longitude"
 		case limit = "limit"
 		case storeImage = "storeImage"
+        case currentBag = "currentBag"
+        case available = "available"
+        case restWeekResponseDtos = "restWeekResponseDtos"
 	}
 
 	init(from decoder: Decoder) throws {
@@ -51,6 +57,9 @@ struct StoreInfoResponseDtoList : Codable {
 		longitude = try values.decodeIfPresent(Double.self, forKey: .longitude)
 		limit = try values.decodeIfPresent(Int.self, forKey: .limit)
 		storeImage = try values.decodeIfPresent(String.self, forKey: .storeImage)
+        currentBag = try values.decodeIfPresent(Int.self, forKey: .currentBag)
+        available = try values.decodeIfPresent(Int.self, forKey: .available)
+        restWeekResponseDtos = try values.decodeIfPresent([RestWeekResponseDtos].self, forKey: .restWeekResponseDtos)
 	}
 
 }
