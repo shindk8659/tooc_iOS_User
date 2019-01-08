@@ -36,7 +36,6 @@ class ReservationViewController: UITableViewController {
     var rateOfSuitcase = 0
     var rateOfLuggage = 0
     var totalRate = 0
-    var serviceRate: [Int] = [4, 6, 8, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
     var rateList: [Int] = []
     var priceInfo: [PriceList?]? = []
     
@@ -164,6 +163,7 @@ class ReservationViewController: UITableViewController {
     }
     
     @IBAction func didPressReservation(_ sender: Any) {
+        UserDefaults.standard.set(totalTime.text, forKey: "totalTime")
         
         guard totalRate != 0 else {
             let alertController = UIAlertController(title: "",message: "1개 이상의 짐을 선택해 주세요.", preferredStyle: UIAlertController.Style.alert)

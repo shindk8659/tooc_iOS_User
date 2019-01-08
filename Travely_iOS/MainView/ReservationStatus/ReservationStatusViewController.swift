@@ -120,6 +120,8 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
     
     override func viewWillAppear(_ animated: Bool) {
             network()
+            totalTime.text = UserDefaults.standard.string(forKey: "totalTime")
+        
     }
     
     func network() {
@@ -130,14 +132,15 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
                 let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
                 alertController.addAction(cancelButton)
                 self?.present(alertController, animated: true, completion: nil)
+                print("error1")
             }
                 // 서버측 에러핸들러 구성후 바꿔야함
             else if result == nil && errorModel != nil && error == nil {
-                print(errorModel, error)
-                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                alertController.addAction(cancelButton)
-                self?.present(alertController, animated: true, completion: nil)
+                let DoNotRVNaviViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoNotRVNavi")
+                DoNotRVNaviViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "ic_reservation_gray_tab"),tag: 1)
+                DoNotRVNaviViewController.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+                self!.tabBarController?.viewControllers![1] = DoNotRVNaviViewController
+                self!.tabBarController?.selectedIndex = 1
             }
             else {
                 print(result)
@@ -159,7 +162,8 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
                     self!.statusProgressView[1].backgroundColor = .white
                     self!.statusProgressView[2].backgroundColor = .white
                     self!.statusProgressView[3].backgroundColor = .white
-                case "CANCEL": break
+                case "CANCEL":
+                    break
                 default: break
                 }
                 
@@ -201,7 +205,8 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
                 default: break
                 }
                 
-                self!.totalRateOfPayment.text = "\(result!.price)원"
+                let totalPrice = result!.price ?? 0
+                self!.totalRateOfPayment.text = "\(totalPrice)원"
                 self?.storeName.text = result?.store?.storeName
                 self?.storeAdress.text = result?.store?.address
                 print("클로즈 타임: \(result?.store?.closeTime)")
@@ -209,6 +214,23 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
                 self?.latitude = result?.store?.latitude
                 self?.longitude = result?.store?.longitude
                 
+                let bagDtos = result?.bagDtos
+                let unitPrice = result?.priceUnit ?? 0
+                var totalCount = 0
+                
+                for bag in bagDtos! {
+                    switch bag.bagType {
+                    case "CARRIER" :
+                        totalCount += bag.bagCount!
+                        self!.suitcaseRate.text = "\(bag.bagCount ?? 0)개 \(unitPrice)원"
+                    case "ETC" :
+                        totalCount += bag.bagCount!
+                        self!.luggageRate.text = "\(bag.bagCount ?? 0)개 \(unitPrice)원"
+                    default: break
+                    }
+                }
+                
+                self?.totalRate.text = "요금: \(unitPrice)원 X \(totalCount)개"
             
             }
         }
@@ -299,18 +321,8 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
             }
         default: break
         }
-        
         return UITableView.automaticDimension
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        switch indexPath.row {
@@ -391,10 +403,23 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
 
 }
 
-extension ReservationStatusViewController: presentAlert {
+extension ReservationStatusViewController: presentAlert, changeTabProtocol {
+    func changeTabViewController() {
+        let DoNotRVNaviController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoNotRVNavi")
+        
+        DoNotRVNaviController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "ic_reservation_gray_tab"),tag: 1)
+        
+        DoNotRVNaviController.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+        
+        self.tabBarController?.viewControllers![1] = DoNotRVNaviController
+        self.tabBarController?.selectedIndex = 1
+    }
+    
     func presentRVAlert() {
         let storyboard = UIStoryboard(name: "Alert", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
+        vc.delegate = self
+        vc.type = .cancel
         self.tabBarController?.present(vc, animated: true, completion: nil)
     }
 }
