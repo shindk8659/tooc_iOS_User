@@ -43,7 +43,10 @@ class cancelConfirmViewController: UIViewController {
     func layoutSetup() {
         alertView.layer.cornerRadius = 10
         confirmButton.layer.cornerRadius = 18
+        closeButton.layer.borderWidth = 2
+        closeButton.layer.borderColor = UIColor(red: 0x1F, green: 0xBF, blue: 0xC8).cgColor
         closeButton.layer.cornerRadius = 18
+        
     }
     
 }

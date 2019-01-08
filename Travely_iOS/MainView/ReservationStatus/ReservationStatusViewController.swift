@@ -67,6 +67,8 @@ class ReservationStatusViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.titleView = titleImageView
         layoutSetup()
+        UserDefaults.standard.set(true, forKey: "isReserve")
+        
         
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
 //        self.navigationController?.navigationBar.shadowImage = UIImage()

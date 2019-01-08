@@ -106,6 +106,7 @@
 		D192BFA821E3BEB40072D4EF /* PriceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFA721E3BEB40072D4EF /* PriceList.swift */; };
 		D192BFAA21E3C2CE0072D4EF /* ReservationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFA921E3C2CE0072D4EF /* ReservationInfo.swift */; };
 		D192BFAC21E3C3190072D4EF /* BagImgDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFAB21E3C3190072D4EF /* BagImgDtos.swift */; };
+		D192BFAE21E506D00072D4EF /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFAD21E506D00072D4EF /* DeliveryViewController.swift */; };
 		D1ABFAE321DBC20500BEE3E0 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABFAE221DBC20500BEE3E0 /* CircleButton.swift */; };
 		D1ABFAE521DBC29B00BEE3E0 /* ReservationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */; };
 /* End PBXBuildFile section */
@@ -213,6 +214,7 @@
 		D192BFA721E3BEB40072D4EF /* PriceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceList.swift; sourceTree = "<group>"; };
 		D192BFA921E3C2CE0072D4EF /* ReservationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationInfo.swift; sourceTree = "<group>"; };
 		D192BFAB21E3C3190072D4EF /* BagImgDtos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagImgDtos.swift; sourceTree = "<group>"; };
+		D192BFAD21E506D00072D4EF /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		D1ABFAE221DBC20500BEE3E0 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStatusViewController.swift; sourceTree = "<group>"; };
 		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,6 +392,7 @@
 			children = (
 				D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */,
 				D192BFA421E2CF3B0072D4EF /* DidNotReserveViewController.swift */,
+				D192BFAD21E506D00072D4EF /* DeliveryViewController.swift */,
 			);
 			path = ReservationStatus;
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 				52DAACD521E0B5A800B000A7 /* AppGuideViewController.swift in Sources */,
 				D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */,
 				52EDFB5E21DA2FC400A83CC0 /* StoreImageResponseDtos.swift in Sources */,
+				D192BFAE21E506D00072D4EF /* DeliveryViewController.swift in Sources */,
 				52D174B821E132E300CD28ED /* LoginModel.swift in Sources */,
 				D12A6C9621DCB58300FB6B78 /* LatestReservationViewController.swift in Sources */,
 				52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */,

@@ -626,10 +626,10 @@
             </objects>
             <point key="canvasLocation" x="946" y="78"/>
         </scene>
-        <!--View Controller-->
+        <!--Delivery View Controller-->
         <scene sceneID="Kjk-L6-clo">
             <objects>
-                <viewController id="Vcw-tm-Au1" sceneMemberID="viewController">
+                <viewController id="Vcw-tm-Au1" customClass="DeliveryViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fxa-A9-Udm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

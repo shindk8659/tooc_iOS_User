@@ -207,23 +207,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Db5-I9-j1O">
                                 <rect key="frame" x="62.666666666666657" y="440" width="249.99999999999997" height="36"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiU-xx-VCI">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="36"/>
-                                        <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="X91-bA-CD7"/>
-                                            <constraint firstAttribute="width" constant="120" id="iIj-ZS-C4R"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
-                                        <state key="normal" title="확인">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didPressConfirm:" destination="zAQ-PD-rR6" eventType="touchUpInside" id="TOf-Lv-34w"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lps-lK-3cX">
-                                        <rect key="frame" x="130" y="0.0" width="120" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="gJX-LS-xAS"/>
@@ -235,6 +220,21 @@
                                         </state>
                                         <connections>
                                             <action selector="didPressClose:" destination="zAQ-PD-rR6" eventType="touchUpInside" id="u7d-Wu-Xk6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiU-xx-VCI">
+                                        <rect key="frame" x="130" y="0.0" width="120" height="36"/>
+                                        <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="X91-bA-CD7"/>
+                                            <constraint firstAttribute="width" constant="120" id="iIj-ZS-C4R"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressConfirm:" destination="zAQ-PD-rR6" eventType="touchUpInside" id="TOf-Lv-34w"/>
                                         </connections>
                                     </button>
                                 </subviews>
