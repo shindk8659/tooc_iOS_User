@@ -28,7 +28,7 @@ class MyReviewViewController: UIViewController ,ReloadViwDelegate{
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        self.addBackButton("white")
+        self.addBackButton("black")
         self.getMyReview()
             
         

@@ -17,6 +17,9 @@ class ShopReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var userReviewTextView: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        var frame = self.userReviewTextView.frame
+        frame.size.height = self.userReviewTextView.contentSize.height
+        self.userReviewTextView.frame = frame
         // Initialization code
     }
 

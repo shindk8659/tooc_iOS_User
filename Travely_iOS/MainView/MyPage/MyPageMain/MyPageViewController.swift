@@ -23,9 +23,6 @@ class MyPageViewController: UIViewController,ReloadViwDelegate {
     @IBOutlet weak var favoriteCountLabel: UILabel!
     @IBOutlet weak var reviewCountLabel: UILabel!
     
-    
-    
-    
     @IBAction func appStatusButtonAction(_ sender: Any) {
         let appstatusVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "appstatus")
         appstatusVC.addBackButton("black")
