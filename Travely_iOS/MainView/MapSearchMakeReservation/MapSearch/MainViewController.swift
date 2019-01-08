@@ -169,7 +169,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         
-        self.getCurrentAddress()
+        
        
         // shopDetailView
         shopDetailView.delegate = self
@@ -183,6 +183,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         // main 뷰에 mapView를 추가하고 지도뷰 위에 searchView와 searchTableView shopDetailView를 추가한다
         mapView.delegate = self
         mapView.isMyLocationEnabled = true
+        self.getCurrentAddress()
         mapView.settings.myLocationButton = true
         marker.icon = UIImage(named: "icPinColor.png")
         //그라데이션 뷰
@@ -199,7 +200,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             UIColor.white.withAlphaComponent(1).cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
-        
         mapView.layer.mask = gradientLayer
         
         // 변경한 뷰들 순차적으로 다시 메인뷰에 설정함
@@ -249,6 +249,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     override func viewWillAppear(_ animated: Bool) {
       
         // Expandable tableview delegate
+        self.getCurrentAddress()
         searchTableView.expandableDelegate = self
         searchTableView.animation = .automatic
         searchTableView.separatorStyle = .singleLine
@@ -353,7 +354,9 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     func getCurrentAddress() {
         var currentLocation: CLLocation
         currentLocation = self.locationManager.location!
+        
         print(currentLocation.coordinate.latitude,currentLocation.coordinate.longitude)
+        mapView.camera = GMSCameraPosition.camera(withLatitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: 15)
         networkManager.getCurrentLocation(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude) { [weak self](current, err) in
             
             if current?.status?.name != "no results"  {
@@ -743,6 +746,7 @@ extension MainViewController: AfterReserve
         self.shopDetailView.isScrollEnabled = false
         self.shopDetailView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.shopDetailView.frame.width, height: self.shopDetailView.frame.height)
         self.shopSlideImageView.frame = CGRect(x: 0, y: -217, width: self.shopSlideImageView.frame.width, height: self.shopSlideImageView.frame.height)
+        self.shopSimpleInfoView.isHidden = true
         self.searchView.isHidden = false
         //네비게이션바를 투명하게 해서 뒤에 mapView를 보여준다
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -750,7 +754,7 @@ extension MainViewController: AfterReserve
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
         self.navigationItem.titleView = titleImageView
         self.tabBarController?.hideTabBarAnimated(hide: false)
-        
+        self.getCurrentAddress()
     }
     
     
