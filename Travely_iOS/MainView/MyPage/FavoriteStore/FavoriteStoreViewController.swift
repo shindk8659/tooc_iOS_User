@@ -20,10 +20,7 @@ class FavoriteStoreViewController: UIViewController {
         self.favoriteStoreTableView.delegate = self
         self.favoriteStoreTableView.dataSource = self
        
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        self.addBackButton("black")
+       
         networkModel.getFavoriteStore { [weak self](favoriteStore, errorModel, error) in
             
             // 리뷰
@@ -47,6 +44,14 @@ class FavoriteStoreViewController: UIViewController {
             }
         
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        self.addBackButton("black")
     }
     
     func setStoreTime(openTime: Int?, closeTime: Int?) -> String{
