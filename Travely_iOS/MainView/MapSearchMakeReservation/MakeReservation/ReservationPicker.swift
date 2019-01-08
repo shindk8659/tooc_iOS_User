@@ -58,6 +58,20 @@ class ReservationPicker: UIViewController {
         }
     }
     
+    @IBAction func didPressReset(_ sender: Any) {
+        if checkRSDate != nil {
+            if status == .check {
+                self.date = checkRSDate!
+            }
+        }
+        
+        if findRSDate != nil {
+            if status == .find {
+                self.date = findRSDate!
+            }
+        }
+    }
+    
     @IBAction func didPressConfirmation(_ sender: UIButton) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "e"
@@ -87,8 +101,13 @@ class ReservationPicker: UIViewController {
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         } else {
             openHoursAlert.isHidden = false
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.openHoursAlert.isHidden = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.openHoursAlert.alpha = 0
+                }, completion: { (true) in
+                    self.openHoursAlert!.isHidden = true
+                    self.openHoursAlert.alpha = 0.8
+                })
             }
         }
     }
@@ -104,6 +123,11 @@ class ReservationPicker: UIViewController {
     
     var openTime = Date()
     var closeTime = Date()
+    
+    var checkRSDate:Date?
+    var findRSDate:Date?
+    
+    
     
     var status: status = .check {
         didSet {
@@ -122,8 +146,11 @@ class ReservationPicker: UIViewController {
                 datePicker.minimumDate = Date.init(timeIntervalSinceNow: 0)
                 guard initialCheck1 == true else {
                     datePicker.date = checkDate
+                    checkRSDate = checkDate
                     return
                 }
+                
+                checkRSDate = checkDate
                 initialCheck1 = false
                 
             case .find:
@@ -140,8 +167,11 @@ class ReservationPicker: UIViewController {
                 datePicker.minimumDate = Date.init(timeInterval: 60, since: checkDate)
                 guard initialCheck2 == true else {
                     datePicker.date = findDate
+                    findRSDate = findDate
                     return
                 }
+                
+                findRSDate = findDate
                 initialCheck2 = false
             }
         }
@@ -192,8 +222,6 @@ class ReservationPicker: UIViewController {
         let open = dateFormatter.string(from: openTime)
         let close = dateFormatter.string(from: closeTime)
         openHourLabel.text = "영업시간:\(open) ~ \(close)"
-        
-        print(dayOff)
         
         
         if dayOff != nil {
@@ -248,8 +276,6 @@ class ReservationPicker: UIViewController {
 //        }
 //        date = datePicker.date
     
-        
-        
 //        date = Date(timeIntervalSinceNow: 0)
         status = .check
         changeLabel()

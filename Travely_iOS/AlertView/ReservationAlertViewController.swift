@@ -33,7 +33,9 @@ class ReservationAlertViewController: UIViewController {
             self.delegate!.changeTabViewController()
         }
         } else {
-            // 두번째 탭 예약뷰 -> 예약현황 없음 뷰 & 첫번째 탭 처음 들어왔을때 뷰로 들어 오는 로직
+            self.dismiss(animated: true) {
+                self.delegate!.changeTabViewController()
+            }
         }
     }
     
