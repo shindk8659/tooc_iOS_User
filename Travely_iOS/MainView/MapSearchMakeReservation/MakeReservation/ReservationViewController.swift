@@ -10,9 +10,11 @@ import UIKit
 protocol AfterReserve {
     func refreshMainViewAfterReserve()
 }
+
 class ReservationViewController: UITableViewController {
     //이전 뷰 초기화 delegate
     var delegate: AfterReserve?
+    
     //이전뷰에서 가져온 데이터들
     var storeIdx:Int = 0
     var closeTime:Int = 0
@@ -36,6 +38,8 @@ class ReservationViewController: UITableViewController {
     var rateOfLuggage = 0
     var totalRate = 0
     var serviceRate: [Int] = [4, 6, 8, 12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+    var rateList: [Int] = []
+    var priceInfo: [PriceList?]? = []
     
     let networkManager = NetworkManager()
     var reservationDetail: ReservationModel?
@@ -67,6 +71,7 @@ class ReservationViewController: UITableViewController {
     @IBAction func didPressFareInfo(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Alert", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ServiceRateAlertViewController") as! ServiceRateAlertViewController
+        vc.rateArray = rateList
         tabBarController?.present(vc, animated: false, completion: nil)
     }
     
@@ -160,6 +165,14 @@ class ReservationViewController: UITableViewController {
     }
     
     @IBAction func didPressReservation(_ sender: Any) {
+        
+        guard totalRate != 0 else {
+            let alertController = UIAlertController(title: "",message: "1개 이상의 짐을 선택해 주세요.", preferredStyle: UIAlertController.Style.alert)
+            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+            alertController.addAction(cancelButton)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
 
         let startTime = Int(checkTime.timeIntervalSince1970)*1000
         let endTime = Int(findTime.timeIntervalSince1970)*1000
@@ -201,7 +214,6 @@ class ReservationViewController: UITableViewController {
                 vc.type = .reserve
                 vc.delegate = self
                 self!.tabBarController?.present(vc, animated: false, completion:nil)
-               
             } 
         }
     }
@@ -244,9 +256,11 @@ class ReservationViewController: UITableViewController {
         
         findLabel[0].text = dateFormatter1.string(from: findTime)
         findLabel[1].text = dateFormatter2.string(from: findTime)
+        
+        bringPriceList()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func bringPriceList() {
         networkManager.bringPriceList { [weak self] (result, errorModel, error) in
             if result == nil && errorModel == nil && error != nil {
                 print(errorModel, error)
@@ -256,8 +270,10 @@ class ReservationViewController: UITableViewController {
                 print(errorModel, error)
             }
             else {
-                print("통신 성공")
-                print(result)
+                self!.priceInfo = result
+                for price in result! {
+                    self?.rateList.append((price?.price)!)
+                }
             }
         }
     }
@@ -300,7 +316,6 @@ class ReservationViewController: UITableViewController {
 //        } else if indexPath.row == 4 {
 //            return 0
 //        }
-        
         return UITableView.automaticDimension
     }
     
@@ -342,48 +357,50 @@ extension ReservationViewController: changeTabProtocol,tossTheTime {
     }
     
     func calculatebasicRate(interval: Int) {
-        
-        // 서버 로직(알고리즘)
+        // 가격 산정 알고리즘
         var hour = interval / 60 / 60
+        var extraHour = 0
         if hour * 60 * 60 != interval {
-            print("실행")
             hour += 1
         }
         
+        var price = 0
+        var priceIdx = 0
+
+        for info in priceInfo! {
+            if (info?.priceIdx)! < hour {
+                price = (info?.price)!
+                priceIdx = (info?.priceIdx)!
+            }
+        }
         
+        if hour > (priceInfo![7]?.priceIdx)! {
+            let hourGap = hour - (priceInfo![7]?.priceIdx)!
+            print(hourGap, hour, (priceInfo![7]?.priceIdx)! )
+            extraHour = hourGap / 12
+
+            if extraHour % 12 == 0 {
+                extraHour -= 1
+            }
+        }
         
+        price = price + extraHour*priceInfo![0]!.price!
+        self.rate = price
+        basicRate.text = "시간 기본 요금: 원"
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        for rate in serviceRate {
-//            if rate == serviceRate.last {
-//                serviceRate.append(rate + 12)
-//                print(serviceRate.last, rate)
-//            }
-            
-            if interval <= rate*3600 {
-                switch rate {
-                case 4: self.rate = 3500
-                basicRate.text = "4시간 기본 요금: 3500원"
-                case 6: self.rate = 4500
-                basicRate.text = "4~6시간 기본 요금: 4500원"
-                case 8: self.rate = 5500
-                basicRate.text = "6~8시간 기본 요금: 5500원"
-                case 12: self.rate = 6500
-                basicRate.text = "8~12시간 기본 요금: 6500원"
-                case 24: self.rate = 7500
-                basicRate.text = "12~24시간 기본 요금: 6500원"
-                default: self.rate = 7500 + 4000*(rate - 24)/12
-                basicRate.text = "\(rate-12)~\(rate)시간 기본 요금: \(self.rate)원"
+                switch priceIdx {
+                case 4:
+                basicRate.text = "4시간 기본 요금: \(price)원"
+                case 6:
+                basicRate.text = "4~6시간 기본 요금: \(price)원"
+                case 8:
+                basicRate.text = "6~8시간 기본 요금: \(price)원"
+                case 12:
+                basicRate.text = "8~12시간 기본 요금: \(price)원"
+                case 24:
+                basicRate.text = "12~24시간 기본 요금: \(price)원"
+                default:
+                basicRate.text = "\(36+12*extraHour)~\(36+12*extraHour+12)시간 기본 요금: \(price)원"
                 }
                 rateOfSuitcase = self.rate*Int(numberOfSuitcase)
                 rateOfLuggage = self.rate*Int(numberOfLuggage)
@@ -392,9 +409,6 @@ extension ReservationViewController: changeTabProtocol,tossTheTime {
                 numberOfLuggageLabel.text = "\(numberOfLuggage)개 \(String(rateOfLuggage))원"
                 totalRateLabel.text = "\(totalRate)원"
                 return
-            }
-        }
-        //4시간, 4~6, 6~8, 8~12, 12~24, 24~36, 36~48 ... 12시간 단위
     }
 }
 

@@ -11,7 +11,7 @@ import UIKit
 class ServiceRateAlertViewController: UIViewController {
     
     let timeArray = ["4(기본이용)", "4~6", "6~8", "8~12", "12~24", "24~36", "36~48"]
-    let rateArray = ["3,500", "4,500", "5,500", "6,500", "7,500", "11,500", "15,500"]
+    var rateArray = [Int]()
 
     @IBOutlet var rateTableView: UITableView!
     
@@ -36,8 +36,13 @@ extension ServiceRateAlertViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "basicRateCell") as! RateCell
+        
         cell.timeLabel.text = timeArray[indexPath.row]
-        cell.rateLabel.text = rateArray[indexPath.row]
+        if indexPath.row == 7 {
+            cell.rateLabel.text = String(rateArray[0])
+        } else {
+        cell.rateLabel.text = String(rateArray[indexPath.row+1])
+        }
         return cell
     }
 }
