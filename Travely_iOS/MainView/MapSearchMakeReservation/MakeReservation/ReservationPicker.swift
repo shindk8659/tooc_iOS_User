@@ -61,7 +61,7 @@ class ReservationPicker: UIViewController {
     @IBAction func didPressConfirmation(_ sender: UIButton) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "e"
-        var isDayOff: Bool?
+        var isDayOff: Bool? = false
         
         if dayOff != nil {
             for day in dayOff! {
@@ -73,13 +73,23 @@ class ReservationPicker: UIViewController {
             }
         }
         
-        // rawValue가 0 일때 클로징타임이 00:00시일때 -> rawValue 1이 뜸
+        // rawValue가 0 일때 클로징타임이 00:00시일때 -> rawValue 1이 뜸 -> 해결 (23:59)
+        // 찾는시간 오전설정 가능 -> 오류 해결해야함
+        
+        dateFormatter.dateFormat = "HH:mm"
+        if dateFormatter.string(from: closeTime) == "00:00" {
+            closeTime = Date(timeInterval: -60, since: closeTime)
+        }
+        
         if checkDate.compareTimeOnly(to: openTime).rawValue == 1 && findDate.compareTimeOnly(to: closeTime).rawValue == -1 && isDayOff == false {
             let dateSet: [String] = [checkViewLabel[1].text!, checkViewLabel[2].text!, findViewLabel[1].text!, findViewLabel[2].text!, intervalTime.text!]
             self.delegate.tossTheTime(checkDate: checkDate , findDate: findDate, timeInterval: timeInterval, dateSet: dateSet)
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         } else {
             openHoursAlert.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.openHoursAlert.isHidden = true
+            }
         }
     }
     
@@ -139,8 +149,6 @@ class ReservationPicker: UIViewController {
     
     var date: Date = Date() {
         didSet {
-            
-            
             let calendar = NSCalendar.current
             let dateComponents = calendar.dateComponents( [.year, .day, .hour, .minute], from: date)
             let fixedDate = calendar.date(from: dateComponents)
@@ -201,7 +209,9 @@ class ReservationPicker: UIViewController {
                 default: return
                 }
             }
+            if dayOff!.count >= 1 {
             openHourLabel.text!.append(" 휴무")
+            }
         }
     }
     

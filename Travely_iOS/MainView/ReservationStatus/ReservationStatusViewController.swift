@@ -61,6 +61,7 @@ class ReservationStatusViewController: UITableViewController {
     let networkManager = NetworkManager()
     var latitude:  CLLocationDegrees?
     var longitude:  CLLocationDegrees?
+    var paymentState: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,21 +96,22 @@ class ReservationStatusViewController: UITableViewController {
             else {
                 print(result)
 //                let storeIdx = gino(restWeekResponseDtos?[0]?.storeIdx)
-                switch result?.stateType {
+                self!.paymentState = result?.stateType
+                switch self!.paymentState {
                 case "RESERVED":
-                    self!.statusProgressView[0].backgroundColor = .black
+                    self!.statusProgressView[0].backgroundColor = .white
                 case "PAYED":
-                    self!.statusProgressView[0].backgroundColor = .black
-                    self!.statusProgressView[1].backgroundColor = .black
+                    self!.statusProgressView[0].backgroundColor = .white
+                    self!.statusProgressView[1].backgroundColor = .white
                 case "ARCHIVE":
-                    self!.statusProgressView[0].backgroundColor = .black
-                    self!.statusProgressView[1].backgroundColor = .black
-                    self!.statusProgressView[2].backgroundColor = .black
+                    self!.statusProgressView[0].backgroundColor = .white
+                    self!.statusProgressView[1].backgroundColor = .white
+                    self!.statusProgressView[2].backgroundColor = .white
                 case "PICKUP":
-                    self!.statusProgressView[0].backgroundColor = .black
-                    self!.statusProgressView[1].backgroundColor = .black
-                    self!.statusProgressView[2].backgroundColor = .black
-                    self!.statusProgressView[3].backgroundColor = .black
+                    self!.statusProgressView[0].backgroundColor = .white
+                    self!.statusProgressView[1].backgroundColor = .white
+                    self!.statusProgressView[2].backgroundColor = .white
+                    self!.statusProgressView[3].backgroundColor = .white
                 case "CANCEL": break
                 default: break
                 }
@@ -229,8 +231,38 @@ class ReservationStatusViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+
+        switch paymentState {
+        case "RESERVED":
+            if indexPath.row == 3 {
+                return 0
+            }
+        case "PAYED":
+            if indexPath.row == 2 || indexPath.row == 3  {
+                return 0
+            }
+        case "ARCHIVE":
+            if indexPath.row == 2 {
+                return 0
+            }
+        case "PICKUP":
+            if indexPath.row == 2 {
+                return 0
+            }
+        default: break
+        }
+        
         return UITableView.automaticDimension
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

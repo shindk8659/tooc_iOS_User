@@ -1502,7 +1502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wmx-9T-DG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2666" y="78"/>
+            <point key="canvasLocation" x="2567" y="78"/>
         </scene>
         <!--예약하기-->
         <scene sceneID="QGB-0F-6qA">
@@ -2848,7 +2848,7 @@
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5F-Df-sep">
                                                                             <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
-                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="backgroundColor" red="0.12156862745098039" green="0.74901960784313726" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="16" id="97K-21-GZg"/>
                                                                                 <constraint firstAttribute="width" constant="16" id="Hhh-dO-nRE"/>
@@ -2856,7 +2856,7 @@
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76o-Hq-eNk">
                                                                             <rect key="frame" x="89.666666666666657" y="0.0" width="16" height="16"/>
-                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="16" id="m6t-mp-xXL"/>
                                                                                 <constraint firstAttribute="height" constant="16" id="yeX-04-gel"/>
@@ -2864,7 +2864,7 @@
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRR-ah-Sh3">
                                                                             <rect key="frame" x="179.33333333333334" y="0.0" width="16" height="16"/>
-                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="16" id="a6v-nM-6Xy"/>
                                                                                 <constraint firstAttribute="width" constant="16" id="hT0-Bf-z7R"/>
@@ -2872,7 +2872,7 @@
                                                                         </view>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dcg-qz-Axv">
                                                                             <rect key="frame" x="269" y="0.0" width="16" height="16"/>
-                                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="16" id="Y3U-H7-nfU"/>
                                                                                 <constraint firstAttribute="width" constant="16" id="nin-GH-Z8G"/>
