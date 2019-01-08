@@ -7,10 +7,14 @@
 //
 
 import UIKit
-
+protocol AfterReserve {
+    func refreshMainViewAfterReserve()
+}
 class ReservationViewController: UITableViewController {
-    
+    //이전 뷰 초기화 delegate
+    var delegate: AfterReserve?
     //이전뷰에서 가져온 데이터들
+    var storeIdx:Int = 0
     var closeTime:Int = 0
     var currentBag:Int = 0
     var limit:Int = 0
@@ -156,7 +160,7 @@ class ReservationViewController: UITableViewController {
     }
     
     @IBAction func didPressReservation(_ sender: Any) {
-        let storeIdx = gino(restWeekResponseDtos?[0]?.storeIdx)
+
         let startTime = Int(checkTime.timeIntervalSince1970)*1000
         let endTime = Int(findTime.timeIntervalSince1970)*1000
         var bagDtos:[[String : Any]] = []
@@ -196,7 +200,8 @@ class ReservationViewController: UITableViewController {
                 let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
                 vc.type = .reserve
                 vc.delegate = self
-                self!.tabBarController?.present(vc, animated: false, completion: nil)
+                self!.tabBarController?.present(vc, animated: false, completion:nil)
+               
             } 
         }
     }
@@ -313,6 +318,8 @@ class ReservationViewController: UITableViewController {
 extension ReservationViewController: changeTabProtocol,tossTheTime {
 
     func changeTabViewController() {
+        self.navigationController?.popViewController(animated: true)
+        self.delegate?.refreshMainViewAfterReserve()
         let ReservationStatusViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReservationStatusNavi")
         
         ReservationStatusViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "ic_reservation_gray_tab"),tag: 1)

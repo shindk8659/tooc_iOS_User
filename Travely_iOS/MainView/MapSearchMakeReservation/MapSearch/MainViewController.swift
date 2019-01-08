@@ -19,8 +19,8 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     @IBOutlet weak var searchButtonView: UIView!
     @IBOutlet weak var hideBtn: UIBarButtonItem!
     @IBOutlet weak var shopDetailView: UITableView!
-    @IBOutlet weak var shopSimpleInfoView: UIView!
     @IBOutlet weak var shopDetailHeaderView: UIView!
+    @IBOutlet weak var shopSimpleInfoView: UIView!
     
     // shopsimpleInfoview IBOulet
     @IBOutlet weak var simpleInfoStoreNameLabel: UILabel!
@@ -36,7 +36,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     lazy var shopSlideImageView :UIScrollView = UIScrollView.init(frame: CGRect(x: 0, y: -217, width: self.view.frame.size.width, height: 217))
     lazy var searchTableView: ExpandableTableView = ExpandableTableView.init(frame: CGRect(x: 0, y: self.view.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height))
     lazy var mapView = GMSMapView.map(withFrame: CGRect(x: UIScreen.main.bounds.origin.x, y: UIScreen.main.bounds.origin.y, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), camera: GMSCameraPosition.camera(withLatitude: 37.558514, longitude: 126.925239, zoom: 15))
-    
+   
     // titleImage
     let titleImageView = UIImageView.init(image: UIImage.init(named: "tooc"))
     
@@ -58,11 +58,13 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
+        vc.delegate = self
         vc.closeTime = gino(storeDetailModel?.closeTime)
         vc.currentBag = gino(storeDetailModel?.currentBag)
         vc.limit = gino(storeDetailModel?.limit)
         vc.opentime = gino(storeDetailModel?.openTime)
         vc.restWeekResponseDtos = storeDetailModel?.restWeekResponseDtos
+        vc.storeIdx = gino(storeDetailModel?.storeIdx)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -143,6 +145,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //예약 뷰 델리게이트
         
         //스토어 이미지 뷰 설정
         shopSlideImageView.showsHorizontalScrollIndicator = true
@@ -269,7 +272,8 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         
         
     }
-
+    
+    
     // swipe Gesture upside
     @objc func handleSimpleInfoSwipeUpGesture(recognizer: UISwipeGestureRecognizer) {
         if self.shopDetailView.frame.origin.y == self.view.frame.height-150{
@@ -338,12 +342,13 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
                 self.searchView.isHidden = false
                 self.tabBarController?.hideTabBarAnimated(hide: false)
             }) { [weak self](true) in
-                 self?.shopSimpleInfoView.isHidden = false
+                self?.shopSimpleInfoView.isHidden = false
             }
             self.navigationItem.titleView = titleImageView
             
         }
     }
+    
     
     func getCurrentAddress() {
         var currentLocation: CLLocation
@@ -727,6 +732,28 @@ extension MainViewController: UITableViewDelegate
 {
 
      
+}
+extension MainViewController: AfterReserve
+{
+    func refreshMainViewAfterReserve() {
+        
+        self.marker.map = nil
+        self.mapView.isUserInteractionEnabled = true
+        self.shopDetailView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+        self.shopDetailView.isScrollEnabled = false
+        self.shopDetailView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.shopDetailView.frame.width, height: self.shopDetailView.frame.height)
+        self.shopSlideImageView.frame = CGRect(x: 0, y: -217, width: self.shopSlideImageView.frame.width, height: self.shopSlideImageView.frame.height)
+        self.searchView.isHidden = false
+        //네비게이션바를 투명하게 해서 뒤에 mapView를 보여준다
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.barTintColor = UIColor.clear
+        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        self.navigationItem.titleView = titleImageView
+        self.tabBarController?.hideTabBarAnimated(hide: false)
+        
+    }
+    
+    
 }
 
 

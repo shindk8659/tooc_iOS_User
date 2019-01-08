@@ -17,10 +17,13 @@ class LatestReservationViewController: UITableViewController {
     
     lazy var mapView = GMSMapView()
     var initialCheck = 1
+    // titleImage
+    let titleImageView = UIImageView.init(image: UIImage.init(named: "logoWhite.png"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutSetup()
+         self.navigationItem.titleView = titleImageView
     }
     
     func layoutSetup() {

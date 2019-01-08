@@ -53,6 +53,7 @@ class ReservationStatusViewController: UITableViewController {
         self.tabBarController?.present(vc, animated: true, completion: nil)
     }
     
+    let titleImageView = UIImageView.init(image: UIImage.init(named: "logoWhite.png"))
     lazy var mapView = GMSMapView()
     // mapMarker
     let marker = GMSMarker()
@@ -63,6 +64,7 @@ class ReservationStatusViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.titleView = titleImageView
         layoutSetup()
         
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
