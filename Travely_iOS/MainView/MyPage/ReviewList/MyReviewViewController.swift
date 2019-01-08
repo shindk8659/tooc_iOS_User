@@ -25,13 +25,17 @@ class MyReviewViewController: UIViewController ,ReloadViwDelegate{
         
         self.reviewListTableView.delegate = self
         self.reviewListTableView.dataSource = self
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        self.addBackButton("black")
         self.getMyReview()
             
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        self.addBackButton("black")
     }
     func getMyReview()
     {

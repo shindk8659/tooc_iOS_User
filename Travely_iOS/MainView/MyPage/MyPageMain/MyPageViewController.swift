@@ -75,13 +75,16 @@ class MyPageViewController: UIViewController,ReloadViwDelegate {
         
         self.myPageTableView.delegate = self
         self.myPageTableView.dataSource = self
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+       
      
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
         myPageNetworking()
     }
     
