@@ -352,11 +352,9 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     
     
     func getCurrentAddress() {
+        
         var currentLocation: CLLocation
         currentLocation = self.locationManager.location!
-        
-        print(currentLocation.coordinate.latitude,currentLocation.coordinate.longitude)
-        mapView.camera = GMSCameraPosition.camera(withLatitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: 15)
         networkManager.getCurrentLocation(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude) { [weak self](current, err) in
             
             if current?.status?.name != "no results"  {
@@ -755,6 +753,10 @@ extension MainViewController: AfterReserve
         self.navigationItem.titleView = titleImageView
         self.tabBarController?.hideTabBarAnimated(hide: false)
         self.getCurrentAddress()
+        var currentLocation: CLLocation
+        currentLocation = self.locationManager.location!
+        print(currentLocation.coordinate.latitude,currentLocation.coordinate.longitude)
+        mapView.camera = GMSCameraPosition.camera(withLatitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude, zoom: 15)
     }
     
     
