@@ -137,6 +137,7 @@ extension MyPageViewController: UITableViewDataSource
         cell.currentBag  = self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].currentBag)
         cell.limit = self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].limit)
         cell.opentime = self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].openTime)
+        cell.available = self.gino(profileModel?.storeInfoResponseDtoList?[indexPath.row].available)
         cell.restWeekResponseDtos = profileModel?.storeInfoResponseDtoList?[indexPath.row].restWeekResponseDtos
         
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
@@ -153,7 +154,7 @@ extension MyPageViewController: UITableViewDataSource
 }
 extension MyPageViewController: MakeReviewPresentView {
  
-    func makeReservation(storeIdx: Int, closeTime: Int, currentBag: Int, limit: Int, opentime: Int, restWeekResponseDtos: [RestWeekResponseDtos?]?) {
+    func makeReservation(storeIdx: Int, closeTime: Int, currentBag: Int, limit: Int, opentime: Int,available:Int, restWeekResponseDtos: [RestWeekResponseDtos?]?) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
         vc.closeTime = closeTime
@@ -162,6 +163,7 @@ extension MyPageViewController: MakeReviewPresentView {
         vc.opentime = opentime
         vc.restWeekResponseDtos = restWeekResponseDtos
         vc.storeIdx = storeIdx
+        vc.available = available
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

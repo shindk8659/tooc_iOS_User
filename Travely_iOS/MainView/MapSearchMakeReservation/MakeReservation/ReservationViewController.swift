@@ -21,6 +21,7 @@ class ReservationViewController: UITableViewController {
     var currentBag:Int = 0
     var limit:Int = 0
     var opentime:Int = 0
+    var available:Int = 0
     var restWeekResponseDtos:[RestWeekResponseDtos?]? = nil
     
     var suitcaseCheck: Bool!

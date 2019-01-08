@@ -17,6 +17,7 @@ struct SimpleStoreResponseDtos: Codable {
     let storeImgUrl : String?
     let currentBag: Int?
     let limit:Int?
+    let  available:Int?
     let restWeekResponseDtos : [RestWeekResponseDtos]?
     
     enum CodingKeys: String, CodingKey {
@@ -30,6 +31,7 @@ struct SimpleStoreResponseDtos: Codable {
         case storeImgUrl = "storeImgUrl"
         case currentBag = "currentBag"
         case limit = "limit"
+        case available = "available"
         case restWeekResponseDtos = "restWeekResponseDtos"
     }
     
@@ -44,6 +46,7 @@ struct SimpleStoreResponseDtos: Codable {
         storeImgUrl = try values.decodeIfPresent(String.self, forKey: .storeImgUrl)
         currentBag = try values.decodeIfPresent(Int.self, forKey: .currentBag)
         limit = try values.decodeIfPresent(Int.self, forKey: .limit)
+        available = try values.decodeIfPresent(Int.self, forKey: .available)
         restWeekResponseDtos = try values.decodeIfPresent([RestWeekResponseDtos].self, forKey: .restWeekResponseDtos)
         
     }

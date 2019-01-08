@@ -65,6 +65,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         vc.opentime = gino(storeDetailModel?.openTime)
         vc.restWeekResponseDtos = storeDetailModel?.restWeekResponseDtos
         vc.storeIdx = gino(storeDetailModel?.storeIdx)
+        vc.available = gino(storeDetailModel?.available)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

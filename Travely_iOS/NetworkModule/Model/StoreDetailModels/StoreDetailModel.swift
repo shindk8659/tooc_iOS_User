@@ -28,6 +28,7 @@ struct StoreDetailModel : Codable {
     let currentBag : Int?
     let grade : Double?
     let isFavorite : Int?
+    let available: Int?
     let reviewResponseDtos : [ReviewResponseDtos]?
     let storeImageResponseDtos : [StoreImageResponseDtos]?
     let restWeekResponseDtos : [RestWeekResponseDtos]?
@@ -49,6 +50,7 @@ struct StoreDetailModel : Codable {
         case currentBag = "currentBag"
         case grade = "grade"
         case isFavorite = "isFavorite"
+        case available = "available"
         case reviewResponseDtos = "reviewResponseDtos"
         case storeImageResponseDtos = "storeImageResponseDtos"
         case restWeekResponseDtos = "restWeekResponseDtos"
@@ -71,6 +73,7 @@ struct StoreDetailModel : Codable {
         currentBag = try values.decodeIfPresent(Int.self, forKey: .currentBag)
         grade = try values.decodeIfPresent(Double.self, forKey: .grade)
         isFavorite = try values.decodeIfPresent(Int.self, forKey: .isFavorite)
+        available = try values.decodeIfPresent(Int.self, forKey: .available)
         reviewResponseDtos = try values.decodeIfPresent([ReviewResponseDtos].self, forKey: .reviewResponseDtos)
         storeImageResponseDtos = try values.decodeIfPresent([StoreImageResponseDtos].self, forKey: .storeImageResponseDtos)
         restWeekResponseDtos = try values.decodeIfPresent([RestWeekResponseDtos].self, forKey: .restWeekResponseDtos)

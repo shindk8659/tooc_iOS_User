@@ -23,7 +23,7 @@ class FavoriteStoreViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        self.addBackButton("black")
+        self.addBackButton("white")
         networkModel.getFavoriteStore { [weak self](favoriteStore, errorModel, error) in
             
             // 리뷰
@@ -134,7 +134,7 @@ extension FavoriteStoreViewController: MakeReviewPresentView
         
     }
     
-    func makeReservation(storeIdx: Int, closeTime: Int, currentBag: Int, limit: Int, opentime: Int, restWeekResponseDtos: [RestWeekResponseDtos?]?) {
+    func makeReservation(storeIdx: Int, closeTime: Int, currentBag: Int, limit: Int, opentime: Int,available:Int, restWeekResponseDtos: [RestWeekResponseDtos?]?) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
@@ -144,6 +144,7 @@ extension FavoriteStoreViewController: MakeReviewPresentView
         vc.opentime = opentime
         vc.restWeekResponseDtos = restWeekResponseDtos
         vc.storeIdx = storeIdx
+        vc.available = available
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
