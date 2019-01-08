@@ -14,10 +14,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     let networkManager = NetworkManager()
+    let userDefaults = UserDefaults.standard
+    var isReserve: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         //네비게이션바를 투명하게 
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -27,9 +28,16 @@ class LoginViewController: UIViewController {
         emailTextField.keyboardType = .asciiCapable
         passwordTextField.keyboardType = .asciiCapable
        
-
+        
         // Do any additional setup after loading the view.
+        if self.userDefaults.bool(forKey: "isLogin") == true {
+            let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! MainTabBarController
+            mainView.isReserve = userDefaults.bool(forKey: "isReserve")
+            self.present(mainView, animated: false, completion: nil)
+        }
     }
+    
+
     
     
     
@@ -64,7 +72,8 @@ class LoginViewController: UIViewController {
                     self?.present(alertController,animated: true,completion: nil)
                 }
                 else {
-                    print("로그인",login?.isReserve)
+                    self?.userDefaults.set(true, forKey: "isLogin")
+                    
                     let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! MainTabBarController
                     mainView.isReserve = login?.isReserve
                     self?.present(mainView, animated: true, completion: nil)
@@ -77,12 +86,8 @@ class LoginViewController: UIViewController {
       
     }
     @IBAction func signupBtnAct(_ sender: Any) {
-        
         let signupView = self.storyboard?.instantiateViewController(withIdentifier:"signup") as! SignupViewController
         self.navigationController?.pushViewController(signupView, animated: true)
-
-        
     }
- 
 }
 
