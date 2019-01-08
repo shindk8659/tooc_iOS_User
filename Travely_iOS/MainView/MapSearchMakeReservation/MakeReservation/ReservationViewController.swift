@@ -389,16 +389,18 @@ extension ReservationViewController: changeTabProtocol,tossTheTime {
         basicRate.text = "시간 기본 요금: 원"
         
                 switch priceIdx {
-                case 4:
+                case 0:
                 basicRate.text = "4시간 기본 요금: \(price)원"
-                case 6:
+                case 4:
                 basicRate.text = "4~6시간 기본 요금: \(price)원"
-                case 8:
+                case 6:
                 basicRate.text = "6~8시간 기본 요금: \(price)원"
-                case 12:
+                case 8:
                 basicRate.text = "8~12시간 기본 요금: \(price)원"
-                case 24:
+                case 12:
                 basicRate.text = "12~24시간 기본 요금: \(price)원"
+                case 24:
+                basicRate.text = "24~36시간 기본 요금: \(price)원"
                 default:
                 basicRate.text = "\(36+12*extraHour)~\(36+12*extraHour+12)시간 기본 요금: \(price)원"
                 }

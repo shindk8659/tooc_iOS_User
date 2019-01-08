@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         IQKeyboardManager.shared.enable = true
         GMSServices.provideAPIKey(googleMapsApiKey)
+        
         return true
     }
 

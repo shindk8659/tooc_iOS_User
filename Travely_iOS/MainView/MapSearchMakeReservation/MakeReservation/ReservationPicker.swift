@@ -79,11 +79,13 @@ class ReservationPicker: UIViewController {
         
         if dayOff != nil {
             for day in dayOff! {
+                print("데이데이 \(day)")
+                print(dateFormatter.string(from: checkDate),dateFormatter.string(from: findDate) )
+                
                 if Int(dateFormatter.string(from: checkDate)) == day || Int(dateFormatter.string(from: findDate)) == day {
                     isDayOff = true
-                } else {
-                    isDayOff = false
-                }
+                    print("트루")
+                } 
             }
         }
         
@@ -101,14 +103,14 @@ class ReservationPicker: UIViewController {
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         } else {
             openHoursAlert.isHidden = false
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.openHoursAlert.alpha = 0
-                }, completion: { (true) in
-                    self.openHoursAlert!.isHidden = true
-                    self.openHoursAlert.alpha = 0.8
-                })
-            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+//                UIView.animate(withDuration: 0.3, animations: {
+//                    self.openHoursAlert.alpha = 0
+//                }, completion: { (true) in
+//                    self.openHoursAlert!.isHidden = true
+//                    self.openHoursAlert.alpha = 0.8
+//                })
+//            }
         }
     }
     
@@ -262,7 +264,12 @@ class ReservationPicker: UIViewController {
     }
     
     @objc func hide() {
-        openHoursAlert.isHidden = true
+        UIView.animate(withDuration: 0.3, animations: {
+            self.openHoursAlert.alpha = 0
+        }) { (true) in
+            self.openHoursAlert!.isHidden = true
+            self.openHoursAlert.alpha = 0.8
+        }
     }
     
     func pickerSetup() {
@@ -277,8 +284,18 @@ class ReservationPicker: UIViewController {
 //        date = datePicker.date
     
 //        date = Date(timeIntervalSinceNow: 0)
+        
         status = .check
-        changeLabel()
+        date = checkDate
+        
+        status = .find
+        date = findDate
+        
+        status = .check
+        
+//        status = .check
+//        changeLabel()
+        
         
 //        datePicker.backgroundColor = UIColor(displayP3Red: 76, green: 100, blue: 253, alpha: 0.5)
 //        datePicker.isOpaque = false
