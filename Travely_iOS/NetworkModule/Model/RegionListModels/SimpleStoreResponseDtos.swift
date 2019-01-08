@@ -15,6 +15,10 @@ struct SimpleStoreResponseDtos: Codable {
     let closeTime : Int?
     let grade : Double?
     let storeImgUrl : String?
+    let currentBag: Int?
+    let limit:Int?
+    let  available:Int?
+    let restWeekResponseDtos : [RestWeekResponseDtos]?
     
     enum CodingKeys: String, CodingKey {
         
@@ -25,6 +29,10 @@ struct SimpleStoreResponseDtos: Codable {
         case closeTime = "closeTime"
         case grade = "grade"
         case storeImgUrl = "storeImgUrl"
+        case currentBag = "currentBag"
+        case limit = "limit"
+        case available = "available"
+        case restWeekResponseDtos = "restWeekResponseDtos"
     }
     
     init(from decoder: Decoder) throws {
@@ -36,6 +44,11 @@ struct SimpleStoreResponseDtos: Codable {
         closeTime = try values.decodeIfPresent(Int.self, forKey: .closeTime)
         grade = try values.decodeIfPresent(Double.self, forKey: .grade)
         storeImgUrl = try values.decodeIfPresent(String.self, forKey: .storeImgUrl)
+        currentBag = try values.decodeIfPresent(Int.self, forKey: .currentBag)
+        limit = try values.decodeIfPresent(Int.self, forKey: .limit)
+        available = try values.decodeIfPresent(Int.self, forKey: .available)
+        restWeekResponseDtos = try values.decodeIfPresent([RestWeekResponseDtos].self, forKey: .restWeekResponseDtos)
+        
     }
     
 }
