@@ -183,7 +183,6 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         // main 뷰에 mapView를 추가하고 지도뷰 위에 searchView와 searchTableView shopDetailView를 추가한다
         mapView.delegate = self
         mapView.isMyLocationEnabled = true
-        self.getCurrentAddress()
         mapView.settings.myLocationButton = true
         marker.icon = UIImage(named: "icPinColor.png")
         //그라데이션 뷰
@@ -354,19 +353,25 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     func getCurrentAddress() {
         
         var currentLocation: CLLocation
-        currentLocation = self.locationManager.location!
-        networkManager.getCurrentLocation(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude) { [weak self](current, err) in
-            
-            if current?.status?.name != "no results"  {
-                let currentLocationString:String = "현위치 : " + (current?.results?[0].region?.area1?.name)! + " " + (current?.results?[0].region?.area2?.name)! + " " + (current?.results?[0].region?.area3?.name)!
-                self?.currentLocLB.text = currentLocationString
+        if self.locationManager.location != nil {
+             currentLocation = self.locationManager.location!
+            networkManager.getCurrentLocation(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude) { [weak self](current, err) in
+                
+                if current?.status?.name != "no results"  {
+                    let currentLocationString:String = "현위치 : " + (current?.results?[0].region?.area1?.name)! + " " + (current?.results?[0].region?.area2?.name)! + " " + (current?.results?[0].region?.area3?.name)!
+                    self?.currentLocLB.text = currentLocationString
+                    
+                }
+                else {
+                    self?.currentLocLB.text = "위치를 찾을수 없습니다."
+                }
                 
             }
-            else {
-                self?.currentLocLB.text = "위치를 찾을수 없습니다."
-            }
-            
         }
+        else{
+            self.currentLocLB.text = "위치를 찾을수 없습니다."
+        }
+        
     }
     
     func setStoreTime(openTime: Int?, closeTime: Int?) -> String{
@@ -392,6 +397,18 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
             return ""
         }
         
+        
+    }
+    func makeReviewTime(time:Int?) ->String{
+        let timeStamp = gino(time)/1000
+        let date = Date(timeIntervalSince1970: Double(gino(timeStamp)))
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+9") //Set timezone that you want
+        dateFormatter.locale = Locale(identifier: "ko_kr")
+        dateFormatter.dateFormat = "MMM d일 HH:mm"
+        //Specify your format that you want
+        let open = dateFormatter.string(from: date)
+        return open
     }
     
     // Location Manager delegates
@@ -674,6 +691,7 @@ extension MainViewController: UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "shopaddresscell") as! ShopAddressTableViewCell
+            cell.delegate = self
             cell.shopAddressLabel.text = storeDetailModel?.address
             cell.shopOldAddressLabel.text = storeDetailModel?.addressNumber
             cell.shopTimeLabel.text = setStoreTime(openTime:storeDetailModel?.openTime, closeTime: storeDetailModel?.closeTime)
@@ -718,6 +736,10 @@ extension MainViewController: UITableViewDataSource
                 let cell = tableView.dequeueReusableCell(withIdentifier: "shopreviewcell") as! ShopReviewTableViewCell
                 cell.userGradeLabel.text = "\(String(describing: (storeDetailModel?.reviewResponseDtos?[indexPath.row].like)!))점"
                 cell.userReviewTextView.text = storeDetailModel?.reviewResponseDtos?[indexPath.row].content
+                cell.userNameLabel.text = storeDetailModel?.reviewResponseDtos?[indexPath.row].userName
+                print(storeDetailModel?.reviewResponseDtos?[indexPath.row].createdAt)
+                print(self.makeReviewTime(time: storeDetailModel?.reviewResponseDtos?[indexPath.row].createdAt))
+                cell.postTimeLabel.text =  self.makeReviewTime(time: storeDetailModel?.reviewResponseDtos?[indexPath.row].createdAt)
                 return cell
             }
             else {
@@ -760,6 +782,46 @@ extension MainViewController: AfterReserve
     }
     
     
+}
+extension MainViewController: FindPathDelegate
+{
+    func excuteFindPath() {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+    
+    
+        let appleMapInstalled = UIApplication.shared.canOpenURL(URL(string: "http://maps.apple.com/")!)
+        let kakaoMapInstalled = UIApplication.shared.canOpenURL(URL(string: "daummaps://")!)
+        if (!appleMapInstalled){
+            let appleButton = UIAlertAction(title: "애플 지도 다운받기", style: .default, handler: {(alert: UIAlertAction!) in
+                UIApplication.shared.open(URL(string: "http://maps.apple.com/?saddr=\((self.locationManager.location?.coordinate.latitude)!),\((self.locationManager.location?.coordinate.longitude)!)&daddr=\((self.storeDetailModel?.latitude)!),\((self.storeDetailModel?.longitude)!)")! as URL, options: [:], completionHandler: nil)})
+            alertController.addAction(appleButton)
+            
+        }
+        else {
+            let appleButton = UIAlertAction(title: "애플 지도", style: .default, handler: {(alert: UIAlertAction!) in
+                UIApplication.shared.open(URL(string: "http://maps.apple.com/?saddr=\((self.locationManager.location?.coordinate.latitude)!),\((self.locationManager.location?.coordinate.longitude)!)&daddr=\((self.storeDetailModel?.latitude)!),\((self.storeDetailModel?.longitude)!)")! as URL, options: [:], completionHandler: nil)})
+            alertController.addAction(appleButton)
+            
+        }
+        
+        if (!kakaoMapInstalled){
+            let appleDownButton = UIAlertAction(title: "카카오 맵 다운받기", style: .default, handler: {(alert: UIAlertAction!) in
+                UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/id304608425?mt=8")! as URL, options: [:], completionHandler: nil)})
+            alertController.addAction(appleDownButton)
+        }
+        else {
+            let kakaoButton = UIAlertAction(title: "카카오 맵", style: .default, handler: {(alert: UIAlertAction!) in
+                UIApplication.shared.open(URL(string: "daummaps://route?sp=\((self.locationManager.location?.coordinate.latitude)!),\((self.locationManager.location?.coordinate.longitude)!)&ep=\((self.storeDetailModel?.latitude)!),\((self.storeDetailModel?.longitude)!)&by=CAR")! as URL, options: [:], completionHandler: nil)})
+            alertController.addAction(kakaoButton)
+            
+        }
+            
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: {(alert: UIAlertAction!) in alertController.dismiss(animated: true, completion: nil)})
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion:{})
+        
+        
+    }
 }
 
 

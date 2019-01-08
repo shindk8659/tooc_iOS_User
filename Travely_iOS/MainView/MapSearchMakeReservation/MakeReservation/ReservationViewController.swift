@@ -21,8 +21,7 @@ class ReservationViewController: UITableViewController {
     var currentBag:Int = 0
     var limit:Int = 0
     var opentime:Int = 0
-    var week:Int = 0
-    var restWeekResponseDtos:[RestWeekResponseDtos?]?
+    var restWeekResponseDtos:[RestWeekResponseDtos?]? = nil
     
     var suitcaseCheck: Bool!
     var luggageCheck: Bool!
@@ -220,9 +219,9 @@ class ReservationViewController: UITableViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.shadowImage = UIImage()
         //테스트프린트
-        print("테스트프린트",closeTime,currentBag,limit,opentime,restWeekResponseDtos!,week)
+        print("테스트프린트",closeTime,currentBag,limit,opentime,restWeekResponseDtos)
         suitcaseCheck = false
         luggageCheck = false
         reservationButton.isEnabled = false

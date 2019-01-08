@@ -119,7 +119,7 @@ extension MyReviewViewController: UITableViewDelegate
 {
     
 }
-extension MyReviewViewController: DeleteReviewReloadTableView
+extension MyReviewViewController: ReviewReloadTableView
 {
     func ModifyReview(onCell: MyReviewTableViewCell) {
         let indexPath = self.reviewListTableView.indexPath(for: onCell)

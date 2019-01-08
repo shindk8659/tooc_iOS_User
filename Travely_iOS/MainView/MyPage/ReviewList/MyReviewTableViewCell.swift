@@ -9,7 +9,7 @@
 import UIKit
 import Cosmos
 
-protocol DeleteReviewReloadTableView {
+protocol ReviewReloadTableView {
     func didDeleteReview(onCell: MyReviewTableViewCell)
     func ModifyReview(onCell: MyReviewTableViewCell)
 }
@@ -23,7 +23,7 @@ class MyReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewTextView: UITextView!
     @IBOutlet weak var reviewStoreStarRatingView: CosmosView!
     
-    var delegate: DeleteReviewReloadTableView?
+    var delegate: ReviewReloadTableView?
     let networkManager = NetworkManager()
     var reviewIdx:Int?
     

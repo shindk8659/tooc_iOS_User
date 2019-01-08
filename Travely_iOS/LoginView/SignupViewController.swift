@@ -51,6 +51,13 @@ class SignupViewController: UIViewController {
 
                 // 로그인 네트워크 처리
                 if signin == nil && errorModel == nil && error != nil {
+                    self?.phoneTextField.text = ""
+                    self?.passTextField.text = ""
+                    self?.configPassTextField.text = ""
+                    self?.emailTextField.text = ""
+                    self?.nameTextField.text = ""
+                    let image = UIImage(named: "btSignin.png") as UIImage?
+                    self?.confirmButton.setImage(image, for: .normal)
                     let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
                     let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
                     alertController.addAction(cancelButton)
@@ -58,24 +65,29 @@ class SignupViewController: UIViewController {
                 }
                 else if signin == nil && errorModel != nil && error == nil {
                     var message :String? = ""
+                    let image = UIImage(named: "btSignin.png") as UIImage?
+                    self?.confirmButton.setImage(image, for: .normal)
                     for i in 0 ..< errorModel!.count
                     {
-                        if i == errorModel!.count-1 {
-                             message?.append((errorModel?[i]?.message)!)
+                        if (errorModel?[i]?.message)! == "잘못된 전화번호 형식입니다." {
+                            self?.phoneTextField.text = ""
+                        }
+                        else if (errorModel?[i]?.message)! == "password형식이 올바르지 않습니다." {
+                            self?.passTextField.text = ""
+                            self?.configPassTextField.text = ""
+                        }
+                        else if (errorModel?[i]?.message)! == "비밀번호 확인 비밀번호가 일치하지 않습니다." {
+                            self?.configPassTextField.text = ""
                         }
                         else {
-                             message?.append((errorModel?[i]?.message)!+"\n")
+                            self?.emailTextField.text = ""
                         }
-                       
+                        message?.append((errorModel?[i]?.message)!+"\n")
                     }
+                    
                     let alertController = UIAlertController(title: "정확한 정보를 입력해주세요.",message: message, preferredStyle: UIAlertController.Style.alert)
                     let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
                     alertController.addAction(cancelButton)
-                    self?.nameTextField.text = ""
-                    self?.emailTextField.text = ""
-                    self?.passTextField.text = ""
-                    self?.configPassTextField.text = ""
-                    self?.phoneTextField.text = ""
                     self?.present(alertController,animated: true,completion: nil)
                 }
                 else {

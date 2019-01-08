@@ -58,7 +58,7 @@ class LoginViewController: UIViewController {
                     self?.present(alertController,animated: true,completion: nil)
                 }
                 else if login == nil && errorModel != nil && error == nil {
-                    let alertController = UIAlertController(title: "",message: "정확한 정보를 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
+                    let alertController = UIAlertController(title: "",message: "이메일과 비밀번호를 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
                     let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
                     alertController.addAction(cancelButton)
                     self?.present(alertController,animated: true,completion: nil)

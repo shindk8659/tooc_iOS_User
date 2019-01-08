@@ -9,9 +9,19 @@
 import UIKit
 protocol MakeReviewPresentView {
     func makeReview(onCell: RecentStorageTableViewCell)
+    func makeReservation(storeIdx:Int,closeTime:Int,currentBag:Int,limit:Int,opentime:Int,
+    restWeekResponseDtos:[RestWeekResponseDtos?]?)
+    
 }
 
 class RecentStorageTableViewCell: UITableViewCell {
+    //이전뷰에서 가져온 데이터들
+    var storeIdx:Int = 0
+    var closeTime:Int = 0
+    var currentBag:Int = 0
+    var limit:Int = 0
+    var opentime:Int = 0
+    var restWeekResponseDtos:[RestWeekResponseDtos?]?
 
     @IBOutlet weak var recentStorageImg: UIImageView!
     @IBOutlet weak var recentStorageNameLabel: UILabel!
@@ -21,6 +31,7 @@ class RecentStorageTableViewCell: UITableViewCell {
         self.delegate?.makeReview(onCell: self)
     }
     @IBAction func makeReserveButtonAction(_ sender: Any) {
+        self.delegate?.makeReservation(storeIdx: storeIdx, closeTime: closeTime, currentBag: currentBag, limit: limit, opentime: opentime, restWeekResponseDtos: restWeekResponseDtos)
     }
     var delegate: MakeReviewPresentView?
     override func awakeFromNib() {
