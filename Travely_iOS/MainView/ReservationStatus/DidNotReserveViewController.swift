@@ -15,6 +15,5 @@ class DidNotReserveViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = titleImageView
-        UserDefaults.standard.set(false, forKey: "isReserve")
     }
 }

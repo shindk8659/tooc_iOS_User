@@ -175,8 +175,10 @@ class ReservationViewController: UITableViewController {
         }
         
         
-        let open = Date(timeIntervalSince1970: TimeInterval(opentime))
-        let close = Date(timeIntervalSince1970: TimeInterval(closeTime))
+        let open = Date(timeIntervalSince1970: TimeInterval(opentime/1000))
+        let close = Date(timeIntervalSince1970: TimeInterval(closeTime/1000))
+        
+        
     
         guard checkTime.isDateAvailable(openTime: open, closeTime: close) && findTime.isDateAvailable(openTime: open, closeTime: close) else {
             let alertController = UIAlertController(title: "",message: "예약 가능 시간이 아닙니다. \n 시간 설정을 다시 해 주세요.", preferredStyle: UIAlertController.Style.alert)
@@ -189,7 +191,6 @@ class ReservationViewController: UITableViewController {
         let startTime = Int(checkTime.timeIntervalSince1970)*1000
         let endTime = Int(findTime.timeIntervalSince1970)*1000
         var bagDtos:[[String : Any]] = []
-        
         
         if numberOfSuitcase != 0 {
             let suitCase: [String : Any] = ["bagType" : "CARRIER", "bagCount" : numberOfSuitcase]

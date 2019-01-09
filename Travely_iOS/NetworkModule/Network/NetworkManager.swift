@@ -282,6 +282,23 @@ class NetworkManager {
             completion(nil,errorModel,error)
         }
     }
+    
+    func uploadImg(data: Data, completion: @escaping(ImgModel?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        
+        let router = APIRouter(url: "/api/img", method: .post, parameters: nil, headers: header, data: data)
+        
+        NetworkRequester(with: router).requestMultipartFormData{
+            (Img:ImgModel?, errorModel :ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(Img,errorModel,error)
+        }
+    }
 
     
     

@@ -13,5 +13,6 @@ target 'Travely_iOS' do
     pod 'IQKeyboardManagerSwift'
     pod 'Cosmos', '~> 18.0'
     pod 'UITextView+Placeholder'
+    pod 'lottie-ios'
     
 end

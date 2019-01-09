@@ -73,9 +73,28 @@ extension InquiryViewController: UIImagePickerControllerDelegate, UINavigationCo
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
         image = newImg
-        let imgData = image.jpegData(compressionQuality: 1)
-        alarmImgUpload(imgData: imgData!)
-        dismiss(animated: true, completion: nil)
+        let imgData1 = image.jpegData(compressionQuality: 1)
+        let imgData2 = image.pngData()
+//        alarmImgUpload(imgData: imgData!)
+        if imgData1 != nil {
+            print("데이터 있음")
+            print(imgData1)
+        }
+        
+//        networkManager.uploadImg(data: imgData!) { [weak self](result, errorModel, error) in
+//            print("결과 \(result)")
+//            print("에러모델 \(errorModel)")
+//            print("에러 \(error)")
+//        }
+//        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+//            self.networkManager.uploadImg(data: imgData!) { [weak self](result, errorModel, error) in
+//                print("결과 \(result)")
+//                print("에러모델 \(errorModel)")
+//                print("에러 \(error)")
+//            }
+            self.alarmImgUpload(imgData: imgData1!)
+        }
     }
     
     func alarmImgUpload(imgData: Data) {
@@ -92,13 +111,16 @@ extension InquiryViewController: UIImagePickerControllerDelegate, UINavigationCo
             case .success(let upload, _, _): upload.uploadProgress(closure: { (progress) in
                 print("Upload Progress: \(progress.fractionCompleted)")
             })
-            upload.responseJSON(completionHandler: { (response) in
-                if let result = response.result.value {
-                    print(response)
-                    print(result)
-                    print(response.result.value)
-                    print("성공")
-                }
+//            upload.responseJSON(completionHandler: { (response) in
+//                if let result = response.result.value {
+//                    print(response)
+//                    print(result)
+//                    print(response.result.value)
+//                    print("성공")
+//                }
+//            })
+            upload.responseData(completionHandler: { (data) in
+                print(data.response?.statusCode)
             })
             case .failure(let err): print("error: \(err)")
             }
