@@ -17,7 +17,7 @@ struct SimpleStoreResponseDtos: Codable {
     let storeImgUrl : String?
     let currentBag: Int?
     let limit:Int?
-    let  available:Int?
+    let available:Int?
     let restWeekResponseDtos : [RestWeekResponseDtos]?
     
     enum CodingKeys: String, CodingKey {

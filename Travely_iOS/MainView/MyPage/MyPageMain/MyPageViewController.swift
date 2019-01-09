@@ -153,18 +153,39 @@ extension MyPageViewController: UITableViewDataSource
     
 }
 extension MyPageViewController: MakeReviewPresentView {
- 
+    
+
     func makeReservation(storeIdx: Int, closeTime: Int, currentBag: Int, limit: Int, opentime: Int,available:Int, restWeekResponseDtos: [RestWeekResponseDtos?]?) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
-        vc.closeTime = closeTime
-        vc.currentBag = currentBag
-        vc.limit = limit
-        vc.opentime = opentime
-        vc.restWeekResponseDtos = restWeekResponseDtos
-        vc.storeIdx = storeIdx
-        vc.available = available
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        if  UserDefaults.standard.bool(forKey: "isReserve") {
+            let alertController = UIAlertController(title: "",message: "이미 상가에 예약이 되어있습니다.", preferredStyle: UIAlertController.Style.alert)
+            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+            alertController.addAction(cancelButton)
+            self.present(alertController,animated: true,completion: nil)
+        }
+        else {
+            if available == -1 {
+                let alertController = UIAlertController(title: "",message: "더 이상 해당 상가에 예약이 불가합니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self.present(alertController,animated: true,completion: nil)
+                
+            }
+            else {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
+                vc.closeTime = closeTime
+                vc.currentBag = currentBag
+                vc.limit = limit
+                vc.opentime = opentime
+                vc.restWeekResponseDtos = restWeekResponseDtos
+                vc.storeIdx = storeIdx
+                vc.available = available
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+        }
+        
     }
     
     func makeReview(onCell: RecentStorageTableViewCell) {
