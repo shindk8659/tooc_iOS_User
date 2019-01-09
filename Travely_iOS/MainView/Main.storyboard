@@ -558,7 +558,7 @@
                                         <rect key="frame" x="0.0" y="514" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZiV-OL-2pL" id="pt5-GU-5ao">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 리뷰가 없습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5rV-qC-db6">
@@ -613,9 +613,11 @@
                         <outlet property="searchButtonView" destination="XDn-uE-tnz" id="u1u-le-Rcl"/>
                         <outlet property="searchView" destination="Wm1-zS-ohM" id="zyr-4U-Uar"/>
                         <outlet property="shopDetailHeaderView" destination="WzE-sQ-jCJ" id="3GG-N6-8Uz"/>
+                        <outlet property="shopDetailInfoReservationButton" destination="aQT-pv-pGF" id="UXk-0c-hSY"/>
                         <outlet property="shopDetailView" destination="52i-L9-bOM" id="Dgc-8s-And"/>
                         <outlet property="shopSimpleInfoView" destination="YN5-nz-IHc" id="WBc-K6-7xx"/>
                         <outlet property="simpleInfoAddressLabel" destination="nz7-H7-Grs" id="j7I-5b-F9e"/>
+                        <outlet property="simpleInfoReserveButton" destination="3cl-MR-cUs" id="l1o-v0-GhK"/>
                         <outlet property="simpleInfoStoreNameLabel" destination="RCB-Lt-NME" id="E4A-TZ-bfW"/>
                         <outlet property="simpleInfoTimeLabel" destination="ZU3-Pj-V0D" id="WbX-5X-8ae"/>
                         <outlet property="simpleIsWorkingImg" destination="rZm-y2-QcX" id="WFZ-FJ-5Vi"/>
@@ -4166,7 +4168,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="Qcr-bx-J7S"/>
                                                     </constraints>
                                                 </view>
-                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-If-dfa" customClass="CosmosView" customModule="Cosmos">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipc-If-dfa" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="260" y="10.666666666666664" width="91" height="15"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>

@@ -32,6 +32,10 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     @IBOutlet weak var detailStoreNameLabel: UILabel!
     @IBOutlet weak var detailGradeLabel: UILabel!
     
+    //예약버튼
+    @IBOutlet weak var simpleInfoReserveButton: UIButton!
+    @IBOutlet weak var shopDetailInfoReservationButton: UIButton!
+    
     
     lazy var shopSlideImageView :UIScrollView = UIScrollView.init(frame: CGRect(x: 0, y: -217, width: self.view.frame.size.width, height: 217))
     lazy var searchTableView: ExpandableTableView = ExpandableTableView.init(frame: CGRect(x: 0, y: self.view.frame.size.height, width: self.view.frame.size.width, height: self.view.frame.size.height))
@@ -56,17 +60,38 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     
     @IBAction func didPressReservation(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
-        vc.delegate = self
-        vc.closeTime = gino(storeDetailModel?.closeTime)
-        vc.currentBag = gino(storeDetailModel?.currentBag)
-        vc.limit = gino(storeDetailModel?.limit)
-        vc.opentime = gino(storeDetailModel?.openTime)
-        vc.restWeekResponseDtos = storeDetailModel?.restWeekResponseDtos
-        vc.storeIdx = gino(storeDetailModel?.storeIdx)
-        vc.available = gino(storeDetailModel?.available)
-        self.navigationController?.pushViewController(vc, animated: true)
+        if  UserDefaults.standard.bool(forKey: "isReserve") {
+            let alertController = UIAlertController(title: "",message: "이미 상가에 예약이 되어있습니다.", preferredStyle: UIAlertController.Style.alert)
+            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+            alertController.addAction(cancelButton)
+            self.present(alertController,animated: true,completion: nil)
+        }
+        else {
+            if storeDetailModel?.available == -1 {
+                let alertController = UIAlertController(title: "",message: "더 이상 해당 상가에 예약이 불가합니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self.present(alertController,animated: true,completion: nil)
+                
+            }
+            else {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
+                vc.delegate = self
+                vc.closeTime = gino(storeDetailModel?.closeTime)
+                vc.currentBag = gino(storeDetailModel?.currentBag)
+                vc.limit = gino(storeDetailModel?.limit)
+                vc.opentime = gino(storeDetailModel?.openTime)
+                vc.restWeekResponseDtos = storeDetailModel?.restWeekResponseDtos
+                vc.storeIdx = gino(storeDetailModel?.storeIdx)
+                vc.available = gino(storeDetailModel?.available)
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }
+            
+        }
+        
+        
     }
     
     
@@ -358,7 +383,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
              currentLocation = self.locationManager.location!
             networkManager.getCurrentLocation(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude) { [weak self](current, err) in
                 
-                if current?.status?.name != "no results"  {
+                if current?.status?.name != "no results" {
                     let currentLocationString:String = "현위치 : " + (current?.results?[0].region?.area1?.name)! + " " + (current?.results?[0].region?.area2?.name)! + " " + (current?.results?[0].region?.area3?.name)!
                     self?.currentLocLB.text = currentLocationString
                     
@@ -414,7 +439,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     
     // Location Manager delegates
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
+        getCurrentAddress()
         let location = locations.last
         let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
         self.mapView.animate(to: camera)
@@ -555,13 +580,14 @@ extension MainViewController: ExpandableDelegate {
                     self?.storeDetailModel = storeDetail
                     self?.simpleInfoStoreNameLabel.text = storeDetail?.storeName
                     self?.simpleInfoAddressLabel.text = storeDetail?.address
+                    
 
                     self?.simpleInfoTimeLabel.text = self?.setStoreTime(openTime:storeDetail?.openTime, closeTime: storeDetail?.closeTime)
                     
                     //상점 이미지 데이터
                     self?.updateImageCollection(imgCollection: storeDetail?.storeImageResponseDtos)
                     
-                    
+                    //상점 예약 가능 여부에 따른 예약버튼 논리
                     
                     //디테일 상점 테이블뷰
                     self?.detailStoreNameLabel.text = storeDetail?.storeName
