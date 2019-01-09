@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kDE-YC-CeA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ra5-CP-SG8">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -2506,7 +2506,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEr-cU-D7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4986" y="2267"/>
+            <point key="canvasLocation" x="4166" y="2267"/>
         </scene>
         <!--Host Term Of Service View Controller-->
         <scene sceneID="8jL-Uv-HVd">
@@ -5281,6 +5281,58 @@ Cg
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TR-5l-VG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4126" y="4286"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="h9n-Ns-CZK">
+            <objects>
+                <viewController id="Ra5-CP-SG8" customClass="FAQViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Tl-Kv-b0H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7T9-Pr-XV0" customClass="ExpandableTableView" customModule="ExpandableCell">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="Kdm-QW-EGy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도움이        필요하신가요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xK8-ki-Mb0">
+                                            <rect key="frame" x="38" y="71" width="207" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="207" id="9qj-Fx-lYu"/>
+                                                <constraint firstAttribute="height" constant="80" id="MyJ-sk-qfj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="32"/>
+                                            <color key="textColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="xK8-ki-Mb0" secondAttribute="bottom" constant="104" id="778-FC-G7j"/>
+                                        <constraint firstItem="xK8-ki-Mb0" firstAttribute="leading" secondItem="Kdm-QW-EGy" secondAttribute="leading" constant="38" id="Eo6-Dk-t6m"/>
+                                        <constraint firstItem="xK8-ki-Mb0" firstAttribute="top" secondItem="Kdm-QW-EGy" secondAttribute="top" constant="71" id="hOe-1K-gEs"/>
+                                    </constraints>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7T9-Pr-XV0" firstAttribute="leading" secondItem="8Tl-Kv-b0H" secondAttribute="leading" id="3Xu-tN-kxq"/>
+                            <constraint firstAttribute="bottom" secondItem="7T9-Pr-XV0" secondAttribute="bottom" id="95R-RL-3PQ"/>
+                            <constraint firstItem="7T9-Pr-XV0" firstAttribute="top" secondItem="8Tl-Kv-b0H" secondAttribute="top" id="sMm-Vy-9CD"/>
+                            <constraint firstAttribute="trailing" secondItem="7T9-Pr-XV0" secondAttribute="trailing" id="syN-KC-w8o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YJM-fR-EJO"/>
+                    </view>
+                    <connections>
+                        <outlet property="faqExpandableTableView" destination="7T9-Pr-XV0" id="YCN-2B-P70"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ih2-jK-En8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3737" y="1347"/>
         </scene>
         <!--설정-->
         <scene sceneID="yNM-qU-SPn">
