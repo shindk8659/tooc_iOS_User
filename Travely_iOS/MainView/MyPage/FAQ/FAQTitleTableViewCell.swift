@@ -1,19 +1,16 @@
 //
-//  SearchTableViewCell.swift
+//  FAQTitleTableViewCell.swift
 //  Travely_iOS
 //
-//  Created by 신동규 on 12/24/18.
-//  Copyright © 2018 신동규. All rights reserved.
+//  Created by 신동규 on 1/10/19.
+//  Copyright © 2019 신동규. All rights reserved.
 //
 
 import UIKit
-import ExpandableCell
 
-class SearchTableViewCell: ExpandableCell {
+class FAQTitleTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var mapLogo: UIImageView!
-    
-    @IBOutlet weak var regionName: UILabel!
+    @IBOutlet weak var faqTitleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
