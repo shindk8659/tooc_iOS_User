@@ -25,7 +25,10 @@ class MyPageSettingViewController: UITableViewController {
             VC.addBackButton("black")
             self.navigationController?.pushViewController(VC, animated: true)
         case 3: return
-        case 4: return
+        case 4:
+            let VC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "faqview") as! FAQViewController
+            VC.addBackButton("black")
+            self.navigationController?.pushViewController(VC, animated: true)
         case 5:
             let VC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InquiryViewController") as! InquiryViewController
             VC.addBackButton("black")
