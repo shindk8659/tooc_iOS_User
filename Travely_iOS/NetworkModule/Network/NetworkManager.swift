@@ -10,7 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-
 class NetworkManager {
     let jwt = UserDefaults.standard.string(forKey: "jwt")
     
@@ -226,6 +225,7 @@ class NetworkManager {
         ]
        
         let router = APIRouter(url:"/api/favorite/\(storeIdx)", method: .put, parameters: nil ,headers:header)
+        
         NetworkRequester(with: router).request1 { (review:SetFavoriteModel?, errorModel:ErrorModel? , error) in
             guard error == nil else {
                 completion(nil,errorModel,error)
@@ -259,6 +259,27 @@ class NetworkManager {
                 return
             }
             completion(review,error)
+        }
+    }
+    
+    func postInquiry(image: [String], content: String, createAt: String, completion: @escaping(ErrorModel?,ErrorModel?,Error?) -> Void) {
+        let header:HTTPHeaders = [
+            "jwt": gsno(jwt)
+        ]
+        
+        let param: [String:Any] = [
+            "inquiryImgs" : image,
+            "content" : content,
+            "createAt" : createAt
+        ]
+        let router = APIRouter(url:"/api/inquiry", method: .post, parameters: param ,headers:header)
+        
+        NetworkRequester(with: router).request1 { (reservationDetail: ErrorModel?, errorModel:ErrorModel? , error) in
+            guard error == nil else {
+                completion(nil,errorModel,error)
+                return
+            }
+            completion(nil,errorModel,error)
         }
     }
 

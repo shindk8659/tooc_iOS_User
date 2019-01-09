@@ -79,13 +79,9 @@ class ReservationPicker: UIViewController {
         
         if dayOff != nil {
             for day in dayOff! {
-                print("데이데이 \(day)")
-                print(dateFormatter.string(from: checkDate),dateFormatter.string(from: findDate) )
-                
                 if Int(dateFormatter.string(from: checkDate)) == day || Int(dateFormatter.string(from: findDate)) == day {
                     isDayOff = true
-                    print("트루")
-                } 
+                }
             }
         }
         
@@ -210,9 +206,11 @@ class ReservationPicker: UIViewController {
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(check))
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(find))
         let tap3 = UITapGestureRecognizer(target: self, action: #selector(hide))
+        let tap4 = UITapGestureRecognizer(target: self, action: #selector(popOff))
         self.checkView.addGestureRecognizer(tap1)
         self.findView.addGestureRecognizer(tap2)
         self.openHoursAlert.addGestureRecognizer(tap3)
+        self.view.addGestureRecognizer(tap4)
         
         buttonLayerSetup()
         viewLayerSetup()
@@ -243,7 +241,9 @@ class ReservationPicker: UIViewController {
             openHourLabel.text!.append(" 휴무")
             }
         }
+        tap4.delegate = self
     }
+    
     
     @objc func valueChanged() {
         if datePicker.date <= datePicker.minimumDate! {
@@ -270,6 +270,10 @@ class ReservationPicker: UIViewController {
             self.openHoursAlert!.isHidden = true
             self.openHoursAlert.alpha = 0.8
         }
+    }
+    
+    @objc func popOff() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func pickerSetup() {
@@ -365,5 +369,11 @@ class ReservationPicker: UIViewController {
         } else {
             intervalTime.text = ("\(t1)분")
         }
+    }
+}
+
+extension ReservationPicker: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return touch.view == self.view
     }
 }

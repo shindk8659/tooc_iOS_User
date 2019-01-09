@@ -201,15 +201,10 @@ struct NetworkRequester {
                             
                         }
                     }
-                    
                 case .failure(let failError):
                     //네트워크 자체가 안 될 경우
                     completion?(nil, failError)
-                    
-                    
                 }
         }
-        
-        
     }
 }
