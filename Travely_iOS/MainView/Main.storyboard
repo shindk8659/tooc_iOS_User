@@ -3033,7 +3033,6 @@ Cg
             </objects>
             <point key="canvasLocation" x="5694" y="2267"/>
         </scene>
-
         <!--Reservation Status View Controller-->
         <scene sceneID="GT9-Ln-Hf9">
             <objects>
@@ -5520,6 +5519,61 @@ Cg
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LP-qh-cfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4985" y="2962"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ykZ-dg-UtR">
+            <objects>
+                <viewController storyboardIdentifier="faqview" id="9D5-MR-Nof" customClass="FAQViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6YV-IG-49t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="35w-4S-7sX" customClass="ExpandableTableView" customModule="ExpandableCell">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="GGZ-LD-y7W">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhI-hB-qKQ">
+                                            <rect key="frame" x="38" y="66" width="56.666666666666657" height="34"/>
+                                            <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="30"/>
+                                            <color key="textColor" red="0.35294117650000001" green="0.73725490199999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고객님들이 자주 묻는 질문입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVA-pO-9Fx">
+                                            <rect key="frame" x="38" y="111" width="193" height="16"/>
+                                            <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
+                                            <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gVA-pO-9Fx" firstAttribute="top" secondItem="EhI-hB-qKQ" secondAttribute="bottom" constant="11" id="7FB-IW-Jpz"/>
+                                        <constraint firstItem="EhI-hB-qKQ" firstAttribute="top" secondItem="GGZ-LD-y7W" secondAttribute="top" constant="66" id="Fjp-GN-Ghl"/>
+                                        <constraint firstItem="EhI-hB-qKQ" firstAttribute="leading" secondItem="GGZ-LD-y7W" secondAttribute="leading" constant="38" id="JdM-wK-JK0"/>
+                                        <constraint firstItem="gVA-pO-9Fx" firstAttribute="leading" secondItem="EhI-hB-qKQ" secondAttribute="leading" id="psZ-GO-Hca"/>
+                                    </constraints>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="35w-4S-7sX" secondAttribute="bottom" id="MCt-Cv-wTT"/>
+                            <constraint firstItem="35w-4S-7sX" firstAttribute="top" secondItem="6YV-IG-49t" secondAttribute="top" id="NeQ-zZ-wTr"/>
+                            <constraint firstItem="35w-4S-7sX" firstAttribute="leading" secondItem="6YV-IG-49t" secondAttribute="leading" id="a50-mf-eXq"/>
+                            <constraint firstAttribute="trailing" secondItem="35w-4S-7sX" secondAttribute="trailing" id="tWf-KE-vdz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gc6-61-ikg"/>
+                    </view>
+                    <connections>
+                        <outlet property="faqExpandableTableView" destination="35w-4S-7sX" id="SfP-4c-P2l"/>
+                        <outlet property="headerView" destination="GGZ-LD-y7W" id="mdV-o0-YGs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAp-vN-zaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2566" y="1462"/>
         </scene>
     </scenes>
     <resources>
