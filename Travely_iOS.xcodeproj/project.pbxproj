@@ -101,8 +101,6 @@
 		D13841E921D9FDB500EC7D9D /* cancelConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E521D9FDB500EC7D9D /* cancelConfirmViewController.swift */; };
 		D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EA21D9FDCA00EC7D9D /* CALayer.swift */; };
 		D13841ED21D9FDEE00EC7D9D /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */; };
-		D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */; };
-		D13841F121D9FDF900EC7D9D /* TestViewController5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */; };
 		D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841F321D9FE0C00EC7D9D /* CSStepper.swift */; };
 		D1912E6F21E11B73005ADBAF /* ServiceRateAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1912E6E21E11B73005ADBAF /* ServiceRateAlertViewController.swift */; };
 		D1912E7121E11B93005ADBAF /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1912E7021E11B93005ADBAF /* RateCell.swift */; };
@@ -118,6 +116,10 @@
 		D1ABFAE321DBC20500BEE3E0 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABFAE221DBC20500BEE3E0 /* CircleButton.swift */; };
 		D1ABFAE521DBC29B00BEE3E0 /* ReservationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */; };
 		D1FFADF621E63C8B008BE396 /* MyPageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFADF521E63C8B008BE396 /* MyPageSettingViewController.swift */; };
+		D1FFADF821E66ECE008BE396 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFADF721E66ECE008BE396 /* UIAlertController.swift */; };
+		D1FFADFA21E67352008BE396 /* ImgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFADF921E67352008BE396 /* ImgModel.swift */; };
+		D1FFADFC21E684E6008BE396 /* tooc_IOS.json in Resources */ = {isa = PBXBuildFile; fileRef = D1FFADFB21E684E6008BE396 /* tooc_IOS.json */; };
+		D1FFADFE21E68508008BE396 /* TESTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFADFD21E68508008BE396 /* TESTViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,8 +220,6 @@
 		D13841E521D9FDB500EC7D9D /* cancelConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cancelConfirmViewController.swift; sourceTree = "<group>"; };
 		D13841EA21D9FDCA00EC7D9D /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
-		D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
-		D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController5.swift; sourceTree = "<group>"; };
 		D13841F321D9FE0C00EC7D9D /* CSStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSStepper.swift; sourceTree = "<group>"; };
 		D1912E6E21E11B73005ADBAF /* ServiceRateAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRateAlertViewController.swift; sourceTree = "<group>"; };
 		D1912E7021E11B93005ADBAF /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
@@ -235,6 +235,10 @@
 		D1ABFAE221DBC20500BEE3E0 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStatusViewController.swift; sourceTree = "<group>"; };
 		D1FFADF521E63C8B008BE396 /* MyPageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSettingViewController.swift; sourceTree = "<group>"; };
+		D1FFADF721E66ECE008BE396 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		D1FFADF921E67352008BE396 /* ImgModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgModel.swift; sourceTree = "<group>"; };
+		D1FFADFB21E684E6008BE396 /* tooc_IOS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tooc_IOS.json; sourceTree = "<group>"; };
+		D1FFADFD21E68508008BE396 /* TESTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TESTViewController.swift; sourceTree = "<group>"; };
 		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -320,6 +324,7 @@
 				52BDE67721D50064008204FF /* NotoSansCJKkr-Medium.otf */,
 				52BDE67221D50061008204FF /* NotoSansCJKkr-Regular.otf */,
 				52BDE67321D50061008204FF /* NotoSansCJKkr-Thin.otf */,
+				D1FFADFB21E684E6008BE396 /* tooc_IOS.json */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -460,8 +465,6 @@
 				D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */,
 				D12A6C9521DCB58300FB6B78 /* LatestReservationViewController.swift */,
 				52986AFD21D28DC700601983 /* ReservationPicker.swift */,
-				D13841EE21D9FDF900EC7D9D /* TestTableViewController.swift */,
-				D13841EF21D9FDF900EC7D9D /* TestViewController5.swift */,
 				528D962521DBEF1E00FC46D1 /* EmptyReviewTableViewCell.swift */,
 			);
 			path = MakeReservation;
@@ -483,6 +486,7 @@
 				52F2482521DFC951003F6989 /* ReviewList */,
 				D192BFAF21E531190072D4EF /* InquiryViewController.swift */,
 				D1FFADF521E63C8B008BE396 /* MyPageSettingViewController.swift */,
+				D1FFADFD21E68508008BE396 /* TESTViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -522,6 +526,7 @@
 				52F2482F21E00398003F6989 /* StoreInfoResponseDtoList.swift */,
 				52F2483121E003AF003F6989 /* MyReviewModel.swift */,
 				52F2483321E00735003F6989 /* FavoriteModel.swift */,
+				D1FFADF921E67352008BE396 /* ImgModel.swift */,
 			);
 			path = MyPageModels;
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				52986AFB21D28DB100601983 /* UIColor.swift */,
 				D13841EA21D9FDCA00EC7D9D /* CALayer.swift */,
 				D192BF9E21E295450072D4EF /* Date.swift */,
+				D1FFADF721E66ECE008BE396 /* UIAlertController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -663,6 +669,7 @@
 				52BDE67121D50051008204FF /* NanumSquareB.ttf in Resources */,
 				52BDE67A21D50064008204FF /* NotoSansCJKkr-Thin.otf in Resources */,
 				52BDE67B21D50064008204FF /* NotoSansCJKkr-Bold.otf in Resources */,
+				D1FFADFC21E684E6008BE396 /* tooc_IOS.json in Resources */,
 				52AB75FB21CF50700002FB07 /* Assets.xcassets in Resources */,
 				521FC83021D8B8D600CFD955 /* NanumSquareEB.ttf in Resources */,
 				52BDE67E21D50064008204FF /* NotoSansCJKkr-Medium.otf in Resources */,
@@ -696,6 +703,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -708,6 +716,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -803,6 +812,7 @@
 				52DAACD521E0B5A800B000A7 /* AppGuideViewController.swift in Sources */,
 				D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */,
 				52EDFB5E21DA2FC400A83CC0 /* StoreImageResponseDtos.swift in Sources */,
+				D1FFADF821E66ECE008BE396 /* UIAlertController.swift in Sources */,
 				D192BFAE21E506D00072D4EF /* DeliveryViewController.swift in Sources */,
 				52D174B821E132E300CD28ED /* LoginModel.swift in Sources */,
 				D12A6C9621DCB58300FB6B78 /* LatestReservationViewController.swift in Sources */,
@@ -830,12 +840,11 @@
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
 				D192BFAC21E3C3190072D4EF /* BagImgDtos.swift in Sources */,
 				52AB761221CF69240002FB07 /* ViewExtension.swift in Sources */,
-				D13841F121D9FDF900EC7D9D /* TestViewController5.swift in Sources */,
 				52F2482221DFADE4003F6989 /* FavoriteStoreTableViewCell.swift in Sources */,
 				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
-				D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */,
 				52B4DB5321E631E60065368B /* ServiceTermOfServiceTableViewCell.swift in Sources */,
+				D1FFADFE21E68508008BE396 /* TESTViewController.swift in Sources */,
 				52C14C0221E39DFD00372309 /* SetFavoriteModel.swift in Sources */,
 				52B4DB5521E642320065368B /* WholeTermTableViewController.swift in Sources */,
 				D1912E6F21E11B73005ADBAF /* ServiceRateAlertViewController.swift in Sources */,
@@ -853,6 +862,7 @@
 				D192BFA821E3BEB40072D4EF /* PriceList.swift in Sources */,
 				52F2481A21DF7BEE003F6989 /* MyPageViewController.swift in Sources */,
 				52D2BC3521D6AB19005F48D3 /* NetworkRequester.swift in Sources */,
+				D1FFADFA21E67352008BE396 /* ImgModel.swift in Sources */,
 				52EDFB6021DA425700A83CC0 /* RestWeekResponseDtos.swift in Sources */,
 				D10DD1A021DDF9D80011282C /* ReservationAlertViewController.swift in Sources */,
 				5202616221E271D500C3EDA7 /* Code.swift in Sources */,

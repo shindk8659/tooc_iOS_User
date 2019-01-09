@@ -17,13 +17,14 @@ struct APIRouter {
     var method: HTTPMethod
     var parameters: Parameters?
     var headers: HTTPHeaders?
+    var data: Data?
     
-    
-    init(url: String, method: HTTPMethod, parameters: Parameters? = nil, headers: HTTPHeaders? = nil) {
+    init(url: String, method: HTTPMethod, parameters: Parameters? = nil, headers: HTTPHeaders? = nil, data: Data? = nil) {
         self.url = url
         self.method = method
         self.parameters = parameters
         self.headers = headers
+        self.data = data
     }
     
 }

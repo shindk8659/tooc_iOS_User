@@ -28,13 +28,32 @@ class LoginViewController: UIViewController {
         emailTextField.keyboardType = .asciiCapable
         passwordTextField.keyboardType = .asciiCapable
        
-        
         // Do any additional setup after loading the view.
         if self.userDefaults.bool(forKey: "isLogin") == true {
-            let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! MainTabBarController
-            mainView.isReserve = userDefaults.bool(forKey: "isReserve")
-            self.present(mainView, animated: false, completion: nil)
+//            let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! MainTabBarController
+//            mainView.isReserve = userDefaults.bool(forKey: "isReserve")
+//            self.present(mainView, animated: false, completion: nil)
+            let email = self.userDefaults.string(forKey: "email")
+            let password = self.userDefaults.string(forKey: "pass")
+            networkManager.login(email: email! , password: password!) { [weak self](login,errorModel,error) in
+                if login == nil && errorModel == nil && error != nil {
+                    let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                    alertController.addAction(cancelButton)
+                    self?.present(alertController,animated: true,completion: nil)
+                }          else {
+                    self?.userDefaults.set(self?.emailTextField.text, forKey: "email")
+                    self?.userDefaults.set(self?.passwordTextField.text, forKey: "pass")
+                    self?.userDefaults.set(true, forKey: "isLogin")
+                    let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! MainTabBarController
+                    mainView.isReserve = login?.isReserve
+                    self?.present(mainView, animated: true, completion: nil)
+                    let guideView = UIStoryboard(name: "LoginSignup", bundle: nil).instantiateViewController(withIdentifier: "appguideview") as!UINavigationController
+                    self?.present(guideView, animated: true, completion: nil)
+                }
+            }
         }
+
     }
     
 
@@ -72,8 +91,9 @@ class LoginViewController: UIViewController {
                     self?.present(alertController,animated: true,completion: nil)
                 }
                 else {
+                    self?.userDefaults.set(self?.emailTextField.text, forKey: "email")
+                    self?.userDefaults.set(self?.passwordTextField.text, forKey: "pass")
                     self?.userDefaults.set(true, forKey: "isLogin")
-                    
                     let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! MainTabBarController
                     mainView.isReserve = login?.isReserve
                     self?.present(mainView, animated: true, completion: nil)

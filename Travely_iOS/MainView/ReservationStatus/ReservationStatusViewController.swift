@@ -114,7 +114,6 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         layoutSetup()
-        UserDefaults.standard.set(true, forKey: "isReserve")
         
         
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
