@@ -107,3 +107,10 @@ extension NetworkManager {
     }
     
 }
+extension UIAlertController{
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.view.tintColor = UIColor(red: 31, green: 191, blue: 200)
+
+    }
+}

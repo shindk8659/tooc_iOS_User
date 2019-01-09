@@ -156,8 +156,7 @@ extension MyPageViewController: MakeReviewPresentView {
     
 
     func makeReservation(storeIdx: Int, closeTime: Int, currentBag: Int, limit: Int, opentime: Int,available:Int, restWeekResponseDtos: [RestWeekResponseDtos?]?) {
-        
-        if  UserDefaults.standard.bool(forKey: "isReserve") {
+         if UserDefaults.standard.bool(forKey: "isReserve") {
             let alertController = UIAlertController(title: "",message: "이미 상가에 예약이 되어있습니다.", preferredStyle: UIAlertController.Style.alert)
             let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
             alertController.addAction(cancelButton)
