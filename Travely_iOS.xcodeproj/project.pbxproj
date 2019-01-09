@@ -47,6 +47,11 @@
 		52B4DB5121E631C40065368B /* HostTermOfServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB5021E631C40065368B /* HostTermOfServiceTableViewCell.swift */; };
 		52B4DB5321E631E60065368B /* ServiceTermOfServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB5221E631E60065368B /* ServiceTermOfServiceTableViewCell.swift */; };
 		52B4DB5521E642320065368B /* WholeTermTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB5421E642320065368B /* WholeTermTableViewController.swift */; };
+		52B4DB5821E646BB0065368B /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB5721E646BB0065368B /* FAQViewController.swift */; };
+		52B4DB5B21E64FB50065368B /* FAQTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB5921E64FB50065368B /* FAQTitleTableViewCell.swift */; };
+		52B4DB5C21E64FB50065368B /* FAQTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B4DB5A21E64FB50065368B /* FAQTitleTableViewCell.xib */; };
+		52B4DB6121E653EF0065368B /* FAQContentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB5F21E653EF0065368B /* FAQContentsTableViewCell.swift */; };
+		52B4DB6221E653EF0065368B /* FAQContentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52B4DB6021E653EF0065368B /* FAQContentsTableViewCell.xib */; };
 		52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B899CB21D7364C00D2667D /* ErrorModel.swift */; };
 		52BD7CEA21D8C6D800EDD75D /* StoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD7CE921D8C6D800EDD75D /* StoreListModel.swift */; };
 		52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD7CF321D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift */; };
@@ -166,6 +171,11 @@
 		52B4DB5021E631C40065368B /* HostTermOfServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTermOfServiceTableViewCell.swift; sourceTree = "<group>"; };
 		52B4DB5221E631E60065368B /* ServiceTermOfServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTermOfServiceTableViewCell.swift; sourceTree = "<group>"; };
 		52B4DB5421E642320065368B /* WholeTermTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeTermTableViewController.swift; sourceTree = "<group>"; };
+		52B4DB5721E646BB0065368B /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		52B4DB5921E64FB50065368B /* FAQTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTitleTableViewCell.swift; sourceTree = "<group>"; };
+		52B4DB5A21E64FB50065368B /* FAQTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQTitleTableViewCell.xib; sourceTree = "<group>"; };
+		52B4DB5F21E653EF0065368B /* FAQContentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQContentsTableViewCell.swift; sourceTree = "<group>"; };
+		52B4DB6021E653EF0065368B /* FAQContentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQContentsTableViewCell.xib; sourceTree = "<group>"; };
 		52B899CB21D7364C00D2667D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		52BD7CE921D8C6D800EDD75D /* StoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListModel.swift; sourceTree = "<group>"; };
 		52BD7CF321D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStoreResponseDtos.swift; sourceTree = "<group>"; };
@@ -368,6 +378,18 @@
 			path = Termsofservice;
 			sourceTree = "<group>";
 		};
+		52B4DB5621E6469F0065368B /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				52B4DB5721E646BB0065368B /* FAQViewController.swift */,
+				52B4DB5921E64FB50065368B /* FAQTitleTableViewCell.swift */,
+				52B4DB5A21E64FB50065368B /* FAQTitleTableViewCell.xib */,
+				52B4DB5F21E653EF0065368B /* FAQContentsTableViewCell.swift */,
+				52B4DB6021E653EF0065368B /* FAQContentsTableViewCell.xib */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
 		52BD7CEB21D8D6AC00EDD75D /* StoreDetailModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +502,7 @@
 		52F2481821DF7BA5003F6989 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				52B4DB5621E6469F0065368B /* FAQ */,
 				52B4DB4721E628CB0065368B /* Termsofservice */,
 				52F2482021DFADB1003F6989 /* MyPageMain */,
 				52F2481F21DFADA2003F6989 /* FavoriteStore */,
@@ -668,6 +691,7 @@
 				52AB75FE21CF50700002FB07 /* LaunchScreen.storyboard in Resources */,
 				52BDE67121D50051008204FF /* NanumSquareB.ttf in Resources */,
 				52BDE67A21D50064008204FF /* NotoSansCJKkr-Thin.otf in Resources */,
+				52B4DB6221E653EF0065368B /* FAQContentsTableViewCell.xib in Resources */,
 				52BDE67B21D50064008204FF /* NotoSansCJKkr-Bold.otf in Resources */,
 				D1FFADFC21E684E6008BE396 /* tooc_IOS.json in Resources */,
 				52AB75FB21CF50700002FB07 /* Assets.xcassets in Resources */,
@@ -679,6 +703,7 @@
 				52BDE67D21D50064008204FF /* NotoSansCJKkr-Light.otf in Resources */,
 				52BDE66F21D50051008204FF /* NanumSquareR.ttf in Resources */,
 				528D962421DBDC2E00FC46D1 /* Main.storyboard in Resources */,
+				52B4DB5C21E64FB50065368B /* FAQTitleTableViewCell.xib in Resources */,
 				52AB761921D0E9C40002FB07 /* SearchTableViewCell.xib in Resources */,
 				52BDE67921D50064008204FF /* NotoSansCJKkr-Regular.otf in Resources */,
 			);
@@ -778,8 +803,10 @@
 				52BD7CEA21D8C6D800EDD75D /* StoreListModel.swift in Sources */,
 				D10DD1B221DE826F0011282C /* bag.swift in Sources */,
 				5202616B21E271D500C3EDA7 /* Area3.swift in Sources */,
+				52B4DB5821E646BB0065368B /* FAQViewController.swift in Sources */,
 				52EDFB5C21DA2FC400A83CC0 /* ReviewResponseDtos.swift in Sources */,
 				D10DD1AA21DE4B700011282C /* OpenTime.swift in Sources */,
+				52B4DB5B21E64FB50065368B /* FAQTitleTableViewCell.swift in Sources */,
 				5202616621E271D500C3EDA7 /* Region.swift in Sources */,
 				52B4DB4F21E6309B0065368B /* ServiceTermOfServiceViewController.swift in Sources */,
 				D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */,
@@ -815,6 +842,7 @@
 				D1FFADF821E66ECE008BE396 /* UIAlertController.swift in Sources */,
 				D192BFAE21E506D00072D4EF /* DeliveryViewController.swift in Sources */,
 				52D174B821E132E300CD28ED /* LoginModel.swift in Sources */,
+				52B4DB6121E653EF0065368B /* FAQContentsTableViewCell.swift in Sources */,
 				D12A6C9621DCB58300FB6B78 /* LatestReservationViewController.swift in Sources */,
 				52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */,
 				52F2483021E00398003F6989 /* StoreInfoResponseDtoList.swift in Sources */,
@@ -1008,7 +1036,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6D8SYQ63KK;
+				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Travely_iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1028,7 +1056,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6D8SYQ63KK;
+				DEVELOPMENT_TEAM = KB65UR5HX8;
 				INFOPLIST_FILE = "$(SRCROOT)/Travely_iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -2430,7 +2430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEr-cU-D7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4986" y="2267"/>
+            <point key="canvasLocation" x="4166" y="2267"/>
         </scene>
         <!--Host Term Of Service View Controller-->
         <scene sceneID="8jL-Uv-HVd">
@@ -3033,6 +3033,7 @@ Cg
             </objects>
             <point key="canvasLocation" x="5694" y="2267"/>
         </scene>
+
         <!--Reservation Status View Controller-->
         <scene sceneID="GT9-Ln-Hf9">
             <objects>
