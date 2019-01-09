@@ -603,17 +603,14 @@ extension MainViewController: ExpandableDelegate {
                     self?.mapView.camera = GMSCameraPosition.camera(withTarget: (self?.marker.position)!, zoom: 16)
                     
                     // 영업중 영업종료 이미지 시간에 따른 변환
-                    let now = Date()
-                    let openTimestamp = (self?.storeDetailModel?.openTime)!
-                    let closeTemestamp = (self?.storeDetailModel?.closeTime)!
-                    let openDate = Date(timeIntervalSince1970: Double(openTimestamp))
-                    let closeDate = Date(timeIntervalSince1970: Double(closeTemestamp))
-                    if now.compare(openDate).rawValue == 1 && now.compare(closeDate).rawValue == -1 {
-                        self?.simpleIsWorkingImg.image = UIImage(named: "ic_working.png")
+                    let open = Date(timeIntervalSince1970: TimeInterval((self?.storeDetailModel?.openTime)!/1000))
+                    let close = Date(timeIntervalSince1970: TimeInterval((self?.storeDetailModel?.closeTime)!/1000))
+                    if Date(timeIntervalSinceNow: 0).isDateAvailable(openTime: open, closeTime: close) {
+                        self?.simpleIsWorkingImg.image = UIImage(named: "ic_working")
+                    } else {
+                        self?.simpleIsWorkingImg.image = UIImage(named: "ic_end")
                     }
-                    else {
-                        self?.simpleIsWorkingImg.image = UIImage(named: "ic_end.png")
-                    }
+                   
                     //
                 }
             }
@@ -733,17 +730,15 @@ extension MainViewController: UITableViewDataSource
             }
           
            // 영업중 영업종료 이미지 시간에 따른 변환
-            let now = Date()
-            let openTimestamp = gino(storeDetailModel?.openTime)
-            let closeTemestamp = gino(storeDetailModel?.closeTime)
-            let openDate = Date(timeIntervalSince1970: Double(gino(openTimestamp)))
-            let closeDate = Date(timeIntervalSince1970: Double(gino(closeTemestamp)))
-            if now.compare(openDate).rawValue == 1 && now.compare(closeDate).rawValue == -1 {
+            // 영업중 영업종료 이미지 시간에 따른 변환
+            let open = Date(timeIntervalSince1970: TimeInterval(gino(storeDetailModel?.openTime)/1000))
+            let close = Date(timeIntervalSince1970: TimeInterval(gino(storeDetailModel?.closeTime)/1000))
+            if Date(timeIntervalSinceNow: 0).isDateAvailable(openTime: open, closeTime: close) {
                 cell.openCloseImageView.image = UIImage(named: "ic_working.png")
+            } else {
+               cell.openCloseImageView.image = UIImage(named: "ic_end.png")
             }
-            else {
-                cell.openCloseImageView.image = UIImage(named: "ic_end.png")
-            }
+            
             //
             return cell
         }
