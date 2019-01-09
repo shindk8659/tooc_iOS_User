@@ -613,9 +613,11 @@
                         <outlet property="searchButtonView" destination="XDn-uE-tnz" id="u1u-le-Rcl"/>
                         <outlet property="searchView" destination="Wm1-zS-ohM" id="zyr-4U-Uar"/>
                         <outlet property="shopDetailHeaderView" destination="WzE-sQ-jCJ" id="3GG-N6-8Uz"/>
+                        <outlet property="shopDetailInfoReservationButton" destination="aQT-pv-pGF" id="UXk-0c-hSY"/>
                         <outlet property="shopDetailView" destination="52i-L9-bOM" id="Dgc-8s-And"/>
                         <outlet property="shopSimpleInfoView" destination="YN5-nz-IHc" id="WBc-K6-7xx"/>
                         <outlet property="simpleInfoAddressLabel" destination="nz7-H7-Grs" id="j7I-5b-F9e"/>
+                        <outlet property="simpleInfoReserveButton" destination="3cl-MR-cUs" id="l1o-v0-GhK"/>
                         <outlet property="simpleInfoStoreNameLabel" destination="RCB-Lt-NME" id="E4A-TZ-bfW"/>
                         <outlet property="simpleInfoTimeLabel" destination="ZU3-Pj-V0D" id="WbX-5X-8ae"/>
                         <outlet property="simpleIsWorkingImg" destination="rZm-y2-QcX" id="WFZ-FJ-5Vi"/>
@@ -2192,12 +2194,12 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도움이        필요하신가요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uk0-zF-EIH">
-                                    <rect key="frame" x="38" y="71" width="192" height="80"/>
+                                    <rect key="frame" x="38" y="71" width="207" height="80"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="192" id="Fdl-yf-oZQ"/>
+                                        <constraint firstAttribute="width" constant="207" id="Fdl-yf-oZQ"/>
                                         <constraint firstAttribute="height" constant="80" id="I8v-kF-xjD"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                    <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="32"/>
                                     <color key="textColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -2220,12 +2222,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94P-U5-BoK">
-                                                    <rect key="frame" x="30" y="26.333333333333329" width="55" height="20"/>
+                                                    <rect key="frame" x="30" y="26.333333333333329" width="67.333333333333329" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="GV8-73-viq"/>
-                                                        <constraint firstAttribute="width" constant="55" id="kHQ-9X-4hS"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2251,17 +2252,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="언어 선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWV-3G-EOx">
-                                                    <rect key="frame" x="30" y="38" width="55" height="20"/>
+                                                    <rect key="frame" x="30" y="38" width="67.333333333333329" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Cqn-og-S2P"/>
-                                                        <constraint firstAttribute="width" constant="55" id="Yhe-q4-1vo"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nre-bz-DcK">
-                                                    <rect key="frame" x="192" y="31" width="163" height="34"/>
+                                                    <rect key="frame" x="197" y="31" width="163" height="34"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한국어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3a-0J-Os9">
                                                             <rect key="frame" x="18" y="8.0000000000000036" width="34" height="18"/>
@@ -2270,7 +2270,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.96496862169999997" green="0.88713270430000002" blue="0.29391729830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="163" id="17C-oB-o1n"/>
                                                         <constraint firstItem="H3a-0J-Os9" firstAttribute="leading" secondItem="nre-bz-DcK" secondAttribute="leading" constant="18" id="8Un-Vm-fDU"/>
@@ -2284,7 +2283,7 @@
                                                 <constraint firstItem="HWV-3G-EOx" firstAttribute="leading" secondItem="Lv9-Wh-jHq" secondAttribute="leading" constant="30" id="JoB-FD-ti3"/>
                                                 <constraint firstItem="nre-bz-DcK" firstAttribute="centerY" secondItem="HWV-3G-EOx" secondAttribute="centerY" id="X8V-hP-liv"/>
                                                 <constraint firstItem="HWV-3G-EOx" firstAttribute="top" secondItem="Lv9-Wh-jHq" secondAttribute="top" constant="38" id="c2b-Eg-tmw"/>
-                                                <constraint firstAttribute="trailing" secondItem="nre-bz-DcK" secondAttribute="trailing" constant="20" id="m76-9J-RuN"/>
+                                                <constraint firstAttribute="trailing" secondItem="nre-bz-DcK" secondAttribute="trailing" constant="15" id="m76-9J-RuN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2296,12 +2295,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT IS TOOC?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqB-J0-WNK">
-                                                    <rect key="frame" x="30" y="18" width="110" height="20"/>
+                                                    <rect key="frame" x="30.000000000000007" y="18" width="123.66666666666669" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="110" id="A6D-AV-QIB"/>
                                                         <constraint firstAttribute="height" constant="20" id="Jzr-1A-OjQ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2321,12 +2319,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW TO USE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKV-3L-y6o">
-                                                    <rect key="frame" x="30" y="18" width="100" height="20"/>
+                                                    <rect key="frame" x="30" y="18" width="102" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="lMx-hN-itT"/>
-                                                        <constraint firstAttribute="width" constant="100" id="tCZ-9h-HPB"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2351,7 +2348,7 @@
                                                         <constraint firstAttribute="height" constant="20" id="mvu-cp-5PN"/>
                                                         <constraint firstAttribute="width" constant="50" id="zxM-Ld-y7e"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2371,12 +2368,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문의하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssu-zi-UQ3">
-                                                    <rect key="frame" x="29.999999999999996" y="18" width="48.666666666666657" height="20"/>
+                                                    <rect key="frame" x="29.999999999999996" y="18" width="62.666666666666657" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="4jG-RC-Nib"/>
-                                                        <constraint firstAttribute="width" constant="48.5" id="JBF-YV-1HF"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2396,12 +2392,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZZ-6s-cIw">
-                                                    <rect key="frame" x="29.999999999999996" y="18" width="48.666666666666657" height="20"/>
+                                                    <rect key="frame" x="29.999999999999996" y="18" width="62.666666666666657" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="bP5-4p-j1L"/>
-                                                        <constraint firstAttribute="width" constant="48.5" id="ojr-74-Pb0"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -2530,33 +2525,510 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEr-cU-D7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4061.5999999999999" y="2266.9950738916259"/>
+            <point key="canvasLocation" x="4986" y="2267"/>
         </scene>
-        <!--View Controller-->
+        <!--Host Term Of Service View Controller-->
         <scene sceneID="8jL-Uv-HVd">
             <objects>
-                <viewController storyboardIdentifier="clause" id="Lxz-dK-s3n" sceneMemberID="viewController">
+                <viewController id="Lxz-dK-s3n" customClass="HostTermOfServiceViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c6X-Cy-wJc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_text" translatesAutoresizingMaskIntoConstraints="NO" id="EKu-eA-ngA">
-                                <rect key="frame" x="20" y="104" width="335" height="674"/>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mnM-DP-kiM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="MJ4-19-kD6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="호스트 이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42U-E7-Nef">
+                                            <rect key="frame" x="38" y="71" width="199" height="34"/>
+                                            <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="30"/>
+                                            <color key="textColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="42U-E7-Nef" firstAttribute="top" secondItem="MJ4-19-kD6" secondAttribute="top" constant="71" id="drK-SL-LqY"/>
+                                        <constraint firstItem="42U-E7-Nef" firstAttribute="leading" secondItem="MJ4-19-kD6" secondAttribute="leading" constant="38" id="kNO-AB-9tz"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="hosttermcell" rowHeight="610" id="d6c-ct-mbA" customClass="HostTermOfServiceTableViewCell" customModule="Travely_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="283" width="375" height="610"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d6c-ct-mbA" id="dGt-YE-AKV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="609.66666666666663"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ua9-Ic-SO5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="609.66666666666663"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">제 1조 (목적)
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">본 약관은 툭컴퍼니(이하 “회사”라 함)가 제공하는 “서비스 이용약관”에서 예정하는 개별약관으로서 “회사”와 “고객”회원 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 2조(정의)
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">본 약관에서 사용하는 용어의 정의는 다음과 같습니다. 아래 각 조항 외에 본 약관에서 사용하는 정의 규정은 “서비스이용약관”을 준용합니다
+①“예약”이란 “고객”이 “회사”의 “애플리케이션 등”을 통해 특정한 “호스트”에게 자신의 짐을 보관하거나 배송하는 것을 요청하는 의사표시 및 관련 행위를 말합니다.
+②“승낙”이란 “고객”으로 부터 “예약”을 받은 “호스트”가 “고객”의 “예약”내용에 따라 짐을 보관하거나 배송하는 것을 수락하는 의사표시 및 관련 행위를 말합니다.
+③“보관료”란 “예약”을 한 “고객”이 짐의 보관 대가로 지급하는 비용을 말합니다.
+④“배송료”란 “예약”을 한 “고객”이 짐의 배송 대가로 지급하는 비용을 말합니다.
+⑤“서비스이용료”란 “회사”가 “서비스”를 제공하는 대가로 받는 비용을 말합니다.
+⑥“결제금액”이란 “예약”을 한 “고객”이 “회사”에 지급하는 “보관료” 또는 “배송료”와 “서비스 이용료”를 합한 금액을 말합니다.
+⑦“결제”란 “고객”이 “회사”의 “서비스”를 이용하기 위하여 지불수단을 선택하고 금융정보를 입력하여 최종적으로 금전을 지급하는 행위를 말합니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 3조(회사의 지위)
+“회사”는 “고객”이 “호스트”에게 짐의 보관이나 배송에 필요한 정보 및 “예약” 서비스를 제공하고, “고객”으로부터 그 “서비스이용료”를 받는 자 입니다. “고객”과 “호스트”간에 짐 보관 및 배송과 관련하여 발생한 법률관계 중 본 약관에 특별한 규정이 없는 부분에 대하여 “회사”는 관계가 없습니다. 나아가, 본 약관의 규정에 따라 “회사”가 “고객”과 “호스트”와의 짐 보관 및 배송에 관한 법률관계와 관련이 있다고 하더라고 이는 “고객”이 “회사”를 통하여 “서비스”를 이용한 경우에 한합니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 4조 (호스트의 보증)
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">①“호스트”는 다음 각 호의 조건을 충족하는 자임을 보증합니다.
+1. “고객”의 짐을 보관 및 배송하기 위해 필요한 공간을 활용할 수 있는 적법한 권리를 가진 자일 것
+2. “호스트”에 적용될 수 있는 모든 법령, 정책 등을 준수했을 것.
+3. “고객”의 짐 보관 및 배송에 영향을 미칠 수 있는 제 3자와의 계약 권리의무와 충돌하지 않을 것
+4. 광고의 게재 등 “회사”의 서비스를 제공받는 데 있어 법적 규제나 제한이 없는 자 일 것
+②“호스트”는 전 항의 내용이 진실함을 보증하며, “호스트”가 제공하는 전항의 내용에 따라 “회사”가 형성한 사실 및 법률관계로 인하여 “회사”에게 손해 등이 발생한 경우 이에 대한 책임을 집니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 5조(호스트의 등록)
+①“호스트”는 다음 각 호의 절차에 따라 “서비스”에 등록합니다.
+1. “호스트”는 [메인 &gt; 마이페이지 &gt; 문의하기 &gt; Partners Contacts]을 통하여, 또는 “회사”와 직접 연락을 취하여 신청
+2. “호스트”가 신청을 완료하면 “회사”는 검토 후 개별적으로 연락
+3. “회사”는 “호스트”에게 짐 보관 및 배송에 대한 메뉴얼 제공
+4. “호스트”는 “회사”에게 상점 정보(상점 이름, 상점 주소, 운영시간, 보관 가능한 최대 짐 개수 등) 및 호스트 정보(계좌 정보, 호스트 이름 등)를 제공
+5. 모든 절차가 완료되면 “회사”는 “서비스”에 등록
+②“회사”는 “호스트”가 등록한 정보를 활용하여 “예약” 및 “승낙”에 필요한 시스템 및 서비스를 구축합니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 6조(짐 보관 및 배송 계약)
+①“고객”의 “예약”이 있는 경우 “호스트”는 이에 대해 “승낙”하면 “고객”과 “호스트”사이에 짐 보관 또는 배송 계약이 체결됩니다.
+②“호스트”는 “호스트”가 “회사”에 제공하고, “회사”로 부터 등록된 내용(상점영업시간, 짐보관 가능 개수 등)에 따라 “고객”이 요청하는 “예약” 내용대로 짐을 보관 또는 배송할 수 있는 경우, “고객”이 “예약”한 즉시 “승낙”한 것으로 간주됩니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 7조 (호스트의 짐 보관 및 반환, 배송)
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">①“호스트”는 다음 각호의 절차에 따라 “고객”의 짐을 보관합니다.
+1. “호스트”는 “고객”이 “예약”한 짐을 사진촬영 후, 애플리케이션 등에 정해진 방법에 따라 업로드
+2. “호스트”는 “예약”번호를 보안태그에 기재하고, 보안태그를 짐에 부착
+3. “호스트”는 “고객”의 짐을 “회사”와 사전에 약정된 보관 장소에 보관
+②“호스트”는 다음 각호의 절차에 따라 “고객”의 짐을 반환합니다.
+1. “호스트”는 “고객“이 제시한 “예약”티켓을 모바일로 인증하여 짐 찾기 가능여부 확인
+2. “호스트”는 “고객”의 짐 사진과 보안태그의 “예약”번호를 확인하고, 짐을 “고객”에게 전달
+③“호스트”는 다음 각호의 절차에 따라 “고객”의 짐을 배송합니다.
+1.  “호스트”는 “고객”의 배송“예약”정보를 전달받은 운송업체가 상가에 방문해 “예약”번호를 제시할 시, “예약”번호를 확인하여 운송업체에 해당“고객”의 짐을 전달
+2. “호스트”는 모바일로 “고객”의 짐이 운송업체로 전달 됐음을 알림 
+④“호스트”는 “고객”이 예정된 시간으로부터 24시간 후에도 짐을 찾아가지 않는 경우 이를 “회사”에 알려야 하며, “회사”는 “고객”에게 보관한 짐을 수령할 것을 고지하고 “고객”과 “고객”이 보관한 짐을 수령할 시간을 새로 정하여 “호스트”에게 알려야 합니다.
+⑤“호스트”는 개장시간의 변경 등 “승낙”한 내용대로 “고객”에게 짐 보관 및 배송 서비스를 제공할 수 없는 사정이 발생한 경우 이를 지체없이 “회사”에게 알려야 하며 “회사”는 “고객”에게 위와 같은 사실을 고지하고 “고객”의 선택에 따라 다른 “호스트”(대체 호스트)에 짐을 보관하게 하거나 결제한 금액 전액을 환불해야 합니다. “고객”이 “대체호스트”를 이용하는 경우, “회사”는 “고객”이 최초 “호스트”에게 지불한 금액을 “대체호스트”에게 지불합니다.
+⑥“호스트”는 “고객”에 대한 “승낙”에도 불구하고 다음 각 호의 짐은 보관할 수 없으며 “고객”의 짐 보관 요구에 거절하여야 합니다.
+1. 폭발물, 연료, 위험 물질 또는 가연성 물질
+2. 살충제, 독성 화학 물질, 오염 물질, 모든 종류의 폐기물
+3. 화기, 탄약, 불법 마약 또는 기타 통제 물질
+4. 훔친 물건 또는 다른 밀수품
+5. 상한 음식, 살아 있거나 죽은 식물 또는 동물, 기생충 또는 기타 오염된 품목, 축축하거나 곰팡이가 핀 품목
+6. 방사성 물질, 가스나 다른 강한 냄새를 방출하는 물질
+7. 신분증, 여권, 화폐, 유가증권, 귀중품 그 밖의 고가물
+⑦“호스트”는 다음 각호의 짐에 대하여는 “고객”에게 통보하지 않고 짐을 제거하거나 관련기관에 보고, 신고 등을 할 수 있습니다. 다만, “호스트”는 위와 같은 조치를 하기 전에 “회사”에 알려야 합니다.
+1. “고객”의 “예약” 내용과 다른 짐
+2. “고객”의 사전고지에 따라 “호스트”가 동의한 사항이 아닌 짐
+3. 기타 “고객”이 본 약관을 위반하여 맡긴 짐
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 8조 (호스트의 의무) 
+①“호스트”는 “고객”의 “예약”에 대하여 “호스트”가 “승낙”한 내용대로 “고객”의 짐을 보관한 후 반환, 배송 하여야 합니다. 한편, “호스트”가 “회사”에게 고지 및 약정한 공간에 짐을 보관하지 않은 경우, “회사”는 “호스트”에게 경고 혹은 서비스에서 제거 등의 패널티를 부과할 수 있습니다.
+②“호스트”는 선량한 관리자의 주의로 “고객”의 짐을 보관, 배송 하여야 합니다.
+③“호스트”가 전항을 위반하여 “고객”에게 손해가 발생한 경우 “고객”은 “호스트”에게 손해배상을 청구할 수 있습니다. 다만, “고객”에 대한 보상규정을 둘 수 있습니다.
+④“호스트”는 “회사”에 제공하는 정보가 변경되거나 “애플리케이션 등에” 게시된 정보가 잘못된 사실을 안 경우 이를 지체없이 고지하여야 하며, “회사”는 “호스트”가 등록한 정보대로 게시한 경우 “호스트”의 잘못된 정보로 인한 사실 및 법률관계에서 면책됩니다.
+⑤“호스트”는 “고객” 및 “회사”로부터 제공받은 “고객”의 정보를 제3자에게 누설, 배포 등 하지 않습니다.
+⑥“호스트”는 반드시 “회사”를 통하여 “고객”과 회사의 서비스를 이용할 수 있습니다.
+⑦“호스트”가 제 1항의 의무를 위반하여 다음 각 호의 행위를 하는 경우, “회사”는 “호스트”에게 경고 혹은 서비스에서 제거 등의 패널티를 부과할 수 있습니다.
+1. “호스트”가 “회사”를 통하지 않고 “고객”과 짐 보관의 연장 등의 행위를 하는 경우
+2. “호스트”가 “회사”를 통하지 않고 “고객”과 직접 현금 결제를 하는 경우
+제 9조 (회사의 의무)
+①“회사”는 “호스트”에게 다음 각호의 서비스를 제공할 수 있습니다.
+1. “애플리케이션 등”에 “호스트”의 광고 게제
+②“회사”는 “호스트”에게 다음 각호와 같은 방법으로 프로모션을 제공할 수 있습니다.
+1.“호스트”의 “고객”에 대한 홍보 및 할인의 기회 제공
+제 10조 (정산 절차)
+①“회사”는 다음과 같은 방법 및 절차에 따라 “호스트”에게 정산합니다.
+1. 매달 말일 일괄 청산하여 “호스트”가 제공한 계좌로 송부
+2. 정산 금액 내역은 “호스트” 전용 “애플리케이션 등”에 업데이트 함
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 11조 (개별 약정)
+“회사”는 “호스트”와 개별약정을 체결할 수 있습니다. 이 경우 개별약정이 “본 약관”의 효력보다 우선합니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ua9-Ic-SO5" secondAttribute="bottom" id="1zq-ff-feX"/>
+                                                <constraint firstAttribute="trailing" secondItem="ua9-Ic-SO5" secondAttribute="trailing" id="JZQ-Tl-gWT"/>
+                                                <constraint firstItem="ua9-Ic-SO5" firstAttribute="top" secondItem="dGt-YE-AKV" secondAttribute="top" id="Tcg-Nu-Rvu"/>
+                                                <constraint firstItem="ua9-Ic-SO5" firstAttribute="leading" secondItem="dGt-YE-AKV" secondAttribute="leading" id="fdc-YS-JL6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="termOfServiceTextView" destination="ua9-Ic-SO5" id="xqi-B2-gMm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="EKu-eA-ngA" firstAttribute="leading" secondItem="Kcg-Yh-zEN" secondAttribute="leading" constant="20" id="WQZ-Qe-uRv"/>
-                            <constraint firstItem="Kcg-Yh-zEN" firstAttribute="trailing" secondItem="EKu-eA-ngA" secondAttribute="trailing" constant="20" id="bS5-g2-dc1"/>
-                            <constraint firstItem="EKu-eA-ngA" firstAttribute="top" secondItem="Kcg-Yh-zEN" secondAttribute="top" constant="60" id="nSE-Q6-Tv0"/>
-                            <constraint firstItem="Kcg-Yh-zEN" firstAttribute="bottom" secondItem="EKu-eA-ngA" secondAttribute="bottom" id="nlp-JU-niF"/>
+                            <constraint firstItem="mnM-DP-kiM" firstAttribute="top" secondItem="c6X-Cy-wJc" secondAttribute="top" id="0Zr-ov-y6q"/>
+                            <constraint firstItem="mnM-DP-kiM" firstAttribute="leading" secondItem="c6X-Cy-wJc" secondAttribute="leading" id="88n-Gv-5hD"/>
+                            <constraint firstAttribute="trailing" secondItem="mnM-DP-kiM" secondAttribute="trailing" id="Il0-Po-7dc"/>
+                            <constraint firstAttribute="bottom" secondItem="mnM-DP-kiM" secondAttribute="bottom" id="O0H-pT-cW4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kcg-Yh-zEN"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wNa-ls-mfi"/>
+                    <connections>
+                        <outlet property="contentTableView" destination="mnM-DP-kiM" id="wC6-GH-MMB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYc-bM-LV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4825" y="2267"/>
+            <point key="canvasLocation" x="5694" y="2962"/>
         </scene>
         <!--Inquiry View Controller-->
         <scene sceneID="I76-Lp-A0S">
@@ -3867,7 +4339,7 @@
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="6we-z7-KYy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" backIndicatorImage="icBack" id="6we-z7-KYy">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4333,6 +4805,879 @@
             </objects>
             <point key="canvasLocation" x="-10.4" y="1461.576354679803"/>
         </scene>
+        <!--Service Term Of Service View Controller-->
+        <scene sceneID="ddu-3e-l4v">
+            <objects>
+                <viewController id="NKS-c7-Ecn" customClass="ServiceTermOfServiceViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TxW-fr-Hdq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cuw-Qp-Dc4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="b0h-02-9xV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icy-hT-UHe">
+                                            <rect key="frame" x="38" y="71" width="199" height="34"/>
+                                            <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="30"/>
+                                            <color key="textColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="Icy-hT-UHe" firstAttribute="top" secondItem="b0h-02-9xV" secondAttribute="top" constant="71" id="eXZ-00-1iD"/>
+                                        <constraint firstItem="Icy-hT-UHe" firstAttribute="leading" secondItem="b0h-02-9xV" secondAttribute="leading" constant="38" id="iaj-ZJ-yqd"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="servicetermcell" rowHeight="610" id="7V4-uL-syR" customClass="ServiceTermOfServiceTableViewCell" customModule="Travely_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="283" width="375" height="610"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7V4-uL-syR" id="f2B-Ox-57T">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="609.66666666666663"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVe-U7-orM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="609.66666666666663"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">제 1조 (목적)
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">본 약관은 툭컴퍼니(이하 “회사”라 함)가 제공하는 “서비스 이용약관”에서 예정하는 개별약관으로서 “회사”와 “고객”회원 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 2조(정의)
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">본 약관에서 사용하는 용어의 정의는 다음과 같습니다. 아래 각 조항 외에 본 약관에서 사용하는 정의 규정은 “서비스이용약관”을 준용합니다
+①“예약”이란 “고객”이 “회사”의 “애플리케이션 등”을 통해 특정한 “호스트”에게 자신의 짐을 보관하거나 배송하는 것을 요청하는 의사표시 및 관련 행위를 말합니다.
+②“승낙”이란 “고객”으로 부터 “예약”을 받은 “호스트”가 “고객”의 “예약”내용에 따라 짐을 보관하거나 배송하는 것을 수락하는 의사표시 및 관련 행위를 말합니다.
+③“보관료”란 “예약”을 한 “고객”이 짐의 보관 대가로 지급하는 비용을 말합니다.
+④“배송료”란 “예약”을 한 “고객”이 짐의 배송 대가로 지급하는 비용을 말합니다.
+⑤“서비스이용료”란 “회사”가 “서비스”를 제공하는 대가로 받는 비용을 말합니다.
+⑥“결제금액”이란 “예약”을 한 “고객”이 “회사”에 지급하는 “보관료” 또는 “배송료”와 “서비스 이용료”를 합한 금액을 말합니다.
+⑦“결제”란 “고객”이 “회사”의 “서비스”를 이용하기 위하여 지불수단을 선택하고 금융정보를 입력하여 최종적으로 금전을 지급하는 행위를 말합니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 3조(회사의 지위)
+“회사”는 “고객”이 “호스트”에게 짐의 보관이나 배송에 필요한 정보 및 “예약” 서비스를 제공하고, “고객”으로부터 그 “서비스이용료”를 받는 자 입니다. “고객”과 “호스트”간에 짐 보관 및 배송과 관련하여 발생한 법률관계 중 본 약관에 특별한 규정이 없는 부분에 대하여 “회사”는 관계가 없습니다. 나아가, 본 약관의 규정에 따라 “회사”가 “고객”과 “호스트”와의 짐 보관 및 배송에 관한 법률관계와 관련이 있다고 하더라고 이는 “고객”이 “회사”를 통하여 “서비스”를 이용한 경우에 한합니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 4조 (호스트의 보증)
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">①“호스트”는 다음 각 호의 조건을 충족하는 자임을 보증합니다.
+1. “고객”의 짐을 보관 및 배송하기 위해 필요한 공간을 활용할 수 있는 적법한 권리를 가진 자일 것
+2. “호스트”에 적용될 수 있는 모든 법령, 정책 등을 준수했을 것.
+3. “고객”의 짐 보관 및 배송에 영향을 미칠 수 있는 제 3자와의 계약 권리의무와 충돌하지 않을 것
+4. 광고의 게재 등 “회사”의 서비스를 제공받는 데 있어 법적 규제나 제한이 없는 자 일 것
+②“호스트”는 전 항의 내용이 진실함을 보증하며, “호스트”가 제공하는 전항의 내용에 따라 “회사”가 형성한 사실 및 법률관계로 인하여 “회사”에게 손해 등이 발생한 경우 이에 대한 책임을 집니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 5조(호스트의 등록)
+①“호스트”는 다음 각 호의 절차에 따라 “서비스”에 등록합니다.
+1. “호스트”는 [메인 &gt; 마이페이지 &gt; 문의하기 &gt; Partners Contacts]을 통하여, 또는 “회사”와 직접 연락을 취하여 신청
+2. “호스트”가 신청을 완료하면 “회사”는 검토 후 개별적으로 연락
+3. “회사”는 “호스트”에게 짐 보관 및 배송에 대한 메뉴얼 제공
+4. “호스트”는 “회사”에게 상점 정보(상점 이름, 상점 주소, 운영시간, 보관 가능한 최대 짐 개수 등) 및 호스트 정보(계좌 정보, 호스트 이름 등)를 제공
+5. 모든 절차가 완료되면 “회사”는 “서비스”에 등록
+②“회사”는 “호스트”가 등록한 정보를 활용하여 “예약” 및 “승낙”에 필요한 시스템 및 서비스를 구축합니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 6조(짐 보관 및 배송 계약)
+①“고객”의 “예약”이 있는 경우 “호스트”는 이에 대해 “승낙”하면 “고객”과 “호스트”사이에 짐 보관 또는 배송 계약이 체결됩니다.
+②“호스트”는 “호스트”가 “회사”에 제공하고, “회사”로 부터 등록된 내용(상점영업시간, 짐보관 가능 개수 등)에 따라 “고객”이 요청하는 “예약” 내용대로 짐을 보관 또는 배송할 수 있는 경우, “고객”이 “예약”한 즉시 “승낙”한 것으로 간주됩니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 7조 (호스트의 짐 보관 및 반환, 배송)
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">①“호스트”는 다음 각호의 절차에 따라 “고객”의 짐을 보관합니다.
+1. “호스트”는 “고객”이 “예약”한 짐을 사진촬영 후, 애플리케이션 등에 정해진 방법에 따라 업로드
+2. “호스트”는 “예약”번호를 보안태그에 기재하고, 보안태그를 짐에 부착
+3. “호스트”는 “고객”의 짐을 “회사”와 사전에 약정된 보관 장소에 보관
+②“호스트”는 다음 각호의 절차에 따라 “고객”의 짐을 반환합니다.
+1. “호스트”는 “고객“이 제시한 “예약”티켓을 모바일로 인증하여 짐 찾기 가능여부 확인
+2. “호스트”는 “고객”의 짐 사진과 보안태그의 “예약”번호를 확인하고, 짐을 “고객”에게 전달
+③“호스트”는 다음 각호의 절차에 따라 “고객”의 짐을 배송합니다.
+1.  “호스트”는 “고객”의 배송“예약”정보를 전달받은 운송업체가 상가에 방문해 “예약”번호를 제시할 시, “예약”번호를 확인하여 운송업체에 해당“고객”의 짐을 전달
+2. “호스트”는 모바일로 “고객”의 짐이 운송업체로 전달 됐음을 알림 
+④“호스트”는 “고객”이 예정된 시간으로부터 24시간 후에도 짐을 찾아가지 않는 경우 이를 “회사”에 알려야 하며, “회사”는 “고객”에게 보관한 짐을 수령할 것을 고지하고 “고객”과 “고객”이 보관한 짐을 수령할 시간을 새로 정하여 “호스트”에게 알려야 합니다.
+⑤“호스트”는 개장시간의 변경 등 “승낙”한 내용대로 “고객”에게 짐 보관 및 배송 서비스를 제공할 수 없는 사정이 발생한 경우 이를 지체없이 “회사”에게 알려야 하며 “회사”는 “고객”에게 위와 같은 사실을 고지하고 “고객”의 선택에 따라 다른 “호스트”(대체 호스트)에 짐을 보관하게 하거나 결제한 금액 전액을 환불해야 합니다. “고객”이 “대체호스트”를 이용하는 경우, “회사”는 “고객”이 최초 “호스트”에게 지불한 금액을 “대체호스트”에게 지불합니다.
+⑥“호스트”는 “고객”에 대한 “승낙”에도 불구하고 다음 각 호의 짐은 보관할 수 없으며 “고객”의 짐 보관 요구에 거절하여야 합니다.
+1. 폭발물, 연료, 위험 물질 또는 가연성 물질
+2. 살충제, 독성 화학 물질, 오염 물질, 모든 종류의 폐기물
+3. 화기, 탄약, 불법 마약 또는 기타 통제 물질
+4. 훔친 물건 또는 다른 밀수품
+5. 상한 음식, 살아 있거나 죽은 식물 또는 동물, 기생충 또는 기타 오염된 품목, 축축하거나 곰팡이가 핀 품목
+6. 방사성 물질, 가스나 다른 강한 냄새를 방출하는 물질
+7. 신분증, 여권, 화폐, 유가증권, 귀중품 그 밖의 고가물
+⑦“호스트”는 다음 각호의 짐에 대하여는 “고객”에게 통보하지 않고 짐을 제거하거나 관련기관에 보고, 신고 등을 할 수 있습니다. 다만, “호스트”는 위와 같은 조치를 하기 전에 “회사”에 알려야 합니다.
+1. “고객”의 “예약” 내용과 다른 짐
+2. “고객”의 사전고지에 따라 “호스트”가 동의한 사항이 아닌 짐
+3. 기타 “고객”이 본 약관을 위반하여 맡긴 짐
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 8조 (호스트의 의무) 
+①“호스트”는 “고객”의 “예약”에 대하여 “호스트”가 “승낙”한 내용대로 “고객”의 짐을 보관한 후 반환, 배송 하여야 합니다. 한편, “호스트”가 “회사”에게 고지 및 약정한 공간에 짐을 보관하지 않은 경우, “회사”는 “호스트”에게 경고 혹은 서비스에서 제거 등의 패널티를 부과할 수 있습니다.
+②“호스트”는 선량한 관리자의 주의로 “고객”의 짐을 보관, 배송 하여야 합니다.
+③“호스트”가 전항을 위반하여 “고객”에게 손해가 발생한 경우 “고객”은 “호스트”에게 손해배상을 청구할 수 있습니다. 다만, “고객”에 대한 보상규정을 둘 수 있습니다.
+④“호스트”는 “회사”에 제공하는 정보가 변경되거나 “애플리케이션 등에” 게시된 정보가 잘못된 사실을 안 경우 이를 지체없이 고지하여야 하며, “회사”는 “호스트”가 등록한 정보대로 게시한 경우 “호스트”의 잘못된 정보로 인한 사실 및 법률관계에서 면책됩니다.
+⑤“호스트”는 “고객” 및 “회사”로부터 제공받은 “고객”의 정보를 제3자에게 누설, 배포 등 하지 않습니다.
+⑥“호스트”는 반드시 “회사”를 통하여 “고객”과 회사의 서비스를 이용할 수 있습니다.
+⑦“호스트”가 제 1항의 의무를 위반하여 다음 각 호의 행위를 하는 경우, “회사”는 “호스트”에게 경고 혹은 서비스에서 제거 등의 패널티를 부과할 수 있습니다.
+1. “호스트”가 “회사”를 통하지 않고 “고객”과 짐 보관의 연장 등의 행위를 하는 경우
+2. “호스트”가 “회사”를 통하지 않고 “고객”과 직접 현금 결제를 하는 경우
+제 9조 (회사의 의무)
+①“회사”는 “호스트”에게 다음 각호의 서비스를 제공할 수 있습니다.
+1. “애플리케이션 등”에 “호스트”의 광고 게제
+②“회사”는 “호스트”에게 다음 각호와 같은 방법으로 프로모션을 제공할 수 있습니다.
+1.“호스트”의 “고객”에 대한 홍보 및 할인의 기회 제공
+제 10조 (정산 절차)
+①“회사”는 다음과 같은 방법 및 절차에 따라 “호스트”에게 정산합니다.
+1. 매달 말일 일괄 청산하여 “호스트”가 제공한 계좌로 송부
+2. 정산 금액 내역은 “호스트” 전용 “애플리케이션 등”에 업데이트 함
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">제 11조 (개별 약정)
+“회사”는 “호스트”와 개별약정을 체결할 수 있습니다. 이 경우 개별약정이 “본 약관”의 효력보다 우선합니다.
+</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
+                                                                <real key="NSKern" value="0.0"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
+                                                                    <tabStops/>
+                                                                </paragraphStyle>
+                                                                <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <real key="NSStrokeWidth" value="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bVe-U7-orM" secondAttribute="trailing" id="0j6-mp-odo"/>
+                                                <constraint firstItem="bVe-U7-orM" firstAttribute="top" secondItem="f2B-Ox-57T" secondAttribute="top" id="3vg-fQ-iCX"/>
+                                                <constraint firstAttribute="bottom" secondItem="bVe-U7-orM" secondAttribute="bottom" id="lii-M3-75b"/>
+                                                <constraint firstItem="bVe-U7-orM" firstAttribute="leading" secondItem="f2B-Ox-57T" secondAttribute="leading" id="rzg-VE-eNd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="termOfServiceTextView" destination="bVe-U7-orM" id="YvO-g7-h5L"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="cuw-Qp-Dc4" secondAttribute="bottom" id="PQb-Np-1tQ"/>
+                            <constraint firstItem="cuw-Qp-Dc4" firstAttribute="leading" secondItem="TxW-fr-Hdq" secondAttribute="leading" id="Qud-9m-LfM"/>
+                            <constraint firstAttribute="trailing" secondItem="cuw-Qp-Dc4" secondAttribute="trailing" id="gh1-sP-wcv"/>
+                            <constraint firstItem="cuw-Qp-Dc4" firstAttribute="top" secondItem="TxW-fr-Hdq" secondAttribute="top" id="szx-EE-4vE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bX0-YY-ayP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mHN-i3-ikA"/>
+                    <connections>
+                        <outlet property="contentTableView" destination="cuw-Qp-Dc4" id="KnW-B4-7ju"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8TR-5l-VG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6681" y="2962"/>
+        </scene>
+        <!--설정-->
+        <scene sceneID="yNM-qU-SPn">
+            <objects>
+                <tableViewController storyboardIdentifier="termofservice" title="설정" id="xaz-sA-aK5" customClass="WholeTermTableViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Pyu-Bp-JPK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="ZFS-mV-UVn">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용약관" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpk-YB-NFa">
+                                    <rect key="frame" x="38" y="71" width="192" height="80"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="192" id="f8F-tb-8en"/>
+                                        <constraint firstAttribute="height" constant="80" id="pdH-KH-Ocd"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="30"/>
+                                    <color key="textColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Vpk-YB-NFa" firstAttribute="leading" secondItem="ZFS-mV-UVn" secondAttribute="leading" constant="38" id="JP9-Xv-Fyl"/>
+                                <constraint firstItem="Vpk-YB-NFa" firstAttribute="top" secondItem="ZFS-mV-UVn" secondAttribute="top" constant="71" id="KHb-jL-g0j"/>
+                                <constraint firstAttribute="bottom" secondItem="Vpk-YB-NFa" secondAttribute="bottom" constant="104" id="uDw-4a-jt0"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="g5h-Yp-rHI">
+                            <rect key="frame" x="0.0" y="483" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <sections>
+                            <tableViewSection id="gft-Jt-QuG">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="76" id="HXe-P4-ZYb">
+                                        <rect key="frame" x="0.0" y="255" width="375" height="76"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HXe-P4-ZYb" id="LnA-wt-2Ih">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="75.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWQ-fr-4TE">
+                                                    <rect key="frame" x="29.999999999999993" y="18" width="114.33333333333331" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="uVv-m8-ezd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="nWQ-fr-4TE" secondAttribute="bottom" constant="18" id="3Oh-a7-zgz"/>
+                                                <constraint firstItem="nWQ-fr-4TE" firstAttribute="leading" secondItem="LnA-wt-2Ih" secondAttribute="leading" constant="30" id="ulJ-ea-oQ0"/>
+                                                <constraint firstItem="nWQ-fr-4TE" firstAttribute="top" secondItem="LnA-wt-2Ih" secondAttribute="top" constant="18" id="uoY-LR-5lq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1Xi-fn-KAS" kind="push" id="PUC-xA-F8h"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="76" id="Yio-eJ-ipR">
+                                        <rect key="frame" x="0.0" y="331" width="375" height="76"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yio-eJ-ipR" id="wqX-tf-Ale">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="75.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="호스트 이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWJ-rG-sno">
+                                                    <rect key="frame" x="29.999999999999993" y="18" width="114.33333333333331" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="6UW-NW-ASN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GWJ-rG-sno" firstAttribute="top" secondItem="wqX-tf-Ale" secondAttribute="top" constant="18" id="2fc-La-jAS"/>
+                                                <constraint firstAttribute="bottom" secondItem="GWJ-rG-sno" secondAttribute="bottom" constant="18" id="T2s-0k-06A"/>
+                                                <constraint firstItem="GWJ-rG-sno" firstAttribute="leading" secondItem="wqX-tf-Ale" secondAttribute="leading" constant="30" id="wkB-TT-kJo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Lxz-dK-s3n" kind="push" id="JkM-9h-dxY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="76" id="C1k-50-410">
+                                        <rect key="frame" x="0.0" y="407" width="375" height="76"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C1k-50-410" id="MCH-cJ-YjL">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="75.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbD-RJ-Qg6">
+                                                    <rect key="frame" x="29.999999999999993" y="18" width="114.33333333333331" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="HcJ-YV-qqz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="SbD-RJ-Qg6" secondAttribute="bottom" constant="18" id="2mZ-NV-Ogo"/>
+                                                <constraint firstItem="SbD-RJ-Qg6" firstAttribute="leading" secondItem="MCH-cJ-YjL" secondAttribute="leading" constant="30" id="9MQ-5I-C2R"/>
+                                                <constraint firstItem="SbD-RJ-Qg6" firstAttribute="top" secondItem="MCH-cJ-YjL" secondAttribute="top" constant="18" id="Y4b-eK-3en"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NKS-c7-Ecn" kind="push" id="dJJ-kP-nTb"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="xaz-sA-aK5" id="hBk-NW-6X1"/>
+                            <outlet property="delegate" destination="xaz-sA-aK5" id="3te-4g-tBz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="n5U-FV-r6m"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X17-zX-bWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4159" y="2267"/>
+        </scene>
+        <!--User Term Of Service View Controller-->
+        <scene sceneID="hXm-1a-Cit">
+            <objects>
+                <viewController id="1Xi-fn-KAS" customClass="UserTermOfServiceViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0rg-lJ-AzJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EIt-WV-W8g">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="102-MM-uFZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0p-3v-9Gk">
+                                            <rect key="frame" x="38" y="71" width="199" height="34"/>
+                                            <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="30"/>
+                                            <color key="textColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="n0p-3v-9Gk" firstAttribute="leading" secondItem="102-MM-uFZ" secondAttribute="leading" constant="38" id="f2z-2E-Mof"/>
+                                        <constraint firstItem="n0p-3v-9Gk" firstAttribute="top" secondItem="102-MM-uFZ" secondAttribute="top" constant="71" id="qAd-mh-9sb"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="usertermcell" rowHeight="610" id="owu-sC-RLJ" customClass="UserTermOfServiceTableViewCell" customModule="Travely_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="283" width="375" height="610"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="owu-sC-RLJ" id="2Rd-0L-mQC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="609.66666666666663"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmy-f2-KR3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="609.66666666666663"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <string key="text">제 1조 (목적)
+
+
+본 약관은 툭컴퍼니(이하 “회사”라 함)가 제공하는 “서비스 이용약관”에서 예정하는 개별약관으로서 “회사”와 “고객”회원 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+
+
+제 2조(정의)
+
+
+본 약관에서 사용하는 용어의 정의는 다음과 같습니다. 아래 각 조항 외에 본 약관에서 사용하는 정의 규정은 “서비스이용약관”을 준용합니다
+①“예약”이란 “고객”이 “회사”의 “애플리케이션 등”을 통해 특정한 “호스트”에게 자신의 짐을 보관 또는 배송 해줄 것을 요청하는 의사표시 및 관련 행위를 말합니다.
+②“승낙”이란 “고객”으로 부터 “예약”을 받은 “호스트”가 “고객”의 “예약”내용에 따라 짐을 보관 또는 배송 해줄 것을 수락하는 의사표시 및 관련 행위를 말합니다.
+③“보관료”란 “예약”을 한 “고객”이 짐의 보관 대가로 지급하는 비용을 말합니다.
+④“배송료”란 “예약”을 한 “고객‘이 짐의 배송을 대가로 지급하는 비용을 말합니다.
+⑤“서비스이용료”란 “회사”가 “서비스”를 제공하는 대가로 받는 비용을 말합니다.
+⑥“결제금액”이란 “예약”을 한 “고객”이 “회사”에 지급하는 “보관료” 또는 “배송료”와 “서비스이용료”를 합한 금액을 말합니다.
+⑦“결제”란 “고객”이 “회사”의 “서비스”를 이용하기 위하여 지불수단을 선택하고 금융정보를 입력하여 최종적으로 금전을 지급하는 행위를 말합니다.
+
+
+제 3조(회사의 지위)
+“회사”는 “고객”이 “호스트”에게 짐의 보관이나 배송을 요청하는데 필요한 정보 및 “예약” 서비스를 제공하고, “고객”으로부터 그 “서비스이용료”를 받는 자입니다. “고객”과 “호스트”간에 짐 보관 및 배송과 관련하여 발생한 법률관계 중 본 약관에 특별한 규정이 없는 부분에 대하여 “회사”는 관계가 없습니다. 나아가, 본 약관의 규정에 따라 “회사”가 “고객”과 “호스트”와의 짐 보관 및 배송에 관한 법률관계와 관련이 있다고 하더라고 이는 “고객”이 “회사”를 통하여 “서비스”를 이용한 경우에 한합니다.
+
+
+제 4조(예약방법 등)
+①“고객”은 “회사”가 “서비스”를 제공하는 동안에는 자신의 짐을 일정기간 보관하거나 배송하기 위한 “예약 서비스”를 이용할 수 있습니다.
+②“고객”은 “예약”서비스를 이용하기 위해선 아래와 같은 사항을 사전에 확인해야 합니다. “고객”이 아래와 같은 사항을 사전에 확인하지 아니함으로 인하여 발생한 사실 및 법률관계에 대하여 회사는 책임이 없습니다.
+	1. “호스트”의 영업시간
+	2. “호스트”의 영업시간이 “고객”의 예약계획과 적합한지 여부
+	3. 환불규정
+	4. 짐보관/ 찾기 절차
+	5. 짐배송/수령 절차
+	6. 티켓 사용방법(티켓의 주의사항 문구 참조)
+③“고객”은 “예약”서비스를 이용하기 위해선 다음 각호의 정보를 제공해야 합니다. 
+	1. “고객”정보(이름, 전화번호, 이메일, 거주국가 등의 고객정보가 “회사”에 수집 및 보유되고 있는 경우 “고객”은 “예약”서비스 및 “서비스”를 위하여 “회사”가 “고객”이 예약을 신청한 “호스트”에게 제공하는데 동의합니다) 
+	2. 짐을 맡기는 날짜와 시간
+	3. 맡길 짐의 형태와 개수
+	4. 짐을 찾는 날짜와 시간
+	5. 배송정보(짐의 크기, 무게, 배송지)
+	6. 짐 보관 및 배송과 관련된 댓글
+	7. 지불카드 정보
+
+
+④“고객”은 “회사”의 “서비스”를 통해 “호스트”에게 전항의 규정에 따라 “예약”하면, “호스트”는 이를 즉시 “승낙”하여 “고객”과 “호스트”사이의 짐 보관 또는 배송 계약이 체결되며, “고객”이 본 약관에서 정한 결제 및 지불 절차에 따라 결제를 완료한 경우 “예약”이 완료되고 “회사”로부터 “예약”완료의 통보를 받습니다. 이 통보는 “고객”이 등록한 이메일 또는 “애플리케이션 등”에서의 “고객” 정보에서 확인할 수 있습니다.
+⑤“고객”은 “예약”이 완료된 경우, 자신이 “예약”한 사항에 따라 “호스트”에게 짐을 보관 또는 배송할 수 있습니다.
+
+
+제 5조(짐 보관 및 배송 계약)
+
+
+①“고객”의 “예약”이 있는 경우 “호스트”가 이에 대해 “승낙”하면 “고객”과 “호스트”사이에 짐 보관 또는 배송 계약이 체결됩니다.
+②“호스트”는 “호스트”가 “회사”에 제공하고, “회사”로 부터 등록된 내용(상점영업시간, 짐보관 가능 개수 등)에 따라 “고객”이 요청하는 “예약” 내용대로 짐을 보관 또는 배송할 수 있는 경우, “고객”이 “예약”한 즉시 “승낙”한 것으로 간주됩니다.
+
+
+제 6조 (결제 등)
+
+
+①“회사”의 “결제”정책은 다음과 같습니다.
+	1. “결제금액”은 “회사”의 “애플리케이션 등”에 게시됩니다.
+	2. “회사”가 게시하는 “결제금액”은 부가가치세를 포함한 금액입니다.
+	3. “회사”는 “고객”의 “결제금액”중 “서비스이용료”를 제외한 “보관료” 또는 “배송료”를 “호스트”에게 지급합니다.
+	4. “수수료”는 “고객”의 “호스트”의 공간 임대 기간을 기준으로 부과됨을 원칙으로 합니다.
+	5. “고객”이 “호스트”의 공간 임대 기간과 실제 “고객”의 공간 사용기간이 다르더라도 “회사”는 “고객”이 예약한 임대 기간을 기준으로 “수수료”를 책정합니다.
+	6. 전호 경우 “회사”는 “고객”의 추가 “수수료” 발생 시 “고객”에게 추가 “수수료” 발생에 대하여 통보하고, “고객”이 “결제”할 수 있도록 별도의 “결제”페이지를 통하여 안내합니다.
+
+
+②“고객”은 다음 각호의 결제수단을 통하여 “결제”합니다.
+	1. 선불카드, 직불카드, 신용카드 등의 각종 카드 결제
+	2. 전자화폐에 의한 결제
+	3. 인터넷 뱅킹, 폰뱅킹 등을 통한 각종 계좌이체
+	4. “회사”와 계약을 맺었거나 “회사”가 인정한 상품권에 의한 결제
+	5. 기타 전자적 지급 방법에 의한 대금 지급 등
+③“고객”이 “결제”를 위한 입력한 정보에 대한 책임은 “고객”에게 있습니다.
+④“회사”는 “고객”이 결제수단에 대해 정당한 사용권한을 가지고 있는지의 여부를 확인할 수 있으며, 이에 대한 확인이 완료될 때까지 거래진행을 중지하거나, 확인이 불가한 해당거래를 취소할 수 있습니다.
+
+
+제 7조 (짐 보관 및 찾기, 배송 등) 
+①“고객”은 “회사”가 “애플리케이션 등”에 게시한 방법으로 “호스트”에게 짐을 보관하거나 배송할 수 있습니다.
+②“고객”은 다음 각 호의 물건의 보관을 맡길 수 없으며, “호스트”의 짐 보관 거절에 응하여야 합니다.
+	1. 폭발물, 연료, 위험 물질 또는 가연성 물질
+	2. 살충제, 독성 화학 물질, 오염 물질, 모든 종류의 폐기물
+	3. 화기, 탄약, 불법 마약 또는 기타 통제 물질
+	4. 훔친 물건 또는 다른 밀수품
+	5. 상한 음식, 살아 있거나 죽은 식물 또는 동물, 기생충 또는 기타 오염된 품목, 축축하거나 곰팡이가 핀 품목
+	6. 방사성 물질, 가스나 다른 강한 냄새를 방출하는 물질
+	7. 신분증, 여권, 화폐, 유가증권, 귀중품 그 밖의 고가물
+③“고객”이 “회사”나 “호스트”를 기망하여 전항의 물건을 보관시킨 경우, 이로 인하여 발생한 “고객”이나 제 3자에 대한 피해에서 “회사”와 “호스트”는 면책되며, “고객”은 “회사”나 “호스트”가 입은 손해를 배상하여야 합니다.
+④“호스트”는 다음 각 호의 짐에 대하여는 “고객”에게 통보하지 않고 짐을 제거, 관련기관에 보고 등을 할 수 있습니다.
+	1. “고객”의 “예약”내용과 다른 짐
+	2. “고객”의 사전고지에 따라 “호스트”가 동의한 사항이 아닌 짐
+	3. 기타 “고객”이 본 약관을 위반하여 맡긴 짐
+⑤“고객”은 “호스트”의 전항의 짐 처리에 대하여 “호스트” 및 “회사”를 면책하는데 동의합니다.
+⑥“호스트”가 짐 보관 혹은 짐 찾기, 짐 배송을 하기 전에, “고객”은 예약정보를 통해 예약 본인임을 증명해야 합니다. 증명하지 못할 경우, “고객”은 짐 보관 및 짐 찾기, 짐 배송을 할 수 없음에 응해야합니다.
+	1. 이메일로 발송된 예약 티켓(인쇄물 혹은 모바일 스크린샷 등)
+	2. “서비스”를 통한 예약 티켓 확인 [로그인 &gt; 예약내역 &gt; 해당 티켓 선택]
+	3. 예약 티켓을 보여주지 못하는 상황의 경우, 예약 정보에 기재된 동일한 이름(여권, 신분증 등)과 이메일주소 및 핸드폰 번호로 증명해야 합니다.
+⑦짐보관은 “예약”시간의 30분 전부터 가능합니다. 짐 찾기는 “예약”시간 이후에도 찾아갈 수 있으나, “예약”한 시간이 지난 경우에는 지정된 시간 단위에 따라 추가요금이 발생합니다.
+⑧“호스트”가 짐 보관 및 짐 찾기를 정상적으로 완료하기 위해서는, 다음의 절차를 진행해야하며, 이에 “고객”은 응해야 합니다. 
+	1. “고객”은 “예약”정보가 담긴 QR코드를 “호스트”에게 제시
+	2. “호스트”는 “고객”이 “예약”한 짐을 사진촬영 후, 애플리케이션 등에 정해진 방법에 따라 업로드
+	3. “호스트”는 “예약”번호를 보안태그에 기재하고, 보안태그를 짐에 부착
+	4. “고객”은 짐 찾기 시, 짐을 전달받으면, 본인의 짐이 맞는지 반드시 확인
+	5. “회사”는 짐 찾기가 정상적으로 처리되었다는 것에 대하여 “고객”에게 통보
+	6. “고객”은 짐을 전달 받은 후에 이메일 혹은 서비스를 통해 “짐 확인 완료” 버튼을 눌러야하며, 7일간 누르지 않을 경우 “확인 완료”된 것으로 간주
+⑨“호스트”가 짐 배송을 정상적으로 완료하기 위해서는, 다음의 절차를 진행해야하며, 이에 “고객”은 응해야 합니다.
+	1. “고객”은 “예약”정보가 담긴 QR코드를 “호스트”에게 제시
+	2. “고객”은 “예약”한 짐의 규격에 따라 마련된 박스에 짐을 보관
+	3. “호스트”는 “고객”이 “예약”한 짐을 사진촬영 후, 애플리케이션 등에 정해진 방법에 따라 업로드
+	4. “호스트”는 박스를 동봉하고 “예약”번호를 보안태그에 기재하여, 보안태그를 짐에 부착
+	5. “호스트”는 배송업체로의 짐전달이 정상적으로 처리되었다는 것에 대하여 “고객”에게 통보.
+	6. “고객”은 짐 수령 시, 본인의 짐이 맞는지 반드시 확인
+	7. “회사”는 “고객”의 짐수령이 정상적으로 처리되었다는 것에 대하여 “고객”에게 통보.
+	8. “고객”은 짐을 수령 후 이메일 혹은 서비스를 통해 “수령 확인 완료” 버튼을 눌러야하며, 7일간 누르지 않을 경우 “확인 완료”된 것으로 간주합니다.
+
+
+제 8조 (취소 및 환불)
+①“고객”은 다음의 경우 “예약”을 취소할 수 있으며 “회사”는 아래 내용에 따라 환불할 수 있습니다.
+	1. “고객”이 신청한 “예약”일정이 될 때까지 4시간 이상 남아 있는 경우 : 결제 금액 전액 환불
+	2. “고객”이 신청한 “예약”일정이 될 때까지 4시간 미만이 남아 있는 경우 : 결제 금액의 20% 이내의 금액을 공제하고 환불
+②“고객”은 “예약”일정 이후에는 “호스트”의 사정으로 짐보관 및 배송을 할 수 없는 경우가 아닌 한 “결제”를 취소할 수 없습니다.
+③“회사”의 환불은 “고객”이 “결제”한 방법과 같은 방법으로 환불함을 원칙으로 합니다.
+
+
+
+
+제 9조 (보상조치)
+①“회사”와 “호스트”는 다음과 각호의 경우 예외적으로 “고객”에게 보상조치를 합니다.
+	1. “고객”이 “예약”한 “호스트”가 짐 보관 및 배송 서비스를 제공할 수 없는 경우
+	: “고객”의 선택에 따라 다른 “호스트”를 제공하거나 환불함
+	2. “고객”이 “회사”가 정한 방법에 따라 “호스트”에게 짐을 맡겼으나 도난당한 경우
+	:“호스트”와 “고객”은 경찰서 등 관련기관에 도난 신고 등 필요한 절차를 이행함을 전제로 “호스트”는 30만원을 한도로 한 보상금액을 지급
+	3. “고객”이 “회사”가 정한 방법에 따라 “호스트”에게 짐을 맡겼으나 분실당한 경우
+	: “호스트”와 “고객”은 경찰서 등 관련기관에 분실 신고 등 필요한 절차를 이행함을 전제로 “호스트”는 30만원을 한도로 한 보상금액을 지급
+②“회사”와 “호스트”는 다음 각 호의 의무를 이행한 “고객”에 한하여 제1항의 보상조치를 이행합니다.
+	1. “고객”이 “회사”의 “애플리케이션 등”에 게시한 방법에 따라서 “호스트”에게 짐을 맡겼을 것
+	2. “고객”은 제 6조에서 정의한 보관 물건에 대한 안내를 성실히 이행했을 것.
+③“회사”는 “고객”과 “호스트”사이의 손해배상이나 분쟁 등에 관하여 위 보상조치 외에 다른 책임으로부터 면책됩니다.
+
+
+
+
+제 10조(회사의 의무)
+
+
+①“회사”는 “호스트”의 최근 정보를 “애플리케이션 등”에 게시하기 위하여 노력합니다.
+-다음 각 호에 대하여, “회사”는 “고객”에게 ‘애플리케이션 등’을 통해 안내합니다.
+	1. “고객”이 최초 가입한 경우
+	2. “고객”이 비밀번호를 찾는 경우
+	3. “고객”이 예약을 완료했을 경우
+	4. “고객”이 예약을 취소하여 환불이 완료되었을 경우
+	5. “호스트”가 짐 찾기 또는 짐 수령을 진행할 경우
+	6. “고객”이 문의한 경우
+
+
+제 11조(고객의 의무)
+①“고객”은 반드시 “회사”를 통하여 “회사”에 등록된 호스트와 “회사”의 “서비스”를 이용할 수 있습니다.
+②“고객”이 위 제1항의 의무를 위반하여 다음 각 호의 행위를 하는 경우, “회사”는 “고객”과 “호스트”간의 행위와 무관하며, 면책됩니다.
+	1. “고객”이 “호스트”에게 “회사”를 통하지 않고 연락하여 짐 보관 등의 행위를 하는 경우
+	2. “고객”이 “호스트”와 “회사”를 통하지 않고 짐 보관의 연장 등의 행위를 하는 경우
+	3. “고객”이 “회사”를 통하지 않고 “호스트”에게 직접 현금 결제를 하는 경우.
+</string>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Light" family="Noto Sans CJK KR" pointSize="12"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="gmy-f2-KR3" secondAttribute="trailing" id="6FH-7H-peW"/>
+                                                <constraint firstItem="gmy-f2-KR3" firstAttribute="top" secondItem="2Rd-0L-mQC" secondAttribute="top" id="6mG-wH-qCH"/>
+                                                <constraint firstItem="gmy-f2-KR3" firstAttribute="leading" secondItem="2Rd-0L-mQC" secondAttribute="leading" id="FRR-mN-eqV"/>
+                                                <constraint firstAttribute="bottom" secondItem="gmy-f2-KR3" secondAttribute="bottom" id="IGF-6j-FjK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="termOfServiceTextView" destination="gmy-f2-KR3" id="NIl-Zn-gl6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="EIt-WV-W8g" secondAttribute="bottom" id="0d1-fB-hTW"/>
+                            <constraint firstItem="EIt-WV-W8g" firstAttribute="top" secondItem="0rg-lJ-AzJ" secondAttribute="top" id="L8y-AJ-bKt"/>
+                            <constraint firstAttribute="trailing" secondItem="EIt-WV-W8g" secondAttribute="trailing" id="dhW-GE-Vgs"/>
+                            <constraint firstItem="EIt-WV-W8g" firstAttribute="leading" secondItem="0rg-lJ-AzJ" secondAttribute="leading" id="dkW-NK-rzO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WPk-Ut-ffx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LiX-Eu-xxv"/>
+                    <connections>
+                        <outlet property="contentTableView" destination="EIt-WV-W8g" id="BDl-0y-NQH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1LP-qh-cfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4985" y="2962"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bg_half_and_half" width="375" height="414"/>
@@ -4343,6 +5688,7 @@
         <image name="bt_find_the_road" width="47.333332061767578" height="61"/>
         <image name="bt_reset" width="43" height="17"/>
         <image name="checkbox_empty" width="20" height="20"/>
+        <image name="icBack" width="10" height="20"/>
         <image name="ic_address" width="13.333333015441895" height="16"/>
         <image name="ic_ask" width="16.333333969116211" height="16.333333969116211"/>
         <image name="ic_attachment" width="16" height="16"/>
@@ -4380,6 +5726,5 @@
         <image name="setting_ic_instagram" width="16" height="16"/>
         <image name="setting_ic_message" width="16" height="16"/>
         <image name="setting_ic_phone" width="16" height="16"/>
-        <image name="setting_text" width="327" height="569"/>
     </resources>
 </document>

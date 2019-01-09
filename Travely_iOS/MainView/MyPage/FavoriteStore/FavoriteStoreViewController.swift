@@ -20,10 +20,7 @@ class FavoriteStoreViewController: UIViewController {
         self.favoriteStoreTableView.delegate = self
         self.favoriteStoreTableView.dataSource = self
        
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        self.addBackButton("black")
+       
         networkModel.getFavoriteStore { [weak self](favoriteStore, errorModel, error) in
             
             // 리뷰
@@ -47,6 +44,14 @@ class FavoriteStoreViewController: UIViewController {
             }
         
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        self.addBackButton("black")
     }
     
     func setStoreTime(openTime: Int?, closeTime: Int?) -> String{
@@ -110,6 +115,7 @@ extension FavoriteStoreViewController: UITableViewDataSource
             cell.currentBag  = self.gino(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].currentBag)
             cell.limit = self.gino(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].limit)
             cell.opentime = self.gino(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].openTime)
+            cell.available = self.gino(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].available)
             cell.restWeekResponseDtos = self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].restWeekResponseDtos
             cell.favoriteStoreNameLabel.text = gsno(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].storeName)
             cell.favoriteStoreImg.imageFromUrl(gsno(self.favoriteModel?[indexPath.section]?.simpleStoreResponseDtos?[indexPath.row - 1].storeImgUrl))
@@ -136,16 +142,35 @@ extension FavoriteStoreViewController: MakeReviewPresentView
     
     func makeReservation(storeIdx: Int, closeTime: Int, currentBag: Int, limit: Int, opentime: Int,available:Int, restWeekResponseDtos: [RestWeekResponseDtos?]?) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
-        vc.closeTime = closeTime
-        vc.currentBag = currentBag
-        vc.limit = limit
-        vc.opentime = opentime
-        vc.restWeekResponseDtos = restWeekResponseDtos
-        vc.storeIdx = storeIdx
-        vc.available = available
-        self.navigationController?.pushViewController(vc, animated: true)
+        if  UserDefaults.standard.bool(forKey: "isReserve") {
+            let alertController = UIAlertController(title: "",message: "이미 상가에 예약이 되어있습니다.", preferredStyle: UIAlertController.Style.alert)
+            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+            alertController.addAction(cancelButton)
+            self.present(alertController,animated: true,completion: nil)
+        }
+        else {
+            if available == -1 {
+                let alertController = UIAlertController(title: "",message: "더 이상 해당 상가에 예약이 불가합니다.", preferredStyle: UIAlertController.Style.alert)
+                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+                alertController.addAction(cancelButton)
+                self.present(alertController,animated: true,completion: nil)
+                
+            }
+            else {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "ReservationViewController") as! ReservationViewController
+                vc.closeTime = closeTime
+                vc.currentBag = currentBag
+                vc.limit = limit
+                vc.opentime = opentime
+                vc.restWeekResponseDtos = restWeekResponseDtos
+                vc.storeIdx = storeIdx
+                vc.available = available
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+        }
+        
         
     }
     

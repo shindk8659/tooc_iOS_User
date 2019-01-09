@@ -93,7 +93,18 @@ class ReservationPicker: UIViewController {
             closeTime = Date(timeInterval: -60, since: closeTime)
         }
         
-        if checkDate.compareTimeOnly(to: openTime).rawValue == 1 && findDate.compareTimeOnly(to: closeTime).rawValue == -1 && isDayOff == false {
+        dateFormatter.dateFormat = "HHmm"
+        
+        if Int(dateFormatter.string(from: checkDate))! > Int(dateFormatter.string(from: openTime))! && Int(dateFormatter.string(from: checkDate))! < Int(dateFormatter.string(from: closeTime))! {
+            print("true")
+        }
+        
+        if Int(dateFormatter.string(from: findDate))! > Int(dateFormatter.string(from: openTime))! && Int(dateFormatter.string(from: findDate))! < Int(dateFormatter.string(from: closeTime))! {
+            print("true")
+        }
+        
+    
+        if checkDate.isDateAvailable(openTime: openTime, closeTime: closeTime) && findDate.isDateAvailable(openTime: openTime, closeTime: closeTime){
             let dateSet: [String] = [checkViewLabel[1].text!, checkViewLabel[2].text!, findViewLabel[1].text!, findViewLabel[2].text!, intervalTime.text!]
             self.delegate.tossTheTime(checkDate: checkDate , findDate: findDate, timeInterval: timeInterval, dateSet: dateSet)
             self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -242,8 +253,8 @@ class ReservationPicker: UIViewController {
             }
         }
         tap4.delegate = self
+        
     }
-    
     
     @objc func valueChanged() {
         if datePicker.date <= datePicker.minimumDate! {

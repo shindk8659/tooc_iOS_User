@@ -173,7 +173,19 @@ class ReservationViewController: UITableViewController {
             self.present(alertController, animated: true, completion: nil)
             return
         }
-
+        
+        
+        let open = Date(timeIntervalSince1970: TimeInterval(opentime))
+        let close = Date(timeIntervalSince1970: TimeInterval(closeTime))
+    
+        guard checkTime.isDateAvailable(openTime: open, closeTime: close) && findTime.isDateAvailable(openTime: open, closeTime: close) else {
+            let alertController = UIAlertController(title: "",message: "예약 가능 시간이 아닙니다. \n 시간 설정을 다시 해 주세요.", preferredStyle: UIAlertController.Style.alert)
+            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+            alertController.addAction(cancelButton)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
         let startTime = Int(checkTime.timeIntervalSince1970)*1000
         let endTime = Int(findTime.timeIntervalSince1970)*1000
         var bagDtos:[[String : Any]] = []
@@ -327,7 +339,6 @@ class ReservationViewController: UITableViewController {
         }
         reservationButton.layer.cornerRadius = reservationButton.frame.width / 13
     }
-    
 }
 
 extension ReservationViewController: changeTabProtocol,tossTheTime {

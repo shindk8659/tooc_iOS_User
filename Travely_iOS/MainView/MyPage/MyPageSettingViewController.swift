@@ -31,7 +31,7 @@ class MyPageSettingViewController: UITableViewController {
             VC.addBackButton("black")
             self.navigationController?.pushViewController(VC, animated: true)
         case 6:
-            let VC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "clause")
+            let VC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "termofservice") as! WholeTermTableViewController
             VC.addBackButton("black")
             self.navigationController?.pushViewController(VC, animated: true)
         default: return

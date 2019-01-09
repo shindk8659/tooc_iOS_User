@@ -40,6 +40,13 @@
 		52AB761921D0E9C40002FB07 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */; };
 		52AB761C21D104810002FB07 /* DetailShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */; };
 		52AB761D21D104810002FB07 /* DetailShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */; };
+		52B4DB4921E629DC0065368B /* UserTermOfServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB4821E629DC0065368B /* UserTermOfServiceTableViewCell.swift */; };
+		52B4DB4B21E62B560065368B /* UserTermOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB4A21E62B560065368B /* UserTermOfServiceViewController.swift */; };
+		52B4DB4D21E6301C0065368B /* HostTermOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB4C21E6301C0065368B /* HostTermOfServiceViewController.swift */; };
+		52B4DB4F21E6309B0065368B /* ServiceTermOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB4E21E6309B0065368B /* ServiceTermOfServiceViewController.swift */; };
+		52B4DB5121E631C40065368B /* HostTermOfServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB5021E631C40065368B /* HostTermOfServiceTableViewCell.swift */; };
+		52B4DB5321E631E60065368B /* ServiceTermOfServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB5221E631E60065368B /* ServiceTermOfServiceTableViewCell.swift */; };
+		52B4DB5521E642320065368B /* WholeTermTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B4DB5421E642320065368B /* WholeTermTableViewController.swift */; };
 		52B899CC21D7364C00D2667D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B899CB21D7364C00D2667D /* ErrorModel.swift */; };
 		52BD7CEA21D8C6D800EDD75D /* StoreListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD7CE921D8C6D800EDD75D /* StoreListModel.swift */; };
 		52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD7CF321D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift */; };
@@ -150,6 +157,13 @@
 		52AB761721D0E9C40002FB07 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		52AB761A21D104810002FB07 /* DetailShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailShopTableViewCell.swift; sourceTree = "<group>"; };
 		52AB761B21D104810002FB07 /* DetailShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailShopTableViewCell.xib; sourceTree = "<group>"; };
+		52B4DB4821E629DC0065368B /* UserTermOfServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTermOfServiceTableViewCell.swift; sourceTree = "<group>"; };
+		52B4DB4A21E62B560065368B /* UserTermOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTermOfServiceViewController.swift; sourceTree = "<group>"; };
+		52B4DB4C21E6301C0065368B /* HostTermOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTermOfServiceViewController.swift; sourceTree = "<group>"; };
+		52B4DB4E21E6309B0065368B /* ServiceTermOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTermOfServiceViewController.swift; sourceTree = "<group>"; };
+		52B4DB5021E631C40065368B /* HostTermOfServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTermOfServiceTableViewCell.swift; sourceTree = "<group>"; };
+		52B4DB5221E631E60065368B /* ServiceTermOfServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTermOfServiceTableViewCell.swift; sourceTree = "<group>"; };
+		52B4DB5421E642320065368B /* WholeTermTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WholeTermTableViewController.swift; sourceTree = "<group>"; };
 		52B899CB21D7364C00D2667D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		52BD7CE921D8C6D800EDD75D /* StoreListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListModel.swift; sourceTree = "<group>"; };
 		52BD7CF321D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStoreResponseDtos.swift; sourceTree = "<group>"; };
@@ -335,6 +349,20 @@
 			path = LoginView;
 			sourceTree = "<group>";
 		};
+		52B4DB4721E628CB0065368B /* Termsofservice */ = {
+			isa = PBXGroup;
+			children = (
+				52B4DB5421E642320065368B /* WholeTermTableViewController.swift */,
+				52B4DB4A21E62B560065368B /* UserTermOfServiceViewController.swift */,
+				52B4DB4C21E6301C0065368B /* HostTermOfServiceViewController.swift */,
+				52B4DB4E21E6309B0065368B /* ServiceTermOfServiceViewController.swift */,
+				52B4DB4821E629DC0065368B /* UserTermOfServiceTableViewCell.swift */,
+				52B4DB5021E631C40065368B /* HostTermOfServiceTableViewCell.swift */,
+				52B4DB5221E631E60065368B /* ServiceTermOfServiceTableViewCell.swift */,
+			);
+			path = Termsofservice;
+			sourceTree = "<group>";
+		};
 		52BD7CEB21D8D6AC00EDD75D /* StoreDetailModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +477,7 @@
 		52F2481821DF7BA5003F6989 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				52B4DB4721E628CB0065368B /* Termsofservice */,
 				52F2482021DFADB1003F6989 /* MyPageMain */,
 				52F2481F21DFADA2003F6989 /* FavoriteStore */,
 				52F2482521DFC951003F6989 /* ReviewList */,
@@ -736,18 +765,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B4DB4B21E62B560065368B /* UserTermOfServiceViewController.swift in Sources */,
 				52BD7CEA21D8C6D800EDD75D /* StoreListModel.swift in Sources */,
 				D10DD1B221DE826F0011282C /* bag.swift in Sources */,
 				5202616B21E271D500C3EDA7 /* Area3.swift in Sources */,
 				52EDFB5C21DA2FC400A83CC0 /* ReviewResponseDtos.swift in Sources */,
 				D10DD1AA21DE4B700011282C /* OpenTime.swift in Sources */,
 				5202616621E271D500C3EDA7 /* Region.swift in Sources */,
+				52B4DB4F21E6309B0065368B /* ServiceTermOfServiceViewController.swift in Sources */,
 				D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */,
 				52DAACD321E0B20B00B000A7 /* AppGuidePageViewController.swift in Sources */,
 				5202616421E271D500C3EDA7 /* Coords.swift in Sources */,
 				52F2482921DFCAA6003F6989 /* MyReviewTableViewCell.swift in Sources */,
 				52AA4B4721DAB36B00442C9A /* ReviewHeaderTableViewCell.swift in Sources */,
 				D10DD1B021DE4B700011282C /* ReservationModel.swift in Sources */,
+				52B4DB4D21E6301C0065368B /* HostTermOfServiceViewController.swift in Sources */,
 				52AB760D21CF65ED0002FB07 /* LoginViewController.swift in Sources */,
 				D192BFA521E2CF3B0072D4EF /* DidNotReserveViewController.swift in Sources */,
 				52EDFB5D21DA2FC400A83CC0 /* StoreDetailModel.swift in Sources */,
@@ -755,6 +787,7 @@
 				D1ABFAE521DBC29B00BEE3E0 /* ReservationStatusViewController.swift in Sources */,
 				5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */,
 				D1912E7121E11B93005ADBAF /* RateCell.swift in Sources */,
+				52B4DB5121E631C40065368B /* HostTermOfServiceTableViewCell.swift in Sources */,
 				52F2483221E003AF003F6989 /* MyReviewModel.swift in Sources */,
 				D192BF9F21E295450072D4EF /* Date.swift in Sources */,
 				52986AFE21D28DC700601983 /* ReservationPicker.swift in Sources */,
@@ -763,6 +796,7 @@
 				52AB75F621CF506F0002FB07 /* MainViewController.swift in Sources */,
 				D192BFA321E2CC450072D4EF /* MainTabBarController.swift in Sources */,
 				5202616721E271D500C3EDA7 /* Results.swift in Sources */,
+				52B4DB4921E629DC0065368B /* UserTermOfServiceTableViewCell.swift in Sources */,
 				52F2482721DFC998003F6989 /* MyReviewViewController.swift in Sources */,
 				5202615221E22F7100C3EDA7 /* MakeReviewPopupViewController.swift in Sources */,
 				52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */,
@@ -801,7 +835,9 @@
 				52D2BC3821D6BDCB005F48D3 /* NetworkManager.swift in Sources */,
 				52986AFC21D28DB100601983 /* UIColor.swift in Sources */,
 				D13841F021D9FDF900EC7D9D /* TestTableViewController.swift in Sources */,
+				52B4DB5321E631E60065368B /* ServiceTermOfServiceTableViewCell.swift in Sources */,
 				52C14C0221E39DFD00372309 /* SetFavoriteModel.swift in Sources */,
+				52B4DB5521E642320065368B /* WholeTermTableViewController.swift in Sources */,
 				D1912E6F21E11B73005ADBAF /* ServiceRateAlertViewController.swift in Sources */,
 				D10DD1AE21DE4B700011282C /* CloseTime.swift in Sources */,
 				5202616A21E271D500C3EDA7 /* Area4.swift in Sources */,
