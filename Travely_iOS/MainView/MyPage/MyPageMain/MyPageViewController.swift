@@ -24,7 +24,7 @@ class MyPageViewController: UIViewController,ReloadViwDelegate {
     @IBOutlet weak var reviewCountLabel: UILabel!
     
     @IBAction func appStatusButtonAction(_ sender: Any) {
-        let appstatusVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "appstatus")
+        let appstatusVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "appstatus") as! MyPageSettingViewController
         appstatusVC.addBackButton("black")
         self.navigationController?.pushViewController(appstatusVC, animated: true)
     

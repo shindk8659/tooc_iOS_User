@@ -1502,7 +1502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wmx-9T-DG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2567" y="78"/>
+            <point key="canvasLocation" x="2565.5999999999999" y="77.58620689655173"/>
         </scene>
         <!--예약하기-->
         <scene sceneID="QGB-0F-6qA">
@@ -2184,7 +2184,7 @@
         <!--설정-->
         <scene sceneID="IJM-Dk-SLs">
             <objects>
-                <tableViewController storyboardIdentifier="appstatus" title="설정" id="qId-YW-Gtz" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="appstatus" title="설정" id="qId-YW-Gtz" customClass="MyPageSettingViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VRw-gb-QlH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2260,19 +2260,38 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nre-bz-DcK">
+                                                    <rect key="frame" x="197" y="31" width="163" height="34"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한국어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3a-0J-Os9">
+                                                            <rect key="frame" x="18" y="8.0000000000000036" width="34" height="18"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Light" family="Noto Sans CJK KR" pointSize="12"/>
+                                                            <color key="textColor" red="0.28627450980392155" green="0.28627450980392155" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="163" id="17C-oB-o1n"/>
+                                                        <constraint firstItem="H3a-0J-Os9" firstAttribute="leading" secondItem="nre-bz-DcK" secondAttribute="leading" constant="18" id="8Un-Vm-fDU"/>
+                                                        <constraint firstItem="H3a-0J-Os9" firstAttribute="centerY" secondItem="nre-bz-DcK" secondAttribute="centerY" id="8uu-Uc-YjN"/>
+                                                        <constraint firstAttribute="height" constant="34" id="RGJ-KM-0kn"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="HWV-3G-EOx" secondAttribute="bottom" constant="38" id="7KQ-Eo-gHh"/>
                                                 <constraint firstItem="HWV-3G-EOx" firstAttribute="leading" secondItem="Lv9-Wh-jHq" secondAttribute="leading" constant="30" id="JoB-FD-ti3"/>
+                                                <constraint firstItem="nre-bz-DcK" firstAttribute="centerY" secondItem="HWV-3G-EOx" secondAttribute="centerY" id="X8V-hP-liv"/>
                                                 <constraint firstItem="HWV-3G-EOx" firstAttribute="top" secondItem="Lv9-Wh-jHq" secondAttribute="top" constant="38" id="c2b-Eg-tmw"/>
+                                                <constraint firstAttribute="trailing" secondItem="nre-bz-DcK" secondAttribute="trailing" constant="15" id="m76-9J-RuN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="76" id="VjE-P6-nXH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="76" id="VjE-P6-nXH">
                                         <rect key="frame" x="0.0" y="426" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VjE-P6-nXH" id="CXF-Sm-ZB2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="75.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT IS TOOC?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqB-J0-WNK">
@@ -2292,11 +2311,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="76" id="6yd-J4-JyH">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="76" id="6yd-J4-JyH">
                                         <rect key="frame" x="0.0" y="502" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6yd-J4-JyH" id="ejF-bp-y8W">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="75.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW TO USE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKV-3L-y6o">
@@ -2316,11 +2335,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="91" id="dEl-hG-s2i">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="91" id="dEl-hG-s2i">
                                         <rect key="frame" x="0.0" y="578" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dEl-hG-s2i" id="f5W-bM-RHW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="90.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsg-vV-qNv">
@@ -2341,11 +2360,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="76" id="Mga-dP-y3c">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="76" id="Mga-dP-y3c">
                                         <rect key="frame" x="0.0" y="669" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mga-dP-y3c" id="wNf-ej-hz4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="75.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문의하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ssu-zi-UQ3">
@@ -2388,9 +2407,6 @@
                                                 <constraint firstItem="bZZ-6s-cIw" firstAttribute="top" secondItem="orf-8g-r3T" secondAttribute="top" constant="18" id="jqH-rN-Ro8"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="xaz-sA-aK5" kind="push" id="qqg-6x-PjX"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -2400,6 +2416,9 @@
                             <outlet property="delegate" destination="qId-YW-Gtz" id="Kv9-tm-ifJ"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="languageView" destination="nre-bz-DcK" id="X4e-Zn-31k"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ppl-WU-qJx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2408,7 +2427,7 @@
         <!--View Controller-->
         <scene sceneID="mIY-hx-fBb">
             <objects>
-                <viewController id="wCl-NL-9c5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="aboutTooc" id="wCl-NL-9c5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BQp-aA-aKk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2553,7 +2572,7 @@
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2568,7 +2587,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2582,7 +2601,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2597,7 +2616,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2611,7 +2630,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2626,7 +2645,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2636,7 +2655,7 @@ Cg
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">본 약관에서 사용하는 용어의 정의는 다음과 같습니다. 아래 각 조항 외에 본 약관에서 사용하는 정의 규정은 “서비스이용약관”을 준용합니다
+                                                            <string key="content">본 약관에서 사용하는 용어의 정의는 다음과 같습니다. 아래 각 조항 외에 본 약관에서 사용하는 정의 규정은 “서비스이용약관”을 준용합니다
 ①“예약”이란 “고객”이 “회사”의 “애플리케이션 등”을 통해 특정한 “호스트”에게 자신의 짐을 보관하거나 배송하는 것을 요청하는 의사표시 및 관련 행위를 말합니다.
 ②“승낙”이란 “고객”으로 부터 “예약”을 받은 “호스트”가 “고객”의 “예약”내용에 따라 짐을 보관하거나 배송하는 것을 수락하는 의사표시 및 관련 행위를 말합니다.
 ③“보관료”란 “예약”을 한 “고객”이 짐의 보관 대가로 지급하는 비용을 말합니다.
@@ -2644,10 +2663,10 @@ Cg
 ⑤“서비스이용료”란 “회사”가 “서비스”를 제공하는 대가로 받는 비용을 말합니다.
 ⑥“결제금액”이란 “예약”을 한 “고객”이 “회사”에 지급하는 “보관료” 또는 “배송료”와 “서비스 이용료”를 합한 금액을 말합니다.
 ⑦“결제”란 “고객”이 “회사”의 “서비스”를 이용하기 위하여 지불수단을 선택하고 금융정보를 입력하여 최종적으로 금전을 지급하는 행위를 말합니다.
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2662,7 +2681,7 @@ Cgo
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2672,12 +2691,12 @@ Cgo
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">제 3조(회사의 지위)
+                                                            <string key="content">제 3조(회사의 지위)
 “회사”는 “고객”이 “호스트”에게 짐의 보관이나 배송에 필요한 정보 및 “예약” 서비스를 제공하고, “고객”으로부터 그 “서비스이용료”를 받는 자 입니다. “고객”과 “호스트”간에 짐 보관 및 배송과 관련하여 발생한 법률관계 중 본 약관에 특별한 규정이 없는 부분에 대하여 “회사”는 관계가 없습니다. 나아가, 본 약관의 규정에 따라 “회사”가 “고객”과 “호스트”와의 짐 보관 및 배송에 관한 법률관계와 관련이 있다고 하더라고 이는 “고객”이 “회사”를 통하여 “서비스”를 이용한 경우에 한합니다.
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2692,7 +2711,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2706,7 +2725,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2721,7 +2740,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2731,16 +2750,16 @@ Cg
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">①“호스트”는 다음 각 호의 조건을 충족하는 자임을 보증합니다.
+                                                            <string key="content">①“호스트”는 다음 각 호의 조건을 충족하는 자임을 보증합니다.
 1. “고객”의 짐을 보관 및 배송하기 위해 필요한 공간을 활용할 수 있는 적법한 권리를 가진 자일 것
 2. “호스트”에 적용될 수 있는 모든 법령, 정책 등을 준수했을 것.
 3. “고객”의 짐 보관 및 배송에 영향을 미칠 수 있는 제 3자와의 계약 권리의무와 충돌하지 않을 것
 4. 광고의 게재 등 “회사”의 서비스를 제공받는 데 있어 법적 규제나 제한이 없는 자 일 것
 ②“호스트”는 전 항의 내용이 진실함을 보증하며, “호스트”가 제공하는 전항의 내용에 따라 “회사”가 형성한 사실 및 법률관계로 인하여 “회사”에게 손해 등이 발생한 경우 이에 대한 책임을 집니다.
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2755,7 +2774,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2765,7 +2784,7 @@ Cg
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">제 5조(호스트의 등록)
+                                                            <string key="content">제 5조(호스트의 등록)
 ①“호스트”는 다음 각 호의 절차에 따라 “서비스”에 등록합니다.
 1. “호스트”는 [메인 &gt; 마이페이지 &gt; 문의하기 &gt; Partners Contacts]을 통하여, 또는 “회사”와 직접 연락을 취하여 신청
 2. “호스트”가 신청을 완료하면 “회사”는 검토 후 개별적으로 연락
@@ -2773,10 +2792,10 @@ Cg
 4. “호스트”는 “회사”에게 상점 정보(상점 이름, 상점 주소, 운영시간, 보관 가능한 최대 짐 개수 등) 및 호스트 정보(계좌 정보, 호스트 이름 등)를 제공
 5. 모든 절차가 완료되면 “회사”는 “서비스”에 등록
 ②“회사”는 “호스트”가 등록한 정보를 활용하여 “예약” 및 “승낙”에 필요한 시스템 및 서비스를 구축합니다.
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2791,7 +2810,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2807,7 +2826,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2822,7 +2841,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2836,7 +2855,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2851,7 +2870,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2861,7 +2880,7 @@ Cg
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">①“호스트”는 다음 각호의 절차에 따라 “고객”의 짐을 보관합니다.
+                                                            <string key="content">①“호스트”는 다음 각호의 절차에 따라 “고객”의 짐을 보관합니다.
 1. “호스트”는 “고객”이 “예약”한 짐을 사진촬영 후, 애플리케이션 등에 정해진 방법에 따라 업로드
 2. “호스트”는 “예약”번호를 보안태그에 기재하고, 보안태그를 짐에 부착
 3. “호스트”는 “고객”의 짐을 “회사”와 사전에 약정된 보관 장소에 보관
@@ -2885,10 +2904,10 @@ Cg
 1. “고객”의 “예약” 내용과 다른 짐
 2. “고객”의 사전고지에 따라 “호스트”가 동의한 사항이 아닌 짐
 3. 기타 “고객”이 본 약관을 위반하여 맡긴 짐
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2903,7 +2922,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2913,7 +2932,7 @@ Cg
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">제 8조 (호스트의 의무) 
+                                                            <string key="content">제 8조 (호스트의 의무) 
 ①“호스트”는 “고객”의 “예약”에 대하여 “호스트”가 “승낙”한 내용대로 “고객”의 짐을 보관한 후 반환, 배송 하여야 합니다. 한편, “호스트”가 “회사”에게 고지 및 약정한 공간에 짐을 보관하지 않은 경우, “회사”는 “호스트”에게 경고 혹은 서비스에서 제거 등의 패널티를 부과할 수 있습니다.
 ②“호스트”는 선량한 관리자의 주의로 “고객”의 짐을 보관, 배송 하여야 합니다.
 ③“호스트”가 전항을 위반하여 “고객”에게 손해가 발생한 경우 “고객”은 “호스트”에게 손해배상을 청구할 수 있습니다. 다만, “고객”에 대한 보상규정을 둘 수 있습니다.
@@ -2932,10 +2951,10 @@ Cg
 ①“회사”는 다음과 같은 방법 및 절차에 따라 “호스트”에게 정산합니다.
 1. 매달 말일 일괄 청산하여 “호스트”가 제공한 계좌로 송부
 2. 정산 금액 내역은 “호스트” 전용 “애플리케이션 등”에 업데이트 함
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2950,7 +2969,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -2965,7 +2984,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -3009,12 +3028,12 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYc-bM-LV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4126" y="3624"/>
+            <point key="canvasLocation" x="5694" y="2962"/>
         </scene>
-        <!--View Controller-->
+        <!--Inquiry View Controller-->
         <scene sceneID="I76-Lp-A0S">
             <objects>
-                <viewController id="PSu-l0-0pm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InquiryViewController" id="PSu-l0-0pm" customClass="InquiryViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Htf-VF-ID7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3033,11 +3052,11 @@ Cg
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jm8-Az-bcz">
                                 <rect key="frame" x="20" y="224" width="335" height="213.33333333333337"/>
-                                <color key="backgroundColor" red="0.1215686275" green="0.74901960779999999" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jm8-Az-bcz" secondAttribute="height" multiplier="11:7" id="Qlw-zc-Urg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value=" 문의하실 메시지를 입력해주세요."/>
@@ -3060,7 +3079,6 @@ Cg
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96496862169999997" green="0.88713270430000002" blue="0.29391729830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="wkt-md-2ch" secondAttribute="trailing" constant="15" id="7vy-33-pom"/>
                                     <constraint firstAttribute="bottom" secondItem="n9D-gE-snx" secondAttribute="bottom" constant="10" id="Bmc-ev-Wek"/>
@@ -3077,6 +3095,9 @@ Cg
                                     <constraint firstAttribute="height" constant="49" id="oOs-LW-YbB"/>
                                 </constraints>
                                 <state key="normal" image="setting_bt_ok"/>
+                                <connections>
+                                    <action selector="didPressComplete:" destination="PSu-l0-0pm" eventType="touchUpInside" id="f5S-9g-o1x"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3097,10 +3118,15 @@ Cg
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dbE-ML-GDt"/>
                     </view>
+                    <connections>
+                        <outlet property="addImgView" destination="6gZ-GO-qPr" id="TMZ-IE-eLC"/>
+                        <outlet property="imgName" destination="n9D-gE-snx" id="4e7-vr-JK6"/>
+                        <outlet property="textView" destination="jm8-Az-bcz" id="Z7u-rd-TBu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eet-Pt-2Yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5602" y="2267"/>
+            <point key="canvasLocation" x="5694" y="2267"/>
         </scene>
         <!--Test View Controller5-->
         <scene sceneID="b3p-Mt-4Bj">
@@ -4824,7 +4850,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -4839,7 +4865,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -4853,7 +4879,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -4868,7 +4894,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -4882,7 +4908,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -4897,7 +4923,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -4907,7 +4933,7 @@ Cg
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">본 약관에서 사용하는 용어의 정의는 다음과 같습니다. 아래 각 조항 외에 본 약관에서 사용하는 정의 규정은 “서비스이용약관”을 준용합니다
+                                                            <string key="content">본 약관에서 사용하는 용어의 정의는 다음과 같습니다. 아래 각 조항 외에 본 약관에서 사용하는 정의 규정은 “서비스이용약관”을 준용합니다
 ①“예약”이란 “고객”이 “회사”의 “애플리케이션 등”을 통해 특정한 “호스트”에게 자신의 짐을 보관하거나 배송하는 것을 요청하는 의사표시 및 관련 행위를 말합니다.
 ②“승낙”이란 “고객”으로 부터 “예약”을 받은 “호스트”가 “고객”의 “예약”내용에 따라 짐을 보관하거나 배송하는 것을 수락하는 의사표시 및 관련 행위를 말합니다.
 ③“보관료”란 “예약”을 한 “고객”이 짐의 보관 대가로 지급하는 비용을 말합니다.
@@ -4915,10 +4941,10 @@ Cg
 ⑤“서비스이용료”란 “회사”가 “서비스”를 제공하는 대가로 받는 비용을 말합니다.
 ⑥“결제금액”이란 “예약”을 한 “고객”이 “회사”에 지급하는 “보관료” 또는 “배송료”와 “서비스 이용료”를 합한 금액을 말합니다.
 ⑦“결제”란 “고객”이 “회사”의 “서비스”를 이용하기 위하여 지불수단을 선택하고 금융정보를 입력하여 최종적으로 금전을 지급하는 행위를 말합니다.
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -4933,7 +4959,7 @@ Cgo
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -4943,12 +4969,12 @@ Cgo
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">제 3조(회사의 지위)
+                                                            <string key="content">제 3조(회사의 지위)
 “회사”는 “고객”이 “호스트”에게 짐의 보관이나 배송에 필요한 정보 및 “예약” 서비스를 제공하고, “고객”으로부터 그 “서비스이용료”를 받는 자 입니다. “고객”과 “호스트”간에 짐 보관 및 배송과 관련하여 발생한 법률관계 중 본 약관에 특별한 규정이 없는 부분에 대하여 “회사”는 관계가 없습니다. 나아가, 본 약관의 규정에 따라 “회사”가 “고객”과 “호스트”와의 짐 보관 및 배송에 관한 법률관계와 관련이 있다고 하더라고 이는 “고객”이 “회사”를 통하여 “서비스”를 이용한 경우에 한합니다.
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -4963,7 +4989,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -4977,7 +5003,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -4992,7 +5018,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5002,16 +5028,16 @@ Cg
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">①“호스트”는 다음 각 호의 조건을 충족하는 자임을 보증합니다.
+                                                            <string key="content">①“호스트”는 다음 각 호의 조건을 충족하는 자임을 보증합니다.
 1. “고객”의 짐을 보관 및 배송하기 위해 필요한 공간을 활용할 수 있는 적법한 권리를 가진 자일 것
 2. “호스트”에 적용될 수 있는 모든 법령, 정책 등을 준수했을 것.
 3. “고객”의 짐 보관 및 배송에 영향을 미칠 수 있는 제 3자와의 계약 권리의무와 충돌하지 않을 것
 4. 광고의 게재 등 “회사”의 서비스를 제공받는 데 있어 법적 규제나 제한이 없는 자 일 것
 ②“호스트”는 전 항의 내용이 진실함을 보증하며, “호스트”가 제공하는 전항의 내용에 따라 “회사”가 형성한 사실 및 법률관계로 인하여 “회사”에게 손해 등이 발생한 경우 이에 대한 책임을 집니다.
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5026,7 +5052,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5036,7 +5062,7 @@ Cg
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">제 5조(호스트의 등록)
+                                                            <string key="content">제 5조(호스트의 등록)
 ①“호스트”는 다음 각 호의 절차에 따라 “서비스”에 등록합니다.
 1. “호스트”는 [메인 &gt; 마이페이지 &gt; 문의하기 &gt; Partners Contacts]을 통하여, 또는 “회사”와 직접 연락을 취하여 신청
 2. “호스트”가 신청을 완료하면 “회사”는 검토 후 개별적으로 연락
@@ -5044,10 +5070,10 @@ Cg
 4. “호스트”는 “회사”에게 상점 정보(상점 이름, 상점 주소, 운영시간, 보관 가능한 최대 짐 개수 등) 및 호스트 정보(계좌 정보, 호스트 이름 등)를 제공
 5. 모든 절차가 완료되면 “회사”는 “서비스”에 등록
 ②“회사”는 “호스트”가 등록한 정보를 활용하여 “예약” 및 “승낙”에 필요한 시스템 및 서비스를 구축합니다.
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5062,7 +5088,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5078,7 +5104,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5093,7 +5119,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5107,7 +5133,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5122,7 +5148,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5132,7 +5158,7 @@ Cg
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">①“호스트”는 다음 각호의 절차에 따라 “고객”의 짐을 보관합니다.
+                                                            <string key="content">①“호스트”는 다음 각호의 절차에 따라 “고객”의 짐을 보관합니다.
 1. “호스트”는 “고객”이 “예약”한 짐을 사진촬영 후, 애플리케이션 등에 정해진 방법에 따라 업로드
 2. “호스트”는 “예약”번호를 보안태그에 기재하고, 보안태그를 짐에 부착
 3. “호스트”는 “고객”의 짐을 “회사”와 사전에 약정된 보관 장소에 보관
@@ -5156,10 +5182,10 @@ Cg
 1. “고객”의 “예약” 내용과 다른 짐
 2. “고객”의 사전고지에 따라 “호스트”가 동의한 사항이 아닌 짐
 3. 기타 “고객”이 본 약관을 위반하여 맡긴 짐
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5174,7 +5200,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5184,7 +5210,7 @@ Cg
                                                             </attributes>
                                                         </fragment>
                                                         <fragment>
-                                                            <mutableString key="content">제 8조 (호스트의 의무) 
+                                                            <string key="content">제 8조 (호스트의 의무) 
 ①“호스트”는 “고객”의 “예약”에 대하여 “호스트”가 “승낙”한 내용대로 “고객”의 짐을 보관한 후 반환, 배송 하여야 합니다. 한편, “호스트”가 “회사”에게 고지 및 약정한 공간에 짐을 보관하지 않은 경우, “회사”는 “호스트”에게 경고 혹은 서비스에서 제거 등의 패널티를 부과할 수 있습니다.
 ②“호스트”는 선량한 관리자의 주의로 “고객”의 짐을 보관, 배송 하여야 합니다.
 ③“호스트”가 전항을 위반하여 “고객”에게 손해가 발생한 경우 “고객”은 “호스트”에게 손해배상을 청구할 수 있습니다. 다만, “고객”에 대한 보상규정을 둘 수 있습니다.
@@ -5203,10 +5229,10 @@ Cg
 ①“회사”는 다음과 같은 방법 및 절차에 따라 “호스트”에게 정산합니다.
 1. 매달 말일 일괄 청산하여 “호스트”가 제공한 계좌로 송부
 2. 정산 금액 내역은 “호스트” 전용 “애플리케이션 등”에 업데이트 함
-</mutableString>
+</string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5221,7 +5247,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="14" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5236,7 +5262,7 @@ Cg
 </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" size="12" name="NotoSansCJKkr-Light"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <real key="NSKern" value="0.0"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" minimumLineHeight="34.080001831054688" defaultTabInterval="36" tighteningFactorForTruncation="0.0">
                                                                     <tabStops/>
@@ -5280,7 +5306,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8TR-5l-VG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4126" y="4286"/>
+            <point key="canvasLocation" x="6681" y="2962"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="h9n-Ns-CZK">
@@ -5363,6 +5389,11 @@ Cg
                                 <constraint firstItem="Vpk-YB-NFa" firstAttribute="top" secondItem="ZFS-mV-UVn" secondAttribute="top" constant="71" id="KHb-jL-g0j"/>
                                 <constraint firstAttribute="bottom" secondItem="Vpk-YB-NFa" secondAttribute="bottom" constant="104" id="uDw-4a-jt0"/>
                             </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="g5h-Yp-rHI">
+                            <rect key="frame" x="0.0" y="483" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <sections>
                             <tableViewSection id="gft-Jt-QuG">
@@ -5460,7 +5491,7 @@ Cg
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X17-zX-bWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3316" y="3563"/>
+            <point key="canvasLocation" x="4159" y="2267"/>
         </scene>
         <!--User Term Of Service View Controller-->
         <scene sceneID="hXm-1a-Cit">
@@ -5501,7 +5532,7 @@ Cg
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmy-f2-KR3">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="609.66666666666663"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <mutableString key="text">제 1조 (목적)
+                                                    <string key="text">제 1조 (목적)
 
 
 본 약관은 툭컴퍼니(이하 “회사”라 함)가 제공하는 “서비스 이용약관”에서 예정하는 개별약관으로서 “회사”와 “고객”회원 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
@@ -5660,7 +5691,7 @@ Cg
 	1. “고객”이 “호스트”에게 “회사”를 통하지 않고 연락하여 짐 보관 등의 행위를 하는 경우
 	2. “고객”이 “호스트”와 “회사”를 통하지 않고 짐 보관의 연장 등의 행위를 하는 경우
 	3. “고객”이 “회사”를 통하지 않고 “호스트”에게 직접 현금 결제를 하는 경우.
-</mutableString>
+</string>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Light" family="Noto Sans CJK KR" pointSize="12"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -5697,7 +5728,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LP-qh-cfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4126" y="2964"/>
+            <point key="canvasLocation" x="4985" y="2962"/>
         </scene>
     </scenes>
     <resources>

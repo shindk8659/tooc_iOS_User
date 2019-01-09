@@ -91,6 +91,7 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
             self.present(alertController, animated: true, completion:{})
             
     }
+    
     let titleImageView = UIImageView.init(image: UIImage.init(named: "logoWhite.png"))
     lazy var mapView = GMSMapView()
    
@@ -123,7 +124,6 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
     override func viewWillAppear(_ animated: Bool) {
             network()
             totalTime.text = UserDefaults.standard.string(forKey: "totalTime")
-        
     }
     
     func network() {
@@ -141,38 +141,48 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
                 let DoNotRVNaviViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DoNotRVNavi")
                 DoNotRVNaviViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "ic_reservation_gray_tab"),tag: 1)
                 DoNotRVNaviViewController.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
-                self!.tabBarController?.viewControllers![1] = DoNotRVNaviViewController
-                self!.tabBarController?.selectedIndex = 1
+                self?.tabBarController?.viewControllers![1] = DoNotRVNaviViewController
+                self?.tabBarController?.selectedIndex = 1
             }
             else {
                 print(result)
 //                let storeIdx = gino(restWeekResponseDtos?[0]?.storeIdx)
                 self?.reservationInfo = result
-                self!.paymentState = result?.stateType
+                self?.paymentState = result?.stateType
                 switch self!.paymentState {
                 case "RESERVED":
-                    self!.statusProgressView[0].backgroundColor = .white
+                    self?.statusProgressView[0].backgroundColor = .white
                 case "PAYED":
-                    self!.statusProgressView[0].backgroundColor = .white
-                    self!.statusProgressView[1].backgroundColor = .white
+                    self?.statusProgressView[0].backgroundColor = .white
+                    self?.statusProgressView[1].backgroundColor = .white
                 case "ARCHIVE":
-                    self!.statusProgressView[0].backgroundColor = .white
-                    self!.statusProgressView[1].backgroundColor = .white
-                    self!.statusProgressView[2].backgroundColor = .white
+                    self?.statusProgressView[0].backgroundColor = .white
+                    self?.statusProgressView[1].backgroundColor = .white
+                    self?.statusProgressView[2].backgroundColor = .white
+                    
+                    let bagImgDtos = result?.bagImgDtos
+                    var count = 0
+                    
+                    for img in bagImgDtos! {
+                        let ImgURL = img.bagImgUrl
+                        self?.bagImages[count].imageFromUrl(ImgURL)
+                        self?.bagImages[count].contentMode = .scaleAspectFit
+                        count += 1
+                    }
                 case "PICKUP":
-                    self!.statusProgressView[0].backgroundColor = .white
-                    self!.statusProgressView[1].backgroundColor = .white
-                    self!.statusProgressView[2].backgroundColor = .white
-                    self!.statusProgressView[3].backgroundColor = .white
+                    self?.statusProgressView[0].backgroundColor = .white
+                    self?.statusProgressView[1].backgroundColor = .white
+                    self?.statusProgressView[2].backgroundColor = .white
+                    self?.statusProgressView[3].backgroundColor = .white
                 case "CANCEL":
                     break
                 default: break
                 }
                 
-                self!.reservationCode.text = result?.reserveCode
+                self?.reservationCode.text = result?.reserveCode
                 
                 let image = self!.generateQRCode(from: self!.reservationCode.text!)
-                self!.qrCode.image = image
+                self?.qrCode.image = image
                 
                 let dateFormatter1 = DateFormatter()
                 dateFormatter1.dateFormat = "yy년 M월 d일 E요일"
@@ -181,11 +191,11 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
                 dateFormatter2.dateFormat = "a h시 m분"
                 dateFormatter2.locale = Locale(identifier:"ko_KR")
                 
-                self!.checkDate.text = dateFormatter1.string(from: Date(timeIntervalSince1970: TimeInterval((result?.startTime)!/1000)))
-                self!.checkTime.text = dateFormatter2.string(from: Date(timeIntervalSince1970: TimeInterval((result?.startTime)!/1000)))
+                self?.checkDate.text = dateFormatter1.string(from: Date(timeIntervalSince1970: TimeInterval((result?.startTime)!/1000)))
+                self?.checkTime.text = dateFormatter2.string(from: Date(timeIntervalSince1970: TimeInterval((result?.startTime)!/1000)))
                 
-                self!.findDate.text = dateFormatter1.string(from: Date(timeIntervalSince1970: TimeInterval((result?.endTime)!/1000)))
-                self!.findTime.text = dateFormatter2.string(from: Date(timeIntervalSince1970: TimeInterval((result?.endTime)!/1000)))
+                self?.findDate.text = dateFormatter1.string(from: Date(timeIntervalSince1970: TimeInterval((result?.endTime)!/1000)))
+                self?.findTime.text = dateFormatter2.string(from: Date(timeIntervalSince1970: TimeInterval((result?.endTime)!/1000)))
                 
 //                if result?.bagDtos!.count == 1 {
 //                    if result?.bagDtos![0]["bagType"] == "CARRIER" {
@@ -208,10 +218,9 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
                 }
                 
                 let totalPrice = result!.price ?? 0
-                self!.totalRateOfPayment.text = "\(totalPrice)원"
+                self?.totalRateOfPayment.text = "\(totalPrice)원"
                 self?.storeName.text = result?.store?.storeName
                 self?.storeAdress.text = result?.store?.address
-                print("클로즈 타임: \(result?.store?.closeTime)")
                 
                 self?.latitude = result?.store?.latitude
                 self?.longitude = result?.store?.longitude
@@ -224,16 +233,22 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
                     switch bag.bagType {
                     case "CARRIER" :
                         totalCount += bag.bagCount!
-                        self!.suitcaseRate.text = "\(bag.bagCount ?? 0)개 \(unitPrice)원"
+                        self?.suitcaseRate.text = "\(bag.bagCount ?? 0)개 \(unitPrice)원"
                     case "ETC" :
                         totalCount += bag.bagCount!
-                        self!.luggageRate.text = "\(bag.bagCount ?? 0)개 \(unitPrice)원"
+                        self?.luggageRate.text = "\(bag.bagCount ?? 0)개 \(unitPrice)원"
                     default: break
                     }
                 }
-                
                 self?.totalRate.text = "요금: \(unitPrice)원 X \(totalCount)개"
-            
+                
+                let open = Date(timeIntervalSince1970: TimeInterval((result?.store?.openTime)!/1000))
+                let close = Date(timeIntervalSince1970: TimeInterval((result?.store?.closeTime)!/1000))
+                if Date(timeIntervalSinceNow: 0).isDateAvailable(openTime: open, closeTime: close) {
+                    self?.isOpenImg.image = UIImage(named: "ic_working")
+                } else {
+                    self?.isOpenImg.image = UIImage(named: "ic_end")
+                }
             }
         }
     }
