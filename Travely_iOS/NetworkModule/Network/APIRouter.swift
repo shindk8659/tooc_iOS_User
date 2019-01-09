@@ -18,6 +18,7 @@ struct APIRouter {
     var parameters: Parameters?
     var headers: HTTPHeaders?
     
+    
     init(url: String, method: HTTPMethod, parameters: Parameters? = nil, headers: HTTPHeaders? = nil) {
         self.url = url
         self.method = method
