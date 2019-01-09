@@ -79,13 +79,9 @@ class ReservationPicker: UIViewController {
         
         if dayOff != nil {
             for day in dayOff! {
-                print("데이데이 \(day)")
-                print(dateFormatter.string(from: checkDate),dateFormatter.string(from: findDate) )
-                
                 if Int(dateFormatter.string(from: checkDate)) == day || Int(dateFormatter.string(from: findDate)) == day {
                     isDayOff = true
-                    print("트루")
-                } 
+                }
             }
         }
         
@@ -97,7 +93,18 @@ class ReservationPicker: UIViewController {
             closeTime = Date(timeInterval: -60, since: closeTime)
         }
         
-        if checkDate.compareTimeOnly(to: openTime).rawValue == 1 && findDate.compareTimeOnly(to: closeTime).rawValue == -1 && isDayOff == false {
+        dateFormatter.dateFormat = "HHmm"
+        
+        if Int(dateFormatter.string(from: checkDate))! > Int(dateFormatter.string(from: openTime))! && Int(dateFormatter.string(from: checkDate))! < Int(dateFormatter.string(from: closeTime))! {
+            print("true")
+        }
+        
+        if Int(dateFormatter.string(from: findDate))! > Int(dateFormatter.string(from: openTime))! && Int(dateFormatter.string(from: findDate))! < Int(dateFormatter.string(from: closeTime))! {
+            print("true")
+        }
+        
+    
+        if checkDate.isDateAvailable(openTime: openTime, closeTime: closeTime) && findDate.isDateAvailable(openTime: openTime, closeTime: closeTime){
             let dateSet: [String] = [checkViewLabel[1].text!, checkViewLabel[2].text!, findViewLabel[1].text!, findViewLabel[2].text!, intervalTime.text!]
             self.delegate.tossTheTime(checkDate: checkDate , findDate: findDate, timeInterval: timeInterval, dateSet: dateSet)
             self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -210,9 +217,11 @@ class ReservationPicker: UIViewController {
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(check))
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(find))
         let tap3 = UITapGestureRecognizer(target: self, action: #selector(hide))
+        let tap4 = UITapGestureRecognizer(target: self, action: #selector(popOff))
         self.checkView.addGestureRecognizer(tap1)
         self.findView.addGestureRecognizer(tap2)
         self.openHoursAlert.addGestureRecognizer(tap3)
+        self.view.addGestureRecognizer(tap4)
         
         buttonLayerSetup()
         viewLayerSetup()
@@ -243,6 +252,8 @@ class ReservationPicker: UIViewController {
             openHourLabel.text!.append(" 휴무")
             }
         }
+        tap4.delegate = self
+        
     }
     
     @objc func valueChanged() {
@@ -270,6 +281,10 @@ class ReservationPicker: UIViewController {
             self.openHoursAlert!.isHidden = true
             self.openHoursAlert.alpha = 0.8
         }
+    }
+    
+    @objc func popOff() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func pickerSetup() {
@@ -365,5 +380,11 @@ class ReservationPicker: UIViewController {
         } else {
             intervalTime.text = ("\(t1)분")
         }
+    }
+}
+
+extension ReservationPicker: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        return touch.view == self.view
     }
 }

@@ -114,8 +114,10 @@
 		D192BFAA21E3C2CE0072D4EF /* ReservationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFA921E3C2CE0072D4EF /* ReservationInfo.swift */; };
 		D192BFAC21E3C3190072D4EF /* BagImgDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFAB21E3C3190072D4EF /* BagImgDtos.swift */; };
 		D192BFAE21E506D00072D4EF /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFAD21E506D00072D4EF /* DeliveryViewController.swift */; };
+		D192BFB021E531190072D4EF /* InquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFAF21E531190072D4EF /* InquiryViewController.swift */; };
 		D1ABFAE321DBC20500BEE3E0 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABFAE221DBC20500BEE3E0 /* CircleButton.swift */; };
 		D1ABFAE521DBC29B00BEE3E0 /* ReservationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */; };
+		D1FFADF621E63C8B008BE396 /* MyPageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFADF521E63C8B008BE396 /* MyPageSettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -229,8 +231,10 @@
 		D192BFA921E3C2CE0072D4EF /* ReservationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationInfo.swift; sourceTree = "<group>"; };
 		D192BFAB21E3C3190072D4EF /* BagImgDtos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagImgDtos.swift; sourceTree = "<group>"; };
 		D192BFAD21E506D00072D4EF /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
+		D192BFAF21E531190072D4EF /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		D1ABFAE221DBC20500BEE3E0 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStatusViewController.swift; sourceTree = "<group>"; };
+		D1FFADF521E63C8B008BE396 /* MyPageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSettingViewController.swift; sourceTree = "<group>"; };
 		FCA8F4C411292DF69C93159F /* Pods_Travely_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travely_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -477,6 +481,8 @@
 				52F2482021DFADB1003F6989 /* MyPageMain */,
 				52F2481F21DFADA2003F6989 /* FavoriteStore */,
 				52F2482521DFC951003F6989 /* ReviewList */,
+				D192BFAF21E531190072D4EF /* InquiryViewController.swift */,
+				D1FFADF521E63C8B008BE396 /* MyPageSettingViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -818,6 +824,7 @@
 				5202616D21E271D500C3EDA7 /* Area0.swift in Sources */,
 				52F2481E21DFAB25003F6989 /* FavoriteStoreViewController.swift in Sources */,
 				5202616821E271D500C3EDA7 /* Area1.swift in Sources */,
+				D192BFB021E531190072D4EF /* InquiryViewController.swift in Sources */,
 				52F2483421E00735003F6989 /* FavoriteModel.swift in Sources */,
 				D10DD1AB21DE4B700011282C /* StartTime.swift in Sources */,
 				52EA578621D3AA6F0012F53C /* ShopReviewTableViewCell.swift in Sources */,
@@ -838,6 +845,7 @@
 				D10DD1AF21DE4B700011282C /* EndTime.swift in Sources */,
 				D10DD1AC21DE4B700011282C /* BagDtos.swift in Sources */,
 				52F2481C21DF9A5C003F6989 /* RecentStorageTableViewCell.swift in Sources */,
+				D1FFADF621E63C8B008BE396 /* MyPageSettingViewController.swift in Sources */,
 				D10DD1AD21DE4B700011282C /* Store.swift in Sources */,
 				D13841ED21D9FDEE00EC7D9D /* ReservationViewController.swift in Sources */,
 				5202616521E271D500C3EDA7 /* Status.swift in Sources */,
@@ -990,7 +998,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KB65UR5HX8;
+				DEVELOPMENT_TEAM = 6D8SYQ63KK;
 				INFOPLIST_FILE = "$(SRCROOT)/Travely_iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1010,7 +1018,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KB65UR5HX8;
+				DEVELOPMENT_TEAM = 6D8SYQ63KK;
 				INFOPLIST_FILE = "$(SRCROOT)/Travely_iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

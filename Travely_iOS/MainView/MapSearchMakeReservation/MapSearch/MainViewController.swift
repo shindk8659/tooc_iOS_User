@@ -814,8 +814,7 @@ extension MainViewController: FindPathDelegate
 {
     func excuteFindPath() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-    
-    
+        
         let appleMapInstalled = UIApplication.shared.canOpenURL(URL(string: "http://maps.apple.com/")!)
         let kakaoMapInstalled = UIApplication.shared.canOpenURL(URL(string: "daummaps://")!)
         if (!appleMapInstalled){
@@ -846,7 +845,6 @@ extension MainViewController: FindPathDelegate
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: {(alert: UIAlertAction!) in alertController.dismiss(animated: true, completion: nil)})
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion:{})
-        
         
     }
 }
