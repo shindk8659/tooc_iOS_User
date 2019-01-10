@@ -17,22 +17,8 @@ class TESTViewController: UIViewController {
         
         testlot.animationView.setAnimation(named: "tooc_IOS")
         testlot.animationView.play { [weak self](true) in
-            let loginView = UIStoryboard.init(name: "LoginSignup", bundle: nil).instantiateViewController(withIdentifier: "loginnavi") as! LoginNavigationViewController
-            self?.present(loginView, animated: true, completion: nil)
+            let loginView = UIStoryboard.init(name: "LoginSignup", bundle: nil).instantiateViewController(withIdentifier: "loginnavi")
+            self?.present(loginView, animated: false, completion: nil)
         }
-        
-        // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

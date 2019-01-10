@@ -9,13 +9,20 @@
 import UIKit
 
 class MyPageSettingViewController: UITableViewController {
-
+    
     @IBOutlet var languageView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         languageView.layer.borderWidth = 1
         languageView.layer.borderColor = UIColor.lightGray.cgColor
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapInside))
+        languageView.addGestureRecognizer(tap)
+    }
+    
+    @objc func tapInside() {
+        showAlertMessage(titleStr: "", messageStr: "다른 언어는 차후 지원될 예정입니다.")
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -38,7 +45,6 @@ class MyPageSettingViewController: UITableViewController {
             VC.addBackButton("black")
             self.navigationController?.pushViewController(VC, animated: true)
         default: return
-            
         }
     }
     
