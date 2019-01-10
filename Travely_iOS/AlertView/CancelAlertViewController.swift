@@ -16,7 +16,6 @@ class CancelAlertViewController: UIViewController {
     
     @IBOutlet var confirmButton: UIButton!
 
-    
     @IBAction func didPressConfirm(_ sender: UIButton) {
         self.dismiss(animated: true) {
             print("프레즌트")
@@ -26,7 +25,6 @@ class CancelAlertViewController: UIViewController {
 //            self.presentingViewController?.present(vc, animated: true, completion: nil)
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

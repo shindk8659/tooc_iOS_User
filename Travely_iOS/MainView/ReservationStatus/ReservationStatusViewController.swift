@@ -115,6 +115,9 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
         self.locationManager.startUpdatingLocation()
         layoutSetup()
         
+        let userDefaults = UserDefaults()
+        userDefaults.set(true, forKey: "isReserve")
+        userDefaults.synchronize()
     }
     
     override func viewWillAppear(_ animated: Bool) {

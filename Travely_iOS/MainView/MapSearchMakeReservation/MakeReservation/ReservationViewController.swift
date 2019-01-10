@@ -115,6 +115,7 @@ class ReservationViewController: UITableViewController {
                 tableView.reloadData()
             }
         }
+        self.luggageChoiceLabel.text = "짐 선택: 캐리어 \(numberOfSuitcase)개, 일반짐 \(numberOfLuggage)개"
     }
     
     @IBAction func didPressSCStepper(_ sender: CSStepper) {
@@ -123,6 +124,7 @@ class ReservationViewController: UITableViewController {
         totalRate = rateOfSuitcase + rateOfLuggage
         numberOfSuitcaseLabel.text = "\(numberOfSuitcase)개 \(String(rateOfSuitcase))원"
         totalRateLabel.text = "\(totalRate)원"
+        self.luggageChoiceLabel.text = "짐 선택: 캐리어 \(numberOfSuitcase)개, 일반짐 \(numberOfLuggage)개"
     }
     
     @IBAction func didPressLGStepper(_ sender: CSStepper) {
@@ -131,6 +133,7 @@ class ReservationViewController: UITableViewController {
         totalRate = rateOfSuitcase + rateOfLuggage
         numberOfLuggageLabel.text = "\(numberOfLuggage)개 \(String(rateOfLuggage))원"
         totalRateLabel.text = "\(totalRate)원"
+        self.luggageChoiceLabel.text = "짐 선택: 캐리어 \(numberOfSuitcase)개, 일반짐 \(numberOfLuggage)개"
     }
     
     
