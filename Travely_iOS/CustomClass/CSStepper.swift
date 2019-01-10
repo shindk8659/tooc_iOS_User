@@ -117,9 +117,7 @@ public class CSStepper: UIControl {
     
     override public func layoutSubviews() {
         super.layoutSubviews()
-        let borderWidth: CGFloat = 0.5
-        let borderColor = UIColor.gray
-        
+
         let btnWidth = self.frame.height
         
         let lblWidth = self.frame.width - (btnWidth * 2)
@@ -127,10 +125,6 @@ public class CSStepper: UIControl {
         self.leftBtn.frame = CGRect(x: 0, y: 0, width: btnWidth, height: btnWidth)
         self.centerLabel.frame = CGRect(x: btnWidth, y: 0, width: lblWidth, height: btnWidth)
         self.rightBtn.frame = CGRect(x: btnWidth+lblWidth, y: 0, width: btnWidth, height: btnWidth)
-
-//        self.leftBtn.layer.addBorder1([.top, .bottom, .left, .right], color: borderColor, width: borderWidth)
-//        self.rightBtn.layer.addBorder2([.top, .bottom, .left, .right], color: borderColor, width: borderWidth)
-//        self.centerLabel.layer.addBorder1([.top, .bottom], color: borderColor, width: borderWidth)
     }
     
 }

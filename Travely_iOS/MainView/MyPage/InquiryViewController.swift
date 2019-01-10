@@ -86,12 +86,13 @@ extension InquiryViewController: UIImagePickerControllerDelegate, UINavigationCo
             print(imgData1)
         }
         
-//        networkManager.uploadImg(data: imgData!) { [weak self](result, errorModel, error) in
-//            print("결과 \(result)")
-//            print("에러모델 \(errorModel)")
-//            print("에러 \(error)")
-//        }
-//        dismiss(animated: true, completion: nil)
+        networkManager.uploadImg(data: imgData1!) { [weak self](result, errorModel, error) in
+            print("결과 \(result)")
+            print("에러모델 \(errorModel)")
+            print("에러 \(error)")
+        }
+        dismiss(animated: true, completion: nil)
+        
         dismiss(animated: true) {
            self.tabBarController?.hideTabBarAnimated(hide: false)
             self.networkManager.uploadImg(data: imgData2!) { [weak self](result, errorModel, error) in

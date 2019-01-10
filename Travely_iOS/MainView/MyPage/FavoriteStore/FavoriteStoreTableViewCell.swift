@@ -34,12 +34,17 @@ class FavoriteStoreTableViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        if self.frame.width < 375 {
+            print("개수 줄음")
+            starRateView.settings.starSize = 13
+        } else {
+            print("ss")
+            starRateView.settings.starSize = 20
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
