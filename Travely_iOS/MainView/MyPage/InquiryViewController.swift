@@ -88,12 +88,12 @@ extension InquiryViewController: UIImagePickerControllerDelegate, UINavigationCo
 //        }
 //        dismiss(animated: true, completion: nil)
         dismiss(animated: true) {
-//            self.networkManager.uploadImg(data: imgData!) { [weak self](result, errorModel, error) in
-//                print("결과 \(result)")
-//                print("에러모델 \(errorModel)")
-//                print("에러 \(error)")
-//            }
-            self.alarmImgUpload(imgData: imgData1!)
+            self.networkManager.uploadImg(data: imgData2!) { [weak self](result, errorModel, error) in
+                print("결과 \(result)")
+                print("에러모델 \(errorModel)")
+                print("에러 \(error)")
+            }
+//            self.alarmImgUpload(imgData: imgData1!)
         }
     }
     

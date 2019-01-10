@@ -104,7 +104,6 @@
 		D13841E621D9FDB500EC7D9D /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13841E221D9FDB500EC7D9D /* Alert.storyboard */; };
 		D13841E721D9FDB500EC7D9D /* CancelAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E321D9FDB500EC7D9D /* CancelAlertViewController.swift */; };
 		D13841E921D9FDB500EC7D9D /* cancelConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841E521D9FDB500EC7D9D /* cancelConfirmViewController.swift */; };
-		D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EA21D9FDCA00EC7D9D /* CALayer.swift */; };
 		D13841ED21D9FDEE00EC7D9D /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */; };
 		D13841F421D9FE0C00EC7D9D /* CSStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13841F321D9FE0C00EC7D9D /* CSStepper.swift */; };
 		D1912E6F21E11B73005ADBAF /* ServiceRateAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1912E6E21E11B73005ADBAF /* ServiceRateAlertViewController.swift */; };
@@ -120,8 +119,8 @@
 		D192BFB021E531190072D4EF /* InquiryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192BFAF21E531190072D4EF /* InquiryViewController.swift */; };
 		D1ABFAE321DBC20500BEE3E0 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABFAE221DBC20500BEE3E0 /* CircleButton.swift */; };
 		D1ABFAE521DBC29B00BEE3E0 /* ReservationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */; };
+		D1C1338221E6C3C100850847 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C1338121E6C3C100850847 /* UIViewController.swift */; };
 		D1FFADF621E63C8B008BE396 /* MyPageSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFADF521E63C8B008BE396 /* MyPageSettingViewController.swift */; };
-		D1FFADF821E66ECE008BE396 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFADF721E66ECE008BE396 /* UIAlertController.swift */; };
 		D1FFADFA21E67352008BE396 /* ImgModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFADF921E67352008BE396 /* ImgModel.swift */; };
 		D1FFADFC21E684E6008BE396 /* tooc_IOS.json in Resources */ = {isa = PBXBuildFile; fileRef = D1FFADFB21E684E6008BE396 /* tooc_IOS.json */; };
 		D1FFADFE21E68508008BE396 /* TESTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FFADFD21E68508008BE396 /* TESTViewController.swift */; };
@@ -228,7 +227,6 @@
 		D13841E321D9FDB500EC7D9D /* CancelAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelAlertViewController.swift; sourceTree = "<group>"; };
 		D13841E421D9FDB500EC7D9D /* ReservationAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationAlertViewController.swift; sourceTree = "<group>"; };
 		D13841E521D9FDB500EC7D9D /* cancelConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cancelConfirmViewController.swift; sourceTree = "<group>"; };
-		D13841EA21D9FDCA00EC7D9D /* CALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		D13841EC21D9FDED00EC7D9D /* ReservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		D13841F321D9FE0C00EC7D9D /* CSStepper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSStepper.swift; sourceTree = "<group>"; };
 		D1912E6E21E11B73005ADBAF /* ServiceRateAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRateAlertViewController.swift; sourceTree = "<group>"; };
@@ -244,8 +242,8 @@
 		D192BFAF21E531190072D4EF /* InquiryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryViewController.swift; sourceTree = "<group>"; };
 		D1ABFAE221DBC20500BEE3E0 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		D1ABFAE421DBC29B00BEE3E0 /* ReservationStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationStatusViewController.swift; sourceTree = "<group>"; };
+		D1C1338121E6C3C100850847 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D1FFADF521E63C8B008BE396 /* MyPageSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSettingViewController.swift; sourceTree = "<group>"; };
-		D1FFADF721E66ECE008BE396 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		D1FFADF921E67352008BE396 /* ImgModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgModel.swift; sourceTree = "<group>"; };
 		D1FFADFB21E684E6008BE396 /* tooc_IOS.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tooc_IOS.json; sourceTree = "<group>"; };
 		D1FFADFD21E68508008BE396 /* TESTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TESTViewController.swift; sourceTree = "<group>"; };
@@ -322,7 +320,6 @@
 				52AB75FA21CF50700002FB07 /* Assets.xcassets */,
 				52AB75FC21CF50700002FB07 /* LaunchScreen.storyboard */,
 				52AB75FF21CF50700002FB07 /* Info.plist */,
-				52AB761121CF69240002FB07 /* ViewExtension.swift */,
 				52BDE66D21D50051008204FF /* NanumSquareB.ttf */,
 				521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */,
 				52BDE66C21D50051008204FF /* NanumSquareL.ttf */,
@@ -593,9 +590,9 @@
 			isa = PBXGroup;
 			children = (
 				52986AFB21D28DB100601983 /* UIColor.swift */,
-				D13841EA21D9FDCA00EC7D9D /* CALayer.swift */,
 				D192BF9E21E295450072D4EF /* Date.swift */,
-				D1FFADF721E66ECE008BE396 /* UIAlertController.swift */,
+				52AB761121CF69240002FB07 /* ViewExtension.swift */,
+				D1C1338121E6C3C100850847 /* UIViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -813,6 +810,7 @@
 				52DAACD321E0B20B00B000A7 /* AppGuidePageViewController.swift in Sources */,
 				5202616421E271D500C3EDA7 /* Coords.swift in Sources */,
 				52F2482921DFCAA6003F6989 /* MyReviewTableViewCell.swift in Sources */,
+				D1C1338221E6C3C100850847 /* UIViewController.swift in Sources */,
 				52AA4B4721DAB36B00442C9A /* ReviewHeaderTableViewCell.swift in Sources */,
 				D10DD1B021DE4B700011282C /* ReservationModel.swift in Sources */,
 				52B4DB4D21E6301C0065368B /* HostTermOfServiceViewController.swift in Sources */,
@@ -837,9 +835,7 @@
 				5202615221E22F7100C3EDA7 /* MakeReviewPopupViewController.swift in Sources */,
 				52BD7CF421D8DE3D00EDD75D /* SimpleStoreResponseDtos.swift in Sources */,
 				52DAACD521E0B5A800B000A7 /* AppGuideViewController.swift in Sources */,
-				D13841EB21D9FDCA00EC7D9D /* CALayer.swift in Sources */,
 				52EDFB5E21DA2FC400A83CC0 /* StoreImageResponseDtos.swift in Sources */,
-				D1FFADF821E66ECE008BE396 /* UIAlertController.swift in Sources */,
 				D192BFAE21E506D00072D4EF /* DeliveryViewController.swift in Sources */,
 				52D174B821E132E300CD28ED /* LoginModel.swift in Sources */,
 				52B4DB6121E653EF0065368B /* FAQContentsTableViewCell.swift in Sources */,

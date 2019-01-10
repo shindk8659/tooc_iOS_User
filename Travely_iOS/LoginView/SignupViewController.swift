@@ -39,10 +39,11 @@ class SignupViewController: UIViewController {
        
         if nameTextField.text == "" || emailTextField.text == "" || phoneTextField.text == "" || configPassTextField.text == "" || passTextField.text == "" {
 
-            let alertController = UIAlertController(title: "",message: "정보를 입력 해 주세요", preferredStyle: UIAlertController.Style.alert)
-            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-            alertController.addAction(cancelButton)
-            self.present(alertController,animated: true,completion: nil)
+//            let alertController = UIAlertController(title: "",message: "정보를 입력 해 주세요", preferredStyle: UIAlertController.Style.alert)
+//            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//            alertController.addAction(cancelButton)
+//            self.present(alertController,animated: true,completion: nil)
+            self.showAlertMessage(titleStr:"", messageStr: "정보를 입력해 주세요.")
         }
 
         else {
@@ -58,10 +59,11 @@ class SignupViewController: UIViewController {
                     self?.nameTextField.text = ""
                     let image = UIImage(named: "btSignin.png") as UIImage?
                     self?.confirmButton.setImage(image, for: .normal)
-                    let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                    alertController.addAction(cancelButton)
-                    self?.present(alertController,animated: true,completion: nil)
+//                    let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+//                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//                    alertController.addAction(cancelButton)
+//                    self?.present(alertController,animated: true,completion: nil)
+                    self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
                 }
                 else if signin == nil && errorModel != nil && error == nil {
                     var message :String? = ""
@@ -85,10 +87,11 @@ class SignupViewController: UIViewController {
                         message?.append((errorModel?[i]?.message)!+"\n")
                     }
                     
-                    let alertController = UIAlertController(title: "정확한 정보를 입력해주세요.",message: message, preferredStyle: UIAlertController.Style.alert)
-                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                    alertController.addAction(cancelButton)
-                    self?.present(alertController,animated: true,completion: nil)
+//                    let alertController = UIAlertController(title: "정확한 정보를 입력해주세요.",message: message, preferredStyle: UIAlertController.Style.alert)
+//                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//                    alertController.addAction(cancelButton)
+//                    self?.present(alertController,animated: true,completion: nil)
+                    self?.showAlertMessage(titleStr:"정확한 정보를 입력해주세요.", messageStr: message)
                 }
                 else {
                     if self?.userdata.string(forKey: "showGuide") == "yes" {

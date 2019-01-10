@@ -45,16 +45,18 @@ class MyPageViewController: UIViewController,ReloadViwDelegate {
         networkManager.getProfileInfo { [weak self](profile, errorModel, error) in
             // 로그인 네트워크 처리
             if profile == nil && errorModel == nil && error != nil {
-                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                alertController.addAction(cancelButton)
-                self?.present(alertController,animated: true,completion: nil)
+//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//                alertController.addAction(cancelButton)
+//                self?.present(alertController,animated: true,completion: nil)
+                self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
             }
             else if profile == nil && errorModel != nil && error == nil {
-                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                alertController.addAction(cancelButton)
-                self?.present(alertController,animated: true,completion: nil)
+//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//                alertController.addAction(cancelButton)
+//                self?.present(alertController,animated: true,completion: nil)
+                self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
             }
             else {
                 self?.profileModel = profile
@@ -157,18 +159,19 @@ extension MyPageViewController: MakeReviewPresentView {
 
     func makeReservation(storeIdx: Int, closeTime: Int, currentBag: Int, limit: Int, opentime: Int,available:Int, restWeekResponseDtos: [RestWeekResponseDtos?]?) {
          if UserDefaults.standard.bool(forKey: "isReserve") {
-            let alertController = UIAlertController(title: "",message: "이미 상가에 예약이 되어있습니다.", preferredStyle: UIAlertController.Style.alert)
-            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-            alertController.addAction(cancelButton)
-            self.present(alertController,animated: true,completion: nil)
+//            let alertController = UIAlertController(title: "",message: "이미 상가에 예약이 되어있습니다.", preferredStyle: UIAlertController.Style.alert)
+//            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//            alertController.addAction(cancelButton)
+//            self.present(alertController,animated: true,completion: nil)
+            self.showAlertMessage(titleStr:"", messageStr: "이미 상가에 예약이 되어있습니다.")
         }
         else {
             if available == -1 {
-                let alertController = UIAlertController(title: "",message: "더 이상 해당 상가에 예약이 불가합니다.", preferredStyle: UIAlertController.Style.alert)
-                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                alertController.addAction(cancelButton)
-                self.present(alertController,animated: true,completion: nil)
-                
+//                let alertController = UIAlertController(title: "",message: "더 이상 해당 상가에 예약이 불가합니다.", preferredStyle: UIAlertController.Style.alert)
+//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//                alertController.addAction(cancelButton)
+//                self.present(alertController,animated: true,completion: nil)
+                self.showAlertMessage(titleStr:"", messageStr: "더 이상 해당 상가에 예약이 불가능합니다.")
             }
             else {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
