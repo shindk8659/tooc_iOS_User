@@ -25,7 +25,7 @@
 			<string>daummaps</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>daummaps://route</string>
+				<string>daummaps</string>
 			</array>
 		</dict>
 		<dict>
@@ -33,7 +33,7 @@
 			<string>applemap</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>http://maps.apple.com/?saddr</string>
+				<string>applemap</string>
 			</array>
 		</dict>
 	</array>
@@ -44,6 +44,7 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>daummaps</string>
+        <>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
