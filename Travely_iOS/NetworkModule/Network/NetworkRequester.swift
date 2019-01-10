@@ -207,7 +207,7 @@ struct NetworkRequester {
     
     func requestMultipartFormData<T: Codable>(completion: Completion1<T>) {
         manager.upload(multipartFormData: { (multipartFormData) in
-            multipartFormData.append(self.api.data!, withName: "type", fileName: "file.png", mimeType: "image/png")
+            multipartFormData.append(self.api.data!, withName: "file.png", fileName: "file.png", mimeType: "image/png")
         }, usingThreshold: UInt64.init(), to: api.requestUrl, method: api.method, headers: api.headers) { result in
             switch result {
             case .success(let upload, _, _):

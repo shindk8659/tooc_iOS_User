@@ -3300,20 +3300,20 @@ Cg
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="캐리어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zy8-GV-yPe">
-                                                    <rect key="frame" x="25.333333333333332" y="686" width="44.333333333333343" height="24"/>
+                                                    <rect key="frame" x="25.333333333333329" y="686" width="60" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="qWu-vN-vlp"/>
-                                                        <constraint firstAttribute="width" constant="44.329999999999998" id="rW0-hg-OY5"/>
+                                                        <constraint firstAttribute="width" constant="60" id="rW0-hg-OY5"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                                                     <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="물품 보관 가방" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExP-Ix-YWz">
-                                                    <rect key="frame" x="25.333333333333336" y="728" width="97.333333333333314" height="24"/>
+                                                    <rect key="frame" x="25.333333333333329" y="728" width="109.99999999999999" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="dG9-jE-ta6"/>
-                                                        <constraint firstAttribute="width" constant="97.329999999999998" id="zlT-YN-O1l"/>
+                                                        <constraint firstAttribute="width" constant="110" id="zlT-YN-O1l"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                                                     <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
