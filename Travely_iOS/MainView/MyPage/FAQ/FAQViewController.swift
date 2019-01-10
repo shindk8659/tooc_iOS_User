@@ -19,7 +19,6 @@ class FAQViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(faqExpandableTableView)
         faqExpandableTableView.expandableDelegate = self
         faqExpandableTableView.animation = .automatic
         faqExpandableTableView.separatorInset = .zero
@@ -53,9 +52,6 @@ extension FAQViewController: ExpandableDelegate
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
         let cell = expandableTableView.dequeueReusableCell(withIdentifier: "FAQContentsTableViewCell") as! FAQContentsTableViewCell
         cell.faqContentsTextView.text = faqContent[indexPath.row]
-        var frame = cell.faqContentsTextView.frame
-        frame.size.height = cell.faqContentsTextView.contentSize.height
-        cell.faqContentsTextView.frame = frame
         return [cell]
         
        
@@ -65,12 +61,8 @@ extension FAQViewController: ExpandableDelegate
     //하위 셀 사이즈
     func expandableTableView(_ expandableTableView: ExpandableTableView, heightsForExpandedRowAt indexPath: IndexPath) -> [CGFloat]? {
         
-         let cell = expandableTableView.dequeueReusableCell(withIdentifier: "FAQContentsTableViewCell") as! FAQContentsTableViewCell
-        cell.faqContentsTextView.text = faqContent[indexPath.row]
-        var frame = cell.faqContentsTextView.frame
-        frame.size.height = cell.faqContentsTextView.contentSize.height
-        cell.faqContentsTextView.frame = frame
-        return [cell.faqContentsTextView.frame.height]
+        
+        return [180]
     }
     
     //섹션 개수
