@@ -251,17 +251,6 @@ class NetworkManager {
         }
     }
     
-    func getKakaoFindPath(lat:Double,long:Double,completion: @escaping(CurrentLocation?,Error?) -> Void) {
-        let router = APIRouter(url:"daummaps://route?sp=37.537229,127.005515&ep=37.4979502,127.0276368&by=PUBLICTRANSIT", method: .get, parameters: nil ,headers:nil)
-        NetworkRequester(with: router).requestOtherAPI{ (review:CurrentLocation?, error) in
-            guard error == nil else {
-                completion(nil,error)
-                return
-            }
-            completion(review,error)
-        }
-    }
-    
     func postInquiry(image: [String], content: String, createAt: String, completion: @escaping(ErrorModel?,ErrorModel?,Error?) -> Void) {
         let header:HTTPHeaders = [
             "jwt": gsno(jwt)

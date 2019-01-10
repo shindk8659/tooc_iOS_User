@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>사진 첨부를위해 라이브러리 접근을 필요로 합니다.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -23,18 +21,21 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleIdentifier</key>
-			<string></string>
-			<key>CFBundleTypeRole</key>
-			<string>None</string>
 			<key>CFBundleURLName</key>
-			<string></string>
+			<string>daummaps</string>
 			<key>CFBundleURLSchemes</key>
-			<array/>
+			<array>
+				<string>daummaps://route</string>
+			</array>
 		</dict>
-		<dict/>
-		<dict/>
-		<dict/>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>applemap</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>http://maps.apple.com/?saddr</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -46,12 +47,18 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>카메라 접근을 허용해주세요
+
+출처: https://zeddios.tistory.com/369 [ZeddiOS]</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>이 서비스는 사용자의 위치정보를 필요로 합니다.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>이 서비스는 사용자의 위치정보를 필요로 합니다.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>이 서비스는 사용자의 위치정보를 필요로 합니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>사진 첨부를위해 라이브러리 접근을 필요로 합니다.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
