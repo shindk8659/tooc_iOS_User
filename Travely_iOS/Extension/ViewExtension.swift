@@ -29,7 +29,7 @@ extension UITabBarController {
     func hideTabBarAnimated(hide:Bool) {
         UIView.animate(withDuration: 0.3, animations: {
             if hide {
-                self.tabBar.transform = CGAffineTransform(translationX: 0, y: 100)
+                self.tabBar.transform = CGAffineTransform(translationX: 0, y: 83)
             } else {
                 self.tabBar.transform = CGAffineTransform.identity
             }

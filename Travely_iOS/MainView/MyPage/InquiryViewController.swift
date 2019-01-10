@@ -35,6 +35,7 @@ class InquiryViewController: UIViewController {
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = true
+        self.tabBarController?.hideTabBarAnimated(hide: true)
         present(imagePicker, animated: true, completion: nil)
     }
 
@@ -51,6 +52,7 @@ class InquiryViewController: UIViewController {
 
 extension InquiryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.tabBarController?.hideTabBarAnimated(hide: false)
         dismiss(animated: true, completion: nil)
     }
     
