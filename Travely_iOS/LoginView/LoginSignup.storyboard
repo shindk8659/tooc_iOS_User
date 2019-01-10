@@ -476,7 +476,7 @@
         <!--App Guide View Controller-->
         <scene sceneID="NVr-gZ-ULL">
             <objects>
-                <viewController id="6iU-GX-cPE" customClass="AppGuideViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="appguidepageview" id="6iU-GX-cPE" customClass="AppGuideViewController" customModule="Travely_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wMb-YE-h2D"/>
                         <viewControllerLayoutGuide type="bottom" id="e6H-Jq-yA5"/>

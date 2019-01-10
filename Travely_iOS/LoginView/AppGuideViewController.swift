@@ -22,13 +22,15 @@ class AppGuideViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pageControl.addTarget(self, action: #selector(didChangePageControlValue), for: .valueChanged)
-        // titleImage
-        let titleImageView = UIImageView.init(image: UIImage.init(named: "logoWhite"))
-        self.navigationItem.titleView = titleImageView
-        //네비게이션바를 투명하게
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.backgroundColor = .clear
+        let titleImageView = UIImageView.init(image: UIImage.init(named: "logoWhite"))
+        self.navigationItem.titleView = titleImageView
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
