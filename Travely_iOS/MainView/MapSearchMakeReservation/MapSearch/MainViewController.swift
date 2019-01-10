@@ -61,18 +61,10 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     @IBAction func didPressReservation(_ sender: Any) {
         
         if  UserDefaults.standard.bool(forKey: "isReserve") {
-//            let alertController = UIAlertController(title: "",message: "이미 상가에 예약이 되어있습니다.", preferredStyle: UIAlertController.Style.alert)
-//            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//            alertController.addAction(cancelButton)
-//            self.present(alertController,animated: true,completion: nil)
             self.showAlertMessage(titleStr:"", messageStr: "이미 상가에 예약이 되어있습니다.")
         }
         else {
             if storeDetailModel?.available == -1 {
-//                let alertController = UIAlertController(title: "",message: "더 이상 해당 상가에 예약이 불가합니다.", preferredStyle: UIAlertController.Style.alert)
-//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                alertController.addAction(cancelButton)
-//                self.present(alertController,animated: true,completion: nil)
                 self.showAlertMessage(titleStr:"", messageStr: "더이상 해당 상가에 예약이 불가능합니다.")
             }
             else {
@@ -106,18 +98,10 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         networkManager.regionList{ [weak self] (regionList, errorModel, error) in
             // 지역 리스트 네트워크 처리
             if regionList == nil && errorModel == nil && error != nil {
-//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                alertController.addAction(cancelButton)
-//                self?.present(alertController,animated: true,completion: nil)
                 self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
             }
                 // 서버측 에러핸들러 구성후 바꿔야함
             else if regionList == nil && errorModel != nil && error == nil {
-//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                alertController.addAction(cancelButton)
-//                self?.present(alertController,animated: true,completion: nil)
                 self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
             }
             else {
@@ -386,7 +370,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
              currentLocation = self.locationManager.location!
             networkManager.getCurrentLocation(lat: currentLocation.coordinate.latitude, long: currentLocation.coordinate.longitude) { [weak self](current, err) in
                 
-                if current?.status?.name != "no results" {
+                if current?.status?.name != "no results" && current != nil {
                     let currentLocationString:String = "현위치 : " + (current?.results?[0].region?.area1?.name)! + " " + (current?.results?[0].region?.area2?.name)! + " " + (current?.results?[0].region?.area3?.name)!
                     self?.currentLocLB.text = currentLocationString
                     
@@ -566,18 +550,10 @@ extension MainViewController: ExpandableDelegate {
                 
                 // 지역 리스트 네트워크 처리
                 if storeDetail == nil && errorModel == nil && error != nil {
-//                    let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-//                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                    alertController.addAction(cancelButton)
-//                    self?.present(alertController,animated: true,completion: nil)
                     self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
                 }
                     // 서버측 에러핸들러 구성후 바꿔야함
                 else if storeDetail == nil && errorModel != nil && error == nil {
-//                    let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-//                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                    alertController.addAction(cancelButton)
-//                    self?.present(alertController,animated: true,completion: nil)
                     self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
                 }
                 else {
@@ -764,8 +740,6 @@ extension MainViewController: UITableViewDataSource
                 cell.userGradeLabel.text = "\(String(describing: (storeDetailModel?.reviewResponseDtos?[indexPath.row].like)!))점"
                 cell.userReviewTextView.text = storeDetailModel?.reviewResponseDtos?[indexPath.row].content
                 cell.userNameLabel.text = storeDetailModel?.reviewResponseDtos?[indexPath.row].userName
-                print(storeDetailModel?.reviewResponseDtos?[indexPath.row].createdAt)
-                print(self.makeReviewTime(time: storeDetailModel?.reviewResponseDtos?[indexPath.row].createdAt))
                 cell.postTimeLabel.text =  self.makeReviewTime(time: storeDetailModel?.reviewResponseDtos?[indexPath.row].createdAt)
                 return cell
             }
@@ -827,7 +801,6 @@ extension MainViewController: FindPathDelegate
             let appleButton = UIAlertAction(title: "애플 지도", style: .default, handler: {(alert: UIAlertAction!) in
                 UIApplication.shared.open(URL(string: "http://maps.apple.com/?saddr=\((self.locationManager.location?.coordinate.latitude)!),\((self.locationManager.location?.coordinate.longitude)!)&daddr=\((self.storeDetailModel?.latitude)!),\((self.storeDetailModel?.longitude)!)")! as URL, options: [:], completionHandler: nil)})
             alertController.addAction(appleButton)
-            
         }
         
         if (!kakaoMapInstalled){
