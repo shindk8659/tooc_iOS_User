@@ -174,6 +174,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //예약 뷰 델리게이트
         
         //스토어 이미지 뷰 설정
