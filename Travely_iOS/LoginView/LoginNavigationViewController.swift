@@ -1,29 +1,21 @@
 //
-//  TESTViewController.swift
+//  LoginNavigationViewController.swift
 //  Travely_iOS
 //
-//  Created by seunghwan Lee on 10/01/2019.
+//  Created by 신동규 on 1/10/19.
 //  Copyright © 2019 신동규. All rights reserved.
 //
 
 import UIKit
-import Lottie
 
-class TESTViewController: UIViewController {
+class LoginNavigationViewController: UINavigationController {
 
-    @IBOutlet var testlot: LOTAnimatedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        testlot.animationView.setAnimation(named: "tooc_IOS")
-        testlot.animationView.play { [weak self](true) in
-            let loginView = UIStoryboard.init(name: "LoginSignup", bundle: nil).instantiateViewController(withIdentifier: "loginnavi") as! LoginNavigationViewController
-            self?.present(loginView, animated: true, completion: nil)
-        }
-        
+
         // Do any additional setup after loading the view.
     }
-
+    
 
     /*
     // MARK: - Navigation

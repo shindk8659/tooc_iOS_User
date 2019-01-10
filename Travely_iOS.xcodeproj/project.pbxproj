@@ -22,6 +22,7 @@
 		5202616C21E271D500C3EDA7 /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202616021E271D500C3EDA7 /* Center.swift */; };
 		5202616D21E271D500C3EDA7 /* Area0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202616121E271D500C3EDA7 /* Area0.swift */; };
 		521FC83021D8B8D600CFD955 /* NanumSquareEB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */; };
+		5251923421E6F7380023B8BB /* LoginNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5251923321E6F7380023B8BB /* LoginNavigationViewController.swift */; };
 		5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5280E34C21D7B5A800829935 /* RegionListModel.swift */; };
 		528D962421DBDC2E00FC46D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528D962321DBDC2E00FC46D1 /* Main.storyboard */; };
 		528D962721DBEF1E00FC46D1 /* EmptyReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D962521DBEF1E00FC46D1 /* EmptyReviewTableViewCell.swift */; };
@@ -143,6 +144,7 @@
 		5202616021E271D500C3EDA7 /* Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
 		5202616121E271D500C3EDA7 /* Area0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area0.swift; sourceTree = "<group>"; };
 		521FC82F21D8B8D600CFD955 /* NanumSquareEB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareEB.ttf; sourceTree = "<group>"; };
+		5251923321E6F7380023B8BB /* LoginNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationViewController.swift; sourceTree = "<group>"; };
 		5280E34C21D7B5A800829935 /* RegionListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionListModel.swift; sourceTree = "<group>"; };
 		528D962321DBDC2E00FC46D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		528D962521DBEF1E00FC46D1 /* EmptyReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				52DAACD421E0B5A800B000A7 /* AppGuideViewController.swift */,
 				52DAACD221E0B20B00B000A7 /* AppGuidePageViewController.swift */,
 				52DAACD621E1001E00B000A7 /* LastGuideViewController.swift */,
+				5251923321E6F7380023B8BB /* LoginNavigationViewController.swift */,
 			);
 			path = LoginView;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				D192BFA521E2CF3B0072D4EF /* DidNotReserveViewController.swift in Sources */,
 				52EDFB5D21DA2FC400A83CC0 /* StoreDetailModel.swift in Sources */,
 				528D962721DBEF1E00FC46D1 /* EmptyReviewTableViewCell.swift in Sources */,
+				5251923421E6F7380023B8BB /* LoginNavigationViewController.swift in Sources */,
 				D1ABFAE521DBC29B00BEE3E0 /* ReservationStatusViewController.swift in Sources */,
 				5280E34D21D7B5A800829935 /* RegionListModel.swift in Sources */,
 				D1912E7121E11B93005ADBAF /* RateCell.swift in Sources */,
