@@ -56,12 +56,29 @@ class MyPageSettingViewController: UITableViewController {
             let VC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "InquiryViewController") as! InquiryViewController
             VC.addBackButton("black")
             self.navigationController?.pushViewController(VC, animated: true)
+//            showAlertMessage(titleStr: "", messageStr: "준비중인 서비스 입니다.")
         case 6:
             let VC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "termofservice") as! WholeTermTableViewController
             VC.addBackButton("black")
             self.navigationController?.pushViewController(VC, animated: true)
+        case 7:
+            let alert = UIAlertController(title: "", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
+            let conform = UIAlertAction(title: "확인", style: UIAlertAction.Style.default) { (_) in
+                let userDefaults = UserDefaults()
+                userDefaults.set(false, forKey: "isLogin")
+                userDefaults.synchronize()
+                self.dismiss(animated: true, completion: nil)
+            }
+            let cancel = UIAlertAction(title: "취소", style: UIAlertAction.Style.cancel, handler: nil)
+            alert.addAction(cancel)
+            alert.addAction(conform)
+            self.present(alert, animated: true, completion: nil)
         default: return
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
 }
