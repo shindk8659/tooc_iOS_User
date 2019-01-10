@@ -13,9 +13,6 @@ class FAQContentsTableViewCell: UITableViewCell {
     @IBOutlet weak var faqContentsTextView: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        var frame = self.faqContentsTextView.frame
-        frame.size.height = self.faqContentsTextView.contentSize.height
-        self.faqContentsTextView.frame = frame
         // Initialization code
     }
 

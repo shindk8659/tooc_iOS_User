@@ -30,9 +30,13 @@ class MyPageSettingViewController: UITableViewController {
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        
         self.tabBarController?.hideTabBarAnimated(hide: false)
     }
-    
+       override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+            
+            cell.selectionStyle = .none
+        }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 2:
