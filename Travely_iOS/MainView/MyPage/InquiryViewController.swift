@@ -29,6 +29,9 @@ class InquiryViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapInside))
         addImgView.addGestureRecognizer(tap)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
     
     @objc func tapInside() {
         let imagePicker = UIImagePickerController()
@@ -90,6 +93,7 @@ extension InquiryViewController: UIImagePickerControllerDelegate, UINavigationCo
 //        }
 //        dismiss(animated: true, completion: nil)
         dismiss(animated: true) {
+           self.tabBarController?.hideTabBarAnimated(hide: false)
             self.networkManager.uploadImg(data: imgData2!) { [weak self](result, errorModel, error) in
                 print("결과 \(result)")
                 print("에러모델 \(errorModel)")
