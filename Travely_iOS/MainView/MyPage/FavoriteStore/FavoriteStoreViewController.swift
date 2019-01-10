@@ -25,16 +25,8 @@ class FavoriteStoreViewController: UIViewController {
             
             // 리뷰
             if favoriteStore == nil && errorModel == nil && error != nil {
-//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                alertController.addAction(cancelButton)
-//                self?.present(alertController,animated: true,completion: nil)
                 self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
             } else if favoriteStore == nil && errorModel != nil && error == nil {
-//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                alertController.addAction(cancelButton)
-//                self?.present(alertController,animated: true,completion: nil)
                 self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
             }
             else {
@@ -105,6 +97,12 @@ extension FavoriteStoreViewController: UITableViewDataSource
             
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "favoritestorecell") as! FavoriteStoreTableViewCell
+            
+            if self.view.frame.width < 375 {
+                cell.starRateView.settings.starSize = 13
+            } else {
+                cell.starRateView.settings.starSize = 20
+            }
             cell.delegate = self
             cell.selectionStyle = UITableViewCell.SelectionStyle.none;
             cell.separatorInset = UIEdgeInsets.zero

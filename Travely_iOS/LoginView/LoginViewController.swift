@@ -30,29 +30,18 @@ class LoginViewController: UIViewController {
        
         // Do any additional setup after loading the view.
         if self.userDefaults.bool(forKey: "isLogin") == true {
-//            let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! MainTabBarController
-//            mainView.isReserve = userDefaults.bool(forKey: "isReserve")
-//            self.present(mainView, animated: false, completion: nil)
-            
             let email = self.userDefaults.string(forKey: "email")
             let password = self.userDefaults.string(forKey: "pass")
             
             networkManager.login(email: email! , password: password!) { [weak self](login,errorModel,error) in
                 if login == nil && errorModel == nil && error != nil {
-//                    let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-//                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                    alertController.addAction(cancelButton)
-//                    self?.present(alertController,animated: true,completion: nil)
-                    
                     self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
-                    
                 } else {
                     self?.userDefaults.set(email, forKey: "email")
                     self?.userDefaults.set(password, forKey: "pass")
                     self?.userDefaults.set(true, forKey: "isLogin")
                     let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! MainTabBarController
                     mainView.isReserve = login?.isReserve
-                    print(login?.isReserve)
                     if mainView.isReserve != nil{
                     self?.present(mainView, animated: true, completion: nil)
                     }
@@ -69,17 +58,9 @@ class LoginViewController: UIViewController {
     
         if emailTextField.text == "" || passwordTextField.text ==  "" {
             if emailTextField.text == ""{
-//                let alertController = UIAlertController(title: "",message: "이메일을 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
-//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                alertController.addAction(cancelButton)
-//                self.present(alertController,animated: true,completion: nil)
                  self.showAlertMessage(titleStr:"", messageStr: "이메일을 입력해주세요.")
                 
             } else{
-//                let alertController = UIAlertController(title: "",message: "비밀번호를 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
-//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                alertController.addAction(cancelButton)
-//                self.present(alertController,animated: true,completion: nil)
                 self.showAlertMessage(titleStr:"", messageStr: "비밀번호를 입력해주세요.")
             }
         }
@@ -88,17 +69,9 @@ class LoginViewController: UIViewController {
               
                 // 로그인 네트워크 처리
                 if login == nil && errorModel == nil && error != nil {
-//                    let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-//                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                    alertController.addAction(cancelButton)
-//                    self?.present(alertController,animated: true,completion: nil)
                     self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
                 }
                 else if login == nil && errorModel != nil && error == nil {
-//                    let alertController = UIAlertController(title: "",message: "이메일과 비밀번호를 확인해주세요.", preferredStyle: UIAlertController.Style.alert)
-//                    let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-//                    alertController.addAction(cancelButton)
-//                    self?.present(alertController,animated: true,completion: nil)
                     self?.showAlertMessage(titleStr:"", messageStr: "이메일과 비밀번호를 확인해주세요.")
                 }
                 else {
@@ -107,7 +80,6 @@ class LoginViewController: UIViewController {
                     self?.userDefaults.set(true, forKey: "isLogin")
                     let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! MainTabBarController
                     mainView.isReserve = login?.isReserve
-                    print(login?.isReserve)
                     self?.present(mainView, animated: true, completion: nil)
                     let guideView = UIStoryboard(name: "LoginSignup", bundle: nil).instantiateViewController(withIdentifier: "appguideview") as!UINavigationController
                     self?.present(guideView, animated: true, completion: nil)

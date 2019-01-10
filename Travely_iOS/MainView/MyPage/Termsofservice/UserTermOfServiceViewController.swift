@@ -18,9 +18,6 @@ class UserTermOfServiceViewController: UIViewController {
         self.addBackButton("black")
     }
     
-
-    
-
 }
 extension UserTermOfServiceViewController: UITableViewDelegate
 {
