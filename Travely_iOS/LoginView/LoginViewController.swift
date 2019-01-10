@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.backgroundColor = UIColor.clear
-        
         emailTextField.keyboardType = .asciiCapable
         passwordTextField.keyboardType = .asciiCapable
        
@@ -78,6 +77,8 @@ class LoginViewController: UIViewController {
                     self?.userDefaults.set(self?.emailTextField.text, forKey: "email")
                     self?.userDefaults.set(self?.passwordTextField.text, forKey: "pass")
                     self?.userDefaults.set(true, forKey: "isLogin")
+                    self?.emailTextField.text = ""
+                    self?.passwordTextField.text = ""
                     let mainView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "firstmain") as! MainTabBarController
                     mainView.isReserve = login?.isReserve
                     self?.present(mainView, animated: true, completion: nil)

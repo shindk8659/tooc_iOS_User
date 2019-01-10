@@ -14,13 +14,35 @@ class InquiryViewController: UIViewController {
     
     var image = UIImage()
     let networkManager = NetworkManager()
+    var testText = String()
+    var imgURL = ""
 
     @IBOutlet var textView: UITextView!
     @IBOutlet var addImgView: UIView!
     @IBOutlet var imgName: UILabel!
     
     @IBAction func didPressComplete(_ sender: Any) {
-//        networkManager.postInquiry(image: <#T##[String]#>, content: <#T##String#>, createAt: <#T##String#>, completion: <#T##(ErrorModel?, ErrorModel?, Error?) -> Void#>)
+        
+        if textView.text.isEmpty == true{
+            showAlertMessage(titleStr: "", messageStr: "문의하실 내용을 적어주세요.")
+        } else {
+        let dateStamp = Date(timeIntervalSinceNow: 0).timeIntervalSince1970*1000
+        let text = textView.text ?? "빈 메시지"
+            networkManager.postInquiry(image: [imgURL], content: text, createAt: Int(dateStamp)) { [weak self] (nil, ErrorModel, Error) in
+                if ErrorModel == nil && Error != nil {
+                    self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
+                } else if ErrorModel != nil && Error == nil {
+                    self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
+                } else {
+                    let alert = UIAlertController(title: "", message: "문의가 등록되었습니다.", preferredStyle: .alert)
+                    let confirm = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: { (_) in
+                        self?.navigationController?.popViewController(animated: true)
+                    })
+                    alert.addAction(confirm)
+                    self?.present(alert, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -29,6 +51,7 @@ class InquiryViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapInside))
         addImgView.addGestureRecognizer(tap)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         
     }
@@ -64,6 +87,7 @@ extension InquiryViewController: UIImagePickerControllerDelegate, UINavigationCo
         if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
             let assetResources = PHAssetResource.assetResources(for: asset)
             imgName.text = assetResources.first?.originalFilename ?? "파일오류"
+            testText = (assetResources.first?.originalFilename)!
         }
         
         var newImg = UIImage()
@@ -77,60 +101,22 @@ extension InquiryViewController: UIImagePickerControllerDelegate, UINavigationCo
         else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-        image = newImg
-        let imgData1 = image.jpegData(compressionQuality: 1)
-        let imgData2 = image.pngData()
-//        alarmImgUpload(imgData: imgData!)
-        if imgData1 != nil {
-            print("데이터 있음")
-            print(imgData1)
-        }
         
-        networkManager.uploadImg(data: imgData1!) { [weak self](result, errorModel, error) in
-            print("결과 \(result)")
-            print("에러모델 \(errorModel)")
-            print("에러 \(error)")
+        image = newImg
+        let imgData:Data = image.jpegData(compressionQuality: 1)!
+        
+        networkManager.uploadImg(data: imgData) { [weak self](result, errorModel, error) in
+            if result == nil && errorModel == nil && error != nil {
+                self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
+            } else if result == nil && errorModel != nil && error == nil {
+                self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
+            } else {
+                self?.imgURL = result?.bagImgUrl ?? ""
+            }
         }
-        dismiss(animated: true, completion: nil)
         
         dismiss(animated: true) {
-           self.tabBarController?.hideTabBarAnimated(hide: false)
-            self.networkManager.uploadImg(data: imgData2!) { [weak self](result, errorModel, error) in
-                print("결과 \(result)")
-                print("에러모델 \(errorModel)")
-                print("에러 \(error)")
-            }
-//            self.alarmImgUpload(imgData: imgData1!)
-        }
-    }
-    
-    func alarmImgUpload(imgData: Data) {
-        let jwt = UserDefaults.standard.string(forKey: "jwt")
-        let header:HTTPHeaders = [
-            "jwt": gsno(jwt)
-        ]
-        
-        let url = "http://52.78.222.197:8080/api/img"
-        Alamofire.upload(multipartFormData: { (multipartFormData) in
-            multipartFormData.append(imgData, withName: "fileset", fileName: "file.jpg", mimeType: "image/jpg")
-        }, usingThreshold: UInt64.init(), to: url, method: .post, headers: header) { (result) in
-            switch result {
-            case .success(let upload, _, _): upload.uploadProgress(closure: { (progress) in
-                print("Upload Progress: \(progress.fractionCompleted)")
-            })
-//            upload.responseJSON(completionHandler: { (response) in
-//                if let result = response.result.value {
-//                    print(response)
-//                    print(result)
-//                    print(response.result.value)
-//                    print("성공")
-//                }
-//            })
-            upload.responseData(completionHandler: { (data) in
-                print(data.response?.statusCode)
-            })
-            case .failure(let err): print("error: \(err)")
-            }
+            self.tabBarController?.hideTabBarAnimated(hide: false)
         }
     }
 }
