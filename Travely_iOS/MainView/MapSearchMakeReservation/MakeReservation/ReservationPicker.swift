@@ -85,9 +85,6 @@ class ReservationPicker: UIViewController {
             }
         }
         
-        // rawValue가 0 일때 클로징타임이 00:00시일때 -> rawValue 1이 뜸 -> 해결 (23:59)
-        // 찾는시간 오전설정 가능 -> 오류 해결해야함
-        
         dateFormatter.dateFormat = "HH:mm"
         if dateFormatter.string(from: closeTime) == "00:00" {
             closeTime = Date(timeInterval: -60, since: closeTime)
@@ -110,14 +107,6 @@ class ReservationPicker: UIViewController {
             self.presentingViewController?.dismiss(animated: true, completion: nil)
         } else {
             openHoursAlert.isHidden = false
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-//                UIView.animate(withDuration: 0.3, animations: {
-//                    self.openHoursAlert.alpha = 0
-//                }, completion: { (true) in
-//                    self.openHoursAlert!.isHidden = true
-//                    self.openHoursAlert.alpha = 0.8
-//                })
-//            }
         }
     }
     
@@ -288,18 +277,6 @@ class ReservationPicker: UIViewController {
     }
     
     func pickerSetup() {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "mm"
-//        print(Int(dateFormatter.string(from: datePicker.date))!)
-//
-//        if Int(dateFormatter.string(from: datePicker.date))! % 15 != 0 {
-//            let timeinterval = Double(Int(dateFormatter.string(from: datePicker.date))! % 15)
-//            datePicker.date.addTimeInterval(900-timeinterval*60)
-//        }
-//        date = datePicker.date
-    
-//        date = Date(timeIntervalSinceNow: 0)
-        
         status = .check
         date = checkDate
         
@@ -307,15 +284,6 @@ class ReservationPicker: UIViewController {
         date = findDate
         
         status = .check
-        
-//        status = .check
-//        changeLabel()
-        
-        
-//        datePicker.backgroundColor = UIColor(displayP3Red: 76, green: 100, blue: 253, alpha: 0.5)
-//        datePicker.isOpaque = false
-//        datePicker.backgroundColor = UIColor(red: 76, green: 100, blue: 253, alpha: 1)
-        //주석
     }
     
     func buttonLayerSetup() {
@@ -324,7 +292,6 @@ class ReservationPicker: UIViewController {
             button.layer.borderWidth = 1
             button.layer.borderColor = color.cgColor
             button.setTitleColor(color, for: .normal)
-//            button.layer.cornerRadius = button.frame.width / 2
             button.layer.masksToBounds = true
         }
     }

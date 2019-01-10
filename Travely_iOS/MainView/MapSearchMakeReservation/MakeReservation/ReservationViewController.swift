@@ -167,10 +167,11 @@ class ReservationViewController: UITableViewController {
         UserDefaults.standard.set(totalTime.text, forKey: "totalTime")
         
         guard totalRate != 0 else {
-            let alertController = UIAlertController(title: "",message: "1개 이상의 짐을 선택해 주세요.", preferredStyle: UIAlertController.Style.alert)
-            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-            alertController.addAction(cancelButton)
-            self.present(alertController, animated: true, completion: nil)
+//            let alertController = UIAlertController(title: "",message: "1개 이상의 짐을 선택해 주세요.", preferredStyle: UIAlertController.Style.alert)
+//            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//            alertController.addAction(cancelButton)
+//            self.present(alertController, animated: true, completion: nil)
+            self.showAlertMessage(titleStr:"", messageStr: "1개 이상의 짐을 선택해 주세요.")
             return
         }
         
@@ -181,10 +182,11 @@ class ReservationViewController: UITableViewController {
         
     
         guard checkTime.isDateAvailable(openTime: open, closeTime: close) && findTime.isDateAvailable(openTime: open, closeTime: close) else {
-            let alertController = UIAlertController(title: "",message: "예약 가능 시간이 아닙니다. \n 시간 설정을 다시 해 주세요.", preferredStyle: UIAlertController.Style.alert)
-            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-            alertController.addAction(cancelButton)
-            self.present(alertController, animated: true, completion: nil)
+//            let alertController = UIAlertController(title: "",message: "예약 가능 시간이 아닙니다. \n 시간 설정을 다시 해 주세요.", preferredStyle: UIAlertController.Style.alert)
+//            let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//            alertController.addAction(cancelButton)
+//            self.present(alertController, animated: true, completion: nil)
+            self.showAlertMessage(titleStr:"", messageStr: "예약 가능 시간이 아닙니다. \n 시간 설정을 다시 해 주세요.")
             return
         }
         
@@ -205,23 +207,23 @@ class ReservationViewController: UITableViewController {
        networkManager.saveReservation(storeIdx:storeIdx , startTime: startTime, endTime: endTime, bagDtos: bagDtos, payType: payment) { [weak self] (data, errorModel, error) in
 
             if data == nil && errorModel == nil && error != nil {
-                print(errorModel, error)
-                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                alertController.addAction(cancelButton)
-                self?.present(alertController, animated: true, completion: nil)
+//                print(errorModel, error)
+//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//                alertController.addAction(cancelButton)
+//                self?.present(alertController, animated: true, completion: nil)
+                self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
             }
                 // 서버측 에러핸들러 구성후 바꿔야함
             else if data == nil && errorModel != nil && error == nil {
-                print(errorModel, error)
-                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
-                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-                alertController.addAction(cancelButton)
-                self?.present(alertController, animated: true, completion: nil)
+//                print(errorModel, error)
+//                let alertController = UIAlertController(title: "",message: "네트워크 오류입니다.", preferredStyle: UIAlertController.Style.alert)
+//                let cancelButton = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+//                alertController.addAction(cancelButton)
+//                self?.present(alertController, animated: true, completion: nil)
+                self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
             }
             else {
-                print("통신 성공")
-                print(data)
                 let storyboard = UIStoryboard(name: "Alert", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "ReservationAlertViewController") as! ReservationAlertViewController
                 vc.type = .reserve
@@ -234,8 +236,7 @@ class ReservationViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        //테스트프린트
-        print("테스트프린트",closeTime,currentBag,limit,opentime,restWeekResponseDtos)
+
         suitcaseCheck = false
         luggageCheck = false
         reservationButton.isEnabled = false
@@ -276,11 +277,11 @@ class ReservationViewController: UITableViewController {
     func bringPriceList() {
         networkManager.bringPriceList { [weak self] (result, errorModel, error) in
             if result == nil && errorModel == nil && error != nil {
-                print(errorModel, error)
+                self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
             }
                 // 서버측 에러핸들러 구성후 바꿔야함
             else if result == nil && errorModel != nil && error == nil {
-                print(errorModel, error)
+                self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
             }
             else {
                 self!.priceInfo = result
@@ -322,13 +323,7 @@ class ReservationViewController: UITableViewController {
         if indexPath.row == 5 && luggageCheck == false {
             return 0
         }
-        
-        //주석
-//        if indexPath.row == 4 && (suitcaseCheck == true || luggageCheck == true) {
-//            return 68
-//        } else if indexPath.row == 4 {
-//            return 0
-//        }
+
         return UITableView.automaticDimension
     }
     
