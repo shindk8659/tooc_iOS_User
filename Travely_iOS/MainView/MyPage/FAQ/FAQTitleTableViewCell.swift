@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ExpandableCell
 
-class FAQTitleTableViewCell: UITableViewCell {
+class FAQTitleTableViewCell: ExpandableCell {
 
     @IBOutlet weak var faqTitleLabel: UILabel!
     override func awakeFromNib() {

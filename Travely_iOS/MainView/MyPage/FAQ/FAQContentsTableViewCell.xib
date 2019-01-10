@@ -25,22 +25,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="FAQContentsTableViewCell" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKu-Fp-zTk">
-                        <rect key="frame" x="33.5" y="11" width="253" height="165"/>
+                        <rect key="frame" x="40" y="0.0" width="240" height="180.5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="165" id="8p5-Np-KNX"/>
-                            <constraint firstAttribute="width" constant="253" id="kYu-tN-bnM"/>
-                        </constraints>
                         <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="aKu-Fp-zTk" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="3Ky-MY-RDD"/>
-                    <constraint firstItem="aKu-Fp-zTk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="17.5" id="NtO-Jg-cpI"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="aKu-Fp-zTk" secondAttribute="trailing" constant="17.5" id="aGA-e7-eKL"/>
-                    <constraint firstItem="aKu-Fp-zTk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="psT-ow-acg"/>
+                    <constraint firstItem="aKu-Fp-zTk" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="3:4" id="4V0-KS-hF1"/>
+                    <constraint firstItem="aKu-Fp-zTk" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="T3O-0o-Fn1"/>
+                    <constraint firstItem="aKu-Fp-zTk" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="auc-e6-14a"/>
+                    <constraint firstItem="aKu-Fp-zTk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xNh-4B-OLo"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
