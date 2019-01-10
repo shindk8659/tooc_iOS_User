@@ -49,9 +49,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>카메라 접근을 허용해주세요
-
-출처: https://zeddios.tistory.com/369 [ZeddiOS]</string>
+	<string>카메라 접근을 허용해주세요</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>이 서비스는 사용자의 위치정보를 필요로 합니다.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
