@@ -227,6 +227,12 @@ class ReservationStatusViewController: UITableViewController,CLLocationManagerDe
                 
                 let open = Date(timeIntervalSince1970: TimeInterval((result?.store?.openTime)!/1000))
                 let close = Date(timeIntervalSince1970: TimeInterval((result?.store?.closeTime)!/1000))
+                
+                dateFormatter2.dateFormat = "HH:mm"
+                let openTime = dateFormatter2.string(from: open)
+                let closeTime = dateFormatter2.string(from: close)
+                self?.openTime.text = "매일 \(openTime)~\(closeTime) "
+                
                 if Date(timeIntervalSinceNow: 0).isDateAvailable(openTime: open, closeTime: close) {
                     self?.isOpenImg.image = UIImage(named: "ic_working")
                 } else {
