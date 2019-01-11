@@ -9,7 +9,6 @@
 import Foundation
 
 extension Date {
-
     func isDateAvailable(openTime: Date, closeTime: Date ) -> Bool {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HHmm"

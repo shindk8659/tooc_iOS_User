@@ -12,14 +12,12 @@ struct LoginModel : Codable {
    
     let isReserve: Bool?
     enum CodingKeys: String, CodingKey {
-        case isReserve = "isReserve"
-    
+        case isReserve = "isReserve"    
     }
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         isReserve = try values.decodeIfPresent(Bool.self, forKey: .isReserve)
-   
     }
     
 }

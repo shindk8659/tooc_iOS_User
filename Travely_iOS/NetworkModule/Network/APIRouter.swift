@@ -32,5 +32,4 @@ extension APIRouter {
     var requestUrl: String {
         return APIConfiguration.baseURL + url
     }
-    
 }
