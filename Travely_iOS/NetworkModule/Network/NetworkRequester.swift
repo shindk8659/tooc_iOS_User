@@ -213,7 +213,7 @@ struct NetworkRequester {
             case .success(let upload, _, _):
                 upload.responseData(completionHandler: { response in
                     if let resultStatusCode = response.response?.statusCode {
-                        print("- NetworkRequester - Response statusCode : \(resultStatusCode)")
+                        print("- NetworkRequester - Response statusCode : \(resultStatusCode)\(response.description)")
                         guard resultStatusCode < 300 else {
                             // 오류 메세지 들어올 경우
                             let data = response.data

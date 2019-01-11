@@ -10,7 +10,7 @@ import UIKit
 
 open class ExpandableCell: UITableViewCell {
     open var arrowImageView: UIImageView!
-    open var rightMargin: CGFloat = 16
+    open var rightMargin: CGFloat = 24.6
     open var highlightAnimation = HighlightAnimation.animated
     private var isOpen = false
     private var initialExpansionAllowed = true
@@ -33,7 +33,8 @@ open class ExpandableCell: UITableViewCell {
 
     func initView() {
         arrowImageView = UIImageView()
-        arrowImageView.image = UIImage(named: "expandableCell_arrow", in: Bundle(for: ExpandableCell.self), compatibleWith: nil)
+        arrowImageView.sizeToFit()
+        arrowImageView.image = UIImage(named: "icArrowDown", in: Bundle(for: ExpandableCell.self), compatibleWith: nil)
         self.contentView.addSubview(arrowImageView)
     }
     
@@ -43,7 +44,7 @@ open class ExpandableCell: UITableViewCell {
         let width = self.bounds.width
         let height = self.bounds.height
 
-        arrowImageView.frame = CGRect(x: width - rightMargin, y: (height - 11)/2, width: 22, height: 11)
+        arrowImageView.frame = CGRect(x: width - rightMargin, y: (height - 11)/2, width: 10, height: 10)
     }
 
     func open() {
@@ -51,7 +52,8 @@ open class ExpandableCell: UITableViewCell {
         self.initialExpansionAllowed = false
         if highlightAnimation == .animated {
             UIView.animate(withDuration: 0.3) {[weak self] in
-                self?.arrowImageView.layer.transform = CATransform3DMakeRotation(CGFloat(Double.pi), 1.0, 0.0, 0.0)
+                self?.arrowImageView.image = UIImage(named: "icArrowUp", in: Bundle(for: ExpandableCell.self), compatibleWith: nil)
+                
             }
         }
     }
@@ -60,7 +62,8 @@ open class ExpandableCell: UITableViewCell {
         self.isOpen = false
         if highlightAnimation == .animated {
             UIView.animate(withDuration: 0.3) {[weak self] in
-                self?.arrowImageView.layer.transform = CATransform3DMakeRotation(CGFloat(Double.pi), 0.0, 0.0, 0.0)
+                self?.arrowImageView.image = UIImage(named: "icArrowDown", in: Bundle(for: ExpandableCell.self), compatibleWith: nil)
+
             }
         }
     }

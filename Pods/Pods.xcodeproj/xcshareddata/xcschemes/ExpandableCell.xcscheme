@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "224580824D4276BBCB37A928CF5E9482"
-               BuildableName = "Cosmos.framework"
-               BlueprintName = "Cosmos"
+               BlueprintIdentifier = "1469564F8BA49C7623488CD229E5288A"
+               BuildableName = "ExpandableCell.framework"
+               BlueprintName = "ExpandableCell"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "224580824D4276BBCB37A928CF5E9482"
-            BuildableName = "Cosmos.framework"
-            BlueprintName = "Cosmos"
+            BlueprintIdentifier = "1469564F8BA49C7623488CD229E5288A"
+            BuildableName = "ExpandableCell.framework"
+            BlueprintName = "ExpandableCell"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1469564F8BA49C7623488CD229E5288A"
+            BuildableName = "ExpandableCell.framework"
+            BlueprintName = "ExpandableCell"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

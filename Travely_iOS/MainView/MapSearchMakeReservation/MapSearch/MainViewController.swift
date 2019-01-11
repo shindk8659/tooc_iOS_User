@@ -264,7 +264,8 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,UIGestureRe
         // Expandable tableview delegate
         self.getCurrentAddress()
         searchTableView.expandableDelegate = self
-        searchTableView.animation = .automatic
+        searchTableView.animation = .bottom
+        searchTableView.autoRemoveSelection = true
         searchTableView.separatorStyle = .singleLine
         searchTableView.tableFooterView = UIView()
         searchTableView.register(UINib(nibName: "DetailShopTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailShopTableViewCell")

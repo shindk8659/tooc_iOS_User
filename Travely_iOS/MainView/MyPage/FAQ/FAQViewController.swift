@@ -20,8 +20,9 @@ class FAQViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         faqExpandableTableView.expandableDelegate = self
-        faqExpandableTableView.animation = .automatic
-        faqExpandableTableView.separatorInset = .zero
+        faqExpandableTableView.animation = .left
+        faqExpandableTableView.expansionStyle = .single
+        faqExpandableTableView.autoRemoveSelection = true
         faqExpandableTableView.register(UINib(nibName: "FAQTitleTableViewCell", bundle: nil), forCellReuseIdentifier: "FAQTitleTableViewCell")
         faqExpandableTableView.register(UINib(nibName: "FAQContentsTableViewCell", bundle: nil), forCellReuseIdentifier: "FAQContentsTableViewCell")
        
@@ -41,6 +42,7 @@ extension FAQViewController: ExpandableDelegate
     func expandableTableView(_ expandableTableView: ExpandableTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = expandableTableView.dequeueReusableCell(withIdentifier: "FAQTitleTableViewCell") as! FAQTitleTableViewCell
         cell.faqTitleLabel.text = faqTitle[indexPath.row]
+        
             
         return cell
         
@@ -50,12 +52,50 @@ extension FAQViewController: ExpandableDelegate
     
     //하위 셀
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
-        let cell = expandableTableView.dequeueReusableCell(withIdentifier: "FAQContentsTableViewCell") as! FAQContentsTableViewCell
-        cell.faqContentsTextView.text = faqContent[indexPath.row]
-        return [cell]
-        
-       
-       
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                let cell = faqExpandableTableView.dequeueReusableCell(withIdentifier: "FAQContentsTableViewCell") as! FAQContentsTableViewCell
+                cell.faqContentsTextView.text = faqContent[indexPath.row]
+                return [cell]
+            case 1:
+                let cell = faqExpandableTableView.dequeueReusableCell(withIdentifier: "FAQContentsTableViewCell") as! FAQContentsTableViewCell
+                cell.faqContentsTextView.text = faqContent[indexPath.row]
+                return [cell]
+            case 2:
+                let cell = faqExpandableTableView.dequeueReusableCell(withIdentifier: "FAQContentsTableViewCell") as! FAQContentsTableViewCell
+                cell.faqContentsTextView.text = faqContent[indexPath.row]
+                return [cell]
+            case 3:
+                let cell = faqExpandableTableView.dequeueReusableCell(withIdentifier: "FAQContentsTableViewCell") as! FAQContentsTableViewCell
+                cell.faqContentsTextView.text = faqContent[indexPath.row]
+                return [cell]
+            case 4:
+                let cell = faqExpandableTableView.dequeueReusableCell(withIdentifier: "FAQContentsTableViewCell") as! FAQContentsTableViewCell
+                cell.faqContentsTextView.text = faqContent[indexPath.row]
+                return [cell]
+            case 5:
+                let cell = faqExpandableTableView.dequeueReusableCell(withIdentifier: "FAQContentsTableViewCell") as! FAQContentsTableViewCell
+                cell.faqContentsTextView.text = faqContent[indexPath.row]
+                return [cell]
+            case 6:
+                let cell = faqExpandableTableView.dequeueReusableCell(withIdentifier: "FAQContentsTableViewCell") as! FAQContentsTableViewCell
+                cell.faqContentsTextView.text = faqContent[indexPath.row]
+                return [cell]
+            case 7:
+                let cell = faqExpandableTableView.dequeueReusableCell(withIdentifier: "FAQContentsTableViewCell") as! FAQContentsTableViewCell
+                cell.faqContentsTextView.text = faqContent[indexPath.row]
+                return [cell]
+            default:
+                break
+            }
+            
+        default:
+            break
+        }
+         return nil
+    
     }
     
     //하위 셀 사이즈
