@@ -25,9 +25,9 @@ class InquiryViewController: UIViewController {
         if textView.text.isEmpty == true{
             showAlertMessage(titleStr: "", messageStr: "문의하실 내용을 적어주세요.")
         } else {
-        let dateStamp = Date(timeIntervalSinceNow: 0).timeIntervalSince1970*1000
+        
         let text = textView.text ?? "빈 메시지"
-            networkManager.postInquiry(image: [imgURL], content: text, createAt: Int(dateStamp)) { [weak self] (nil, ErrorModel, Error) in
+            networkManager.postInquiry(image: [imgURL], content: text) { [weak self] (nil, ErrorModel, Error) in
                 if ErrorModel == nil && Error != nil {
                     self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
                 } else if ErrorModel != nil && Error == nil {

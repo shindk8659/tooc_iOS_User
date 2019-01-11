@@ -251,15 +251,14 @@ class NetworkManager {
         }
     }
     
-    func postInquiry(image: [String], content: String, createAt: Int, completion: @escaping(ErrorModel?,ErrorModel?,Error?) -> Void) {
+    func postInquiry(image: [String], content: String, completion: @escaping(ErrorModel?,ErrorModel?,Error?) -> Void) {
         let header:HTTPHeaders = [
             "jwt": gsno(jwt)
         ]
         
         let param: [String:Any] = [
             "inquiryImgs" : image,
-            "content" : content,
-            "createAt" : createAt
+            "content" : content
         ]
         
         let router = APIRouter(url:"/api/inquiry", method: .post, parameters: param ,headers:header)
