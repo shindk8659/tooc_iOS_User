@@ -188,7 +188,7 @@ class ReservationPicker: UIViewController {
                 checkDate = fixedDate!
                 
                 if findDate <= date {
-                    findDate = Date.init(timeInterval: 60, since: date)
+                    findDate = Date.init(timeInterval: 14400, since: date) // 60
                 }
                 
             case .find:

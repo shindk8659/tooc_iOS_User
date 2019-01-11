@@ -8,7 +8,6 @@
 
 import UIKit
 import Photos
-import Alamofire
 
 class InquiryViewController: UIViewController {
     

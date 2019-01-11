@@ -136,8 +136,6 @@ class ReservationViewController: UITableViewController {
         self.luggageChoiceLabel.text = "짐 선택: 캐리어 \(numberOfSuitcase)개, 일반짐 \(numberOfLuggage)개"
     }
     
-    
-    
     @IBAction func didPressPayment(_ sender: UIButton) {
            let fill = UIImage(named: "bt_circle_fill")
            let empty = UIImage(named: "bt_circle_empty")
