@@ -26,8 +26,22 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <!--Include to allow all connections (DANGER)-->
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
 	<key>CFBundleURLTypes</key>
 	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>https://tooc.tk/</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>tooc</string>
+		</dict>
 		<dict>
 			<key>CFBundleURLName</key>
 			<string>daummaps</string>

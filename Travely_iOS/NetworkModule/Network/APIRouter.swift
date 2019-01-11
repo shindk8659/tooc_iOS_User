@@ -9,7 +9,8 @@
 import Alamofire
 
 struct APIConfiguration {
-    static let baseURL = "http://52.78.222.197:8080"
+    static let baseURL = "https://tooc.tk"
+
 }
 
 struct APIRouter {
