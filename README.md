@@ -27,7 +27,7 @@
 
 
 
-![사용자-워크플로우](/Users/shindongkyu/tooc/user/tooc_iOS_User/README_IMAGE/사용자-워크플로우.jpg)
+![사용자-워크플로우](/README_IMAGE/사용자-워크플로우.jpg)
 
 
 
