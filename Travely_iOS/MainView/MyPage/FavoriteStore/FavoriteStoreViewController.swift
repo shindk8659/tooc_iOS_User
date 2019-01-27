@@ -21,6 +21,23 @@ class FavoriteStoreViewController: UIViewController {
         self.favoriteStoreTableView.dataSource = self
        
        
+//        networkModel.getFavoriteStore { [weak self](favoriteStore, errorModel, error) in
+//            
+//            // 리뷰
+//            if favoriteStore == nil && errorModel == nil && error != nil {
+//                self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
+//            } else if favoriteStore == nil && errorModel != nil && error == nil {
+//                self?.showAlertMessage(titleStr:"", messageStr: "네트워크 오류입니다.")
+//            }
+//            else {
+//                self?.favoriteModel = favoriteStore
+//                self?.favoriteStoreTableView.reloadData()
+//            }
+//        }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        
         networkModel.getFavoriteStore { [weak self](favoriteStore, errorModel, error) in
             
             // 리뷰
@@ -34,8 +51,6 @@ class FavoriteStoreViewController: UIViewController {
                 self?.favoriteStoreTableView.reloadData()
             }
         }
-    }
-    override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
